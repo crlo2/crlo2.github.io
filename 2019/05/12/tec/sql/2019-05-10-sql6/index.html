@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+<title>[SQL] GROUP BY, HAVING절 - EUNI</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+    <meta name="description" content="1. 집계함수(AGGREGATE FUNCTION) 여러 행들의 그룹이 모여 그룹당 하나의 결과를 리턴하는 함수 GROUP BY 절은 행들을 소그룹화 함 SELECT절, HAVING절, ORDER BY 절에 사용할 수 있음.    집계함수명([DISTINCT] 칼럼이나 표현식)COUNT(*) NULL값을 포함한 행의 수 출력COUNT(표현식) 표현식의 값이">
+<meta name="keywords" content="sql">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[SQL] GROUP BY, HAVING절">
+<meta property="og:url" content="https://crlo2.github.io/2019/05/12/tec/sql/2019-05-10-sql6/index.html">
+<meta property="og:site_name" content="EUNI">
+<meta property="og:description" content="1. 집계함수(AGGREGATE FUNCTION) 여러 행들의 그룹이 모여 그룹당 하나의 결과를 리턴하는 함수 GROUP BY 절은 행들을 소그룹화 함 SELECT절, HAVING절, ORDER BY 절에 사용할 수 있음.    집계함수명([DISTINCT] 칼럼이나 표현식)COUNT(*) NULL값을 포함한 행의 수 출력COUNT(표현식) 표현식의 값이">
+<meta property="og:locale" content="ko">
+<meta property="og:image" content="https://crlo2.github.io/images/og_image.png">
+<meta property="og:updated_time" content="2019-05-10T07:58:53.178Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[SQL] GROUP BY, HAVING절">
+<meta name="twitter:description" content="1. 집계함수(AGGREGATE FUNCTION) 여러 행들의 그룹이 모여 그룹당 하나의 결과를 리턴하는 함수 GROUP BY 절은 행들을 소그룹화 함 SELECT절, HAVING절, ORDER BY 절에 사용할 수 있음.    집계함수명([DISTINCT] 칼럼이나 표현식)COUNT(*) NULL값을 포함한 행의 수 출력COUNT(표현식) 표현식의 값이">
+<meta name="twitter:image" content="https://crlo2.github.io/images/og_image.png">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/favicon.svg">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+    
+    
+
+    
+    
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/logo.png" alt="[SQL] GROUP BY, HAVING절" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item" href="/categories/tec/">Technology</a>
+                
+                <a class="navbar-item" href="/categories/trip/">Trip</a>
+                
+                <a class="navbar-item" href="/categories/others/">Others</a>
+                
+                <a class="navbar-item" href="/tags">Tags</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    
+                    <a class="navbar-item" target="_blank" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="카탈로그" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="검색" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-05-12T12:44:34.475Z">2019-05-12</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/tec/">tec</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/tec/sql/">sql</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    8분 읽기 (나에 대하여 1210 단어)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                [SQL] GROUP BY, HAVING절
+            
+        </h1>
+        <div class="content">
+            <h2 id="1-집계함수-AGGREGATE-FUNCTION"><a href="#1-집계함수-AGGREGATE-FUNCTION" class="headerlink" title="1. 집계함수(AGGREGATE FUNCTION)"></a>1. 집계함수(AGGREGATE FUNCTION)</h2><ul>
+<li>여러 행들의 그룹이 모여 그룹당 하나의 결과를 리턴하는 함수</li>
+<li>GROUP BY 절은 행들을 소그룹화 함</li>
+<li>SELECT절, HAVING절, ORDER BY 절에 사용할 수 있음.  </li>
+</ul>
+<h3 id="집계함수명-DISTINCT-칼럼이나-표현식"><a href="#집계함수명-DISTINCT-칼럼이나-표현식" class="headerlink" title="집계함수명([DISTINCT] 칼럼이나 표현식)"></a>집계함수명([DISTINCT] 칼럼이나 표현식)</h3><h3 id="COUNT"><a href="#COUNT" class="headerlink" title="COUNT(*)"></a>COUNT(*)</h3><ul>
+<li>NULL값을 포함한 행의 수 출력<h3 id="COUNT-표현식"><a href="#COUNT-표현식" class="headerlink" title="COUNT(표현식)"></a>COUNT(표현식)</h3></li>
+<li>표현식의 값이 NULL값을 제외한 행의 수 출력<h3 id="SUM-DISTINCT-표현식"><a href="#SUM-DISTINCT-표현식" class="headerlink" title="SUM([DISTINCT] 표현식)"></a>SUM([DISTINCT] 표현식)</h3></li>
+<li>NULL값을 제외한 합계출력<h3 id="AVG-DISTINCT-표현식"><a href="#AVG-DISTINCT-표현식" class="headerlink" title="AVG([DISTINCT] 표현식)"></a>AVG([DISTINCT] 표현식)</h3></li>
+<li>NULL값을 제외한 평균출력<h3 id="MAX-DISTINCT-표현식"><a href="#MAX-DISTINCT-표현식" class="headerlink" title="MAX([DISTINCT] 표현식)"></a>MAX([DISTINCT] 표현식)</h3></li>
+<li>표현식의 최대값 출력<h3 id="MIN-DISTINCT-표현식"><a href="#MIN-DISTINCT-표현식" class="headerlink" title="MIN([DISTINCT] 표현식)"></a>MIN([DISTINCT] 표현식)</h3></li>
+<li>표현식의 최소값 출력<h3 id="STDDEV-D-표현식"><a href="#STDDEV-D-표현식" class="headerlink" title="STDDEV([D] 표현식)"></a>STDDEV([D] 표현식)</h3></li>
+<li>표현식의 표준편차 출력<h3 id="VARIAN-D-표현식"><a href="#VARIAN-D-표현식" class="headerlink" title="VARIAN([D] 표현식)"></a>VARIAN([D] 표현식)</h3></li>
+<li>표현식의 분산 출력   </li>
+</ul>
+<h2 id="2-GROUP-BY절"><a href="#2-GROUP-BY절" class="headerlink" title="2. GROUP BY절"></a>2. GROUP BY절</h2><ul>
+<li>SQL문에서 FROM과 WHERE절 뒤에 위치, 데이터를 그룹으로 분류하여 소그룹에대한 항목별 통계정보를 얻을때 사용  </li>
+</ul>
+<pre><code class="sql"><span class="keyword">SELECT</span> [<span class="keyword">DISTINCT</span>] 칼럼명 [<span class="keyword">ALIAS</span>명]
+<span class="keyword">FROM</span> 테이블명
+[<span class="keyword">WHERE</span> 조건식]
+[<span class="keyword">GROUP</span> <span class="keyword">BY</span> 칼럼이나 표현식]
+[<span class="keyword">HAVING</span> 그룹조건식];
+</code></pre>
+<h3 id="GROUP-BY-HAVING절의-특성"><a href="#GROUP-BY-HAVING절의-특성" class="headerlink" title="GROUP BY, HAVING절의 특성"></a>GROUP BY, HAVING절의 특성</h3><ul>
+<li>그룹바이로 소그룹의 기준을 정한후, SELECT 절에 집계함수를 사용</li>
+<li>집계함수의 통계정보는 NULL값을 제외하고 수행함</li>
+<li>WHERE절에는 집계함수 올 수 없음</li>
+<li>HAVING절은 그룹바이절의 기준 항목이나 소그룹의 집계함수를 이용한 저건을 표시</li>
+<li>그룹바이절에 의해 소그룹별로 만들어진 집계데이터 중, HAVING 절에 제한 조건을 두어 만족하는 내용만 출력</li>
+<li>HAVING절은 일반적으로 GROUP BY절 뒤에 위치  </li>
+</ul>
+<pre><code class="sql"><span class="keyword">SELECT</span> <span class="keyword">POSITION</span> 포지션, <span class="keyword">AVG</span>(HEIGHT) 평균키
+<span class="keyword">FROM</span> PLAYER;
+<span class="comment">--&gt;&gt;ERROR : 단일 그룹의 집계함수가 아니다라고 나옴</span>
+
+
+<span class="keyword">SELECT</span> <span class="keyword">POSITION</span> 포지션, <span class="keyword">AVG</span>(HEIGHT) 평균키
+<span class="keyword">FROM</span> PLAYER
+<span class="keyword">GROUP</span> <span class="keyword">BY</span> <span class="keyword">POSITION</span> 포지션;
+<span class="comment">--&gt;&gt;ERROR SQL명령어가 올바르게 종료되지 않음--&gt;그룹바이에 별명ALIAS쓸 수 없음</span>
+
+<span class="comment">--포지션별 최대키, 최소키, 평균키 출력</span>
+<span class="keyword">SELECT</span> <span class="keyword">POSITION</span> 포지션, <span class="keyword">MAX</span>(HEIGHT), <span class="keyword">MIN</span>(HEIGHT), <span class="keyword">AVG</span>(HEIGHT)
+<span class="keyword">FROM</span> PLAYER
+<span class="keyword">GROUP</span> <span class="keyword">BY</span> PISITION;
+</code></pre>
+<h2 id="3-HAVING-절"><a href="#3-HAVING-절" class="headerlink" title="3.HAVING 절"></a>3.HAVING 절</h2><ul>
+<li>GROUP BY후에 조건을 달고 싶을때 WHERE 대신 씀</li>
+<li>WHERE절은 GROUP BY절 전에 오기때문에 소그룹으로 묶인후의 조건을 걸 수없음.  </li>
+</ul>
+<pre><code class="sql"><span class="keyword">SELECT</span> <span class="keyword">POSITION</span> 포지션, <span class="keyword">ROUND</span>(<span class="keyword">AVG</span>(HEIGHT),<span class="number">2</span>) 평균키
+<span class="keyword">FROM</span> PLAYER
+<span class="keyword">WHERE</span> <span class="keyword">AVG</span>(HIGHT) &gt;=<span class="number">180</span>
+<span class="keyword">GROUP</span> <span class="keyword">BY</span> <span class="keyword">POSITION</span>
+<span class="comment">--3행오류 : 집계함수가 허가되지 않음. 그룹바이로 소그룹화 되기전에 집계함수를 사용했기때문.</span>
+
+<span class="keyword">SELECT</span> <span class="keyword">POSITION</span>, <span class="keyword">ROUND</span>(<span class="keyword">AVG</span>(HEIGHT),<span class="number">2</span>)
+<span class="keyword">FROM</span> PLAYER
+<span class="keyword">GROUP</span> <span class="keyword">BY</span> <span class="keyword">POSITION</span>
+<span class="keyword">HAVING</span> <span class="keyword">AVG</span>(HEIGNT)&gt;=<span class="number">180</span>;
+
+<span class="comment">--이렇게써야함</span>
+<span class="comment">--예제)</span>
+<span class="comment">--최대 키가 190CM이상인 선수를 가지고 포지션별 평균 키를 출력</span>
+<span class="keyword">SELECT</span> POSICITON <span class="keyword">AVG</span>(HEIGHT)
+<span class="keyword">FROM</span> PLAYER
+<span class="keyword">GROUP</span> <span class="keyword">BY</span> <span class="keyword">POSITION</span>
+<span class="keyword">HAVING</span> <span class="keyword">MAX</span>(HEIGHT) &gt;=<span class="number">190</span>;
+</code></pre>
+<h2 id="4-CASE-표현을-활용한-월별-데이터-집계"><a href="#4-CASE-표현을-활용한-월별-데이터-집계" class="headerlink" title="4. CASE 표현을 활용한 월별 데이터 집계"></a>4. CASE 표현을 활용한 월별 데이터 집계</h2><ul>
+<li>모델링의 제 1정규화로 반독되는 칼럼의 경우, 구분칼럼을 두고 여러개의 레코드로 만들어진 집합을 정해진 칼럼 수만큼 확장해서 집계 보고서를 만드는 유용한 기법  </li>
+</ul>
+<p>예제)<br>부서별 월별 입사자의 평균 급여를 조회, 입사후 1년마다 급여 인상이나 보너스 지급과 같은 일정이 정기적으로 잡히면 업무적으로 중요한 정보가 됨  </p>
+<pre><code class="sql"><span class="comment">--STEPT1</span>
+<span class="comment">--개별입사정보에서 월별데이터 추출</span>
+<span class="keyword">SELECT</span> ENAME, DEPOTNO, <span class="keyword">EXTRACT</span>(<span class="keyword">MONTH</span> <span class="keyword">FROM</span> HIREDATE) <span class="keyword">MONTH</span>, SAL
+<span class="keyword">FROM</span> EMP;
+
+<span class="comment">--STEPT2 월별데이터 구분</span>
+<span class="keyword">SELECT</span> ENAME, DEPTNO,
+  <span class="keyword">CASE</span> <span class="keyword">MONTH</span> <span class="keyword">WHEN</span> <span class="number">1</span> <span class="keyword">THEN</span> SAL <span class="keyword">END</span> M01, <span class="keyword">CASE</span> <span class="keyword">MONTH</span> <span class="keyword">WHEN</span> <span class="number">2</span> <span class="keyword">THEN</span> SAL <span class="keyword">END</span> M02,
+  <span class="keyword">CASE</span> <span class="keyword">MONTH</span> <span class="keyword">WHEN</span> <span class="number">3</span> <span class="keyword">THEN</span> SAL <span class="keyword">END</span> M03, <span class="keyword">CASE</span> <span class="keyword">MONTH</span> <span class="keyword">WHEN</span> <span class="number">4</span> <span class="keyword">THEN</span> SAL <span class="keyword">END</span> M04,
+  <span class="keyword">CASE</span> <span class="keyword">MONTH</span> <span class="keyword">WHEN</span> <span class="number">5</span> <span class="keyword">THEN</span> SAL <span class="keyword">END</span> M05, <span class="keyword">CASE</span> <span class="keyword">MONTH</span> <span class="keyword">WHEN</span> <span class="number">6</span> <span class="keyword">THEN</span> SAL <span class="keyword">END</span> M06,
+  <span class="keyword">CASE</span> <span class="keyword">MONTH</span> <span class="keyword">WHEN</span> <span class="number">7</span> <span class="keyword">THEN</span> SAL <span class="keyword">END</span> M07, <span class="keyword">CASE</span> <span class="keyword">MONTH</span> <span class="keyword">WHEN</span> <span class="number">8</span> <span class="keyword">THEN</span> SAL <span class="keyword">END</span> M08,
+  <span class="keyword">CASE</span> <span class="keyword">MONTH</span> <span class="keyword">WHEN</span> <span class="number">9</span> <span class="keyword">THEN</span> SAL <span class="keyword">END</span> M09, <span class="keyword">CASE</span> <span class="keyword">MONTH</span> <span class="keyword">WHEN</span> <span class="number">10</span> <span class="keyword">THEN</span> SAL <span class="keyword">END</span> M10,
+  <span class="keyword">CASE</span> <span class="keyword">MONTH</span> <span class="keyword">WHEN</span> <span class="number">11</span> <span class="keyword">THEN</span> SAL <span class="keyword">END</span> M11, <span class="keyword">CASE</span> <span class="keyword">MONTH</span> <span class="keyword">WHEN</span> <span class="number">12</span> <span class="keyword">THEN</span> SAL <span class="keyword">END</span> M12
+<span class="keyword">FROM</span> (<span class="keyword">SELECT</span> ENAME, DEPTNO, <span class="keyword">EXTRACT</span>(<span class="keyword">MONTH</span> <span class="keyword">FROM</span> HIREDATE) <span class="keyword">MONTH</span>, SAL
+      <span class="keyword">FROM</span> EMP);
+
+<span class="comment">--STEPT3 2의구분을 부서별로 그룹화</span>
+<span class="keyword">SELECT</span> DEPTNO,
+  <span class="keyword">AVG</span>(<span class="keyword">CASE</span> <span class="keyword">MONTH</span> <span class="keyword">WHEN</span> <span class="number">1</span> <span class="keyword">THEN</span> SAL <span class="keyword">END</span>) M01, <span class="keyword">AVG</span>(<span class="keyword">CASE</span> <span class="keyword">MONTH</span> <span class="keyword">WHEN</span> <span class="number">2</span> <span class="keyword">THEN</span> SAL <span class="keyword">END</span>) M02,
+  <span class="keyword">AVG</span>(<span class="keyword">CASE</span> <span class="keyword">MONTH</span> <span class="keyword">WHEN</span> <span class="number">3</span> <span class="keyword">THEN</span> SAL <span class="keyword">END</span>) M03, <span class="keyword">AVG</span>(<span class="keyword">CASE</span> <span class="keyword">MONTH</span> <span class="keyword">WHEN</span> <span class="number">4</span> <span class="keyword">THEN</span> SAL <span class="keyword">END</span>) M04,
+  <span class="keyword">AVG</span>(<span class="keyword">CASE</span> <span class="keyword">MONTH</span> <span class="keyword">WHEN</span> <span class="number">5</span> <span class="keyword">THEN</span> SAL <span class="keyword">END</span>) M05, <span class="keyword">AVG</span>(<span class="keyword">CASE</span> <span class="keyword">MONTH</span> <span class="keyword">WHEN</span> <span class="number">6</span> <span class="keyword">THEN</span> SAL <span class="keyword">END</span>) M06,
+  <span class="keyword">AVG</span>(<span class="keyword">CASE</span> <span class="keyword">MONTH</span> <span class="keyword">WHEN</span> <span class="number">7</span> <span class="keyword">THEN</span> SAL <span class="keyword">END</span>) M07, <span class="keyword">AVG</span>(<span class="keyword">CASE</span> <span class="keyword">MONTH</span> <span class="keyword">WHEN</span> <span class="number">8</span> <span class="keyword">THEN</span> SAL <span class="keyword">END</span>) M08,
+  <span class="keyword">AVG</span>(<span class="keyword">CASE</span> <span class="keyword">MONTH</span> <span class="keyword">WHEN</span> <span class="number">9</span> <span class="keyword">THEN</span> SAL <span class="keyword">END</span>) M09, <span class="keyword">AVG</span>(<span class="keyword">CASE</span> <span class="keyword">MONTH</span> <span class="keyword">WHEN</span> <span class="number">10</span> <span class="keyword">THEN</span> SAL <span class="keyword">END</span>) M10,
+  <span class="keyword">AVG</span>(<span class="keyword">CASE</span> <span class="keyword">MONTH</span> <span class="keyword">WHEN</span> <span class="number">11</span> <span class="keyword">THEN</span> SAL <span class="keyword">END</span>) M11, <span class="keyword">AVG</span>(<span class="keyword">CASE</span> <span class="keyword">MONTH</span> <span class="keyword">WHEN</span> <span class="number">12</span> <span class="keyword">THEN</span> SAL <span class="keyword">END</span>) M12
+<span class="keyword">FROM</span> (<span class="keyword">SELECT</span> ENAME, DEPTNO, <span class="keyword">EXTRACT</span>(<span class="keyword">MONTH</span> <span class="keyword">FROM</span> HIREDATE) <span class="keyword">MONTH</span>, SAL
+      <span class="keyword">FROM</span> EMP)
+<span class="keyword">GROUP</span> <span class="keyword">BY</span> DEPTNO;
+</code></pre>
+<h2 id="5-집계함수와-NULL처리"><a href="#5-집계함수와-NULL처리" class="headerlink" title="5.집계함수와 NULL처리"></a>5.집계함수와 NULL처리</h2><ul>
+<li>빈칸을 NULL이 아니라 0으로 처리하기 위해 NVL()을 사용하는 경우가 있는데, 오히려 불필요할 수 있음</li>
+<li>행 함수는 건수가 NULL인 행을 빼고 계산함. SUM, AVG,..등 굳이 0을넣어 불필요하게 더 계산할 필요가 없음</li>
+<li>ELSE  절 생략하면 DEFAULT 값이 NULL임</li>
+<li>출력시 NULL이 아닌 0을 표현하고싶으면 NVL(SUM(SAL),0)이렇게 하면됨</li>
+</ul>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/sql/">sql</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/05/12/tec/sql/2019-05-10-sql7/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">[SQL] ORDER BY 정렬</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/05/12/tec/sql/2019-05-10-sql5/">
+                <span class="level-item">[SQL] 함수</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">댓글</h3>
+        
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left is-sticky">
+    
+        
+<div class="card widget" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                카탈로그
+            </h3>
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#1-집계함수-AGGREGATE-FUNCTION">
+        <span class="has-mr-6">1</span>
+        <span>1. 집계함수(AGGREGATE FUNCTION)</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#집계함수명-DISTINCT-칼럼이나-표현식">
+        <span class="has-mr-6">1.1</span>
+        <span>집계함수명([DISTINCT] 칼럼이나 표현식)</span>
+        </a></li><li>
+        <a class="is-flex" href="#COUNT">
+        <span class="has-mr-6">1.2</span>
+        <span>COUNT(*)</span>
+        </a></li><li>
+        <a class="is-flex" href="#COUNT-표현식">
+        <span class="has-mr-6">1.3</span>
+        <span>COUNT(표현식)</span>
+        </a></li><li>
+        <a class="is-flex" href="#SUM-DISTINCT-표현식">
+        <span class="has-mr-6">1.4</span>
+        <span>SUM([DISTINCT] 표현식)</span>
+        </a></li><li>
+        <a class="is-flex" href="#AVG-DISTINCT-표현식">
+        <span class="has-mr-6">1.5</span>
+        <span>AVG([DISTINCT] 표현식)</span>
+        </a></li><li>
+        <a class="is-flex" href="#MAX-DISTINCT-표현식">
+        <span class="has-mr-6">1.6</span>
+        <span>MAX([DISTINCT] 표현식)</span>
+        </a></li><li>
+        <a class="is-flex" href="#MIN-DISTINCT-표현식">
+        <span class="has-mr-6">1.7</span>
+        <span>MIN([DISTINCT] 표현식)</span>
+        </a></li><li>
+        <a class="is-flex" href="#STDDEV-D-표현식">
+        <span class="has-mr-6">1.8</span>
+        <span>STDDEV([D] 표현식)</span>
+        </a></li><li>
+        <a class="is-flex" href="#VARIAN-D-표현식">
+        <span class="has-mr-6">1.9</span>
+        <span>VARIAN([D] 표현식)</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#2-GROUP-BY절">
+        <span class="has-mr-6">2</span>
+        <span>2. GROUP BY절</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#GROUP-BY-HAVING절의-특성">
+        <span class="has-mr-6">2.1</span>
+        <span>GROUP BY, HAVING절의 특성</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#3-HAVING-절">
+        <span class="has-mr-6">3</span>
+        <span>3.HAVING 절</span>
+        </a></li><li>
+        <a class="is-flex" href="#4-CASE-표현을-활용한-월별-데이터-집계">
+        <span class="has-mr-6">4</span>
+        <span>4. CASE 표현을 활용한 월별 데이터 집계</span>
+        </a></li><li>
+        <a class="is-flex" href="#5-집계함수와-NULL처리">
+        <span class="has-mr-6">5</span>
+        <span>5.집계함수와 NULL처리</span>
+        </a></li></ul>
+        </div>
+    </div>
+</div>
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered">
+                <div>
+                    
+                        <img class="image is-128x128 has-mb-6" src="/images/ap.jpg" alt="crlo">
+                    
+                    
+                    <p class="is-size-4 is-block">
+                        crlo
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        developer
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>S.Korea</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        포스트
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        21
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        카테고리
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        3
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        태그
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        2
+                    </p>
+                </div>
+            </div>
+        </nav>
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/crlo2" target="_blank">
+                팔로우</a>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="https://github.com/crlo2">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="RSS" href="/">
+                
+                <i class="fas fa-rss"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+            
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            최근 글
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/05/12/tec/sql/2019-05-10-sql7/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[SQL] ORDER BY 정렬">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-12T12:44:34.484Z">2019-05-12</time></div>
+                    <a href="/2019/05/12/tec/sql/2019-05-10-sql7/" class="has-link-black-ter is-size-6">[SQL] ORDER BY 정렬</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/sql/">sql</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/12/tec/sql/2019-05-10-sql6/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[SQL] GROUP BY, HAVING절">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-12T12:44:34.475Z">2019-05-12</time></div>
+                    <a href="/2019/05/12/tec/sql/2019-05-10-sql6/" class="has-link-black-ter is-size-6">[SQL] GROUP BY, HAVING절</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/sql/">sql</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/12/tec/sql/2019-05-10-sql5/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[SQL] 함수">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-12T12:44:34.466Z">2019-05-12</time></div>
+                    <a href="/2019/05/12/tec/sql/2019-05-10-sql5/" class="has-link-black-ter is-size-6">[SQL] 함수</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/sql/">sql</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/12/tec/sql/2019-05-10-sql4/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[SQL] WHERE절">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-12T12:44:34.456Z">2019-05-12</time></div>
+                    <a href="/2019/05/12/tec/sql/2019-05-10-sql4/" class="has-link-black-ter is-size-6">[SQL] WHERE절</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/sql/">sql</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/12/tec/sql/2019-05-10-sql3/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[SQL] TCL(TRANSACTION CONTROL LANGUAGE)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-12T12:44:34.449Z">2019-05-12</time></div>
+                    <a href="/2019/05/12/tec/sql/2019-05-10-sql3/" class="has-link-black-ter is-size-6">[SQL] TCL(TRANSACTION CONTROL LANGUAGE)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/sql/">sql</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+        
+            
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                카테고리
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/tec/">
+            <span class="level-start">
+                <span class="level-item">tec</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">21</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/tec/java/">
+            <span class="level-start">
+                <span class="level-item">java</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">14</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/tec/sql/">
+            <span class="level-start">
+                <span class="level-item">sql</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">7</span>
+            </span>
+        </a></li></ul></li>
+            </ul>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            아카이브
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/05/">
+                <span class="level-start">
+                    <span class="level-item">5월 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">21</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+            
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            태그 클라우드
+        </h3>
+        <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/sql/" style="font-size: 10px;">sql</a>
+    </div>
+</div>
+
+        
+            
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            태그 클라우드
+        </h3>
+        <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/sql/" style="font-size: 10px;">sql</a>
+    </div>
+</div>
+
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            최근 글
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/05/12/tec/sql/2019-05-10-sql7/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[SQL] ORDER BY 정렬">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-12T12:44:34.484Z">2019-05-12</time></div>
+                    <a href="/2019/05/12/tec/sql/2019-05-10-sql7/" class="has-link-black-ter is-size-6">[SQL] ORDER BY 정렬</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/sql/">sql</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/12/tec/sql/2019-05-10-sql6/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[SQL] GROUP BY, HAVING절">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-12T12:44:34.475Z">2019-05-12</time></div>
+                    <a href="/2019/05/12/tec/sql/2019-05-10-sql6/" class="has-link-black-ter is-size-6">[SQL] GROUP BY, HAVING절</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/sql/">sql</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/12/tec/sql/2019-05-10-sql5/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[SQL] 함수">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-12T12:44:34.466Z">2019-05-12</time></div>
+                    <a href="/2019/05/12/tec/sql/2019-05-10-sql5/" class="has-link-black-ter is-size-6">[SQL] 함수</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/sql/">sql</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/12/tec/sql/2019-05-10-sql4/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[SQL] WHERE절">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-12T12:44:34.456Z">2019-05-12</time></div>
+                    <a href="/2019/05/12/tec/sql/2019-05-10-sql4/" class="has-link-black-ter is-size-6">[SQL] WHERE절</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/sql/">sql</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/12/tec/sql/2019-05-10-sql3/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[SQL] TCL(TRANSACTION CONTROL LANGUAGE)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-12T12:44:34.449Z">2019-05-12</time></div>
+                    <a href="/2019/05/12/tec/sql/2019-05-10-sql3/" class="has-link-black-ter is-size-6">[SQL] TCL(TRANSACTION CONTROL LANGUAGE)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/sql/">sql</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                카테고리
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/tec/">
+            <span class="level-start">
+                <span class="level-item">tec</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">21</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/tec/java/">
+            <span class="level-start">
+                <span class="level-item">java</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">14</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/tec/sql/">
+            <span class="level-start">
+                <span class="level-item">sql</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">7</span>
+            </span>
+        </a></li></ul></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            아카이브
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/05/">
+                <span class="level-start">
+                    <span class="level-item">5월 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">21</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            태그 클라우드
+        </h3>
+        <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/sql/" style="font-size: 10px;">sql</a>
+    </div>
+</div>
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            태그 클라우드
+        </h3>
+        <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/sql/" style="font-size: 10px;">sql</a>
+    </div>
+</div>
+
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/logo.png" alt="[SQL] GROUP BY, HAVING절" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2019 daeun&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Download on GitHub" href="https://github.com/crlo2">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("ko");</script>
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="Back to Top" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+    <script src="/js/clipboard.js" defer></script>
+    
+
+    
+    
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="입력 하세요...">
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '포스트',
+                PAGES: '페이지',
+                CATEGORIES: '카테고리',
+                TAGS: '태그',
+                UNTITLED: '(제목없음)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>

@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+<title>[SQL] DDL(Data Definiation Language) - EUNI</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+    <meta name="description" content="*자동으로 COMMIT됨(AUTO COMMIT)   1.자주쓰이는 데이터 유형CHARCTER(s) 고정길이 문자열정보   (s)만큼의 최대 고정길이를 갖고 할당된 변수값의 길이가 s보다 작을때는 공백으로 채움   ‘AA’=’AA     ‘    VARCHAR2(s) 가변길이 문자열정보   s만큼 최대값 입력가능, s이하의 변수길이값입력시 변수길이만큼 바이트">
+<meta name="keywords" content="sql">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[SQL] DDL(Data Definiation Language)">
+<meta property="og:url" content="https://crlo2.github.io/2019/05/12/tec/sql/2019-05-10-sql1/index.html">
+<meta property="og:site_name" content="EUNI">
+<meta property="og:description" content="*자동으로 COMMIT됨(AUTO COMMIT)   1.자주쓰이는 데이터 유형CHARCTER(s) 고정길이 문자열정보   (s)만큼의 최대 고정길이를 갖고 할당된 변수값의 길이가 s보다 작을때는 공백으로 채움   ‘AA’=’AA     ‘    VARCHAR2(s) 가변길이 문자열정보   s만큼 최대값 입력가능, s이하의 변수길이값입력시 변수길이만큼 바이트">
+<meta property="og:locale" content="ko">
+<meta property="og:image" content="https://crlo2.github.io/images/og_image.png">
+<meta property="og:updated_time" content="2019-05-10T07:10:40.690Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[SQL] DDL(Data Definiation Language)">
+<meta name="twitter:description" content="*자동으로 COMMIT됨(AUTO COMMIT)   1.자주쓰이는 데이터 유형CHARCTER(s) 고정길이 문자열정보   (s)만큼의 최대 고정길이를 갖고 할당된 변수값의 길이가 s보다 작을때는 공백으로 채움   ‘AA’=’AA     ‘    VARCHAR2(s) 가변길이 문자열정보   s만큼 최대값 입력가능, s이하의 변수길이값입력시 변수길이만큼 바이트">
+<meta name="twitter:image" content="https://crlo2.github.io/images/og_image.png">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/favicon.svg">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+    
+    
+
+    
+    
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/logo.png" alt="[SQL] DDL(Data Definiation Language)" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item" href="/categories/tec/">Technology</a>
+                
+                <a class="navbar-item" href="/categories/trip/">Trip</a>
+                
+                <a class="navbar-item" href="/categories/others/">Others</a>
+                
+                <a class="navbar-item" href="/tags">Tags</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    
+                    <a class="navbar-item" target="_blank" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="카탈로그" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="검색" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-05-12T12:44:34.433Z">2019-05-12</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/tec/">tec</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/tec/sql/">sql</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    9분 읽기 (나에 대하여 1324 단어)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                [SQL] DDL(Data Definiation Language)
+            
+        </h1>
+        <div class="content">
+            <p>*자동으로 COMMIT됨(AUTO COMMIT)  </p>
+<h2 id="1-자주쓰이는-데이터-유형"><a href="#1-자주쓰이는-데이터-유형" class="headerlink" title="1.자주쓰이는 데이터 유형"></a>1.자주쓰이는 데이터 유형</h2><h3 id="CHARCTER-s"><a href="#CHARCTER-s" class="headerlink" title="CHARCTER(s)"></a>CHARCTER(s)</h3><ul>
+<li>고정길이 문자열정보  </li>
+<li>(s)만큼의 최대 고정길이를 갖고 할당된 변수값의 길이가 s보다 작을때는 공백으로 채움  </li>
+<li>‘AA’=’AA     ‘  </li>
+</ul>
+<h3 id="VARCHAR2-s"><a href="#VARCHAR2-s" class="headerlink" title="VARCHAR2(s)"></a>VARCHAR2(s)</h3><ul>
+<li>가변길이 문자열정보  </li>
+<li>s만큼 최대값 입력가능, s이하의 변수길이값입력시 변수길이만큼 바이트적용  </li>
+<li>‘AA’ != ‘AA    ‘  </li>
+</ul>
+<h3 id="NUMBER-정수-실수-등-숫자정보"><a href="#NUMBER-정수-실수-등-숫자정보" class="headerlink" title="NUMBER-정수, 실수 등 숫자정보"></a>NUMBER-정수, 실수 등 숫자정보</h3><ul>
+<li>NUMBER(4,2) 8은 전체자리수, 2는 소수점 자리수(1234.56)를 나타냄</li>
+</ul>
+<h3 id="DATE-날짜와-시각정보"><a href="#DATE-날짜와-시각정보" class="headerlink" title="DATE-날짜와 시각정보"></a>DATE-날짜와 시각정보</h3><ul>
+<li>1초돤위로 관리*  </li>
+</ul>
+<h2 id="2-CREATE-TABLE"><a href="#2-CREATE-TABLE" class="headerlink" title="2.CREATE TABLE"></a>2.CREATE TABLE</h2><h3 id="테이블-생성식"><a href="#테이블-생성식" class="headerlink" title="테이블 생성식"></a>테이블 생성식</h3><figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> TABLENAME(</span><br><span class="line">     COLUMNNAME1 DATATYPE [<span class="hljs-keyword">DEFAULT</span> 형식] [<span class="hljs-literal">NULL</span> || <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>],</span><br><span class="line">     COLUMNNAME2 DATATYPE [<span class="hljs-keyword">DEFAULT</span> 형식] [<span class="hljs-literal">NULL</span> || <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>],</span><br><span class="line">     ...</span><br><span class="line">     COLUMNNAMEN DATATYPE [<span class="hljs-keyword">DEFAULT</span> 형식] [<span class="hljs-literal">NULL</span> || <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>]</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p><strong>테이블 생성시 주의사항</strong>    </p>
+<ul>
+<li>벤더에서 정의한 예약어는 쓸 수 없음  </li>
+<li>A-Z(대소문자), 0-9, _, $, # 문자만 허용됨  </li>
+<li>테이블명 칼럼명 첫 글자는 반드시 문자로 와야함   </li>
+</ul>
+<h2 id="제약조건-CONSTRAINT"><a href="#제약조건-CONSTRAINT" class="headerlink" title="제약조건(CONSTRAINT)"></a>제약조건(CONSTRAINT)</h2><ul>
+<li>사용자가 원하는 조건의 데이터남 유지하기위한, 데이터 무결성을 유지하기위해 특정 칼럼에 설정하는 제약  </li>
+<li>테이블 생성시 추가하거나 테이블 생성후 ALTER TABLE 이용해서 추가할 수 있음   </li>
+</ul>
+<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> MEMBERS <span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> CK_MEMBERS_POINT <span class="hljs-keyword">CHECK</span>(POINT&lt;<span class="hljs-number">10</span>) <span class="hljs-keyword">NOVALIDATE</span>;<span class="hljs-comment">#PRIMARY KEY(기본키)-각 행의 고유의 식별 데이터-하나의 테이블당 한개만 설정 가능-NULL 입력 불가능#UNIQUE KEY(고유키)-행데이터를 고유하게 식별하기 위한 키-테이블당 여러개 설정 가능-NULL 입력 가능--기본키 및 외래키(TABLENAME1이름의 테이블이 생성되어 있다고 가정) 입력방법1</span></span><br><span class="line"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> TABLENAME(</span><br><span class="line">     COLUMNNAME1 DATATYPE [<span class="hljs-keyword">DEFAULT</span> 형식] [<span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>],</span><br><span class="line">     COLUMNNAME2 DATATYPE [<span class="hljs-keyword">DEFAULT</span> 형식] [<span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>],</span><br><span class="line">     ...</span><br><span class="line">     COLUMNNAMEN DATATYPE [<span class="hljs-keyword">DEFAULT</span> 형식] [<span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>],</span><br><span class="line"></span><br><span class="line">     <span class="hljs-keyword">CONSTRAINT</span> PK_TABLENAME_COLUMNNAME1 PRIMARY <span class="hljs-keyword">KEY</span>(COLUMNNAME1),</span><br><span class="line">     <span class="hljs-keyword">CONSTRAINT</span> FK_TABLENAME_COLUMNNAME2 FOREGIN <span class="hljs-keyword">KEY</span>(COLUMNNAME2) </span><br><span class="line">         <span class="hljs-keyword">REFERENCES</span> TABLENAME2(COLMNUMNAME1)</span><br><span class="line">                                     </span><br><span class="line">);</span><br><span class="line"><span class="hljs-comment">--기본키 입력방법2</span></span><br><span class="line"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> TABLENAME(</span><br><span class="line">     COLUMNNAME1 DATATYPE PRIMARYKEY [<span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>],</span><br><span class="line">     COLUMNNAME2 DATATYPE [<span class="hljs-keyword">DEFAULT</span> 형식] [<span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>],</span><br><span class="line">     ...</span><br><span class="line">     COLUMNNAMEN DATATYPE [<span class="hljs-keyword">DEFAULT</span> 형식] [<span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>],</span><br><span class="line">                                          </span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">--기본키 및 외래키(TABLENAME1이름의 테이블이 생성되어 있다고 가정) 입력방법3</span></span><br><span class="line"><span class="hljs-comment">--테이블 생성 후(테이블 명 = TABLENAME)</span></span><br><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> TABLENAME </span><br><span class="line"><span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> PK_TABLENAME_COLUMNNAME1 PRIMARYKEY(COLUMNNAME1);</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> TABLENAME</span><br><span class="line"><span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> FK_TABLENAME_COLUMNNAME2 FOREGIN <span class="hljs-keyword">KEY</span>(COLUMNNAME2) </span><br><span class="line">         <span class="hljs-keyword">REFERENCES</span> TABLENAME2(COLMNUMNAME1)</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">--기본키 및 외래키 삭제</span></span><br><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> TABLENAME</span><br><span class="line"><span class="hljs-keyword">DROP</span> <span class="hljs-keyword">CONSTRAINT</span> PK_TABLENAME_CONLUNMNAME1;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> TABLENAME</span><br><span class="line"><span class="hljs-keyword">DROP</span> <span class="hljs-keyword">CONSTRAINT</span> FK_TABLENAME_CONLUMNNAME2;</span><br></pre></td></tr></table></figure>
+<h3 id="NOT-NULL"><a href="#NOT-NULL" class="headerlink" title="NOT NULL"></a>NOT NULL</h3><ul>
+<li>NULL 값 입력금지   </li>
+<li>DEFAULT상태에서는 NULL 허가  </li>
+<li>NULL : 공백(“”), 숫자0이 아님, 정의되지 않은 미지의 값, 현재 데이터를 입력하지 못하는 경우<br>NULL + 0 = NULL;<br>NULL + ‘CHAR’ = NULL;   </li>
+</ul>
+<h3 id="CHECK"><a href="#CHECK" class="headerlink" title="CHECK"></a>CHECK</h3><ul>
+<li>입력할수 있는 값의 범위를 제한</li>
+</ul>
+<h3 id="FOREIGN-KEY-외래키"><a href="#FOREIGN-KEY-외래키" class="headerlink" title="FOREIGN KEY(외래키)"></a>FOREIGN KEY(외래키)</h3><ul>
+<li>관계형데이터베이스에서 테이블간의 관계를 정의하기 위해 기본키를 다른 테이블의 외래키로 복사하는 경우 외래키 생성  </li>
+<li>외래키 지정시 참조 무결성 제약옵선 선택가능  </li>
+</ul>
+<h3 id="생성된-테이블-구조확인"><a href="#생성된-테이블-구조확인" class="headerlink" title="생성된 테이블 구조확인"></a>생성된 테이블 구조확인</h3><figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">DESCRIBE</span> TABLENAME;</span><br><span class="line">DESC TABLENAME;</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">### SELECT 문장을 통한 테이블 생성  </span></span><br><span class="line">TABLENAME과 같은 내용의 테이블 TABLENAME1을 복사해서 생성  </span><br><span class="line"></span><br><span class="line">```sql</span><br><span class="line"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> TABLENAME1</span><br><span class="line"><span class="hljs-keyword">AS</span> <span class="hljs-keyword">SELECT</span> * <span class="hljs-keyword">FROM</span> TABLENAME;</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">## 3.ALTER TABLE</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">### ADD COLUMN</span></span><br><span class="line">- 테이블에 컬럼 추가  </span><br><span class="line">- 추가된 칼럼은 테이블의 마지막 컬럼이 되고 컬럼위치를 지정하는것은 불가능  </span><br><span class="line"></span><br><span class="line">```sql</span><br><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> TABLENAME </span><br><span class="line"><span class="hljs-keyword">ADD</span> NEWCOLUMNNAME DATATYPE;</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">### DROP COLUNM </span></span><br><span class="line">- 컬럼 삭제</span><br><span class="line">- 데이터유무에 상관없이 삭제 가능</span><br><span class="line">- 한번에 하나의 칼럼만 삭제가능  </span><br><span class="line">- 삭제후 최소 하나이상의 칼럼이 테이블에 존재해야함</span><br><span class="line">- 삭제된 갈럼은 복구 불가능</span><br><span class="line"></span><br><span class="line">```sql</span><br><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> TABLENAME </span><br><span class="line"><span class="hljs-keyword">DROP</span> <span class="hljs-keyword">COLUMN</span> COLUMNNAME1;</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">### MODIFY COLUMN</span></span><br><span class="line">- 칼럼 데이터 유형, 디폴트값(DEFAULT), NOT NULLL 제약조건 변경</span><br><span class="line">- 칼럼의 크기를 늘릴 수는 있지만 줄일수는 없음(기존데이터 훼손방지)</span><br><span class="line">- 칼럼이 NULL 값만 가지고 있으면 데이터 유형 변경가능\</span><br><span class="line">- 칼럼에 행이 없거나 NULL값만 가지고 있으면 칼럼의 폭 줄이기 가능</span><br><span class="line">- DEFALUT값 변경시, 변경작업 이후 발생하는 행 삽입에만 영향을 미침</span><br><span class="line">- 칼럼에 NULL값이 없을 경우에만 NOT NULL 제약조건을 추가할 수 있음  </span><br><span class="line"></span><br><span class="line">```sql</span><br><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> TABLENAME </span><br><span class="line">MONIFY (COLUMNNAME1 DATATYPE [<span class="hljs-keyword">DEFAULT</span>] [<span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>],</span><br><span class="line">        COLUMNNAME2 DATATYPE [<span class="hljs-keyword">DEFAULT</span>] [<span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>],</span><br><span class="line">        ...</span><br><span class="line">        COLUMNNAMEN DATATYPE [<span class="hljs-keyword">DEFAULT</span>] [<span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>]</span><br><span class="line">); </span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">### RENAME COLUMN </span></span><br><span class="line">- 칼럼명 변경</span><br><span class="line">- 해당 칼럼과 관계된 제약조건이 자동으로 변경</span><br><span class="line"></span><br><span class="line">```sql</span><br><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> TABLENAME</span><br><span class="line"><span class="hljs-keyword">RENAME</span> <span class="hljs-keyword">COLUMN</span> COLUMNNAME <span class="hljs-keyword">TO</span> NEWCOLUMNNAME;</span><br></pre></td></tr></table></figure>
+<h3 id="DROP-CONSTRAINT"><a href="#DROP-CONSTRAINT" class="headerlink" title="DROP CONSTRAINT"></a>DROP CONSTRAINT</h3><ul>
+<li>테이블 생성시 부여했던 제약조건 삭제  </li>
+</ul>
+<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> TABLENAME</span><br><span class="line"><span class="hljs-keyword">DROP</span> <span class="hljs-keyword">CONSTRAINT</span> PK_TABELNAME_COLUMNNNAME;</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">### ADD CONSTRAINT </span></span><br><span class="line">- 제약조건 추가</span><br><span class="line">- 외래키설정하면 참조된 테이블의 데이터 삭제가 불가능 할수도 있음  </span><br><span class="line"></span><br><span class="line">```sql</span><br><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> TALBENAME</span><br><span class="line"><span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> PK_TALBENAME_COLUMNNAME PRIMARY <span class="hljs-keyword">KEY</span>(COLUMNNAME);</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> TABLENAME</span><br><span class="line"><span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> FK_TABLENAME_COLUMNNAME </span><br><span class="line">FOREGIN <span class="hljs-keyword">KEY</span>(COLUMNNAME) <span class="hljs-keyword">REFERENCES</span> TABLENAME1(COLUMNNAME1);  </span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">## 4. RENAEM TABLE</span></span><br><span class="line"><span class="hljs-comment">### RENAME TABLE</span></span><br><span class="line">- 테이블 이름변경</span><br><span class="line"></span><br><span class="line">```sql</span><br><span class="line"><span class="hljs-keyword">RENAME</span> <span class="hljs-keyword">TABLE</span> TABLENAME <span class="hljs-keyword">TO</span> NEWTABLENAME;</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">## 5.DROP TABLE</span></span><br><span class="line"><span class="hljs-comment">### DROPT TABLE</span></span><br><span class="line">- 테이블 삭제</span><br><span class="line">- CASCADE CONSTRAINT는 해당 테이블과 관계있던 참조 제약조건도 삭제한다는 뜻</span><br><span class="line"></span><br><span class="line">```sql</span><br><span class="line"><span class="hljs-keyword">DROP</span> <span class="hljs-keyword">TABLE</span> TABLENAME [<span class="hljs-keyword">CASCADE</span> <span class="hljs-keyword">CONSTRAINT</span>];</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">## 6. TRUNCATE TABLE</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">### TURNCATE TABLE</span></span><br><span class="line">- 테이블의 모든 행(데이터)삭제</span><br><span class="line">- DML로 분류할수도 있지만 AOUTO <span class="hljs-keyword">COMMIT</span>특성이 있어 <span class="hljs-keyword">DDL</span>로도 구분가능</span><br><span class="line">- <span class="hljs-keyword">DELETE</span>와는 다름 </span><br><span class="line">- 정상적인복구가 불가능  </span><br><span class="line"></span><br><span class="line"><span class="hljs-string">``</span><span class="hljs-string">`sql</span></span><br><span class="line"><span class="hljs-string">TURNCATE TABLE TABLENAME;</span></span><br></pre></td></tr></table></figure>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/sql/">sql</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/05/12/tec/sql/2019-05-10-sql2/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">[SQL] DML(DATA MANIPULATION LANGUAGE)</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/05/12/tec/java/2019-05-11-java14/">
+                <span class="level-item">[Java의정석] CH11. 컬렉션프레임웍과 유용한 클래스</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">댓글</h3>
+        
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left is-sticky">
+    
+        
+<div class="card widget" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                카탈로그
+            </h3>
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#1-자주쓰이는-데이터-유형">
+        <span class="has-mr-6">1</span>
+        <span>1.자주쓰이는 데이터 유형</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#CHARCTER-s">
+        <span class="has-mr-6">1.1</span>
+        <span>CHARCTER(s)</span>
+        </a></li><li>
+        <a class="is-flex" href="#VARCHAR2-s">
+        <span class="has-mr-6">1.2</span>
+        <span>VARCHAR2(s)</span>
+        </a></li><li>
+        <a class="is-flex" href="#NUMBER-정수-실수-등-숫자정보">
+        <span class="has-mr-6">1.3</span>
+        <span>NUMBER-정수, 실수 등 숫자정보</span>
+        </a></li><li>
+        <a class="is-flex" href="#DATE-날짜와-시각정보">
+        <span class="has-mr-6">1.4</span>
+        <span>DATE-날짜와 시각정보</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#2-CREATE-TABLE">
+        <span class="has-mr-6">2</span>
+        <span>2.CREATE TABLE</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#테이블-생성식">
+        <span class="has-mr-6">2.1</span>
+        <span>테이블 생성식</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#제약조건-CONSTRAINT">
+        <span class="has-mr-6">3</span>
+        <span>제약조건(CONSTRAINT)</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#NOT-NULL">
+        <span class="has-mr-6">3.1</span>
+        <span>NOT NULL</span>
+        </a></li><li>
+        <a class="is-flex" href="#CHECK">
+        <span class="has-mr-6">3.2</span>
+        <span>CHECK</span>
+        </a></li><li>
+        <a class="is-flex" href="#FOREIGN-KEY-외래키">
+        <span class="has-mr-6">3.3</span>
+        <span>FOREIGN KEY(외래키)</span>
+        </a></li><li>
+        <a class="is-flex" href="#생성된-테이블-구조확인">
+        <span class="has-mr-6">3.4</span>
+        <span>생성된 테이블 구조확인</span>
+        </a></li><li>
+        <a class="is-flex" href="#DROP-CONSTRAINT">
+        <span class="has-mr-6">3.5</span>
+        <span>DROP CONSTRAINT</span>
+        </a></li></ul></li></ul>
+        </div>
+    </div>
+</div>
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered">
+                <div>
+                    
+                        <img class="image is-128x128 has-mb-6" src="/images/ap.jpg" alt="crlo">
+                    
+                    
+                    <p class="is-size-4 is-block">
+                        crlo
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        developer
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>S.Korea</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        포스트
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        21
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        카테고리
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        3
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        태그
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        2
+                    </p>
+                </div>
+            </div>
+        </nav>
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/crlo2" target="_blank">
+                팔로우</a>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="https://github.com/crlo2">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="RSS" href="/">
+                
+                <i class="fas fa-rss"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+            
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            최근 글
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/05/12/tec/sql/2019-05-10-sql7/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[SQL] ORDER BY 정렬">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-12T12:44:34.484Z">2019-05-12</time></div>
+                    <a href="/2019/05/12/tec/sql/2019-05-10-sql7/" class="has-link-black-ter is-size-6">[SQL] ORDER BY 정렬</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/sql/">sql</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/12/tec/sql/2019-05-10-sql6/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[SQL] GROUP BY, HAVING절">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-12T12:44:34.475Z">2019-05-12</time></div>
+                    <a href="/2019/05/12/tec/sql/2019-05-10-sql6/" class="has-link-black-ter is-size-6">[SQL] GROUP BY, HAVING절</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/sql/">sql</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/12/tec/sql/2019-05-10-sql5/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[SQL] 함수">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-12T12:44:34.466Z">2019-05-12</time></div>
+                    <a href="/2019/05/12/tec/sql/2019-05-10-sql5/" class="has-link-black-ter is-size-6">[SQL] 함수</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/sql/">sql</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/12/tec/sql/2019-05-10-sql4/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[SQL] WHERE절">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-12T12:44:34.456Z">2019-05-12</time></div>
+                    <a href="/2019/05/12/tec/sql/2019-05-10-sql4/" class="has-link-black-ter is-size-6">[SQL] WHERE절</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/sql/">sql</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/12/tec/sql/2019-05-10-sql3/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[SQL] TCL(TRANSACTION CONTROL LANGUAGE)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-12T12:44:34.449Z">2019-05-12</time></div>
+                    <a href="/2019/05/12/tec/sql/2019-05-10-sql3/" class="has-link-black-ter is-size-6">[SQL] TCL(TRANSACTION CONTROL LANGUAGE)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/sql/">sql</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+        
+            
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                카테고리
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/tec/">
+            <span class="level-start">
+                <span class="level-item">tec</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">21</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/tec/java/">
+            <span class="level-start">
+                <span class="level-item">java</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">14</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/tec/sql/">
+            <span class="level-start">
+                <span class="level-item">sql</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">7</span>
+            </span>
+        </a></li></ul></li>
+            </ul>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            아카이브
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/05/">
+                <span class="level-start">
+                    <span class="level-item">5월 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">21</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+            
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            태그 클라우드
+        </h3>
+        <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/sql/" style="font-size: 10px;">sql</a>
+    </div>
+</div>
+
+        
+            
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            태그 클라우드
+        </h3>
+        <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/sql/" style="font-size: 10px;">sql</a>
+    </div>
+</div>
+
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            최근 글
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/05/12/tec/sql/2019-05-10-sql7/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[SQL] ORDER BY 정렬">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-12T12:44:34.484Z">2019-05-12</time></div>
+                    <a href="/2019/05/12/tec/sql/2019-05-10-sql7/" class="has-link-black-ter is-size-6">[SQL] ORDER BY 정렬</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/sql/">sql</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/12/tec/sql/2019-05-10-sql6/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[SQL] GROUP BY, HAVING절">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-12T12:44:34.475Z">2019-05-12</time></div>
+                    <a href="/2019/05/12/tec/sql/2019-05-10-sql6/" class="has-link-black-ter is-size-6">[SQL] GROUP BY, HAVING절</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/sql/">sql</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/12/tec/sql/2019-05-10-sql5/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[SQL] 함수">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-12T12:44:34.466Z">2019-05-12</time></div>
+                    <a href="/2019/05/12/tec/sql/2019-05-10-sql5/" class="has-link-black-ter is-size-6">[SQL] 함수</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/sql/">sql</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/12/tec/sql/2019-05-10-sql4/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[SQL] WHERE절">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-12T12:44:34.456Z">2019-05-12</time></div>
+                    <a href="/2019/05/12/tec/sql/2019-05-10-sql4/" class="has-link-black-ter is-size-6">[SQL] WHERE절</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/sql/">sql</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/12/tec/sql/2019-05-10-sql3/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[SQL] TCL(TRANSACTION CONTROL LANGUAGE)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-12T12:44:34.449Z">2019-05-12</time></div>
+                    <a href="/2019/05/12/tec/sql/2019-05-10-sql3/" class="has-link-black-ter is-size-6">[SQL] TCL(TRANSACTION CONTROL LANGUAGE)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/sql/">sql</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                카테고리
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/tec/">
+            <span class="level-start">
+                <span class="level-item">tec</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">21</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/tec/java/">
+            <span class="level-start">
+                <span class="level-item">java</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">14</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/tec/sql/">
+            <span class="level-start">
+                <span class="level-item">sql</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">7</span>
+            </span>
+        </a></li></ul></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            아카이브
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/05/">
+                <span class="level-start">
+                    <span class="level-item">5월 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">21</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            태그 클라우드
+        </h3>
+        <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/sql/" style="font-size: 10px;">sql</a>
+    </div>
+</div>
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            태그 클라우드
+        </h3>
+        <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/sql/" style="font-size: 10px;">sql</a>
+    </div>
+</div>
+
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/logo.png" alt="[SQL] DDL(Data Definiation Language)" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2019 daeun&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Download on GitHub" href="https://github.com/crlo2">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("ko");</script>
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="Back to Top" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+    <script src="/js/clipboard.js" defer></script>
+    
+
+    
+    
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="입력 하세요...">
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '포스트',
+                PAGES: '페이지',
+                CATEGORIES: '카테고리',
+                TAGS: '태그',
+                UNTITLED: '(제목없음)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>
