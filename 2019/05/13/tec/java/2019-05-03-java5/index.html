@@ -16,7 +16,7 @@
 <meta property="og:description" content="1. 상속1.1 상속의 정의와 장점기존의 클래스를 재사용하여 새로운 클래스를 작성하는것 12class Parent&amp;#123;&amp;#125;class Child extends Parent&amp;#123;&amp;#125;  조상클래스 -  부모클래스, 상위클래스, 기반 클래스 자손클래스 - 자식 클래스, 하위클래스, 파생된 클래스     생성자와 초기화 블럭은 상속되지 않는">
 <meta property="og:locale" content="ko">
 <meta property="og:image" content="https://crlo2.github.io/images/og_image.png">
-<meta property="og:updated_time" content="2019-05-13T03:35:24.691Z">
+<meta property="og:updated_time" content="2019-05-13T03:50:40.841Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[Java의정석] CH7. 객체지향프로그래밍2">
 <meta name="twitter:description" content="1. 상속1.1 상속의 정의와 장점기존의 클래스를 재사용하여 새로운 클래스를 작성하는것 12class Parent&amp;#123;&amp;#125;class Child extends Parent&amp;#123;&amp;#125;  조상클래스 -  부모클래스, 상위클래스, 기반 클래스 자손클래스 - 자식 클래스, 하위클래스, 파생된 클래스     생성자와 초기화 블럭은 상속되지 않는">
@@ -143,7 +143,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-13T03:35:24.690Z">2019-05-13</time>
+                <time class="level-item has-text-grey" datetime="2019-05-13T03:50:40.841Z">2019-05-13</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/tec/">tec</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/tec/java/">java</a>
@@ -153,7 +153,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    3분 읽기 (나에 대하여 471 단어)
+                    3분 읽기 (나에 대하여 480 단어)
                 </span>
                 
                 
@@ -167,7 +167,7 @@
         </h1>
         <div class="content">
             <h2 id="1-상속"><a href="#1-상속" class="headerlink" title="1. 상속"></a>1. 상속</h2><h3 id="1-1-상속의-정의와-장점"><a href="#1-1-상속의-정의와-장점" class="headerlink" title="1.1 상속의 정의와 장점"></a>1.1 상속의 정의와 장점</h3><p>기존의 클래스를 재사용하여 새로운 클래스를 작성하는것</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">class Parent&#123;&#125;</span><br><span class="line">class Child extends Parent&#123;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Parent</span></span>&#123;&#125;</span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Child</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Parent</span></span>&#123;&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>조상클래스 -  부모클래스, 상위클래스, 기반 클래스</li>
 <li>자손클래스 - 자식 클래스, 하위클래스, 파생된 클래스  </li>
@@ -176,26 +176,25 @@
 <li>생성자와 초기화 블럭은 상속되지 않는다. 멤버만 상속된다.</li>
 <li>자손 클래스의 멤버개수는 조상 클래스보다 항상 같거나 많다.    </li>
 </ul>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class Tv&#123;</span><br><span class="line">    boolean power;</span><br><span class="line">    int channel;</span><br><span class="line">    </span><br><span class="line">    void power()&#123;power = !power;&#125;</span><br><span class="line">    void channelUp()&#123;++chnannel;&#125;</span><br><span class="line">    void channelDown()&#123;--channel;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class CaptionTv extends Tv&#123;</span><br><span class="line">    boolean caption;</span><br><span class="line">    void displayCaption(String text)&#123;</span><br><span class="line">        if(caption)&#123;</span><br><span class="line">            system.out.println(text);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="1-2-클래스간의-관계-포함관계"><a href="#1-2-클래스간의-관계-포함관계" class="headerlink" title="1.2 클래스간의 관계 - 포함관계"></a>1.2 클래스간의 관계 - 포함관계</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">class Circle&#123;</span><br><span class="line">    int x;</span><br><span class="line">    int y;</span><br><span class="line">    int r;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Tv</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">boolean</span> power;</span><br><span class="line">    <span class="hljs-keyword">int</span> channel;</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">power</span><span class="hljs-params">()</span></span>&#123;power = !power;&#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">channelUp</span><span class="hljs-params">()</span></span>&#123;++chnannel;&#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">channelDown</span><span class="hljs-params">()</span></span>&#123;--channel;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CaptionTv</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Tv</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">boolean</span> caption;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">displayCaption</span><span class="hljs-params">(String text)</span></span>&#123;</span><br><span class="line">        <span class="hljs-keyword">if</span>(caption)&#123;</span><br><span class="line">            system.out.println(text);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="1-2-클래스간의-관계-포함관계"><a href="#1-2-클래스간의-관계-포함관계" class="headerlink" title="1.2 클래스간의 관계 - 포함관계"></a>1.2 클래스간의 관계 - 포함관계</h3><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Circle</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> x;</span><br><span class="line">    <span class="hljs-keyword">int</span> y;</span><br><span class="line">    <span class="hljs-keyword">int</span> r;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>이 클래스를</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">class Point&#123;</span><br><span class="line">    int x; </span><br><span class="line">    int y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Circle&#123;</span><br><span class="line">    Point point = new Point();</span><br><span class="line">    int r;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Point</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> x; </span><br><span class="line">    <span class="hljs-keyword">int</span> y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Circle</span></span>&#123;</span><br><span class="line">    Point point = <span class="hljs-keyword">new</span> Point();</span><br><span class="line">    <span class="hljs-keyword">int</span> r;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>이렇게 표현할 수 있다.<br>Engine, Door 클래스를 미리 작성 후 아래와 같이 사용 가능.</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">class car&#123;</span><br><span class="line">    Engine e = new Engine();</span><br><span class="line">    Door[] d = new Door[4];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">car</span></span>&#123;</span><br><span class="line">    Engine e = <span class="hljs-keyword">new</span> Engine();</span><br><span class="line">    Door[] d = <span class="hljs-keyword">new</span> Door[<span class="hljs-number">4</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="1-3-클래스간-관계-결정하기"><a href="#1-3-클래스간-관계-결정하기" class="headerlink" title="1.3 클래스간 관계 결정하기"></a>1.3 클래스간 관계 결정하기</h3><p>어떨때 상속, 어떨때 포함관계를 맺을까?  </p>
 <ul>
 <li>상속: ~은 ~이다(is-a)</li>
 <li>포함 : ~은 ~을 가지고 있다(has-a)  </li>
 </ul>
-<p>ex) 원은 점(point)이다 (X)<br>    원은 점을 가지고 있다(O)  -&gt; 포함관계</p>
-<pre><code>SportCar는 Car이다(0) -&gt; 상속 관계
-</code></pre><h3 id="1-4-단일-상속"><a href="#1-4-단일-상속" class="headerlink" title="1.4 단일 상속"></a>1.4 단일 상속</h3><p>부모클래스를 두개 이상 상속 받을 수 없다.</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//불가능한 경우</span><br><span class="line">calss TVCR extends TV, VCR&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">class Tv&#123;</span><br><span class="line">    boolean power;</span><br><span class="line">    int channel;</span><br><span class="line">    </span><br><span class="line">    void power()&#123;power = !power;&#125;</span><br><span class="line">    void channelUp()&#123;++chnannel;&#125;</span><br><span class="line">    void channelDown()&#123;--channel;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class VCR&#123;</span><br><span class="line">    boolean power;</span><br><span class="line">    int counter =0;</span><br><span class="line">    void power()&#123;&#125;;</span><br><span class="line">    void play()&#123;&#125;;</span><br><span class="line">    void stop()&#123;&#125;;</span><br><span class="line">    void rew()&#123;&#125;;</span><br><span class="line">    void ff()&#123;&#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class TVCR extends Tv&#123;</span><br><span class="line">    VCR vcr = new VCR();</span><br><span class="line">    int counter =vcr.counter;</span><br><span class="line">    </span><br><span class="line">    void play()&#123;</span><br><span class="line">        vcr.play();</span><br><span class="line">    &#125;;</span><br><span class="line">    void stop()&#123;</span><br><span class="line">        vcr.stop();</span><br><span class="line">    &#125;;</span><br><span class="line">    void rew()&#123;</span><br><span class="line">        vcr.rew();</span><br><span class="line">    &#125;;</span><br><span class="line">    void ff()&#123;</span><br><span class="line">        vcr.ff();</span><br><span class="line">    &#125;;</span><br></pre></td></tr></table></figure>
+<p>ex) 원은 점(point)이다 (X)<br>    원은 점을 가지고 있다(O)  -&gt; 포함관계<br>    SportCar는 Car이다(0) -&gt; 상속 관계</p>
+<h3 id="1-4-단일-상속"><a href="#1-4-단일-상속" class="headerlink" title="1.4 단일 상속"></a>1.4 단일 상속</h3><p>부모클래스를 두개 이상 상속 받을 수 없다.</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//불가능한 경우</span></span><br><span class="line">calss TVCR extends TV, VCR&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Tv</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">boolean</span> power;</span><br><span class="line">    <span class="hljs-keyword">int</span> channel;</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">power</span><span class="hljs-params">()</span></span>&#123;power = !power;&#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">channelUp</span><span class="hljs-params">()</span></span>&#123;++chnannel;&#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">channelDown</span><span class="hljs-params">()</span></span>&#123;--channel;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">VCR</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">boolean</span> power;</span><br><span class="line">    <span class="hljs-keyword">int</span> counter =<span class="hljs-number">0</span>;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">power</span><span class="hljs-params">()</span></span>&#123;&#125;;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">play</span><span class="hljs-params">()</span></span>&#123;&#125;;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">stop</span><span class="hljs-params">()</span></span>&#123;&#125;;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">rew</span><span class="hljs-params">()</span></span>&#123;&#125;;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">ff</span><span class="hljs-params">()</span></span>&#123;&#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TVCR</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Tv</span></span>&#123;</span><br><span class="line">    VCR vcr = <span class="hljs-keyword">new</span> VCR();</span><br><span class="line">    <span class="hljs-keyword">int</span> counter =vcr.counter;</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">play</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">        vcr.play();</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">stop</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">        vcr.stop();</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">rew</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">        vcr.rew();</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">ff</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">        vcr.ff();</span><br><span class="line">    &#125;;</span><br></pre></td></tr></table></figure>
 <h3 id="1-5-Object클래스-모든-클래스의-조상"><a href="#1-5-Object클래스-모든-클래스의-조상" class="headerlink" title="1.5 Object클래스 -모든 클래스의 조상"></a>1.5 Object클래스 -모든 클래스의 조상</h3><p>Object는 모든 클래스의 조상이다.  </p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class Tv&#123;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Tv</span></span>&#123;&#125;</span><br></pre></td></tr></table></figure>
 <p>이것은 따지고 보면</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class Tv extends Object&#123;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Tv</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Object</span></span>&#123;&#125;</span><br></pre></td></tr></table></figure>
 <p>이것임.<br>toString(), equals() 그냥 쓸 수 있는게 Object클래스에 정의 되어있어서 그렇다.</p>
 
         </div>
@@ -222,16 +221,16 @@
     <div class="level post-navigation is-flex-wrap is-mobile">
         
         <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/05/13/tec/java/2019-05-03-java6/">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/05/13/tec/blog/blog7/">
                 <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">[Java의정석] CH7. 객체지향프로그래밍2</span>
+                <span class="level-item">[Hexo와 깃허브로 블로그 만들기] Hexo 테마 적용</span>
             </a>
         </div>
         
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2019/05/13/tec/blog/blog9/">
-                <span class="level-item">[Hexo와 깃허브로 블로그 만들기] disque로 댓글 기능 활성화 하기</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/05/13/tec/java/2019-05-04-java7/">
+                <span class="level-item">[Java의정석] CH7. 객체지향프로그래밍2</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -406,73 +405,16 @@
         
         <article class="media">
             
-            <a href="/2019/05/13/tec/blog/blog6/" class="media-left">
+            <a href="/2019/05/13/tec/java/2019-05-11-java13/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Hexo와 깃허브로 블로그 만들기] jykell에서 hexo로 블로그 이전하기">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Java의정석] CH11. 컬렉션프레임웍과 유용한 클래스">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:40:36.273Z">2019-05-13</time></div>
-                    <a href="/2019/05/13/tec/blog/blog6/" class="has-link-black-ter is-size-6">[Hexo와 깃허브로 블로그 만들기] jykell에서 hexo로 블로그 이전하기</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/05/13/tec/blog/blog7/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Hexo와 깃허브로 블로그 만들기] Hexo 테마 적용">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:40:36.260Z">2019-05-13</time></div>
-                    <a href="/2019/05/13/tec/blog/blog7/" class="has-link-black-ter is-size-6">[Hexo와 깃허브로 블로그 만들기] Hexo 테마 적용</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/05/13/tec/sql/2019-05-10-sql6/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[SQL] GROUP BY, HAVING절">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:38:47.306Z">2019-05-13</time></div>
-                    <a href="/2019/05/13/tec/sql/2019-05-10-sql6/" class="has-link-black-ter is-size-6">[SQL] GROUP BY, HAVING절</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/sql/">sql</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/05/13/tec/java/2019-05-03-java6/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Java의정석] CH7. 객체지향프로그래밍2">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:36:51.920Z">2019-05-13</time></div>
-                    <a href="/2019/05/13/tec/java/2019-05-03-java6/" class="has-link-black-ter is-size-6">[Java의정석] CH7. 객체지향프로그래밍2</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T04:01:44.663Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/java/2019-05-11-java13/" class="has-link-black-ter is-size-6">[Java의정석] CH11. 컬렉션프레임웍과 유용한 클래스</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/java/">java</a>
                     </p>
@@ -482,16 +424,73 @@
         
         <article class="media">
             
-            <a href="/2019/05/13/tec/java/2019-05-03-java5/" class="media-left">
+            <a href="/2019/05/13/tec/sql/2019-05-10-sql5/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Java의정석] CH7. 객체지향프로그래밍2">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[SQL] 함수">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:35:24.690Z">2019-05-13</time></div>
-                    <a href="/2019/05/13/tec/java/2019-05-03-java5/" class="has-link-black-ter is-size-6">[Java의정석] CH7. 객체지향프로그래밍2</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:58:30.437Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/sql/2019-05-10-sql5/" class="has-link-black-ter is-size-6">[SQL] 함수</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/sql/">sql</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/13/tec/sql/2019-05-10-sql7/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[SQL] ORDER BY 정렬">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:57:36.684Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/sql/2019-05-10-sql7/" class="has-link-black-ter is-size-6">[SQL] ORDER BY 정렬</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/sql/">sql</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/13/tec/java/2019-05-10-java12/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Java의정석] CH15. 네트워킹(Networking)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:55:12.289Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/java/2019-05-10-java12/" class="has-link-black-ter is-size-6">[Java의정석] CH15. 네트워킹(Networking)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/java/">java</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/13/tec/java/2019-05-11-java14/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Java의정석] CH11. 컬렉션프레임웍과 유용한 클래스">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:54:20.213Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/java/2019-05-11-java14/" class="has-link-black-ter is-size-6">[Java의정석] CH11. 컬렉션프레임웍과 유용한 클래스</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/java/">java</a>
                     </p>
@@ -773,73 +772,16 @@
         
         <article class="media">
             
-            <a href="/2019/05/13/tec/blog/blog6/" class="media-left">
+            <a href="/2019/05/13/tec/java/2019-05-11-java13/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Hexo와 깃허브로 블로그 만들기] jykell에서 hexo로 블로그 이전하기">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Java의정석] CH11. 컬렉션프레임웍과 유용한 클래스">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:40:36.273Z">2019-05-13</time></div>
-                    <a href="/2019/05/13/tec/blog/blog6/" class="has-link-black-ter is-size-6">[Hexo와 깃허브로 블로그 만들기] jykell에서 hexo로 블로그 이전하기</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/05/13/tec/blog/blog7/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Hexo와 깃허브로 블로그 만들기] Hexo 테마 적용">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:40:36.260Z">2019-05-13</time></div>
-                    <a href="/2019/05/13/tec/blog/blog7/" class="has-link-black-ter is-size-6">[Hexo와 깃허브로 블로그 만들기] Hexo 테마 적용</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/05/13/tec/sql/2019-05-10-sql6/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[SQL] GROUP BY, HAVING절">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:38:47.306Z">2019-05-13</time></div>
-                    <a href="/2019/05/13/tec/sql/2019-05-10-sql6/" class="has-link-black-ter is-size-6">[SQL] GROUP BY, HAVING절</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/sql/">sql</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/05/13/tec/java/2019-05-03-java6/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Java의정석] CH7. 객체지향프로그래밍2">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:36:51.920Z">2019-05-13</time></div>
-                    <a href="/2019/05/13/tec/java/2019-05-03-java6/" class="has-link-black-ter is-size-6">[Java의정석] CH7. 객체지향프로그래밍2</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T04:01:44.663Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/java/2019-05-11-java13/" class="has-link-black-ter is-size-6">[Java의정석] CH11. 컬렉션프레임웍과 유용한 클래스</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/java/">java</a>
                     </p>
@@ -849,16 +791,73 @@
         
         <article class="media">
             
-            <a href="/2019/05/13/tec/java/2019-05-03-java5/" class="media-left">
+            <a href="/2019/05/13/tec/sql/2019-05-10-sql5/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Java의정석] CH7. 객체지향프로그래밍2">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[SQL] 함수">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:35:24.690Z">2019-05-13</time></div>
-                    <a href="/2019/05/13/tec/java/2019-05-03-java5/" class="has-link-black-ter is-size-6">[Java의정석] CH7. 객체지향프로그래밍2</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:58:30.437Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/sql/2019-05-10-sql5/" class="has-link-black-ter is-size-6">[SQL] 함수</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/sql/">sql</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/13/tec/sql/2019-05-10-sql7/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[SQL] ORDER BY 정렬">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:57:36.684Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/sql/2019-05-10-sql7/" class="has-link-black-ter is-size-6">[SQL] ORDER BY 정렬</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/sql/">sql</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/13/tec/java/2019-05-10-java12/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Java의정석] CH15. 네트워킹(Networking)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:55:12.289Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/java/2019-05-10-java12/" class="has-link-black-ter is-size-6">[Java의정석] CH15. 네트워킹(Networking)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/java/">java</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/13/tec/java/2019-05-11-java14/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Java의정석] CH11. 컬렉션프레임웍과 유용한 클래스">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:54:20.213Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/java/2019-05-11-java14/" class="has-link-black-ter is-size-6">[Java의정석] CH11. 컬렉션프레임웍과 유용한 클래스</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/java/">java</a>
                     </p>

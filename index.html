@@ -135,17 +135,17 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-13T03:40:36.273Z">2019-05-13</time>
+                <time class="level-item has-text-grey" datetime="2019-05-13T04:01:44.663Z">2019-05-13</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/tec/">tec</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
+                <a class="has-link-grey -link" href="/categories/tec/">tec</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/tec/java/">java</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    2분 읽기 (나에 대하여 237 단어)
+                    14분 읽기 (나에 대하여 2081 단어)
                 </span>
                 
                 
@@ -154,25 +154,275 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/05/13/tec/blog/blog6/">[Hexo와 깃허브로 블로그 만들기] jykell에서 hexo로 블로그 이전하기</a>
+                <a class="has-link-black-ter" href="/2019/05/13/tec/java/2019-05-11-java13/">[Java의정석] CH11. 컬렉션프레임웍과 유용한 클래스</a>
             
         </h1>
         <div class="content">
-            <blockquote>
-<p>hexo테마가 이쁜게 많아서 바꾸기로 함.  </p>
+            <h2 id="1-컬렉션-프레임웍-Collection-Framework"><a href="#1-컬렉션-프레임웍-Collection-Framework" class="headerlink" title="1. 컬렉션 프레임웍(Collection Framework)"></a>1. 컬렉션 프레임웍(Collection Framework)</h2><p>데이터군을 저장하는 클래스들을 표준화 한 설계.  </p>
+<h3 id="1-1-컬렉션프레임웍의-핵심-인터페이스-List-Set-Map"><a href="#1-1-컬렉션프레임웍의-핵심-인터페이스-List-Set-Map" class="headerlink" title="1.1 컬렉션프레임웍의 핵심 인터페이스 - List, Set, Map"></a>1.1 컬렉션프레임웍의 핵심 인터페이스 - List, Set, Map</h3><table>
+<thead>
+<tr>
+<th>인터페이스</th>
+<th>특징</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>List</td>
+<td>순서가 있는 데이터의 집합. 데이터의 중복을 허용한다.<br> 예) 대기자 명단 <br> 구현클래스: ArrayList, LinkedList, Stack, Vector 등</td>
+</tr>
+<tr>
+<td>Set</td>
+<td>순서를 유지하지 않는 데이터의 집합. 데이터의 중복을 허용하지 않는다. <br>예) 양의 정수집합, 소수의 집합 <br> 구현클래스 : HashSet, ThreeSet 등</td>
+</tr>
+<tr>
+<td>Map</td>
+<td>키(key)와 값(value)의 쌍(pair)으로 이루어진 데이터의 집합 <br> 순서는 유지되지 않으며, 키는 중복을 허용하지 않고 값은 중복을 허용한다.<br>예) 우편번호, 지역번호(전화번호)<br>구현클래스: HashMap, ThreeMap, Hashtable, Properties 등</td>
+</tr>
+</tbody>
+</table>
+<h4 id="1-1-1-Collection-인터페이스"><a href="#1-1-1-Collection-인터페이스" class="headerlink" title="1.1.1 Collection 인터페이스"></a>1.1.1 Collection 인터페이스</h4><table>
+<thead>
+<tr>
+<th>메서드</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>boolean add(Object o)<br>boolean addAll(Collection o)</td>
+<td>지정된 객체 또는 컬렉션이 객체들을 Collection 에 추가한다.</td>
+</tr>
+<tr>
+<td>void clear()</td>
+<td>Collection 의 객체를 모두 삭제한다.</td>
+</tr>
+<tr>
+<td>boolean contains(Object o)<br>boolean containsAll(Collection c)</td>
+<td>지정된 객체 또는 Collection의 객체들이 Collection에 포함되어 있는지 확인한다.</td>
+</tr>
+<tr>
+<td>boolean equals(Object o)</td>
+<td>동일한 Collection인지 비교한다.</td>
+</tr>
+<tr>
+<td>int hashCode()</td>
+<td>Collection의 hash code를 반환한다.</td>
+</tr>
+<tr>
+<td>boolean isEmpty()</td>
+<td>Collection이 비어있는지 확인한다.</td>
+</tr>
+<tr>
+<td>Iterator iterator()</td>
+<td>Collection의 Iterator를 얻어서 반환한다</td>
+</tr>
+<tr>
+<td>boolean remove(Object o)</td>
+<td>지정된 객체를 삭제한다</td>
+</tr>
+<tr>
+<td>boolean removeAll(Collection c)</td>
+<td>지정된 Collection에 포함된 객체들을 삭제한다.</td>
+</tr>
+<tr>
+<td>boolean retainAll(Collection c)</td>
+<td>지정된 Collection에 포함된 객체만을 남기고 다른 객체들은 Collection에서 삭제한다. 이 작업으로 인해 Collection에 변화가 있으면 true없으면  false를 반환한다.</td>
+</tr>
+<tr>
+<td>int size()</td>
+<td>Collection에 저장된 객체의 개수를 반환한다.</td>
+</tr>
+<tr>
+<td>Object[] toArray()</td>
+<td>Collection에 저장된 객체를 객체배열(Object[])로 반환한다.</td>
+</tr>
+<tr>
+<td>Object[] toArray(Object[] a)</td>
+<td>지정된 배열에 Collectiom의 객체를 저장해서 반환한다.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="1-1-2-List인터페이스"><a href="#1-1-2-List인터페이스" class="headerlink" title="1.1.2 List인터페이스"></a>1.1.2 List인터페이스</h4><p>| 메서드 | 설명 |<br>| void add(int index, Object element)<br> addAll(int index, Collection c) | 지정된 위치에 객체를 컬렉션에 포함된 객체들을 추가한다. |<br>| Object get(int index) | 지정된 위치에 있는 객체를 반환한다. |<br>| int indexOf(Object o) | 지정된 객체의 위치를 반환한다.<br>(List의 첫번째 요소부터 순방향으로 찾는다.) |<br>| int lastIndexOf(Object o) | 지정된 객체의 위치를 반환한다. <br>(List의 마지막 요소부터 역방향으로 찾는다.) |<br>| ListIterator listIterator() <br> ListIterator listIterator(int index) | List의 객체에 접근할 수 있는 ListIterator를 반환한다. |<br>| Object remove(int index) | 지정된 위치에 있는 객체를 삭제하고 삭제된 객체를 반환한다. |<br>| Object set(int index, Object element) | 지졷왼 위치에 객체를 저장한다. |<br>| List subList(int fromIndex, int toIndex) |  지정된 범위에 있는 객체를 반환한다. |  </p>
+<h4 id="1-1-3-Set인터페이스"><a href="#1-1-3-Set인터페이스" class="headerlink" title="1.1.3 Set인터페이스"></a>1.1.3 Set인터페이스</h4><p>중복을 허용하지 않고 저장순서가 유지되지 않는 컬렉션 클래스를 구현하는데 사용됨. HashSet, ThreeSet등이 있음.   </p>
+<h4 id="1-1-4-Map인터페이스"><a href="#1-1-4-Map인터페이스" class="headerlink" title="1.1.4 Map인터페이스"></a>1.1.4 Map인터페이스</h4><table>
+<thead>
+<tr>
+<th>메서드</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>void clear()</td>
+<td>Map의모든 객체를 삭제한다</td>
+</tr>
+<tr>
+<td>boolean containsKey(Object Key)</td>
+<td>지정된 key 객체와 일치하는 Map의 key 객체가 있는지 확인한다.</td>
+</tr>
+<tr>
+<td>boolean containsValue()</td>
+<td>지정된 value객체와 일치하는 Map의 value객체가 있는지 확인한다.</td>
+</tr>
+<tr>
+<td>set entrySet()</td>
+<td>Map에 저장되어있는 key-value쌍을 Map.Entry타입의 객체로 저장한 Set으로 반환한다.</td>
+</tr>
+<tr>
+<td>boolean equals(Object o)</td>
+<td>동일한 Map인지 비교한다</td>
+</tr>
+<tr>
+<td>Object get(Object key)</td>
+<td>지정한 key 객체에 대응하는 value 객체를 찾아서 반환한다.</td>
+</tr>
+<tr>
+<td>int hashCode()</td>
+<td>해시코드를 반환한다.</td>
+</tr>
+<tr>
+<td>boolean isEmpty()</td>
+<td>Map이 비어있는지 확인한다.</td>
+</tr>
+<tr>
+<td>Set keySet()</td>
+<td>Map에 저장된 모든 key 객체를 반환한다.</td>
+</tr>
+<tr>
+<td>Object put(Object key, Object value</td>
+<td>Map에 value객체를 key객체에 연결하여 저장한다.</td>
+</tr>
+<tr>
+<td>void putAll(Map t)</td>
+<td>지정한 Map의 모든 key-value쌍을 추가한다.</td>
+</tr>
+<tr>
+<td>Object remove(Object key)</td>
+<td>지정한 key객체와 일치하는 key-value 객체를 삭제한다</td>
+</tr>
+<tr>
+<td>int size()</td>
+<td>Map에 저장된 key-value쌍의 개수를 반환한다.</td>
+</tr>
+<tr>
+<td>Collection values()</td>
+<td>Map에 저장된 모든 value객체를 반환한다.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="1-1-5-Map-Entry-인터페이스"><a href="#1-1-5-Map-Entry-인터페이스" class="headerlink" title="1.1.5 Map.Entry 인터페이스"></a>1.1.5 Map.Entry 인터페이스</h4><h3 id="1-2-동기화-Synchronization"><a href="#1-2-동기화-Synchronization" class="headerlink" title="1.2 동기화(Synchronization)"></a>1.2 동기화(Synchronization)</h3><p>Collections클래스에 아래와 같은 동기화 메서드 제공함. 필요할때 사용가능.  </p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">static</span> Collection <span class="hljs-title">synchronizedCollection</span><span class="hljs-params">(Collection c)</span></span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">static</span> List <span class="hljs-title">synchronizedList</span><span class="hljs-params">(List list)</span></span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">static</span> Map <span class="hljs-title">synchronizedMap</span> <span class="hljs-params">(Map m)</span></span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">static</span> Set <span class="hljs-title">synchronizedSet</span><span class="hljs-params">(Set s)</span></span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">static</span> SortedMap <span class="hljs-title">synchronizedSortedMap</span><span class="hljs-params">(SortedMap m)</span></span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">static</span> SortedSet <span class="hljs-title">synchronizedSortedSet</span><span class="hljs-params">(SortedSet s)</span></span></span><br></pre></td></tr></table></figure>
+<p>위 메서드를 아래와 같이 사용가능함.  </p>
+ <figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">List list = Collections.synchronizedList(<span class="hljs-function">New <span class="hljs-title">ArrayList</span><span class="hljs-params">(...)</span>)</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="1-3-Vector와-ArrayList"><a href="#1-3-Vector와-ArrayList" class="headerlink" title="1.3 Vector와 ArrayList"></a>1.3 Vector와 ArrayList</h3><table>
+<thead>
+<tr>
+<th>공통점</th>
+<th>차이점</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>- List인터페이스를 구현한다.<br>저장순서가 유지되고 중복을 허용한다.<br>- 데이터의 저장공간으로 배열을 사용한다.</td>
+<td>- Vector는 멀티쓰레드에 대한 동기화가 되어있으나 ArrayList는 그렇지 않다.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Deep Copy vs Shallow Copy  </p>
+<blockquote>
+<p>Shallow : 단순히 참조만 복사하는것, 원본 객체에 영향을 받는다.<br>Deep : 원본과 같은 데이터를 저장하고 있는 새로운 객체나 배열을 생성하는것. 원본 객체에 영향을 받지 않음  </p>
 </blockquote>
-<h2 id="1-Node-js설치"><a href="#1-Node-js설치" class="headerlink" title="1. Node.js설치"></a>1. Node.js설치</h2><p><a href="https://nodejs.org/en/" target="_blank" rel="noopener">nodejs 설치하러 가기</a></p>
-<h2 id="2-Git-설치"><a href="#2-Git-설치" class="headerlink" title="2. Git 설치"></a>2. Git 설치</h2><p><a href="https://git-scm.com" target="_blank" rel="noopener">git 설치하러 가기</a></p>
-<h2 id="3-Hexo-설치"><a href="#3-Hexo-설치" class="headerlink" title="3. Hexo 설치"></a>3. Hexo 설치</h2><p><a href="https://hexo.io/ko/docs/" target="_blank" rel="noopener">hexo 설치하러 가기</a></p>
-<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-<h2 id="4-블로그-시작하기"><a href="#4-블로그-시작하기" class="headerlink" title="4. 블로그 시작하기"></a>4. 블로그 시작하기</h2><p>git bash쉘에서 블로그 프로젝트를 구성할 디렉터리 위치에 가서 아래와 같이 실행한다.</p>
-<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init blog</span><br><span class="line">$ <span class="hljs-built_in">cd</span> blog</span><br><span class="line">$ npm install</span><br><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>hexo server가 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> 으로 실행됨.  </p>
-<h2 id="5-blog-config-yml-파일-수정하기"><a href="#5-blog-config-yml-파일-수정하기" class="headerlink" title="5. blog/_config.yml 파일 수정하기"></a>5. blog/_config.yml 파일 수정하기</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">url: http://yoursite.com </span><br><span class="line"></span><br><span class="line">deploy: </span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/crlo2/crlo2.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-<p>deploy 항목을 저렇게 수정하면 hexo가 명령어로 자동 배포 및 생성을 해준다.</p>
-<h2 id="6-hexo-deployer-설치"><a href="#6-hexo-deployer-설치" class="headerlink" title="6. hexo deployer 설치"></a>6. hexo deployer 설치</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm insatll hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-<h2 id="7-hexo-생성-및-git-레포지토리에-배포"><a href="#7-hexo-생성-및-git-레포지토리에-배포" class="headerlink" title="7. hexo 생성 및 git 레포지토리에 배포"></a>7. hexo 생성 및 git 레포지토리에 배포</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d -g</span><br></pre></td></tr></table></figure>
-<p>이렇게 배포를 해줘야만 <a href="https://clro2.github.io" target="_blank" rel="noopener">https://clro2.github.io</a> 주소로 접속하면 블로그 화면이 보인다.  </p>
+</blockquote>
+<h3 id="1-4-LinkedList"><a href="#1-4-LinkedList" class="headerlink" title="1.4 LinkedList"></a>1.4 LinkedList</h3><p>배열의 단점</p>
+<ol>
+<li>크기를 변경할 수 없다.</li>
+<li>비순차적인 데이터의 추가 또는 삭제에 시간이 많이 걸린다.  </li>
+</ol>
+<p>LinkedList는 불연속적으로 존재하는 데이터를 서로 연결한것.<br>링크드리스트의 각 요소(node)들은 자신과 연결된 다음 요소에 대한 참조(주소값)과 데이터로 구성됨.  </p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Node</span></span>&#123;</span><br><span class="line">    Node next; <span class="hljs-comment">// 다음요소의 주소를 저장</span></span><br><span class="line">    Object obj; <span class="hljs-comment">// 데이터를 저장</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>이동방향이 단방향이어서 다음 요소에 대한 접근은 쉽지만 이전요소에 대한 접근은 어렵다.<br>이 단점을 보완한것이 더블링크드리스트(이중 연렬리스트)<br>링크드리스트에 참조변수를 하나 추가해서 이전 요소에 대한 참조가 가능하게 한것.  </p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Node</span></span>&#123;</span><br><span class="line">    Node next; <span class="hljs-comment">//다음 요소의 주소를 저장</span></span><br><span class="line">    Node previous;  <span class="hljs-comment">//이전 요소의 주소를 저장</span></span><br><span class="line">    Object obj;  <span class="hljs-comment">// 데이터를 저장</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>더블써큘러링크드 리스트두 있음.  </p>
+<ol>
+<li>순차적으로 추가/삭제하는 경우에는 ArrayList가 LinkedList보다 빠르다.</li>
+<li>중간데이터를 추가/삭제하는 경우에는 LinkedList 가 ArrayList보다 빠르다.  </li>
+</ol>
+<p>데이터의 개수가 변하지 않는 경우는 ArrayList, 데이터 개수의 변경이 잦다면 LinkedList를 사용하는것이 낫다.  </p>
+<p>두가지 혼합 방법 : 처음작업전 데이터는 ArrayList에 저장, 작업할때는 LinkenList로 옮겨서 사용  </p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">ArrayList al = <span class="hljs-keyword">new</span> ArrayList(<span class="hljs-number">1000000</span>);</span><br><span class="line"><span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">1000000</span>; i++) &#123;</span><br><span class="line">    al.add(i+<span class="hljs-string">""</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">LinkedList ll = <span class="hljs-keyword">new</span> LinkedList(al);</span><br><span class="line"><span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">1000</span>; i++) &#123;</span><br><span class="line">    al.add(<span class="hljs-number">500</span>, <span class="hljs-string">"X"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="1-5-Stack과-Queue"><a href="#1-5-Stack과-Queue" class="headerlink" title="1.5 Stack과 Queue"></a>1.5 Stack과 Queue</h3><ul>
+<li>Stack은 마지막에 저장된 데이터를 가장 먼저 꺼냄 LIFO</li>
+<li>Queue는 처음에 저장한 데이터를 가장 먼저 꺼냄 FIFO  </li>
+</ul>
+<p>Queue는 ArrayList보다 LinkedList로 구현하는것이 더 적합  </p>
+<p><strong>Stack</strong>    </p>
+<table>
+<thead>
+<tr>
+<th>메서드</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>boolean empty()</td>
+<td>Stack이 비어있는지 알려준다</td>
+</tr>
+<tr>
+<td>Object peek()</td>
+<td>Stack의 맨 위에 저장된 객체를 반환한다. 꺼내지는 않는다. 비어있으면 null을 반환한다.</td>
+</tr>
+<tr>
+<td>Object pop()</td>
+<td>Stack의 맨 위에 저장된 객체를 꺼낸다.</td>
+</tr>
+<tr>
+<td>Object push(Object item)</td>
+<td>Stack에 객체를 저장한다.</td>
+</tr>
+<tr>
+<td>int search(Object o)</td>
+<td>Stack에서 주어진 객체를 찾아서 그 위치를 반환한다.1부터 시작함</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Queue</strong>    </p>
+<table>
+<thead>
+<tr>
+<th>메서드</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Object element()</td>
+<td>삭제없이 저장된 요소를 읽어온다. peek와 다른점은 queue가 비었을때 Exception을 발생시킴</td>
+</tr>
+<tr>
+<td>boolean offer(Object o)</td>
+<td>Queue에 객체를 저장한다. 성공하면 true, 실패하면 false를 반환한다.</td>
+</tr>
+<tr>
+<td>Object peek()</td>
+<td>삭제없이 읽어온다. Queue가 비었을때는 null을 반환한다.</td>
+</tr>
+<tr>
+<td>Object pool()</td>
+<td>Queue에서 꺼내온다. 비어있을때는 null을 반환한다.</td>
+</tr>
+<tr>
+<td>Object remove()</td>
+<td>Queue에서 꺼내온다. 비어있으면 에외를 발생시킨다.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>스택의 활용 예 : 수식계산. 수식괄호검사, 워드프로세서의 undo/redo, 웹브라우저 앞으로 뒤로  </li>
+<li>큐의 활용 예 : 최근사용문서, 인쇄작업대기목록, 버퍼</li>
+</ul>
 
         </div>
         
@@ -194,56 +444,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-13T03:40:36.260Z">2019-05-13</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/tec/">tec</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    1분 읽기 (나에 대하여 126 단어)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/05/13/tec/blog/blog7/">[Hexo와 깃허브로 블로그 만들기] Hexo 테마 적용</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="1-Hexo-테마-고르기"><a href="#1-Hexo-테마-고르기" class="headerlink" title="1. Hexo 테마 고르기"></a>1. Hexo 테마 고르기</h2><p><a href="https://hexo.io/themes/" target="_blank" rel="noopener">Hexo 이쁜 테마 고르러 가기</a></p>
-<h2 id="2-icarus-테마-적용하기"><a href="#2-icarus-테마-적용하기" class="headerlink" title="2. icarus 테마 적용하기"></a>2. icarus 테마 적용하기</h2><p>블로그 프로젝트 경로($ cd ~/blog/) 아래 blog/themes/icarus 폴더를 만들어 git 테마를 clone한다. </p>
-<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="hljs-built_in">clone</span> https://github.com/ppoffice/hexo-theme-icarus.git themes/icarus</span><br></pre></td></tr></table></figure>
-<h2 id="3-blog-themes-icarus-config-yml-피일에서-theme-설정을-icarus로-변경한다"><a href="#3-blog-themes-icarus-config-yml-피일에서-theme-설정을-icarus로-변경한다" class="headerlink" title="3. ~/blog/themes/icarus/_config.yml 피일에서 theme 설정을 icarus로 변경한다."></a>3. ~/blog/themes/icarus/_config.yml 피일에서 theme 설정을 icarus로 변경한다.</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: icarus</span><br></pre></td></tr></table></figure>
-<h2 id="4-hexo-서버-재시작-한다"><a href="#4-hexo-서버-재시작-한다" class="headerlink" title="4. hexo 서버 재시작 한다."></a>4. hexo 서버 재시작 한다.</h2><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ hexo s</span><br><span class="line">``</span><br><span class="line">localhost:4000에서 적용된 테마를 확인한다.  </span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">## 5. github에 배포한다.</span></span><br><span class="line"></span><br><span class="line">```bash</span><br><span class="line">$ hexo clean</span><br><span class="line">$ hexo d -g</span><br></pre></td></tr></table></figure>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-13T03:38:47.306Z">2019-05-13</time>
+                <time class="level-item has-text-grey" datetime="2019-05-13T03:58:30.437Z">2019-05-13</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/tec/">tec</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/tec/sql/">sql</a>
@@ -253,7 +454,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    8분 읽기 (나에 대하여 1210 단어)
+                    6분 읽기 (나에 대하여 881 단어)
                 </span>
                 
                 
@@ -262,130 +463,57 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/05/13/tec/sql/2019-05-10-sql6/">[SQL] GROUP BY, HAVING절</a>
+                <a class="has-link-black-ter" href="/2019/05/13/tec/sql/2019-05-10-sql5/">[SQL] 함수</a>
             
         </h1>
         <div class="content">
-            <h2 id="1-집계함수-AGGREGATE-FUNCTION"><a href="#1-집계함수-AGGREGATE-FUNCTION" class="headerlink" title="1. 집계함수(AGGREGATE FUNCTION)"></a>1. 집계함수(AGGREGATE FUNCTION)</h2><ul>
-<li>여러 행들의 그룹이 모여 그룹당 하나의 결과를 리턴하는 함수</li>
-<li>GROUP BY 절은 행들을 소그룹화 함</li>
-<li>SELECT절, HAVING절, ORDER BY 절에 사용할 수 있음.  </li>
+            <h2 id="1-문자열-함수"><a href="#1-문자열-함수" class="headerlink" title="1. 문자열 함수"></a>1. 문자열 함수</h2><h3 id="LOWER-문자열"><a href="#LOWER-문자열" class="headerlink" title="LOWER(문자열)"></a>LOWER(문자열)</h3><ul>
+<li>문자열 소문자로 변경  <h3 id="UPPER-문자열"><a href="#UPPER-문자열" class="headerlink" title="UPPER(문자열)"></a>UPPER(문자열)</h3></li>
+<li>문자열 대문자로 변경<h3 id="ASCII-문자"><a href="#ASCII-문자" class="headerlink" title="ASCII(문자)"></a>ASCII(문자)</h3></li>
+<li>문자, 숫자를 ASCII로 변경<h3 id="CONCAT-문자열1-문자열2"><a href="#CONCAT-문자열1-문자열2" class="headerlink" title="CONCAT(문자열1, 문자열2)"></a>CONCAT(문자열1, 문자열2)</h3></li>
+<li>문자열1과 문자열 2 합침(||와 같은 기능)<h3 id="SUBSTR-문자열-M-N"><a href="#SUBSTR-문자열-M-N" class="headerlink" title="SUBSTR(문자열, M [,N])"></a>SUBSTR(문자열, M [,N])</h3></li>
+<li>문자열 중에 M부터 N개의 문자 리턴(N이 없으면 M부터 끝까지 리턴)  <h3 id="LENGTH-문자열"><a href="#LENGTH-문자열" class="headerlink" title="LENGTH(문자열)"></a>LENGTH(문자열)</h3></li>
+<li>문자열 개수 리턴<h3 id="LTRIM-문자열-지정문자"><a href="#LTRIM-문자열-지정문자" class="headerlink" title="LTRIM(문자열 [,지정문자])"></a>LTRIM(문자열 [,지정문자])</h3></li>
+<li>문자열의 첫 문자부터 지정문자를 제거함(지정문자 생략시 “”공백 제거)<h3 id="RTRIM-문자열-지정문자"><a href="#RTRIM-문자열-지정문자" class="headerlink" title="RTRIM(문자열 [,지정문자])"></a>RTRIM(문자열 [,지정문자])</h3></li>
+<li>문자열 제일 마지막부터 지정문자를 제거함(지정문자 생략시 “”공백제거)<h3 id="TRIM-지정문자-FROM-문자열"><a href="#TRIM-지정문자-FROM-문자열" class="headerlink" title="TRIM(지정문자 FROM 문자열)"></a>TRIM(지정문자 FROM 문자열)</h3></li>
+<li>문자열의 양끝의 지정문자 제거  </li>
 </ul>
-<h3 id="집계함수명-DISTINCT-칼럼이나-표현식"><a href="#집계함수명-DISTINCT-칼럼이나-표현식" class="headerlink" title="집계함수명([DISTINCT] 칼럼이나 표현식)"></a>집계함수명([DISTINCT] 칼럼이나 표현식)</h3><h3 id="COUNT"><a href="#COUNT" class="headerlink" title="COUNT(*)"></a>COUNT(*)</h3><ul>
-<li>NULL값을 포함한 행의 수 출력<h3 id="COUNT-표현식"><a href="#COUNT-표현식" class="headerlink" title="COUNT(표현식)"></a>COUNT(표현식)</h3></li>
-<li>표현식의 값이 NULL값을 제외한 행의 수 출력<h3 id="SUM-DISTINCT-표현식"><a href="#SUM-DISTINCT-표현식" class="headerlink" title="SUM([DISTINCT] 표현식)"></a>SUM([DISTINCT] 표현식)</h3></li>
-<li>NULL값을 제외한 합계출력<h3 id="AVG-DISTINCT-표현식"><a href="#AVG-DISTINCT-표현식" class="headerlink" title="AVG([DISTINCT] 표현식)"></a>AVG([DISTINCT] 표현식)</h3></li>
-<li>NULL값을 제외한 평균출력<h3 id="MAX-DISTINCT-표현식"><a href="#MAX-DISTINCT-표현식" class="headerlink" title="MAX([DISTINCT] 표현식)"></a>MAX([DISTINCT] 표현식)</h3></li>
-<li>표현식의 최대값 출력<h3 id="MIN-DISTINCT-표현식"><a href="#MIN-DISTINCT-표현식" class="headerlink" title="MIN([DISTINCT] 표현식)"></a>MIN([DISTINCT] 표현식)</h3></li>
-<li>표현식의 최소값 출력<h3 id="STDDEV-D-표현식"><a href="#STDDEV-D-표현식" class="headerlink" title="STDDEV([D] 표현식)"></a>STDDEV([D] 표현식)</h3></li>
-<li>표현식의 표준편차 출력<h3 id="VARIAN-D-표현식"><a href="#VARIAN-D-표현식" class="headerlink" title="VARIAN([D] 표현식)"></a>VARIAN([D] 표현식)</h3></li>
-<li>표현식의 분산 출력   </li>
+<h2 id="2-숫자형-함수"><a href="#2-숫자형-함수" class="headerlink" title="2. 숫자형 함수"></a>2. 숫자형 함수</h2><h3 id="ABS-숫자"><a href="#ABS-숫자" class="headerlink" title="ABS(숫자)"></a>ABS(숫자)</h3><ul>
+<li>숫자의 절대값 리턴<h3 id="SING-숫자"><a href="#SING-숫자" class="headerlink" title="SING(숫자)"></a>SING(숫자)</h3></li>
+<li>숫자의 양수, 음수, 0을 구분(결과값 -1 OR 0 OR 1)<h3 id="MOD-숫자1-숫자2"><a href="#MOD-숫자1-숫자2" class="headerlink" title="MOD(숫자1, 숫자2)"></a>MOD(숫자1, 숫자2)</h3></li>
+<li>숫자1/숫자2의 나머지 리턴<h3 id="CEIL-숫자"><a href="#CEIL-숫자" class="headerlink" title="CEIL(숫자)"></a>CEIL(숫자)</h3></li>
+<li>숫자보다 크거나 같은 최소 정수리턴<h3 id="FLOOR-숫자"><a href="#FLOOR-숫자" class="headerlink" title="FLOOR(숫자)"></a>FLOOR(숫자)</h3></li>
+<li>숫자봗 작거나 같은 최대정수리턴<h3 id="ROUND-숫자-M"><a href="#ROUND-숫자-M" class="headerlink" title="ROUND(숫자 [,M])"></a>ROUND(숫자 [,M])</h3></li>
+<li>숫자를 M+1자리에서 반올림해서 리턴(M의 DEFAULT는 0)<h3 id="TRUNC-숫자-M"><a href="#TRUNC-숫자-M" class="headerlink" title="TRUNC(숫자[,M])"></a>TRUNC(숫자[,M])</h3></li>
+<li>숫자를 M+1자리에서 버림해서 리턴(M의 DEFAULT는0)<h3 id="EXP-POWER-SQRT-LOG"><a href="#EXP-POWER-SQRT-LOG" class="headerlink" title="EXP(),POWER(),SQRT(),LOG()"></a>EXP(),POWER(),SQRT(),LOG()</h3></li>
+<li>지수, 거듭제곱, 제곱근, 로그값 리턴  </li>
 </ul>
-<h2 id="2-GROUP-BY절"><a href="#2-GROUP-BY절" class="headerlink" title="2. GROUP BY절"></a>2. GROUP BY절</h2><ul>
-<li>SQL문에서 FROM과 WHERE절 뒤에 위치, 데이터를 그룹으로 분류하여 소그룹에대한 항목별 통계정보를 얻을때 사용  </li>
+<h2 id="3-날짜형-함수"><a href="#3-날짜형-함수" class="headerlink" title="3. 날짜형 함수"></a>3. 날짜형 함수</h2><h3 id="SYSDATE"><a href="#SYSDATE" class="headerlink" title="SYSDATE"></a>SYSDATE</h3><ul>
+<li>현재 날짜, 시각 출력<h3 id="EXTRACT-‘YEAR’-FROM-d"><a href="#EXTRACT-‘YEAR’-FROM-d" class="headerlink" title="EXTRACT(‘YEAR’ FROM d)"></a>EXTRACT(‘YEAR’ FROM d)</h3></li>
+<li>d 날짜에서 ‘YEAR’(년) 추출(YEAR에 MONTY, DAY 입력가능)<h3 id="TO-NUMBER-TO-CHAR-D-’YYYY’"><a href="#TO-NUMBER-TO-CHAR-D-’YYYY’" class="headerlink" title="TO_NUMBER(TO_CHAR(D,’YYYY’))"></a>TO_NUMBER(TO_CHAR(D,’YYYY’))</h3></li>
+<li>날짜데이터에서 년도 출력<h3 id="TO-NUMBER-TO-CHAR-D-’MM’"><a href="#TO-NUMBER-TO-CHAR-D-’MM’" class="headerlink" title="TO_NUMBER(TO_CHAR(D,’MM’))"></a>TO_NUMBER(TO_CHAR(D,’MM’))</h3></li>
+<li>날짜데이터에서 월도 출력<h3 id="TO-NUMBER-TO-CHAR-D-’DD’"><a href="#TO-NUMBER-TO-CHAR-D-’DD’" class="headerlink" title="TO_NUMBER(TO_CHAR(D,’DD’))"></a>TO_NUMBER(TO_CHAR(D,’DD’))</h3></li>
+<li>날짜데이터에서 일 출력  </li>
 </ul>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">SELECT</span> [<span class="hljs-keyword">DISTINCT</span>] 칼럼명 [<span class="hljs-keyword">ALIAS</span>명]</span><br><span class="line"><span class="hljs-keyword">FROM</span> 테이블명</span><br><span class="line">[<span class="hljs-keyword">WHERE</span> 조건식]</span><br><span class="line">[<span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span> 칼럼이나 표현식]</span><br><span class="line">[<span class="hljs-keyword">HAVING</span> 그룹조건식];</span><br></pre></td></tr></table></figure>
-<h3 id="GROUP-BY-HAVING절의-특성"><a href="#GROUP-BY-HAVING절의-특성" class="headerlink" title="GROUP BY, HAVING절의 특성"></a>GROUP BY, HAVING절의 특성</h3><ul>
-<li>그룹바이로 소그룹의 기준을 정한후, SELECT 절에 집계함수를 사용</li>
-<li>집계함수의 통계정보는 NULL값을 제외하고 수행함</li>
-<li>WHERE절에는 집계함수 올 수 없음</li>
-<li>HAVING절은 그룹바이절의 기준 항목이나 소그룹의 집계함수를 이용한 저건을 표시</li>
-<li>그룹바이절에 의해 소그룹별로 만들어진 집계데이터 중, HAVING 절에 제한 조건을 두어 만족하는 내용만 출력</li>
-<li>HAVING절은 일반적으로 GROUP BY절 뒤에 위치  </li>
+<h2 id="4-변환형-함수"><a href="#4-변환형-함수" class="headerlink" title="4. 변환형 함수"></a>4. 변환형 함수</h2><h3 id="TO-NUMBER-문자열"><a href="#TO-NUMBER-문자열" class="headerlink" title="TO_NUMBER(문자열)"></a>TO_NUMBER(문자열)</h3><ul>
+<li>문자열을 숫자로 변환<h3 id="TO-CHAR-숫자-날짜-FOMAT"><a href="#TO-CHAR-숫자-날짜-FOMAT" class="headerlink" title="TO_CHAR(숫자|날짜 [,FOMAT])"></a>TO_CHAR(숫자|날짜 [,FOMAT])</h3></li>
+<li>숫자나 날짜를 주어진 포맷형태로 문자열 타입으로 변환<h3 id="TO-DATE-문자열-FOMAT"><a href="#TO-DATE-문자열-FOMAT" class="headerlink" title="TO_DATE(문자열[,FOMAT])"></a>TO_DATE(문자열[,FOMAT])</h3></li>
+<li>문자열을 주어진 포맷 형태로 날짜타입으로 변환  </li>
 </ul>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">POSITION</span> 포지션, <span class="hljs-keyword">AVG</span>(HEIGHT) 평균키</span><br><span class="line"><span class="hljs-keyword">FROM</span> PLAYER;</span><br><span class="line"><span class="hljs-comment">--&gt;&gt;ERROR : 단일 그룹의 집계함수가 아니다라고 나옴</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">POSITION</span> 포지션, <span class="hljs-keyword">AVG</span>(HEIGHT) 평균키</span><br><span class="line"><span class="hljs-keyword">FROM</span> PLAYER</span><br><span class="line"><span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span> <span class="hljs-keyword">POSITION</span> 포지션;</span><br><span class="line"><span class="hljs-comment">--&gt;&gt;ERROR SQL명령어가 올바르게 종료되지 않음--&gt;그룹바이에 별명ALIAS쓸 수 없음</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">--포지션별 최대키, 최소키, 평균키 출력</span></span><br><span class="line"><span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">POSITION</span> 포지션, <span class="hljs-keyword">MAX</span>(HEIGHT), <span class="hljs-keyword">MIN</span>(HEIGHT), <span class="hljs-keyword">AVG</span>(HEIGHT)</span><br><span class="line"><span class="hljs-keyword">FROM</span> PLAYER</span><br><span class="line"><span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span> PISITION;</span><br></pre></td></tr></table></figure>
-<h2 id="3-HAVING-절"><a href="#3-HAVING-절" class="headerlink" title="3.HAVING 절"></a>3.HAVING 절</h2><ul>
-<li>GROUP BY후에 조건을 달고 싶을때 WHERE 대신 씀</li>
-<li>WHERE절은 GROUP BY절 전에 오기때문에 소그룹으로 묶인후의 조건을 걸 수없음.  </li>
-</ul>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">POSITION</span> 포지션, <span class="hljs-keyword">ROUND</span>(<span class="hljs-keyword">AVG</span>(HEIGHT),<span class="hljs-number">2</span>) 평균키</span><br><span class="line"><span class="hljs-keyword">FROM</span> PLAYER</span><br><span class="line"><span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">AVG</span>(HIGHT) &gt;=<span class="hljs-number">180</span></span><br><span class="line"><span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span> <span class="hljs-keyword">POSITION</span></span><br><span class="line"><span class="hljs-comment">--3행오류 : 집계함수가 허가되지 않음. 그룹바이로 소그룹화 되기전에 집계함수를 사용했기때문.</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">POSITION</span>, <span class="hljs-keyword">ROUND</span>(<span class="hljs-keyword">AVG</span>(HEIGHT),<span class="hljs-number">2</span>)</span><br><span class="line"><span class="hljs-keyword">FROM</span> PLAYER</span><br><span class="line"><span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span> <span class="hljs-keyword">POSITION</span></span><br><span class="line"><span class="hljs-keyword">HAVING</span> <span class="hljs-keyword">AVG</span>(HEIGNT)&gt;=<span class="hljs-number">180</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">--이렇게써야함</span></span><br><span class="line"><span class="hljs-comment">--예제)</span></span><br><span class="line"><span class="hljs-comment">--최대 키가 190CM이상인 선수를 가지고 포지션별 평균 키를 출력</span></span><br><span class="line"><span class="hljs-keyword">SELECT</span> POSICITON <span class="hljs-keyword">AVG</span>(HEIGHT)</span><br><span class="line"><span class="hljs-keyword">FROM</span> PLAYER</span><br><span class="line"><span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span> <span class="hljs-keyword">POSITION</span></span><br><span class="line"><span class="hljs-keyword">HAVING</span> <span class="hljs-keyword">MAX</span>(HEIGHT) &gt;=<span class="hljs-number">190</span>;</span><br></pre></td></tr></table></figure>
-<h2 id="4-CASE-표현을-활용한-월별-데이터-집계"><a href="#4-CASE-표현을-활용한-월별-데이터-집계" class="headerlink" title="4. CASE 표현을 활용한 월별 데이터 집계"></a>4. CASE 표현을 활용한 월별 데이터 집계</h2><ul>
-<li>모델링의 제 1정규화로 반독되는 칼럼의 경우, 구분칼럼을 두고 여러개의 레코드로 만들어진 집합을 정해진 칼럼 수만큼 확장해서 집계 보고서를 만드는 유용한 기법  </li>
-</ul>
-<p>예제)<br>부서별 월별 입사자의 평균 급여를 조회, 입사후 1년마다 급여 인상이나 보너스 지급과 같은 일정이 정기적으로 잡히면 업무적으로 중요한 정보가 됨  </p>
-<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">--STEPT1</span></span><br><span class="line"><span class="hljs-comment">--개별입사정보에서 월별데이터 추출</span></span><br><span class="line"><span class="hljs-keyword">SELECT</span> ENAME, DEPOTNO, <span class="hljs-keyword">EXTRACT</span>(<span class="hljs-keyword">MONTH</span> <span class="hljs-keyword">FROM</span> HIREDATE) <span class="hljs-keyword">MONTH</span>, SAL</span><br><span class="line"><span class="hljs-keyword">FROM</span> EMP;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">--STEPT2 월별데이터 구분</span></span><br><span class="line"><span class="hljs-keyword">SELECT</span> ENAME, DEPTNO,</span><br><span class="line">  <span class="hljs-keyword">CASE</span> <span class="hljs-keyword">MONTH</span> <span class="hljs-keyword">WHEN</span> <span class="hljs-number">1</span> <span class="hljs-keyword">THEN</span> SAL <span class="hljs-keyword">END</span> M01, <span class="hljs-keyword">CASE</span> <span class="hljs-keyword">MONTH</span> <span class="hljs-keyword">WHEN</span> <span class="hljs-number">2</span> <span class="hljs-keyword">THEN</span> SAL <span class="hljs-keyword">END</span> M02,</span><br><span class="line">  <span class="hljs-keyword">CASE</span> <span class="hljs-keyword">MONTH</span> <span class="hljs-keyword">WHEN</span> <span class="hljs-number">3</span> <span class="hljs-keyword">THEN</span> SAL <span class="hljs-keyword">END</span> M03, <span class="hljs-keyword">CASE</span> <span class="hljs-keyword">MONTH</span> <span class="hljs-keyword">WHEN</span> <span class="hljs-number">4</span> <span class="hljs-keyword">THEN</span> SAL <span class="hljs-keyword">END</span> M04,</span><br><span class="line">  <span class="hljs-keyword">CASE</span> <span class="hljs-keyword">MONTH</span> <span class="hljs-keyword">WHEN</span> <span class="hljs-number">5</span> <span class="hljs-keyword">THEN</span> SAL <span class="hljs-keyword">END</span> M05, <span class="hljs-keyword">CASE</span> <span class="hljs-keyword">MONTH</span> <span class="hljs-keyword">WHEN</span> <span class="hljs-number">6</span> <span class="hljs-keyword">THEN</span> SAL <span class="hljs-keyword">END</span> M06,</span><br><span class="line">  <span class="hljs-keyword">CASE</span> <span class="hljs-keyword">MONTH</span> <span class="hljs-keyword">WHEN</span> <span class="hljs-number">7</span> <span class="hljs-keyword">THEN</span> SAL <span class="hljs-keyword">END</span> M07, <span class="hljs-keyword">CASE</span> <span class="hljs-keyword">MONTH</span> <span class="hljs-keyword">WHEN</span> <span class="hljs-number">8</span> <span class="hljs-keyword">THEN</span> SAL <span class="hljs-keyword">END</span> M08,</span><br><span class="line">  <span class="hljs-keyword">CASE</span> <span class="hljs-keyword">MONTH</span> <span class="hljs-keyword">WHEN</span> <span class="hljs-number">9</span> <span class="hljs-keyword">THEN</span> SAL <span class="hljs-keyword">END</span> M09, <span class="hljs-keyword">CASE</span> <span class="hljs-keyword">MONTH</span> <span class="hljs-keyword">WHEN</span> <span class="hljs-number">10</span> <span class="hljs-keyword">THEN</span> SAL <span class="hljs-keyword">END</span> M10,</span><br><span class="line">  <span class="hljs-keyword">CASE</span> <span class="hljs-keyword">MONTH</span> <span class="hljs-keyword">WHEN</span> <span class="hljs-number">11</span> <span class="hljs-keyword">THEN</span> SAL <span class="hljs-keyword">END</span> M11, <span class="hljs-keyword">CASE</span> <span class="hljs-keyword">MONTH</span> <span class="hljs-keyword">WHEN</span> <span class="hljs-number">12</span> <span class="hljs-keyword">THEN</span> SAL <span class="hljs-keyword">END</span> M12</span><br><span class="line"><span class="hljs-keyword">FROM</span> (<span class="hljs-keyword">SELECT</span> ENAME, DEPTNO, <span class="hljs-keyword">EXTRACT</span>(<span class="hljs-keyword">MONTH</span> <span class="hljs-keyword">FROM</span> HIREDATE) <span class="hljs-keyword">MONTH</span>, SAL</span><br><span class="line">      <span class="hljs-keyword">FROM</span> EMP);</span><br><span class="line">      </span><br><span class="line"><span class="hljs-comment">--STEPT3 2의구분을 부서별로 그룹화</span></span><br><span class="line"><span class="hljs-keyword">SELECT</span> DEPTNO,</span><br><span class="line">  <span class="hljs-keyword">AVG</span>(<span class="hljs-keyword">CASE</span> <span class="hljs-keyword">MONTH</span> <span class="hljs-keyword">WHEN</span> <span class="hljs-number">1</span> <span class="hljs-keyword">THEN</span> SAL <span class="hljs-keyword">END</span>) M01, <span class="hljs-keyword">AVG</span>(<span class="hljs-keyword">CASE</span> <span class="hljs-keyword">MONTH</span> <span class="hljs-keyword">WHEN</span> <span class="hljs-number">2</span> <span class="hljs-keyword">THEN</span> SAL <span class="hljs-keyword">END</span>) M02,</span><br><span class="line">  <span class="hljs-keyword">AVG</span>(<span class="hljs-keyword">CASE</span> <span class="hljs-keyword">MONTH</span> <span class="hljs-keyword">WHEN</span> <span class="hljs-number">3</span> <span class="hljs-keyword">THEN</span> SAL <span class="hljs-keyword">END</span>) M03, <span class="hljs-keyword">AVG</span>(<span class="hljs-keyword">CASE</span> <span class="hljs-keyword">MONTH</span> <span class="hljs-keyword">WHEN</span> <span class="hljs-number">4</span> <span class="hljs-keyword">THEN</span> SAL <span class="hljs-keyword">END</span>) M04,</span><br><span class="line">  <span class="hljs-keyword">AVG</span>(<span class="hljs-keyword">CASE</span> <span class="hljs-keyword">MONTH</span> <span class="hljs-keyword">WHEN</span> <span class="hljs-number">5</span> <span class="hljs-keyword">THEN</span> SAL <span class="hljs-keyword">END</span>) M05, <span class="hljs-keyword">AVG</span>(<span class="hljs-keyword">CASE</span> <span class="hljs-keyword">MONTH</span> <span class="hljs-keyword">WHEN</span> <span class="hljs-number">6</span> <span class="hljs-keyword">THEN</span> SAL <span class="hljs-keyword">END</span>) M06,</span><br><span class="line">  <span class="hljs-keyword">AVG</span>(<span class="hljs-keyword">CASE</span> <span class="hljs-keyword">MONTH</span> <span class="hljs-keyword">WHEN</span> <span class="hljs-number">7</span> <span class="hljs-keyword">THEN</span> SAL <span class="hljs-keyword">END</span>) M07, <span class="hljs-keyword">AVG</span>(<span class="hljs-keyword">CASE</span> <span class="hljs-keyword">MONTH</span> <span class="hljs-keyword">WHEN</span> <span class="hljs-number">8</span> <span class="hljs-keyword">THEN</span> SAL <span class="hljs-keyword">END</span>) M08,</span><br><span class="line">  <span class="hljs-keyword">AVG</span>(<span class="hljs-keyword">CASE</span> <span class="hljs-keyword">MONTH</span> <span class="hljs-keyword">WHEN</span> <span class="hljs-number">9</span> <span class="hljs-keyword">THEN</span> SAL <span class="hljs-keyword">END</span>) M09, <span class="hljs-keyword">AVG</span>(<span class="hljs-keyword">CASE</span> <span class="hljs-keyword">MONTH</span> <span class="hljs-keyword">WHEN</span> <span class="hljs-number">10</span> <span class="hljs-keyword">THEN</span> SAL <span class="hljs-keyword">END</span>) M10,</span><br><span class="line">  <span class="hljs-keyword">AVG</span>(<span class="hljs-keyword">CASE</span> <span class="hljs-keyword">MONTH</span> <span class="hljs-keyword">WHEN</span> <span class="hljs-number">11</span> <span class="hljs-keyword">THEN</span> SAL <span class="hljs-keyword">END</span>) M11, <span class="hljs-keyword">AVG</span>(<span class="hljs-keyword">CASE</span> <span class="hljs-keyword">MONTH</span> <span class="hljs-keyword">WHEN</span> <span class="hljs-number">12</span> <span class="hljs-keyword">THEN</span> SAL <span class="hljs-keyword">END</span>) M12</span><br><span class="line"><span class="hljs-keyword">FROM</span> (<span class="hljs-keyword">SELECT</span> ENAME, DEPTNO, <span class="hljs-keyword">EXTRACT</span>(<span class="hljs-keyword">MONTH</span> <span class="hljs-keyword">FROM</span> HIREDATE) <span class="hljs-keyword">MONTH</span>, SAL</span><br><span class="line">      <span class="hljs-keyword">FROM</span> EMP)</span><br><span class="line"><span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span> DEPTNO;</span><br></pre></td></tr></table></figure>
-<h2 id="5-집계함수와-NULL처리"><a href="#5-집계함수와-NULL처리" class="headerlink" title="5.집계함수와 NULL처리"></a>5.집계함수와 NULL처리</h2><ul>
-<li>빈칸을 NULL이 아니라 0으로 처리하기 위해 NVL()을 사용하는 경우가 있는데, 오히려 불필요할 수 있음</li>
-<li>행 함수는 건수가 NULL인 행을 빼고 계산함. SUM, AVG,..등 굳이 0을넣어 불필요하게 더 계산할 필요가 없음</li>
-<li>ELSE  절 생략하면 DEFAULT 값이 NULL임</li>
-<li>출력시 NULL이 아닌 0을 표현하고싶으면 NVL(SUM(SAL),0)이렇게 하면됨</li>
-</ul>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-13T03:36:51.920Z">2019-05-13</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/tec/">tec</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/tec/java/">java</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    5분 읽기 (나에 대하여 751 단어)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/05/13/tec/java/2019-05-03-java6/">[Java의정석] CH7. 객체지향프로그래밍2</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="2-오버라이딩"><a href="#2-오버라이딩" class="headerlink" title="2. 오버라이딩"></a>2. 오버라이딩</h2><h3 id="2-1-오버라이딩이란"><a href="#2-1-오버라이딩이란" class="headerlink" title="2.1 오버라이딩이란?"></a>2.1 오버라이딩이란?</h3><p>조상 클래스부터 상속받은 메서드의 내용을 변경하는것<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">class Point&#123;</span><br><span class="line">    int x;</span><br><span class="line">    int y;</span><br><span class="line">    </span><br><span class="line">    String getLocation()&#123;</span><br><span class="line">        return &quot;x : &quot;+x+&quot;, y : &quot; + y;</span><br><span class="line">    &#125;</span><br><span class="line">|</span><br><span class="line"></span><br><span class="line">class Point3D extends Point&#123;</span><br><span class="line">    int z;</span><br><span class="line">    </span><br><span class="line">    String getLocation()&#123;</span><br><span class="line">        return &quot;x : &quot;+x+&quot;, y : &quot; + y+&quot;, z : &quot;+z;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="2-2-오버라이딩의-조건"><a href="#2-2-오버라이딩의-조건" class="headerlink" title="2.2 오버라이딩의 조건"></a>2.2 오버라이딩의 조건</h3><p>메서드 선언부는 조상의 것과 완전 일치해야함.<br>자손 클래스에서 오버라이딩하는 메서드는 조상 클래스의 메서드와</p>
+<h2 id="5-CASE표현"><a href="#5-CASE표현" class="headerlink" title="5.CASE표현"></a>5.CASE표현</h2><h3 id="함수의-성질을-가지고-있어-중첨해서-사용할-수-있음"><a href="#함수의-성질을-가지고-있어-중첨해서-사용할-수-있음" class="headerlink" title="함수의 성질을 가지고 있어 중첨해서 사용할 수 있음"></a>함수의 성질을 가지고 있어 중첨해서 사용할 수 있음</h3><figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">CASE</span><br><span class="line">  SIMPLE_CASE_EXPRESSION 조건</span><br><span class="line">  ESLE 표현절</span><br><span class="line"><span class="hljs-keyword">END</span></span><br></pre></td></tr></table></figure>
 <ul>
-<li>이름이 같아야 한다.</li>
-<li>매개변수가 같아야 한다.</li>
-<li>리턴 타입이 같아야 한다.</li>
-</ul>
-<ol>
-<li>접근제어자는 조상 클래스의 메서드보다 좁은 범위로 변경할 수 없다.<br>ex) 조상클래스의 메서드의 접근 제어자가 protected라면<br>자식클래스에서 오버라이딩 하는 메서드의 접근 제어자는 protected나 public 이어야함.  </li>
-<li>조상 클래스의 메서드보다 많은 수의 예외를 선언할 수 없다.</li>
-</ol>
-<ul>
-<li>조상 클래스의 메서드를 자손클래스에서 오버라이딩할 때  <ol>
-<li>접근제어자를 조상클래스의 메서드보다 좁은 범위로 할 수 없다.</li>
-<li>예외는 조상 클래스의 메서드보다 많이 선언할 수 없다.</li>
-<li>인스턴스메서드를 static메서드로 또는 그 반대로 변경할 수 없다.</li>
-</ol>
+<li>예제)  <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="hljs-comment">--예제1</span></span><br><span class="line"><span class="hljs-keyword">SELECT</span> ENAME,</span><br><span class="line">      <span class="hljs-keyword">CASE</span> <span class="hljs-keyword">WHEN</span> SAL&gt;<span class="hljs-number">2000</span></span><br><span class="line">           <span class="hljs-keyword">THEN</span> SAL</span><br><span class="line">           <span class="hljs-keyword">ELSE</span> <span class="hljs-number">2000</span></span><br><span class="line">      <span class="hljs-keyword">END</span> REVISED_SALARY</span><br><span class="line"><span class="hljs-keyword">FROM</span> EMP;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">--예제2)</span></span><br><span class="line"><span class="hljs-keyword">SELECT</span> LOC,</span><br><span class="line">     <span class="hljs-keyword">CASE</span> LOC</span><br><span class="line">     <span class="hljs-keyword">WHEN</span> <span class="hljs-string">'NEW YORK'</span> <span class="hljs-keyword">THEN</span> <span class="hljs-string">'EAST'</span></span><br><span class="line">     <span class="hljs-keyword">WHEN</span> <span class="hljs-string">'CHICAGO'</span> <span class="hljs-keyword">THEN</span> <span class="hljs-string">'CENTER'</span></span><br><span class="line">     <span class="hljs-keyword">ELSE</span> <span class="hljs-string">'ETC'</span></span><br><span class="line">     <span class="hljs-keyword">END</span> <span class="hljs-keyword">AS</span> AREA</span><br><span class="line"><span class="hljs-keyword">FROM</span> DEPT;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h3 id="2-3-오버로딩-VS-오버라이딩"><a href="#2-3-오버로딩-VS-오버라이딩" class="headerlink" title="2.3 오버로딩 VS 오버라이딩"></a>2.3 오버로딩 VS 오버라이딩</h3><ul>
-<li>오버로딩(overloading) : 기존에 없는 메서드를 정의하는것(new)</li>
-<li>오버라이딩(overriding) : 상속받은 메서드의 내용을 변경하는 것(change, modify)</li>
+<h2 id="6-NULL관련함수"><a href="#6-NULL관련함수" class="headerlink" title="6.NULL관련함수"></a>6.NULL관련함수</h2><h3 id="연산"><a href="#연산" class="headerlink" title="연산"></a>연산</h3><p>NULL+숫자=NULL;(사칙연산 모두 포함)<br>NULL+문자열=NULL;  </p>
+<h3 id="NVL-표현식1-표현식2"><a href="#NVL-표현식1-표현식2" class="headerlink" title="NVL(표현식1, 표현식2)"></a>NVL(표현식1, 표현식2)</h3><ul>
+<li>표현식 1 이NULL이면 표현식 2를 출력(두 표현식의 데이터 타입이 같아야함)<h3 id="NULLIF-표현식1-표현식2"><a href="#NULLIF-표현식1-표현식2" class="headerlink" title="NULLIF(표현식1, 표현식2)"></a>NULLIF(표현식1, 표현식2)</h3></li>
+<li>표현식1이 표현식2와 같으면 NULL, 아니면 표현식1 출력<h3 id="COALESCE-표현식1-표현식N"><a href="#COALESCE-표현식1-표현식N" class="headerlink" title="COALESCE(표현식1,..,표현식N)"></a>COALESCE(표현식1,..,표현식N)</h3></li>
+<li>임의의 개수 표현식에서 NULL이 아닌 최초의 표현식 리턴,</li>
+<li>모든 표현식이 NULL이면 NULLD을 리턴<h3 id="NULL과-공집합"><a href="#NULL과-공집합" class="headerlink" title="NULL과 공집합"></a>NULL과 공집합</h3>테이블 안에 값이 NULL이면 NULL, 테이블 이 선택안되면 공집합<br>공집합을 NULL로 바꾸기 위해 적절한 함수 사용 EX)MAX()</li>
 </ul>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">class Parent&#123;</span><br><span class="line">    void parentMethod()&#123;&#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Chile extends Parent&#123;</span><br><span class="line">    void parentMethod()&#123;&#125; // 오버라이딩;</span><br><span class="line">    void parentMethod(int i)&#123;&#125; //오버로딩</span><br><span class="line">    </span><br><span class="line">    void childMethod()&#123;&#125;</span><br><span class="line">    void childMethod(int i)&#123;&#125; //오버로딩</span><br><span class="line">    void childMethod()&#123;&#125;// 에러 함수가 중복됨</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="2-4-super"><a href="#2-4-super" class="headerlink" title="2.4 super"></a>2.4 super</h3><p>자손클래스에서 조상 클래스로부터 상속받은 멤버를 참조하는데 사용되는 참조변수.<br>조상클래스의 멤버와 자손클래스의 멤버가 중복 정의되서 구별해야 되지 않는 상황이면 super대신 this를 써도 됨.<br>static 메서드(클래스 메서드)에서는 사용 할 수 없다.</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">class SuperTest&#123;</span><br><span class="line">    public void static void main(String args[])&#123;</span><br><span class="line">        Child c = new Child();</span><br><span class="line">        c.method();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Parent&#123;</span><br><span class="line">    int x =10;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Child extends Parent&#123;</span><br><span class="line">    int x =20;</span><br><span class="line">    void method()&#123;</span><br><span class="line">        system.out.println(&quot;x=&quot;+x);  </span><br><span class="line">        system.out.println(&quot;this.x=&quot;+this.x);</span><br><span class="line">        system.out.println(&quot;super.x=&quot;+super.x);   </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>실행 결과<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x=20</span><br><span class="line">this.x=20;</span><br><span class="line">super.x=10;</span><br></pre></td></tr></table></figure></p>
-<h3 id="2-5-super-조상클래스의-생성자"><a href="#2-5-super-조상클래스의-생성자" class="headerlink" title="2.5 super() - 조상클래스의 생성자"></a>2.5 super() - 조상클래스의 생성자</h3><p>super()는 조상클래스의 생성자를 호출하는 생성자이다.<br>Object클래스를 제외한 모든 클래스의 생성자 첫 줄에는 생성자(같은 클래스의 다른 생성자 또는 조상의 생성자)를 호출 해야함.<br>그렇지 않으면 컴파일러가 super(); 를 자동으로 첫줄에 삽입.  </p>
-<ol>
-<li>클래스 - 어떤 클래스의 인스턴스를 생성할것인가?</li>
-<li>생성자 - 선택한 클래스의 어떤 생성자를 이용해서 인스턴스를 생성할 것인가?</li>
-</ol>
+<h3 id="NULLIF"><a href="#NULLIF" class="headerlink" title="NULLIF"></a>NULLIF</h3><figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">--사원 테이블에서 MGR과 7698이 같으면 NULL, 다르면 MGR 표시하라. </span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">SELECT</span> ENAME, EMPNO, MGR, <span class="hljs-keyword">NULLIF</span>(MGR, <span class="hljs-number">7698</span>) NUIF</span><br><span class="line"><span class="hljs-keyword">FROM</span> EMP;</span><br></pre></td></tr></table></figure>
+<h3 id="COALESCE"><a href="#COALESCE" class="headerlink" title="COALESCE"></a>COALESCE</h3><figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">--사원테이블에서 커미션을 1차선택값, 급여를 2차 선택값으로 선택하되 </span></span><br><span class="line"><span class="hljs-comment">--두 칼럼 모두 NULL이면 NULL로 표시</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">SELECT</span> ENAME, COMM, SAL, <span class="hljs-keyword">COALESCE</span>(COMM, SAL) COAL</span><br><span class="line"><span class="hljs-keyword">FROM</span> EMP;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">--다른방법</span></span><br><span class="line"><span class="hljs-keyword">SELECT</span> ENAME, COMM, SAL</span><br><span class="line">     <span class="hljs-keyword">CASE</span> <span class="hljs-keyword">WHEN</span> COMM <span class="hljs-keyword">IS</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span></span><br><span class="line">          <span class="hljs-keyword">THEN</span> COMM</span><br><span class="line">          <span class="hljs-keyword">ELSE</span> (<span class="hljs-keyword">CASE</span> <span class="hljs-keyword">WHEN</span> SAL <span class="hljs-keyword">IS</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span></span><br><span class="line">                     <span class="hljs-keyword">THEN</span> SAL</span><br><span class="line">                     <span class="hljs-keyword">ELSE</span> <span class="hljs-literal">NULL</span></span><br><span class="line">                <span class="hljs-keyword">END</span>)</span><br><span class="line">      <span class="hljs-keyword">END</span> COAL</span><br><span class="line"><span class="hljs-keyword">FROM</span> EMP;</span><br></pre></td></tr></table></figure>
 
         </div>
         
@@ -407,7 +535,55 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-13T03:35:24.690Z">2019-05-13</time>
+                <time class="level-item has-text-grey" datetime="2019-05-13T03:57:36.684Z">2019-05-13</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/tec/">tec</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/tec/sql/">sql</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    1분 읽기 (나에 대하여 152 단어)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/05/13/tec/sql/2019-05-10-sql7/">[SQL] ORDER BY 정렬</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="1-ORDER-BY-정렬"><a href="#1-ORDER-BY-정렬" class="headerlink" title="1. ORDER BY 정렬"></a>1. ORDER BY 정렬</h2><figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">SELECT</span> 칼럼명 [<span class="hljs-keyword">ALIAS</span>명]</span><br><span class="line"><span class="hljs-keyword">FROM</span> 테이블명</span><br><span class="line">[<span class="hljs-keyword">WHERE</span> 조건식]</span><br><span class="line">[<span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span> 칼럼또는 표현식]</span><br><span class="line">[<span class="hljs-keyword">HAVING</span> 그룹조건식]</span><br><span class="line">[<span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> 칼럼이나 표현식 [<span class="hljs-keyword">ASC</span> 또는 <span class="hljs-keyword">DESC</span>];</span><br></pre></td></tr></table></figure>
+<h2 id="2-SELECT-문장실행-순서"><a href="#2-SELECT-문장실행-순서" class="headerlink" title="2.SELECT 문장실행 순서"></a>2.SELECT 문장실행 순서</h2><p>5)SELECT<br>1)FROM<br>2)WHERE<br>3)GROUP BY<br>4)HAVING<br>6)ORDER BY    </p>
+<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">SELECT</span> DNAME, LOC, DEPTNO</span><br><span class="line"><span class="hljs-keyword">FROM</span> DEPT</span><br><span class="line"><span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> <span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span> <span class="hljs-keyword">DESC</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">SELECT</span> JOB <span class="hljs-keyword">FROM</span> EMP</span><br><span class="line"><span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span> JOB</span><br><span class="line"><span class="hljs-keyword">HAVING</span> <span class="hljs-keyword">COUNT</span>(*)&gt;<span class="hljs-number">0</span></span><br><span class="line"><span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> <span class="hljs-keyword">MAX</span>(EMPNO), <span class="hljs-keyword">MAX</span>(MGR), <span class="hljs-keyword">SUM</span>(SAL), <span class="hljs-keyword">COUNT</span>(DEPTNO), <span class="hljs-keyword">MAX</span>(HIREDATE);</span><br></pre></td></tr></table></figure>
+<h2 id="3-TOP-N-쿼리"><a href="#3-TOP-N-쿼리" class="headerlink" title="3. TOP N 쿼리"></a>3. TOP N 쿼리</h2><h3 id="ROWNUM"><a href="#ROWNUM" class="headerlink" title="ROWNUM"></a>ROWNUM</h3><figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">--ORDER BY가 제일 늦게 실행되기 때문에 원하는 값이 안 나옴</span></span><br><span class="line"><span class="hljs-keyword">SELECT</span> ENAME, SAL <span class="hljs-keyword">FROM</span> EMP</span><br><span class="line"><span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">ROWNUM</span> &lt;<span class="hljs-number">4</span></span><br><span class="line"><span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> SAL;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">--2중쿼리 이용</span></span><br><span class="line"><span class="hljs-keyword">SELECT</span> ENAME, SAL</span><br><span class="line"><span class="hljs-keyword">FROM</span> (<span class="hljs-keyword">SELECT</span> ENAME, SAL <span class="hljs-keyword">FROM</span> EMP</span><br><span class="line">      <span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> SAL <span class="hljs-keyword">DESC</span>)</span><br><span class="line"><span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">ROWNUM</span>&lt;<span class="hljs-number">4</span>;</span><br></pre></td></tr></table></figure>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-05-13T03:55:12.289Z">2019-05-13</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/tec/">tec</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/tec/java/">java</a>
@@ -417,7 +593,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    3분 읽기 (나에 대하여 471 단어)
+                    9분 읽기 (나에 대하여 1327 단어)
                 </span>
                 
                 
@@ -426,42 +602,89 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/05/13/tec/java/2019-05-03-java5/">[Java의정석] CH7. 객체지향프로그래밍2</a>
+                <a class="has-link-black-ter" href="/2019/05/13/tec/java/2019-05-10-java12/">[Java의정석] CH15. 네트워킹(Networking)</a>
             
         </h1>
         <div class="content">
-            <h2 id="1-상속"><a href="#1-상속" class="headerlink" title="1. 상속"></a>1. 상속</h2><h3 id="1-1-상속의-정의와-장점"><a href="#1-1-상속의-정의와-장점" class="headerlink" title="1.1 상속의 정의와 장점"></a>1.1 상속의 정의와 장점</h3><p>기존의 클래스를 재사용하여 새로운 클래스를 작성하는것</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">class Parent&#123;&#125;</span><br><span class="line">class Child extends Parent&#123;&#125;</span><br></pre></td></tr></table></figure>
+            <h2 id="1-네트워킹"><a href="#1-네트워킹" class="headerlink" title="1.네트워킹"></a>1.네트워킹</h2><p>두대 이상의 컴퓨터를 케이블로 연결하여 네트워크를 구성하는것.  </p>
+<h3 id="1-1-클라이언트-서버-client-server"><a href="#1-1-클라이언트-서버-client-server" class="headerlink" title="1.1 클라이언트/서버(client/server)"></a>1.1 클라이언트/서버(client/server)</h3><p>서버(server)는 서비스를 제공하는 컴퓨터, 클라이언트(client)는 서비스를 사용하는 컴퓨터.<br>ex) 파일서버(file server), 메일서버(mail server), 어플래케이션 서버(application server)</p>
+<table>
+<thead>
+<tr>
+<th>서버기반 모델(server-based-model)</th>
+<th>P2P모델(peer-to-peer model)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>- 안정적인서비스 제공이 가능하다.<br>- 공유데이터의 관리와 보안이 용이하다.<br>- 서버구축비용과 관리비용이 든다.</td>
+<td>- 서버구축 및 운용비용을 절감할 수 있다. <br> - 자원의 활용을 극대화 할 수 있다. <br>- 자원의 관리가 어렵다. <br>- 보안이 취약하다.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="1-2-IP주소-IP-address"><a href="#1-2-IP주소-IP-address" class="headerlink" title="1.2 IP주소(IP address)"></a>1.2 IP주소(IP address)</h3><p>IP주소는 컴퓨터(호스트, host)를 구별하는데 사용하는 고유한 값.<br>4 byte(32bit)의 정수로 구성되어있음. <em>a.b.c.d</em>와 같은 형식으로 표현됨.<br>abcd는 0~255사이의 정수이다.<br>윈도우 콘솔에서 ifconfig를 확인하면 ip주소를 확인 할 수 있음.<br>ex)  </p>
 <ul>
-<li>조상클래스 -  부모클래스, 상위클래스, 기반 클래스</li>
-<li>자손클래스 - 자식 클래스, 하위클래스, 파생된 클래스  </li>
+<li>ip주소<br>192.168.10 .100<br>(네트워크주소).(호스트주소)  </li>
+<li>서브넷마스크<br>255.255.255.0  </li>
 </ul>
+<h3 id="1-3-InetAddress"><a href="#1-3-InetAddress" class="headerlink" title="1.3 InetAddress"></a>1.3 InetAddress</h3><p>자바에서 IP주소를 다루기 위한 클래스로 InetAddress 제공함  </p>
+<h3 id="1-4-URL-Uniform-Resource-Location"><a href="#1-4-URL-Uniform-Resource-Location" class="headerlink" title="1.4 URL(Uniform Resource Location)"></a>1.4 URL(Uniform Resource Location)</h3><p>URL은 인터넷에 존재하는 여러 서버들이 제공하는 자원에 접근할 수 있는 주소를 표현하기 위한것.<br>“프로토콜://호스트명:포트번호/경로명/파이명?쿼리스트링#참조”의 형태로 이루워져있음.  </p>
 <ul>
-<li>생성자와 초기화 블럭은 상속되지 않는다. 멤버만 상속된다.</li>
-<li>자손 클래스의 멤버개수는 조상 클래스보다 항상 같거나 많다.    </li>
+<li>프로토콜 : 자원에 접근하기 위해 서버와 통신하는데 사용되는 통신규약(http)</li>
+<li>호스트명: 자원을 제공하는 서버의 이름(<a href="http://www.javahome.com" target="_blank" rel="noopener">www.javahome.com</a>)</li>
+<li>포트번호 : 통신에 사용되는 서버의 포트번호(80)</li>
+<li>경로명 : 접근하려는 자원이 저장된 서버상의 위치(/sample/)</li>
+<li>파일명 : 접근하려는 자원의 이름(hello.html)</li>
+<li>쿼리 : url에서 ?이후부분</li>
+<li>참조 : url에서 # 이후부분   </li>
 </ul>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class Tv&#123;</span><br><span class="line">    boolean power;</span><br><span class="line">    int channel;</span><br><span class="line">    </span><br><span class="line">    void power()&#123;power = !power;&#125;</span><br><span class="line">    void channelUp()&#123;++chnannel;&#125;</span><br><span class="line">    void channelDown()&#123;--channel;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class CaptionTv extends Tv&#123;</span><br><span class="line">    boolean caption;</span><br><span class="line">    void displayCaption(String text)&#123;</span><br><span class="line">        if(caption)&#123;</span><br><span class="line">            system.out.println(text);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="1-2-클래스간의-관계-포함관계"><a href="#1-2-클래스간의-관계-포함관계" class="headerlink" title="1.2 클래스간의 관계 - 포함관계"></a>1.2 클래스간의 관계 - 포함관계</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">class Circle&#123;</span><br><span class="line">    int x;</span><br><span class="line">    int y;</span><br><span class="line">    int r;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>이 클래스를</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">class Point&#123;</span><br><span class="line">    int x; </span><br><span class="line">    int y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Circle&#123;</span><br><span class="line">    Point point = new Point();</span><br><span class="line">    int r;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>이렇게 표현할 수 있다.<br>Engine, Door 클래스를 미리 작성 후 아래와 같이 사용 가능.</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">class car&#123;</span><br><span class="line">    Engine e = new Engine();</span><br><span class="line">    Door[] d = new Door[4];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="1-3-클래스간-관계-결정하기"><a href="#1-3-클래스간-관계-결정하기" class="headerlink" title="1.3 클래스간 관계 결정하기"></a>1.3 클래스간 관계 결정하기</h3><p>어떨때 상속, 어떨때 포함관계를 맺을까?  </p>
+<p>java에서 URL 클래스를 제공함  </p>
+<h3 id="1-5-URL-Connection"><a href="#1-5-URL-Connection" class="headerlink" title="1.5 URL Connection"></a>1.5 URL Connection</h3><p>어플리케이션과 URL간의 통신연결을 나타내는 클래스의 최상위 추상클래스.   </p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> java.net.*;</span><br><span class="line"><span class="hljs-keyword">import</span> java.io.*;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NetworkEx3</span></span>&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span></span>&#123;</span><br><span class="line">      URL url = <span class="hljs-keyword">null</span>;</span><br><span class="line">      String address = <span class="hljs-string">"http://www.javahome.com/sample/hello.html"</span>;</span><br><span class="line">      String line =<span class="hljs-string">""</span>;</span><br><span class="line">      </span><br><span class="line">      <span class="hljs-keyword">try</span>&#123;</span><br><span class="line">          url = <span class="hljs-keyword">new</span> URL(address);</span><br><span class="line">          URLConnection conn = url.openConnection();</span><br><span class="line">          </span><br><span class="line">          System.out.println(<span class="hljs-string">"conn.toSTring(): "</span>+conn);</span><br><span class="line">      &#125;<span class="hljs-keyword">catch</span>(Exception e)&#123;</span><br><span class="line">          e.printStackTrace();</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
-<li>상속: ~은 ~이다(is-a)</li>
-<li>포함 : ~은 ~을 가지고 있다(has-a)  </li>
+<li>아래코드는 해당 페이지의 내용을 읽어온다..  </li>
 </ul>
-<p>ex) 원은 점(point)이다 (X)<br>    원은 점을 가지고 있다(O)  -&gt; 포함관계</p>
-<pre><code>SportCar는 Car이다(0) -&gt; 상속 관계
-</code></pre><h3 id="1-4-단일-상속"><a href="#1-4-단일-상속" class="headerlink" title="1.4 단일 상속"></a>1.4 단일 상속</h3><p>부모클래스를 두개 이상 상속 받을 수 없다.</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//불가능한 경우</span><br><span class="line">calss TVCR extends TV, VCR&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">class Tv&#123;</span><br><span class="line">    boolean power;</span><br><span class="line">    int channel;</span><br><span class="line">    </span><br><span class="line">    void power()&#123;power = !power;&#125;</span><br><span class="line">    void channelUp()&#123;++chnannel;&#125;</span><br><span class="line">    void channelDown()&#123;--channel;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class VCR&#123;</span><br><span class="line">    boolean power;</span><br><span class="line">    int counter =0;</span><br><span class="line">    void power()&#123;&#125;;</span><br><span class="line">    void play()&#123;&#125;;</span><br><span class="line">    void stop()&#123;&#125;;</span><br><span class="line">    void rew()&#123;&#125;;</span><br><span class="line">    void ff()&#123;&#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class TVCR extends Tv&#123;</span><br><span class="line">    VCR vcr = new VCR();</span><br><span class="line">    int counter =vcr.counter;</span><br><span class="line">    </span><br><span class="line">    void play()&#123;</span><br><span class="line">        vcr.play();</span><br><span class="line">    &#125;;</span><br><span class="line">    void stop()&#123;</span><br><span class="line">        vcr.stop();</span><br><span class="line">    &#125;;</span><br><span class="line">    void rew()&#123;</span><br><span class="line">        vcr.rew();</span><br><span class="line">    &#125;;</span><br><span class="line">    void ff()&#123;</span><br><span class="line">        vcr.ff();</span><br><span class="line">    &#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="1-5-Object클래스-모든-클래스의-조상"><a href="#1-5-Object클래스-모든-클래스의-조상" class="headerlink" title="1.5 Object클래스 -모든 클래스의 조상"></a>1.5 Object클래스 -모든 클래스의 조상</h3><p>Object는 모든 클래스의 조상이다.  </p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class Tv&#123;&#125;</span><br></pre></td></tr></table></figure>
-<p>이것은 따지고 보면</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class Tv extends Object&#123;&#125;</span><br></pre></td></tr></table></figure>
-<p>이것임.<br>toString(), equals() 그냥 쓸 수 있는게 Object클래스에 정의 되어있어서 그렇다.</p>
-
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> java.net.*;</span><br><span class="line"><span class="hljs-keyword">import</span> java.io.*;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NetworkEx4</span></span>&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span></span>&#123;</span><br><span class="line">      URL url = <span class="hljs-keyword">null</span>;</span><br><span class="line">      BufferedReader input = <span class="hljs-keyword">null</span>;</span><br><span class="line">      String address = <span class="hljs-string">"http://www.javahome.com/sample/hello.html"</span>;</span><br><span class="line">      String line =<span class="hljs-string">""</span>;</span><br><span class="line">      </span><br><span class="line">      <span class="hljs-keyword">try</span>&#123;</span><br><span class="line">          url = <span class="hljs-keyword">new</span> URL(address);</span><br><span class="line">          </span><br><span class="line">          input = <span class="hljs-keyword">new</span> BufferedReader(<span class="hljs-keyword">new</span> InputStreamReader(url.openStream()));</span><br><span class="line">          </span><br><span class="line">          <span class="hljs-keyword">while</span>((line= input.readline()) != <span class="hljs-keyword">null</span>) &#123;</span><br><span class="line">              System.out.println(line);</span><br><span class="line">          &#125;</span><br><span class="line">          input.close();</span><br><span class="line">      &#125;<span class="hljs-keyword">catch</span>(Exception e)&#123;</span><br><span class="line">          e.printStackTrace();</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>이진파일을 읽어 저장함.  </li>
+</ul>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">import</span> java.net.*;</span><br><span class="line"><span class="hljs-keyword">import</span> java.io.*;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NetworkEx5</span></span>&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span></span>&#123;</span><br><span class="line">      URL url = <span class="hljs-keyword">null</span>;</span><br><span class="line">      InputStream in = <span class="hljs-keyword">null</span>;</span><br><span class="line">      FileOutputStream out = <span class="hljs-keyword">null</span>;</span><br><span class="line">      String address = <span class="hljs-string">"http://www.javahome.com/sample/hello.zip"</span>;</span><br><span class="line">      <span class="hljs-keyword">int</span> ch = <span class="hljs-number">0</span>;</span><br><span class="line">      </span><br><span class="line">      <span class="hljs-keyword">try</span>&#123;</span><br><span class="line">          url = <span class="hljs-keyword">new</span> URL(address);</span><br><span class="line">          in = url.openStream();</span><br><span class="line">          out = <span class="hljs-keyword">new</span> FileOutputStream(<span class="hljs-string">"hello.zip"</span>);</span><br><span class="line">          </span><br><span class="line">          <span class="hljs-keyword">while</span>((ch= inlread()) != -<span class="hljs-number">1</span>) &#123;</span><br><span class="line">              out.writy(ch);</span><br><span class="line">          &#125;</span><br><span class="line">          in.close();</span><br><span class="line">          out.close();</span><br><span class="line">      &#125;<span class="hljs-keyword">catch</span>(Exception e)&#123;</span><br><span class="line">          e.printStackTrace();</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-소켓-프로그래밍"><a href="#2-소켓-프로그래밍" class="headerlink" title="2. 소켓 프로그래밍"></a>2. 소켓 프로그래밍</h2><p>소켓을 이용한 통신프로그래밍.<br>java.net패키지를 통해 소켓 프로그래밍을 지원함.  </p>
+<h3 id="2-1-TCP와-UDP"><a href="#2-1-TCP와-UDP" class="headerlink" title="2.1 TCP와 UDP"></a>2.1 TCP와 UDP</h3><p>TCP/IP 프로토콜은 이기종 시스템간의 통신을 위한 표준 프로토콜로 프로토콜의 집합이다.<br>TCP와 UDP모두 TCP/IP에 포함되어 있음, OSI 7계층의 전송계층에 해당하는 프로토콜이다.   </p>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>TCP</th>
+<th>UDP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>연결방식</td>
+<td>.연결기반<br>- 연결 후 통신(전화기)<br>- 1:1통신방식</td>
+<td>.비연결기반<br>- 연결없이 통신(소포)<br>- 1:1, 1:n, n:n 통신방식</td>
+</tr>
+<tr>
+<td>특징</td>
+<td>.데이터의 경계를 구분안함<br>.신뢰성 있는 데이터를 전송<br>- 데이터의 전송순서가 보장됨<br>- 데이터의 수신여부를 확인함<br>(데이터가 손실되면 재전송)<br>- 패킷을 관리할 필요가 없음<br>.UDP보다 전송속도가 느림</td>
+<td>.데이터의 경계를 구분함<br>.신뢰성 없는 데이터 전송<br>- 데이터의 전송순서가 바뀔 수 있음<br>- 데이터의 수신여부를 확인안 함<br>(데이터가 손실되어도 알 수 없음)<br>- 패킷을 관리해 주어야 함<br>.TCP보다 전송속도가 빠름</td>
+</tr>
+<tr>
+<td>관련 클래스</td>
+<td>.Scoket<br>.ServerSocket</td>
+<td>.DatagramSocket<br>.DatagramPacket<br>.MulticastSocket</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-3-TCP-소켓-프로그래밍"><a href="#2-3-TCP-소켓-프로그래밍" class="headerlink" title="2.3 TCP 소켓 프로그래밍"></a>2.3 TCP 소켓 프로그래밍</h3><p><strong>서버 프로그램과 클라이언트 프로그램간의 통신과정 단계</strong></p>
+<ol>
+<li>서버프로그램에서는 서버소켓을 사용하여 서버의 컴퓨터의 특정 포트에서 클라이언트의 연결요청을 처리할 준비를 한다. </li>
+<li>클라이언트 프로그램은 접속할 서버의 IP주소와 포트 정보를 가지고 소켓을 생성해서 서버에 연결을 요청한다. </li>
+<li>서버소켓은 클라이언트의 연결요청으 ㄹ받으면 서버에서 새로운 소켓을 생성해서 클라이언트의 소켓과 연결되도록 한다.</li>
+<li>이제 클라이언트 소켓과 새로 생성된 서버의 소켓은 서버소켓과 관계없이 일대일 통신을 한다.  </li>
+</ol>
+<h3 id="2-4-UDP-소켓-프로그래밍"><a href="#2-4-UDP-소켓-프로그래밍" class="headerlink" title="2.4 UDP 소켓 프로그래밍"></a>2.4 UDP 소켓 프로그래밍</h3>
         </div>
         
         
@@ -482,17 +705,17 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-13T03:31:39.724Z">2019-05-13</time>
+                <time class="level-item has-text-grey" datetime="2019-05-13T03:54:20.213Z">2019-05-13</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/tec/">tec</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
+                <a class="has-link-grey -link" href="/categories/tec/">tec</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/tec/java/">java</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    몇 초 읽기 (나에 대하여 78 단어)
+                    5분 읽기 (나에 대하여 768 단어)
                 </span>
                 
                 
@@ -501,14 +724,124 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/05/13/tec/blog/blog9/">[Hexo와 깃허브로 블로그 만들기] disque로 댓글 기능 활성화 하기</a>
+                <a class="has-link-black-ter" href="/2019/05/13/tec/java/2019-05-11-java14/">[Java의정석] CH11. 컬렉션프레임웍과 유용한 클래스</a>
             
         </h1>
         <div class="content">
-            <h2 id="1-disque-회원가입"><a href="#1-disque-회원가입" class="headerlink" title="1. disque 회원가입"></a>1. disque 회원가입</h2><p><a href="https://disqus.com/profile/signup/" target="_blank" rel="noopener">disque 회원가입 하러가기</a> </p>
-<h2 id="2-UserName변경"><a href="#2-UserName변경" class="headerlink" title="2. UserName변경"></a>2. UserName변경</h2><p>Account에서 Username을 변경한다.(disque에서 유일해야함.)</p>
-<h2 id="3-blog-themes-icarus-config-yml-파일-수정"><a href="#3-blog-themes-icarus-config-yml-파일-수정" class="headerlink" title="3. /blog/themes/icarus/_config.yml 파일 수정"></a>3. /blog/themes/icarus/_config.yml 파일 수정</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">comment:</span><br><span class="line">    type: disqus</span><br><span class="line">    shortname: xxxxxxxx</span><br></pre></td></tr></table></figure>
-<h2 id="4-post-md-파일-Front-Matter부분-수정"><a href="#4-post-md-파일-Front-Matter부분-수정" class="headerlink" title="4. post.md 파일 Front-Matter부분 수정"></a>4. post.md 파일 Front-Matter부분 수정</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># (optional) a unique id to identify the post in Disqus system</span><br><span class="line">disqusId: xxxxxxxx</span><br><span class="line">---</span><br><span class="line">Post content...</span><br></pre></td></tr></table></figure>
+            <h2 id="1-컬렉션-프레임웍-Collection-Framework"><a href="#1-컬렉션-프레임웍-Collection-Framework" class="headerlink" title="1. 컬렉션 프레임웍(Collection Framework)"></a>1. 컬렉션 프레임웍(Collection Framework)</h2><h3 id="1-6-Enumeration-Iterator-ListIterator"><a href="#1-6-Enumeration-Iterator-ListIterator" class="headerlink" title="1.6 Enumeration, Iterator, ListIterator"></a>1.6 Enumeration, Iterator, ListIterator</h3><h4 id="1-6-1-Iterator"><a href="#1-6-1-Iterator" class="headerlink" title="1.6.1 Iterator"></a>1.6.1 Iterator</h4><p>컬렉션에 저장된 각 요소에 접근하는 기능을 가진 Iterator인터페이스를 정의해 Collection인터페이스에 Iterator를 반환하는 iterator()를 정의하고있다.  </p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Iterator</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">boolean</span> <span class="hljs-title">hasNext</span><span class="hljs-params">()</span></span>;</span><br><span class="line">    ObjectNext();</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">remove</span><span class="hljs-params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Collection</span> </span>&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Iterator</span><span class="hljs-params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>iterator()은 Collection 인터페이스에 구현되어있기 때문에 자손 클래스인 List와 Set에도 포함되어 있음.    </p>
+<table>
+<thead>
+<tr>
+<th>메서드</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>boolean hasNext()</td>
+<td>읽어올 요소가 남아있는지 확인. 있으면 true, 없으면 false를 반환한다.</td>
+</tr>
+<tr>
+<td>Object next()</td>
+<td>다음 요소를 읽어온다. next()를 호출하기 전에 hasNext()를 호출해 확인하는것이 안전하다.</td>
+</tr>
+<tr>
+<td>void remove()</td>
+<td>next()로 읽어 온 요소를 삭제. next()호출 한 다음에 remove()를 호출해야 한다.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="1-6-2-Enumeration과-ListIterator"><a href="#1-6-2-Enumeration과-ListIterator" class="headerlink" title="1.6.2 Enumeration과 ListIterator"></a>1.6.2 Enumeration과 ListIterator</h4><ul>
+<li>Enumeration은 컬렉션 프레임웍이 만들어지기 전에 사용하는것 Iterator의 구버전.  Iterator를 사용하자.  </li>
+<li>ListIterator는  Iterator를 상속받아 기능을 추가한 것. 양방향으로 이동이 가능함.<br>ArrayList나 LinkedList와 같이 List인터페이스를 구현한 컬렉션에서만 사용가능  </li>
+</ul>
+<h3 id="1-7-HashSet"><a href="#1-7-HashSet" class="headerlink" title="1.7 HashSet"></a>1.7 HashSet</h3><p>HashSet은 Set인터페이스를 구현한 가장 대표적 컬렉션.<br>중복된 요소를 저장하지 않음. 저장순서를 유지하지 않음.<br>저장순서 유지하려면 LinkedHashSet을 사용하면 됨.  </p>
+<table>
+<thead>
+<tr>
+<th>생성자 또는 메서드</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HashSet()</td>
+<td>HashSet객체를 생성한다.</td>
+</tr>
+<tr>
+<td>HashSet(Collection c)</td>
+<td>주어진 컬렉션을 포함하는 HashSet객체를 생성한다.</td>
+</tr>
+<tr>
+<td>HashSet(int initialCapactiy)</td>
+<td>주어진 값을 초기용량으로 하는 HashSet객체를 생성한다.</td>
+</tr>
+<tr>
+<td>HashSet(int initialCapactiy, float loadFactor)</td>
+<td>초기용량과 load factor를 지정하는 생성자</td>
+</tr>
+<tr>
+<td>boolean add(Object o)</td>
+<td>새로운 객체를 저장한다</td>
+</tr>
+<tr>
+<td>boolean addAll(Collection c)</td>
+<td>주어진 컬렉션에 모든 객체를 추가한다.</td>
+</tr>
+<tr>
+<td>void clear()</td>
+<td>저장된 모든 객체를 삭제한다.</td>
+</tr>
+<tr>
+<td>Object clone()</td>
+<td>HashSEt을 복제하여 반환한다.</td>
+</tr>
+<tr>
+<td>boolean contains(Object o)</td>
+<td>지정된 객체를 포함하고 있는지 알려준다.</td>
+</tr>
+<tr>
+<td>boolean containsAll(Collection  c)</td>
+<td>주어진 컬렉션에 저장된 모든 객체들을 포함하고 있는지 알려준다.</td>
+</tr>
+<tr>
+<td>boolean isEmpty()</td>
+<td>HashSet이 비어있는지 알려준다.</td>
+</tr>
+<tr>
+<td>boolean iterator()</td>
+<td>Iterator 를 반환한다.</td>
+</tr>
+<tr>
+<td>boolean remove(Object o)</td>
+<td>지정된 객체를 HashSet에서 삭제한다.</td>
+</tr>
+<tr>
+<td>boolean removeAll(Collection c)</td>
+<td>주어진컬렉션에 저장된 모든 객체와 동일한 것을 HashSet에서 모두 삭제한다(차집합)</td>
+</tr>
+<tr>
+<td>boolean retainAll(Collection c)</td>
+<td>주어진 컬렉션에 저장된 객체와 동일한 것만 남기고 삭제한다.(교집합)</td>
+</tr>
+<tr>
+<td>int size()</td>
+<td>저장된 객체의 개수를 반환한다.</td>
+</tr>
+<tr>
+<td>Object[] toArray()</td>
+<td>저장된 객체들을 객체배열의 형태로 변환한다.</td>
+</tr>
+<tr>
+<td>Object[] toArray(Object[] a)</td>
+<td>저장된 객체들을 주어진 객체배열 a에 담는다.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="1-8-ThreeSet"><a href="#1-8-ThreeSet" class="headerlink" title="1.8 ThreeSet"></a>1.8 ThreeSet</h3><p>ThreeSet은 이진검색트리라는 자료구조의 형태로 데이터를 저장하는 컬렉션 클래스.<br>정렬, 검색, 범위검색에 뛰어난 성능을 보인다.  </p>
+
         </div>
         
         
@@ -529,107 +862,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-13T03:25:29.692Z">2019-05-13</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/tec/">tec</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    몇 초 읽기 (나에 대하여 36 단어)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/05/13/tec/blog/2019-04-29-blog4/">[JEKYLL과 깃허브로 블로그 만들기] 네비게이션 메뉴 (Navigation)만들기</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="1-data-navigation-yml-파일-만들기"><a href="#1-data-navigation-yml-파일-만들기" class="headerlink" title="1. /_data/navigation.yml 파일 만들기"></a>1. /_data/navigation.yml 파일 만들기</h2><pre><code>main:
-  - title: &quot;TECHNOLOGY&quot;
-    url: /tec/
-  - title: &quot;WORLD-TRIP&quot;
-    url: /trip/
-  - title: &quot;OTHERS&quot;
-    url: /posts/
-</code></pre><p>위의 내용 추가</p>
-<h2 id="2-완성"><a href="#2-완성" class="headerlink" title="2. 완성"></a>2. 완성</h2><p><img src="/assets/images/nav.JPG" alt="캡쳐"></p>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-13T03:25:29.677Z">2019-05-13</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/tec/">tec</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    몇 초 읽기 (나에 대하여 24 단어)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/05/13/tec/blog/2019-04-29-blog5/">[JEKYLL과 깃허브로 블로그 만들기] 검색 메뉴(Search)만들기</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="1-config-yml-파일-수정하기"><a href="#1-config-yml-파일-수정하기" class="headerlink" title="1. /_config.yml 파일 수정하기"></a>1. /_config.yml 파일 수정하기</h2><pre><code>search: true
-</code></pre><p>위의 내용 추가</p>
-<h2 id="2-완성"><a href="#2-완성" class="headerlink" title="2. 완성"></a>2. 완성</h2><p><img src="/assets/images/nav.JPG" alt="캡쳐"></p>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-13T03:25:29.650Z">2019-05-13</time>
+                <time class="level-item has-text-grey" datetime="2019-05-13T03:53:19.209Z">2019-05-13</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/tec/">tec</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
@@ -657,7 +890,7 @@
 <h2 id="2-사용할-템틀릿-정하기"><a href="#2-사용할-템틀릿-정하기" class="headerlink" title="2. 사용할 템틀릿 정하기"></a>2. 사용할 템틀릿 정하기</h2><p>여기서<a href="https://github.com/topics/jekyll-theme" target="_blank" rel="noopener">(jekyll-theme)</a>{: target=”_blank”} 원하는 테마프로젝트를 선택합니다. </p>
 <p>minimal-mistakes 테마를 선택하였습니다.</p>
 <p><img src="/assets/images/chtemplet.JPG" alt="캡쳐"></p>
-<h2 id="3-config-yml-파일-복사하기"><a href="#3-config-yml-파일-복사하기" class="headerlink" title="3. _config.yml 파일 복사하기"></a>3. _config.yml 파일 복사하기</h2><p><code>remote_theme : mmistakes/minimal-mistakes</code> 추가 및 수정하기</p>
+<h2 id="3-config-yml-파일-복사하기"><a href="#3-config-yml-파일-복사하기" class="headerlink" title="3. _config.yml 파일 복사하기"></a>3. _config.yml 파일 복사하기</h2><p><code>remote_theme : mmistakes/minimal-mistakes</code>추가 및 수정하기</p>
 <p><img src="/assets/images/_config.JPG" alt="이미지"></p>
 <h2 id="4-index-html-복사하기"><a href="#4-index-html-복사하기" class="headerlink" title="4.index.html 복사하기"></a>4.index.html 복사하기</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">---layout: home---</span><br></pre></td></tr></table></figure>
 <p>위와 같이 index.html파일을 만듭니다.</p>
@@ -682,7 +915,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-13T03:25:29.624Z">2019-05-13</time>
+                <time class="level-item has-text-grey" datetime="2019-05-13T03:52:37.184Z">2019-05-13</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/tec/">tec</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
@@ -692,7 +925,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    몇 초 읽기 (나에 대하여 33 단어)
+                    몇 초 읽기 (나에 대하여 24 단어)
                 </span>
                 
                 
@@ -701,12 +934,185 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/05/13/tec/blog/2019-04-29-blog2/">[JEKYLL과 깃허브로 블로그 만들기] 포스트(Post) 쓰기</a>
+                <a class="has-link-black-ter" href="/2019/05/13/tec/blog/2019-04-29-blog5/">[JEKYLL과 깃허브로 블로그 만들기] 검색 메뉴(Search)만들기</a>
             
         </h1>
         <div class="content">
-            <h2 id="1-posts-2019-01-01-md파일-생성하기"><a href="#1-posts-2019-01-01-md파일-생성하기" class="headerlink" title="1. /_posts/2019-01-01.md파일 생성하기"></a>1. /_posts/2019-01-01.md파일 생성하기</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">---</span><br><span class="line">title: &quot;테스트 포스팅&quot;</span><br><span class="line">date: 2017-10-20 08:26:28 -0400</span><br><span class="line">categories:</span><br><span class="line">  - test</span><br><span class="line">tags:</span><br><span class="line">  - test</span><br><span class="line">---</span><br><span class="line">## 안녕하세요.</span><br></pre></td></tr></table></figure>
-<h2 id="2-완성"><a href="#2-완성" class="headerlink" title="2. 완성"></a>2. 완성</h2><p><img src="/assets/images/testpost.JPG" alt="캡처"></p>
+            <h2 id="1-config-yml-파일-수정하기"><a href="#1-config-yml-파일-수정하기" class="headerlink" title="1. /_config.yml 파일 수정하기"></a>1. /_config.yml 파일 수정하기</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">search: true</span><br></pre></td></tr></table></figure>
+<p>위의 내용 추가</p>
+<h2 id="2-완성"><a href="#2-완성" class="headerlink" title="2. 완성"></a>2. 완성</h2><p><img src="/assets/images/nav.JPG" alt="캡쳐"></p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-05-13T03:52:22.531Z">2019-05-13</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/tec/">tec</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    몇 초 읽기 (나에 대하여 36 단어)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/05/13/tec/blog/2019-04-29-blog4/">[JEKYLL과 깃허브로 블로그 만들기] 네비게이션 메뉴 (Navigation)만들기</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="1-data-navigation-yml-파일-만들기"><a href="#1-data-navigation-yml-파일-만들기" class="headerlink" title="1. /_data/navigation.yml 파일 만들기"></a>1. /_data/navigation.yml 파일 만들기</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">main:</span><br><span class="line">  - title: &quot;TECHNOLOGY&quot;</span><br><span class="line">    url: /tec/</span><br><span class="line">  - title: &quot;WORLD-TRIP&quot;</span><br><span class="line">    url: /trip/</span><br><span class="line">  - title: &quot;OTHERS&quot;</span><br><span class="line">    url: /posts/</span><br></pre></td></tr></table></figure>
+<p>위의 내용 추가</p>
+<h2 id="2-완성"><a href="#2-완성" class="headerlink" title="2. 완성"></a>2. 완성</h2><p><img src="/assets/images/nav.JPG" alt="캡쳐"></p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-05-13T03:51:42.630Z">2019-05-13</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/tec/">tec</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    1분 읽기 (나에 대하여 126 단어)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/05/13/tec/blog/blog7/">[Hexo와 깃허브로 블로그 만들기] Hexo 테마 적용</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="1-Hexo-테마-고르기"><a href="#1-Hexo-테마-고르기" class="headerlink" title="1. Hexo 테마 고르기"></a>1. Hexo 테마 고르기</h2><p><a href="https://hexo.io/themes/" target="_blank" rel="noopener">Hexo 이쁜 테마 고르러 가기</a></p>
+<h2 id="2-icarus-테마-적용하기"><a href="#2-icarus-테마-적용하기" class="headerlink" title="2. icarus 테마 적용하기"></a>2. icarus 테마 적용하기</h2><p>블로그 프로젝트 경로($ cd ~/blog/) 아래 blog/themes/icarus 폴더를 만들어 git 테마를 clone한다. </p>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="hljs-built_in">clone</span> https://github.com/ppoffice/hexo-theme-icarus.git themes/icarus</span><br></pre></td></tr></table></figure>
+<h2 id="3-blog-themes-icarus-config-yml-피일에서-theme-설정을-icarus로-변경한다"><a href="#3-blog-themes-icarus-config-yml-피일에서-theme-설정을-icarus로-변경한다" class="headerlink" title="3. ~/blog/themes/icarus/_config.yml 피일에서 theme 설정을 icarus로 변경한다."></a>3. ~/blog/themes/icarus/_config.yml 피일에서 theme 설정을 icarus로 변경한다.</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: icarus</span><br></pre></td></tr></table></figure>
+<h2 id="4-hexo-서버-재시작-한다"><a href="#4-hexo-서버-재시작-한다" class="headerlink" title="4. hexo 서버 재시작 한다."></a>4. hexo 서버 재시작 한다.</h2><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
+<p>localhost:4000에서 적용된 테마를 확인한다.  </p>
+<h2 id="5-github에-배포한다"><a href="#5-github에-배포한다" class="headerlink" title="5. github에 배포한다."></a>5. github에 배포한다.</h2><figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo d -g</span><br></pre></td></tr></table></figure>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-05-13T03:50:40.841Z">2019-05-13</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/tec/">tec</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/tec/java/">java</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    3분 읽기 (나에 대하여 480 단어)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/05/13/tec/java/2019-05-03-java5/">[Java의정석] CH7. 객체지향프로그래밍2</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="1-상속"><a href="#1-상속" class="headerlink" title="1. 상속"></a>1. 상속</h2><h3 id="1-1-상속의-정의와-장점"><a href="#1-1-상속의-정의와-장점" class="headerlink" title="1.1 상속의 정의와 장점"></a>1.1 상속의 정의와 장점</h3><p>기존의 클래스를 재사용하여 새로운 클래스를 작성하는것</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Parent</span></span>&#123;&#125;</span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Child</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Parent</span></span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>조상클래스 -  부모클래스, 상위클래스, 기반 클래스</li>
+<li>자손클래스 - 자식 클래스, 하위클래스, 파생된 클래스  </li>
+</ul>
+<ul>
+<li>생성자와 초기화 블럭은 상속되지 않는다. 멤버만 상속된다.</li>
+<li>자손 클래스의 멤버개수는 조상 클래스보다 항상 같거나 많다.    </li>
+</ul>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Tv</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">boolean</span> power;</span><br><span class="line">    <span class="hljs-keyword">int</span> channel;</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">power</span><span class="hljs-params">()</span></span>&#123;power = !power;&#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">channelUp</span><span class="hljs-params">()</span></span>&#123;++chnannel;&#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">channelDown</span><span class="hljs-params">()</span></span>&#123;--channel;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CaptionTv</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Tv</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">boolean</span> caption;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">displayCaption</span><span class="hljs-params">(String text)</span></span>&#123;</span><br><span class="line">        <span class="hljs-keyword">if</span>(caption)&#123;</span><br><span class="line">            system.out.println(text);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="1-2-클래스간의-관계-포함관계"><a href="#1-2-클래스간의-관계-포함관계" class="headerlink" title="1.2 클래스간의 관계 - 포함관계"></a>1.2 클래스간의 관계 - 포함관계</h3><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Circle</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> x;</span><br><span class="line">    <span class="hljs-keyword">int</span> y;</span><br><span class="line">    <span class="hljs-keyword">int</span> r;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>이 클래스를</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Point</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> x; </span><br><span class="line">    <span class="hljs-keyword">int</span> y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Circle</span></span>&#123;</span><br><span class="line">    Point point = <span class="hljs-keyword">new</span> Point();</span><br><span class="line">    <span class="hljs-keyword">int</span> r;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>이렇게 표현할 수 있다.<br>Engine, Door 클래스를 미리 작성 후 아래와 같이 사용 가능.</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">car</span></span>&#123;</span><br><span class="line">    Engine e = <span class="hljs-keyword">new</span> Engine();</span><br><span class="line">    Door[] d = <span class="hljs-keyword">new</span> Door[<span class="hljs-number">4</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="1-3-클래스간-관계-결정하기"><a href="#1-3-클래스간-관계-결정하기" class="headerlink" title="1.3 클래스간 관계 결정하기"></a>1.3 클래스간 관계 결정하기</h3><p>어떨때 상속, 어떨때 포함관계를 맺을까?  </p>
+<ul>
+<li>상속: ~은 ~이다(is-a)</li>
+<li>포함 : ~은 ~을 가지고 있다(has-a)  </li>
+</ul>
+<p>ex) 원은 점(point)이다 (X)<br>    원은 점을 가지고 있다(O)  -&gt; 포함관계<br>    SportCar는 Car이다(0) -&gt; 상속 관계</p>
+<h3 id="1-4-단일-상속"><a href="#1-4-단일-상속" class="headerlink" title="1.4 단일 상속"></a>1.4 단일 상속</h3><p>부모클래스를 두개 이상 상속 받을 수 없다.</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//불가능한 경우</span></span><br><span class="line">calss TVCR extends TV, VCR&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Tv</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">boolean</span> power;</span><br><span class="line">    <span class="hljs-keyword">int</span> channel;</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">power</span><span class="hljs-params">()</span></span>&#123;power = !power;&#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">channelUp</span><span class="hljs-params">()</span></span>&#123;++chnannel;&#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">channelDown</span><span class="hljs-params">()</span></span>&#123;--channel;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">VCR</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">boolean</span> power;</span><br><span class="line">    <span class="hljs-keyword">int</span> counter =<span class="hljs-number">0</span>;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">power</span><span class="hljs-params">()</span></span>&#123;&#125;;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">play</span><span class="hljs-params">()</span></span>&#123;&#125;;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">stop</span><span class="hljs-params">()</span></span>&#123;&#125;;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">rew</span><span class="hljs-params">()</span></span>&#123;&#125;;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">ff</span><span class="hljs-params">()</span></span>&#123;&#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TVCR</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Tv</span></span>&#123;</span><br><span class="line">    VCR vcr = <span class="hljs-keyword">new</span> VCR();</span><br><span class="line">    <span class="hljs-keyword">int</span> counter =vcr.counter;</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">play</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">        vcr.play();</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">stop</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">        vcr.stop();</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">rew</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">        vcr.rew();</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">ff</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">        vcr.ff();</span><br><span class="line">    &#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="1-5-Object클래스-모든-클래스의-조상"><a href="#1-5-Object클래스-모든-클래스의-조상" class="headerlink" title="1.5 Object클래스 -모든 클래스의 조상"></a>1.5 Object클래스 -모든 클래스의 조상</h3><p>Object는 모든 클래스의 조상이다.  </p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Tv</span></span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+<p>이것은 따지고 보면</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Tv</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Object</span></span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+<p>이것임.<br>toString(), equals() 그냥 쓸 수 있는게 Object클래스에 정의 되어있어서 그렇다.</p>
 
         </div>
         
@@ -852,73 +1258,16 @@
         
         <article class="media">
             
-            <a href="/2019/05/13/tec/blog/blog6/" class="media-left">
+            <a href="/2019/05/13/tec/java/2019-05-11-java13/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Hexo와 깃허브로 블로그 만들기] jykell에서 hexo로 블로그 이전하기">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Java의정석] CH11. 컬렉션프레임웍과 유용한 클래스">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:40:36.273Z">2019-05-13</time></div>
-                    <a href="/2019/05/13/tec/blog/blog6/" class="has-link-black-ter is-size-6">[Hexo와 깃허브로 블로그 만들기] jykell에서 hexo로 블로그 이전하기</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/05/13/tec/blog/blog7/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Hexo와 깃허브로 블로그 만들기] Hexo 테마 적용">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:40:36.260Z">2019-05-13</time></div>
-                    <a href="/2019/05/13/tec/blog/blog7/" class="has-link-black-ter is-size-6">[Hexo와 깃허브로 블로그 만들기] Hexo 테마 적용</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/05/13/tec/sql/2019-05-10-sql6/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[SQL] GROUP BY, HAVING절">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:38:47.306Z">2019-05-13</time></div>
-                    <a href="/2019/05/13/tec/sql/2019-05-10-sql6/" class="has-link-black-ter is-size-6">[SQL] GROUP BY, HAVING절</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/sql/">sql</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/05/13/tec/java/2019-05-03-java6/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Java의정석] CH7. 객체지향프로그래밍2">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:36:51.920Z">2019-05-13</time></div>
-                    <a href="/2019/05/13/tec/java/2019-05-03-java6/" class="has-link-black-ter is-size-6">[Java의정석] CH7. 객체지향프로그래밍2</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T04:01:44.663Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/java/2019-05-11-java13/" class="has-link-black-ter is-size-6">[Java의정석] CH11. 컬렉션프레임웍과 유용한 클래스</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/java/">java</a>
                     </p>
@@ -928,16 +1277,73 @@
         
         <article class="media">
             
-            <a href="/2019/05/13/tec/java/2019-05-03-java5/" class="media-left">
+            <a href="/2019/05/13/tec/sql/2019-05-10-sql5/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Java의정석] CH7. 객체지향프로그래밍2">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[SQL] 함수">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:35:24.690Z">2019-05-13</time></div>
-                    <a href="/2019/05/13/tec/java/2019-05-03-java5/" class="has-link-black-ter is-size-6">[Java의정석] CH7. 객체지향프로그래밍2</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:58:30.437Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/sql/2019-05-10-sql5/" class="has-link-black-ter is-size-6">[SQL] 함수</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/sql/">sql</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/13/tec/sql/2019-05-10-sql7/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[SQL] ORDER BY 정렬">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:57:36.684Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/sql/2019-05-10-sql7/" class="has-link-black-ter is-size-6">[SQL] ORDER BY 정렬</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/sql/">sql</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/13/tec/java/2019-05-10-java12/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Java의정석] CH15. 네트워킹(Networking)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:55:12.289Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/java/2019-05-10-java12/" class="has-link-black-ter is-size-6">[Java의정석] CH15. 네트워킹(Networking)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/java/">java</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/13/tec/java/2019-05-11-java14/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Java의정석] CH11. 컬렉션프레임웍과 유용한 클래스">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:54:20.213Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/java/2019-05-11-java14/" class="has-link-black-ter is-size-6">[Java의정석] CH11. 컬렉션프레임웍과 유용한 클래스</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/java/">java</a>
                     </p>
@@ -1219,73 +1625,16 @@
         
         <article class="media">
             
-            <a href="/2019/05/13/tec/blog/blog6/" class="media-left">
+            <a href="/2019/05/13/tec/java/2019-05-11-java13/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Hexo와 깃허브로 블로그 만들기] jykell에서 hexo로 블로그 이전하기">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Java의정석] CH11. 컬렉션프레임웍과 유용한 클래스">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:40:36.273Z">2019-05-13</time></div>
-                    <a href="/2019/05/13/tec/blog/blog6/" class="has-link-black-ter is-size-6">[Hexo와 깃허브로 블로그 만들기] jykell에서 hexo로 블로그 이전하기</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/05/13/tec/blog/blog7/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Hexo와 깃허브로 블로그 만들기] Hexo 테마 적용">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:40:36.260Z">2019-05-13</time></div>
-                    <a href="/2019/05/13/tec/blog/blog7/" class="has-link-black-ter is-size-6">[Hexo와 깃허브로 블로그 만들기] Hexo 테마 적용</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/05/13/tec/sql/2019-05-10-sql6/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[SQL] GROUP BY, HAVING절">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:38:47.306Z">2019-05-13</time></div>
-                    <a href="/2019/05/13/tec/sql/2019-05-10-sql6/" class="has-link-black-ter is-size-6">[SQL] GROUP BY, HAVING절</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/sql/">sql</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/05/13/tec/java/2019-05-03-java6/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Java의정석] CH7. 객체지향프로그래밍2">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:36:51.920Z">2019-05-13</time></div>
-                    <a href="/2019/05/13/tec/java/2019-05-03-java6/" class="has-link-black-ter is-size-6">[Java의정석] CH7. 객체지향프로그래밍2</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T04:01:44.663Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/java/2019-05-11-java13/" class="has-link-black-ter is-size-6">[Java의정석] CH11. 컬렉션프레임웍과 유용한 클래스</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/java/">java</a>
                     </p>
@@ -1295,16 +1644,73 @@
         
         <article class="media">
             
-            <a href="/2019/05/13/tec/java/2019-05-03-java5/" class="media-left">
+            <a href="/2019/05/13/tec/sql/2019-05-10-sql5/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Java의정석] CH7. 객체지향프로그래밍2">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[SQL] 함수">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:35:24.690Z">2019-05-13</time></div>
-                    <a href="/2019/05/13/tec/java/2019-05-03-java5/" class="has-link-black-ter is-size-6">[Java의정석] CH7. 객체지향프로그래밍2</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:58:30.437Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/sql/2019-05-10-sql5/" class="has-link-black-ter is-size-6">[SQL] 함수</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/sql/">sql</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/13/tec/sql/2019-05-10-sql7/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[SQL] ORDER BY 정렬">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:57:36.684Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/sql/2019-05-10-sql7/" class="has-link-black-ter is-size-6">[SQL] ORDER BY 정렬</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/sql/">sql</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/13/tec/java/2019-05-10-java12/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Java의정석] CH15. 네트워킹(Networking)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:55:12.289Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/java/2019-05-10-java12/" class="has-link-black-ter is-size-6">[Java의정석] CH15. 네트워킹(Networking)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/java/">java</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/13/tec/java/2019-05-11-java14/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Java의정석] CH11. 컬렉션프레임웍과 유용한 클래스">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:54:20.213Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/java/2019-05-11-java14/" class="has-link-black-ter is-size-6">[Java의정석] CH11. 컬렉션프레임웍과 유용한 클래스</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/java/">java</a>
                     </p>

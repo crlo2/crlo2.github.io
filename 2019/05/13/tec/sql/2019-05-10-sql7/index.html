@@ -2,24 +2,24 @@
 <html lang="ko">
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-<title>[Java의정석] CH11. 컬렉션프레임웍과 유용한 클래스 - EUNI</title>
+<title>[SQL] ORDER BY 정렬 - EUNI</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="1. 컬렉션 프레임웍(Collection Framework)데이터군을 저장하는 클래스들을 표준화 한 설계.   1.1 컬렉션프레임웍의 핵심 인터페이스 - List, Set, Map   인터페이스 특징     List 순서가 있는 데이터의 집합. 데이터의 중복을 허용한다. 예) 대기자 명단  구현클래스: ArrayList, LinkedList, Stack,">
-<meta name="keywords" content="java">
+    <meta name="description" content="1. ORDER BY 정렬123456SELECT 칼럼명 [ALIAS명]FROM 테이블명[WHERE 조건식][GROUP BY 칼럼또는 표현식][HAVING 그룹조건식][ORDER BY 칼럼이나 표현식 [ASC 또는 DESC]; 2.SELECT 문장실행 순서5)SELECT1)FROM2)WHERE3)GROUP BY4)HAVING6)ORDER BY     1234">
+<meta name="keywords" content="sql">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[Java의정석] CH11. 컬렉션프레임웍과 유용한 클래스">
-<meta property="og:url" content="https://crlo2.github.io/2019/05/12/tec/java/2019-05-11-java13/index.html">
+<meta property="og:title" content="[SQL] ORDER BY 정렬">
+<meta property="og:url" content="https://crlo2.github.io/2019/05/13/tec/sql/2019-05-10-sql7/index.html">
 <meta property="og:site_name" content="EUNI">
-<meta property="og:description" content="1. 컬렉션 프레임웍(Collection Framework)데이터군을 저장하는 클래스들을 표준화 한 설계.   1.1 컬렉션프레임웍의 핵심 인터페이스 - List, Set, Map   인터페이스 특징     List 순서가 있는 데이터의 집합. 데이터의 중복을 허용한다. 예) 대기자 명단  구현클래스: ArrayList, LinkedList, Stack,">
+<meta property="og:description" content="1. ORDER BY 정렬123456SELECT 칼럼명 [ALIAS명]FROM 테이블명[WHERE 조건식][GROUP BY 칼럼또는 표현식][HAVING 그룹조건식][ORDER BY 칼럼이나 표현식 [ASC 또는 DESC]; 2.SELECT 문장실행 순서5)SELECT1)FROM2)WHERE3)GROUP BY4)HAVING6)ORDER BY     1234">
 <meta property="og:locale" content="ko">
 <meta property="og:image" content="https://crlo2.github.io/images/og_image.png">
-<meta property="og:updated_time" content="2019-05-11T06:24:14.563Z">
+<meta property="og:updated_time" content="2019-05-13T03:57:36.684Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="[Java의정석] CH11. 컬렉션프레임웍과 유용한 클래스">
-<meta name="twitter:description" content="1. 컬렉션 프레임웍(Collection Framework)데이터군을 저장하는 클래스들을 표준화 한 설계.   1.1 컬렉션프레임웍의 핵심 인터페이스 - List, Set, Map   인터페이스 특징     List 순서가 있는 데이터의 집합. 데이터의 중복을 허용한다. 예) 대기자 명단  구현클래스: ArrayList, LinkedList, Stack,">
+<meta name="twitter:title" content="[SQL] ORDER BY 정렬">
+<meta name="twitter:description" content="1. ORDER BY 정렬123456SELECT 칼럼명 [ALIAS명]FROM 테이블명[WHERE 조건식][GROUP BY 칼럼또는 표현식][HAVING 그룹조건식][ORDER BY 칼럼이나 표현식 [ASC 또는 DESC]; 2.SELECT 문장실행 순서5)SELECT1)FROM2)WHERE3)GROUP BY4)HAVING6)ORDER BY     1234">
 <meta name="twitter:image" content="https://crlo2.github.io/images/og_image.png">
 
 
@@ -94,7 +94,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.png" alt="[Java의정석] CH11. 컬렉션프레임웍과 유용한 클래스" height="28">
+                <img src="/images/logo.png" alt="[SQL] ORDER BY 정렬" height="28">
             
             </a>
         </div>
@@ -143,17 +143,17 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-12T04:53:40.505Z">2019-05-12</time>
+                <time class="level-item has-text-grey" datetime="2019-05-13T03:57:36.684Z">2019-05-13</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/tec/">tec</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/tec/java/">java</a>
+                <a class="has-link-grey -link" href="/categories/tec/">tec</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/tec/sql/">sql</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    14분 읽기 (나에 대하여 2082 단어)
+                    1분 읽기 (나에 대하여 152 단어)
                 </span>
                 
                 
@@ -162,300 +162,14 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                [Java의정석] CH11. 컬렉션프레임웍과 유용한 클래스
+                [SQL] ORDER BY 정렬
             
         </h1>
         <div class="content">
-            <h2 id="1-컬렉션-프레임웍-Collection-Framework"><a href="#1-컬렉션-프레임웍-Collection-Framework" class="headerlink" title="1. 컬렉션 프레임웍(Collection Framework)"></a>1. 컬렉션 프레임웍(Collection Framework)</h2><p>데이터군을 저장하는 클래스들을 표준화 한 설계.  </p>
-<h3 id="1-1-컬렉션프레임웍의-핵심-인터페이스-List-Set-Map"><a href="#1-1-컬렉션프레임웍의-핵심-인터페이스-List-Set-Map" class="headerlink" title="1.1 컬렉션프레임웍의 핵심 인터페이스 - List, Set, Map"></a>1.1 컬렉션프레임웍의 핵심 인터페이스 - List, Set, Map</h3><table>
-<thead>
-<tr>
-<th>인터페이스</th>
-<th>특징</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>List</td>
-<td>순서가 있는 데이터의 집합. 데이터의 중복을 허용한다.<br> 예) 대기자 명단 <br> 구현클래스: ArrayList, LinkedList, Stack, Vector 등</td>
-</tr>
-<tr>
-<td>Set</td>
-<td>순서를 유지하지 않는 데이터의 집합. 데이터의 중복을 허용하지 않는다. <br>예) 양의 정수집합, 소수의 집합 <br> 구현클래스 : HashSet, ThreeSet 등</td>
-</tr>
-<tr>
-<td>Map</td>
-<td>키(key)와 값(value)의 쌍(pair)으로 이루어진 데이터의 집합 <br> 순서는 유지되지 않으며, 키는 중복을 허용하지 않고 값은 중복을 허용한다.<br>예) 우편번호, 지역번호(전화번호)<br>구현클래스: HashMap, ThreeMap, Hashtable, Properties 등</td>
-</tr>
-</tbody>
-</table>
-<h4 id="1-1-1-Collection-인터페이스"><a href="#1-1-1-Collection-인터페이스" class="headerlink" title="1.1.1 Collection 인터페이스"></a>1.1.1 Collection 인터페이스</h4><table>
-<thead>
-<tr>
-<th>메서드</th>
-<th>설명</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>boolean add(Object o)<br>boolean addAll(Collection o)</td>
-<td>지정된 객체 또는 컬렉션이 객체들을 Collection 에 추가한다.</td>
-</tr>
-<tr>
-<td>void clear()</td>
-<td>Collection 의 객체를 모두 삭제한다.</td>
-</tr>
-<tr>
-<td>boolean contains(Object o)<br>boolean containsAll(Collection c)</td>
-<td>지정된 객체 또는 Collection의 객체들이 Collection에 포함되어 있는지 확인한다.</td>
-</tr>
-<tr>
-<td>boolean equals(Object o)</td>
-<td>동일한 Collection인지 비교한다.</td>
-</tr>
-<tr>
-<td>int hashCode()</td>
-<td>Collection의 hash code를 반환한다.</td>
-</tr>
-<tr>
-<td>boolean isEmpty()</td>
-<td>Collection이 비어있는지 확인한다.</td>
-</tr>
-<tr>
-<td>Iterator iterator()</td>
-<td>Collection의 Iterator를 얻어서 반환한다</td>
-</tr>
-<tr>
-<td>boolean remove(Object o)</td>
-<td>지정된 객체를 삭제한다</td>
-</tr>
-<tr>
-<td>boolean removeAll(Collection c)</td>
-<td>지정된 Collection에 포함된 객체들을 삭제한다.</td>
-</tr>
-<tr>
-<td>boolean retainAll(Collection c)</td>
-<td>지정된 Collection에 포함된 객체만을 남기고 다른 객체들은 Collection에서 삭제한다. 이 작업으로 인해 Collection에 변화가 있으면 true없으면  false를 반환한다.</td>
-</tr>
-<tr>
-<td>int size()</td>
-<td>Collection에 저장된 객체의 개수를 반환한다.</td>
-</tr>
-<tr>
-<td>Object[] toArray()</td>
-<td>Collection에 저장된 객체를 객체배열(Object[])로 반환한다.</td>
-</tr>
-<tr>
-<td>Object[] toArray(Object[] a)</td>
-<td>지정된 배열에 Collectiom의 객체를 저장해서 반환한다.</td>
-</tr>
-</tbody>
-</table>
-<h4 id="1-1-2-List인터페이스"><a href="#1-1-2-List인터페이스" class="headerlink" title="1.1.2 List인터페이스"></a>1.1.2 List인터페이스</h4><p>| 메서드 | 설명 |<br>| void add(int index, Object element)<br> addAll(int index, Collection c) | 지정된 위치에 객체 똔ㄴ 컬렉션에 포함된 객체들을 추가한다. |<br>| Object get(int index) | 지정된 위치에 있는 객체를 반환한다. |<br>| int indexOf(Object o) | 지정된 객체의 위치를 반환한다.<br>(List의 첫번째 요소부터 순방향으로 찾는다.) |<br>| int lastIndexOf(Object o) | 지정된 객체의 위치를 반환한다. <br>(List의 마지막 요소부터 역방향으로 찾는다.) |<br>| ListIterator listIterator() <br> ListIterator listIterator(int index) | List의 객체에 접근할 수 있는 ListIterator를 반환한다. |<br>| Object remove(int index) | 지정된 위치에 있는 객체를 삭제하고 삭제된 객체를 반환한다. |<br>| Object set(int index, Object element) | 지졷왼 위치에 객체를 저장한다. |<br>| List subList(int fromIndex, int toIndex) |  지정된 범위에 있는 객체를 반환한다. |   </p>
-<h4 id="1-1-3-Set인터페이스"><a href="#1-1-3-Set인터페이스" class="headerlink" title="1.1.3 Set인터페이스"></a>1.1.3 Set인터페이스</h4><p>중복을 허용하지 않고 저장순서가 유지되지 않는 컬렉션 클래스를 구현하는데 사용됨. HashSet, ThreeSet등이 있음.   </p>
-<h4 id="1-1-4-Map인터페이스"><a href="#1-1-4-Map인터페이스" class="headerlink" title="1.1.4 Map인터페이스"></a>1.1.4 Map인터페이스</h4><table>
-<thead>
-<tr>
-<th>메서드</th>
-<th>설명</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>void clear()</td>
-<td>Map의모든 객체를 삭제한다</td>
-</tr>
-<tr>
-<td>boolean containsKey(Object Key)</td>
-<td>지정된 key 객체와 일치하는 Map의 key 객체가 있는지 확인한다.</td>
-</tr>
-<tr>
-<td>boolean containsValue()</td>
-<td>지정된 value객체와 일치하는 Map의 value객체가 있는지 확인한다.</td>
-</tr>
-<tr>
-<td>set entrySet()</td>
-<td>Map에 저장되어있는 key-value쌍을 Map.Entry타입의 객체로 저장한 Set으로 반환한다.</td>
-</tr>
-<tr>
-<td>boolean equals(Object o)</td>
-<td>동일한 Map인지 비교한다</td>
-</tr>
-<tr>
-<td>Object get(Object key)</td>
-<td>지정한 key 객체에 대응하는 value 객체를 찾아서 반환한다.</td>
-</tr>
-<tr>
-<td>int hashCode()</td>
-<td>해시코드를 반환한다.</td>
-</tr>
-<tr>
-<td>boolean isEmpty()</td>
-<td>Map이 비어있는지 확인한다.</td>
-</tr>
-<tr>
-<td>Set keySet()</td>
-<td>Map에 저장된 모든 key 객체를 반환한다.</td>
-</tr>
-<tr>
-<td>Object put(Object key, Object value</td>
-<td>Map에 value객체를 key객체에 연결하여 저장한다.</td>
-</tr>
-<tr>
-<td>void putAll(Map t)</td>
-<td>지정한 Map의 모든 key-value쌍을 추가한다.</td>
-</tr>
-<tr>
-<td>Object remove(Object key)</td>
-<td>지정한 key객체와 일치하는 key-value 객체를 삭제한다</td>
-</tr>
-<tr>
-<td>int size()</td>
-<td>Map에 저장된 key-value쌍의 개수를 반환한다.</td>
-</tr>
-<tr>
-<td>Collection values()</td>
-<td>Map에 저장된 모든 value객체를 반환한다.</td>
-</tr>
-</tbody>
-</table>
-<h4 id="1-1-5-Map-Entry-인터페이스"><a href="#1-1-5-Map-Entry-인터페이스" class="headerlink" title="1.1.5 Map.Entry 인터페이스"></a>1.1.5 Map.Entry 인터페이스</h4><h3 id="1-2-동기화-Synchronization"><a href="#1-2-동기화-Synchronization" class="headerlink" title="1.2 동기화(Synchronization)"></a>1.2 동기화(Synchronization)</h3><p>Collections클래스에 아래와 같은 동기화 메서드 제공함. 필요할때 사용가능.  </p>
-<pre><code class="java"><span class="function"><span class="keyword">static</span> Collection <span class="title">synchronizedCollection</span><span class="params">(Collection c)</span></span>
-<span class="function"><span class="keyword">static</span> List <span class="title">synchronizedList</span><span class="params">(List list)</span></span>
-<span class="function"><span class="keyword">static</span> Map <span class="title">synchronizedMap</span> <span class="params">(Map m)</span></span>
-<span class="function"><span class="keyword">static</span> Set <span class="title">synchronizedSet</span><span class="params">(Set s)</span></span>
-<span class="function"><span class="keyword">static</span> SortedMap <span class="title">synchronizedSortedMap</span><span class="params">(SortedMap m)</span></span>
-<span class="function"><span class="keyword">static</span> SortedSet <span class="title">synchronizedSortedSet</span><span class="params">(SortedSet s)</span></span>
-</code></pre>
-<p>위 메서드를 아래와 같이 사용가능함.  </p>
-<pre><code class="java">List list = Collections.synchronizedList(<span class="function">New <span class="title">ArrayList</span><span class="params">(...)</span>)</span>;
-</code></pre>
-<h3 id="1-3-Vector와-ArrayList"><a href="#1-3-Vector와-ArrayList" class="headerlink" title="1.3 Vector와 ArrayList"></a>1.3 Vector와 ArrayList</h3><table>
-<thead>
-<tr>
-<th>공통점</th>
-<th>차이점</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>- List인터페이스를 구현한다.<br>저장순서가 유지되고 중복을 허용한다.<br>- 데이터의 저장공간으로 배열을 사용한다.</td>
-<td>- Vector는 멀티쓰레드에 대한 동기화가 되어있으나 ArrayList는 그렇지 않다.</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>Deep Copy vs Shallow Copy  </p>
-<blockquote>
-<p>Shallow : 단순히 참조만 복사하는것, 원본 객체에 영향을 받는다.<br>Deep : 원본과 같은 데이터를 저장하고 있는 새로운 객체나 배열을 생성하는것. 원본 객체에 영향을 받지 않음  </p>
-</blockquote>
-</blockquote>
-<h3 id="1-4-LinkedList"><a href="#1-4-LinkedList" class="headerlink" title="1.4 LinkedList"></a>1.4 LinkedList</h3><p>배열의 단점</p>
-<ol>
-<li>크기를 변경할 수 없다.</li>
-<li>비순차적인 데이터의 추가 또는 삭제에 시간이 많이 걸린다.  </li>
-</ol>
-<p>LinkedList는 불연속적으로 존재하는 데이터를 서로 연결한것.<br>링크드리스트의 각 요소(node)들은 자신과 연결된 다음 요소에 대한 참조(주소값)과 데이터로 구성됨.  </p>
-<pre><code class="java"><span class="class"><span class="keyword">class</span> <span class="title">Node</span></span>{
-    Node next; <span class="comment">// 다음요소의 주소를 저장</span>
-    Object obj; <span class="comment">// 데이터를 저장</span>
-}
-</code></pre>
-<p>이동방향이 단방향이어서 다음 요소에 대한 접근은 쉽지만 이전요소에 대한 접근은 어렵다.<br>이 단점을 보완한것이 더블링크드리스트(이중 연렬리스트)<br>링크드리스트에 참조변수를 하나 추가해서 이전 요소에 대한 참조가 가능하게 한것.  </p>
-<pre><code class="java"><span class="class"><span class="keyword">class</span> <span class="title">Node</span></span>{
-    Node next; <span class="comment">//다음 요소의 주소를 저장</span>
-    Node previous;  <span class="comment">//이전 요소의 주소를 저장</span>
-    Object obj;  <span class="comment">// 데이터를 저장</span>
-}
-</code></pre>
-<p>더블써큘러링크드 리스트두 있음.  </p>
-<ol>
-<li>순차적으로 추가/삭제하는 경우에는 ArrayList가 LinkedList보다 빠르다.</li>
-<li>중간데이터를 추가/삭제하는 경우에는 LinkedList 가 ArrayList보다 빠르다.  </li>
-</ol>
-<p>데이터의 개수가 변하지 않는 경우는 ArrayList, 데이터 개수의 변경이 잦다면 LinkedList를 사용하는것이 낫다.  </p>
-<p>두가지 혼합 방법 : 처음작업전 데이터는 ArrayList에 저장, 작업할때는 LinkenList로 옮겨서 사용  </p>
-<pre><code class="java">ArrayList al = <span class="keyword">new</span> ArrayList(<span class="number">1000000</span>);
-<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">1000000</span>; i++) {
-    al.add(i+<span class="string">""</span>);
-}
-
-LinkedList ll = <span class="keyword">new</span> LinkedList(al);
-<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">1000</span>; i++) {
-    al.add(<span class="number">500</span>, <span class="string">"X"</span>);
-}
-</code></pre>
-<h3 id="1-5-Stack과-Queue"><a href="#1-5-Stack과-Queue" class="headerlink" title="1.5 Stack과 Queue"></a>1.5 Stack과 Queue</h3><ul>
-<li>Stack은 마지막에 저장된 데이터를 가장 먼저 꺼냄 LIFO</li>
-<li>Queue는 처음에 저장한 데이터를 가장 먼저 꺼냄 FIFO  </li>
-</ul>
-<p>Queue는 ArrayList보다 LinkedList로 구현하는것이 더 적합  </p>
-<p><strong>Stack</strong>    </p>
-<table>
-<thead>
-<tr>
-<th>메서드</th>
-<th>설명</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>boolean empty()</td>
-<td>Stack이 비어있는지 알려준다</td>
-</tr>
-<tr>
-<td>Object peek()</td>
-<td>Stack의 맨 위에 저장된 객체를 반환한다. 꺼내지는 않는다. 비어있으면 null을 반환한다.</td>
-</tr>
-<tr>
-<td>Object pop()</td>
-<td>Stack의 맨 위에 저장된 객체를 꺼낸다.</td>
-</tr>
-<tr>
-<td>Object push(Object item)</td>
-<td>Stack에 객체를 저장한다.</td>
-</tr>
-<tr>
-<td>int search(Object o)</td>
-<td>Stack에서 주어진 객체를 찾아서 그 위치를 반환한다.1부터 시작함</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Queue</strong>    </p>
-<table>
-<thead>
-<tr>
-<th>메서드</th>
-<th>설명</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Object element()</td>
-<td>삭제없이 저장된 요소를 읽어온다. peek와 다른점은 queue가 비었을때 Exception을 발생시킴</td>
-</tr>
-<tr>
-<td>boolean offer(Object o)</td>
-<td>Queue에 객체를 저장한다. 성공하면 true, 실패하면 false를 반환한다.</td>
-</tr>
-<tr>
-<td>Object peek()</td>
-<td>삭제없이 읽어온다. Queue가 비었을때는 null을 반환한다.</td>
-</tr>
-<tr>
-<td>Object pool()</td>
-<td>Queue에서 꺼내온다. 비어있을때는 null을 반환한다.</td>
-</tr>
-<tr>
-<td>Object remove()</td>
-<td>Queue에서 꺼내온다. 비어있으면 에외를 발생시킨다.</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>스택의 활용 예 : 수식계산. 수식괄호검사, 워드프로세서의 undo/redo, 웹브라우저 앞으로 뒤로  </li>
-<li>큐의 활용 예 : 최근사용문서, 인쇄작업대기목록, 버퍼</li>
-</ul>
+            <h2 id="1-ORDER-BY-정렬"><a href="#1-ORDER-BY-정렬" class="headerlink" title="1. ORDER BY 정렬"></a>1. ORDER BY 정렬</h2><figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">SELECT</span> 칼럼명 [<span class="hljs-keyword">ALIAS</span>명]</span><br><span class="line"><span class="hljs-keyword">FROM</span> 테이블명</span><br><span class="line">[<span class="hljs-keyword">WHERE</span> 조건식]</span><br><span class="line">[<span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span> 칼럼또는 표현식]</span><br><span class="line">[<span class="hljs-keyword">HAVING</span> 그룹조건식]</span><br><span class="line">[<span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> 칼럼이나 표현식 [<span class="hljs-keyword">ASC</span> 또는 <span class="hljs-keyword">DESC</span>];</span><br></pre></td></tr></table></figure>
+<h2 id="2-SELECT-문장실행-순서"><a href="#2-SELECT-문장실행-순서" class="headerlink" title="2.SELECT 문장실행 순서"></a>2.SELECT 문장실행 순서</h2><p>5)SELECT<br>1)FROM<br>2)WHERE<br>3)GROUP BY<br>4)HAVING<br>6)ORDER BY    </p>
+<figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">SELECT</span> DNAME, LOC, DEPTNO</span><br><span class="line"><span class="hljs-keyword">FROM</span> DEPT</span><br><span class="line"><span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> <span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span> <span class="hljs-keyword">DESC</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">SELECT</span> JOB <span class="hljs-keyword">FROM</span> EMP</span><br><span class="line"><span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span> JOB</span><br><span class="line"><span class="hljs-keyword">HAVING</span> <span class="hljs-keyword">COUNT</span>(*)&gt;<span class="hljs-number">0</span></span><br><span class="line"><span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> <span class="hljs-keyword">MAX</span>(EMPNO), <span class="hljs-keyword">MAX</span>(MGR), <span class="hljs-keyword">SUM</span>(SAL), <span class="hljs-keyword">COUNT</span>(DEPTNO), <span class="hljs-keyword">MAX</span>(HIREDATE);</span><br></pre></td></tr></table></figure>
+<h2 id="3-TOP-N-쿼리"><a href="#3-TOP-N-쿼리" class="headerlink" title="3. TOP N 쿼리"></a>3. TOP N 쿼리</h2><h3 id="ROWNUM"><a href="#ROWNUM" class="headerlink" title="ROWNUM"></a>ROWNUM</h3><figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">--ORDER BY가 제일 늦게 실행되기 때문에 원하는 값이 안 나옴</span></span><br><span class="line"><span class="hljs-keyword">SELECT</span> ENAME, SAL <span class="hljs-keyword">FROM</span> EMP</span><br><span class="line"><span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">ROWNUM</span> &lt;<span class="hljs-number">4</span></span><br><span class="line"><span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> SAL;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">--2중쿼리 이용</span></span><br><span class="line"><span class="hljs-keyword">SELECT</span> ENAME, SAL</span><br><span class="line"><span class="hljs-keyword">FROM</span> (<span class="hljs-keyword">SELECT</span> ENAME, SAL <span class="hljs-keyword">FROM</span> EMP</span><br><span class="line">      <span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> SAL <span class="hljs-keyword">DESC</span>)</span><br><span class="line"><span class="hljs-keyword">WHERE</span> <span class="hljs-keyword">ROWNUM</span>&lt;<span class="hljs-number">4</span>;</span><br></pre></td></tr></table></figure>
 
         </div>
         
@@ -463,7 +177,7 @@ LinkedList ll = <span class="keyword">new</span> LinkedList(al);
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/java/">java</a>
+                    <a class="has-link-grey -link" href="/tags/sql/">sql</a>
                 </div>
             </div>
         </div>
@@ -481,12 +195,19 @@ LinkedList ll = <span class="keyword">new</span> LinkedList(al);
     <div class="level post-navigation is-flex-wrap is-mobile">
         
         <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/05/12/tec/sql/2019-05-10-sql1/">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/05/13/tec/sql/2019-05-10-sql5/">
                 <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">[SQL] DDL(Data Definiation Language)</span>
+                <span class="level-item">[SQL] 함수</span>
             </a>
         </div>
         
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/05/13/tec/java/2019-05-10-java12/">
+                <span class="level-item">[Java의정석] CH15. 네트워킹(Networking)</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
         
     </div>
 </div>
@@ -499,8 +220,8 @@ LinkedList ll = <span class="keyword">new</span> LinkedList(al);
         
 <script>
     var disqus_config = function () {
-        this.page.url = 'https://crlo2.github.io/2019/05/12/tec/java/2019-05-11-java13/';
-        this.page.identifier = '2019/05/12/tec/java/2019-05-11-java13/';
+        this.page.url = 'https://crlo2.github.io/2019/05/13/tec/sql/2019-05-10-sql7/';
+        this.page.identifier = '2019/05/13/tec/sql/2019-05-10-sql7/';
     };
     (function() {
         var d = document, s = d.createElement('script');  
@@ -532,49 +253,21 @@ LinkedList ll = <span class="keyword">new</span> LinkedList(al);
                 카탈로그
             </h3>
             <ul class="menu-list"><li>
-        <a class="is-flex" href="#1-컬렉션-프레임웍-Collection-Framework">
+        <a class="is-flex" href="#1-ORDER-BY-정렬">
         <span class="has-mr-6">1</span>
-        <span>1. 컬렉션 프레임웍(Collection Framework)</span>
+        <span>1. ORDER BY 정렬</span>
+        </a></li><li>
+        <a class="is-flex" href="#2-SELECT-문장실행-순서">
+        <span class="has-mr-6">2</span>
+        <span>2.SELECT 문장실행 순서</span>
+        </a></li><li>
+        <a class="is-flex" href="#3-TOP-N-쿼리">
+        <span class="has-mr-6">3</span>
+        <span>3. TOP N 쿼리</span>
         </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#1-1-컬렉션프레임웍의-핵심-인터페이스-List-Set-Map">
-        <span class="has-mr-6">1.1</span>
-        <span>1.1 컬렉션프레임웍의 핵심 인터페이스 - List, Set, Map</span>
-        </a><ul class="menu-list"><li>
-        <a class="is-flex" href="#1-1-1-Collection-인터페이스">
-        <span class="has-mr-6">1.1.1</span>
-        <span>1.1.1 Collection 인터페이스</span>
-        </a></li><li>
-        <a class="is-flex" href="#1-1-2-List인터페이스">
-        <span class="has-mr-6">1.1.2</span>
-        <span>1.1.2 List인터페이스</span>
-        </a></li><li>
-        <a class="is-flex" href="#1-1-3-Set인터페이스">
-        <span class="has-mr-6">1.1.3</span>
-        <span>1.1.3 Set인터페이스</span>
-        </a></li><li>
-        <a class="is-flex" href="#1-1-4-Map인터페이스">
-        <span class="has-mr-6">1.1.4</span>
-        <span>1.1.4 Map인터페이스</span>
-        </a></li><li>
-        <a class="is-flex" href="#1-1-5-Map-Entry-인터페이스">
-        <span class="has-mr-6">1.1.5</span>
-        <span>1.1.5 Map.Entry 인터페이스</span>
-        </a></li></ul></li><li>
-        <a class="is-flex" href="#1-2-동기화-Synchronization">
-        <span class="has-mr-6">1.2</span>
-        <span>1.2 동기화(Synchronization)</span>
-        </a></li><li>
-        <a class="is-flex" href="#1-3-Vector와-ArrayList">
-        <span class="has-mr-6">1.3</span>
-        <span>1.3 Vector와 ArrayList</span>
-        </a></li><li>
-        <a class="is-flex" href="#1-4-LinkedList">
-        <span class="has-mr-6">1.4</span>
-        <span>1.4 LinkedList</span>
-        </a></li><li>
-        <a class="is-flex" href="#1-5-Stack과-Queue">
-        <span class="has-mr-6">1.5</span>
-        <span>1.5 Stack과 Queue</span>
+        <a class="is-flex" href="#ROWNUM">
+        <span class="has-mr-6">3.1</span>
+        <span>ROWNUM</span>
         </a></li></ul></li></ul>
         </div>
     </div>
@@ -678,73 +371,16 @@ LinkedList ll = <span class="keyword">new</span> LinkedList(al);
         
         <article class="media">
             
-            <a href="/2019/05/13/tec/blog/blog6/" class="media-left">
+            <a href="/2019/05/13/tec/java/2019-05-11-java13/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Hexo와 깃허브로 블로그 만들기] jykell에서 hexo로 블로그 이전하기">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Java의정석] CH11. 컬렉션프레임웍과 유용한 클래스">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:40:36.273Z">2019-05-13</time></div>
-                    <a href="/2019/05/13/tec/blog/blog6/" class="has-link-black-ter is-size-6">[Hexo와 깃허브로 블로그 만들기] jykell에서 hexo로 블로그 이전하기</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/05/13/tec/blog/blog7/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Hexo와 깃허브로 블로그 만들기] Hexo 테마 적용">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:40:36.260Z">2019-05-13</time></div>
-                    <a href="/2019/05/13/tec/blog/blog7/" class="has-link-black-ter is-size-6">[Hexo와 깃허브로 블로그 만들기] Hexo 테마 적용</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/05/13/tec/sql/2019-05-10-sql6/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[SQL] GROUP BY, HAVING절">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:38:47.306Z">2019-05-13</time></div>
-                    <a href="/2019/05/13/tec/sql/2019-05-10-sql6/" class="has-link-black-ter is-size-6">[SQL] GROUP BY, HAVING절</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/sql/">sql</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/05/13/tec/java/2019-05-03-java6/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Java의정석] CH7. 객체지향프로그래밍2">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:36:51.920Z">2019-05-13</time></div>
-                    <a href="/2019/05/13/tec/java/2019-05-03-java6/" class="has-link-black-ter is-size-6">[Java의정석] CH7. 객체지향프로그래밍2</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T04:01:44.663Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/java/2019-05-11-java13/" class="has-link-black-ter is-size-6">[Java의정석] CH11. 컬렉션프레임웍과 유용한 클래스</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/java/">java</a>
                     </p>
@@ -754,16 +390,73 @@ LinkedList ll = <span class="keyword">new</span> LinkedList(al);
         
         <article class="media">
             
-            <a href="/2019/05/13/tec/java/2019-05-03-java5/" class="media-left">
+            <a href="/2019/05/13/tec/sql/2019-05-10-sql5/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Java의정석] CH7. 객체지향프로그래밍2">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[SQL] 함수">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:35:24.690Z">2019-05-13</time></div>
-                    <a href="/2019/05/13/tec/java/2019-05-03-java5/" class="has-link-black-ter is-size-6">[Java의정석] CH7. 객체지향프로그래밍2</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:58:30.437Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/sql/2019-05-10-sql5/" class="has-link-black-ter is-size-6">[SQL] 함수</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/sql/">sql</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/13/tec/sql/2019-05-10-sql7/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[SQL] ORDER BY 정렬">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:57:36.684Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/sql/2019-05-10-sql7/" class="has-link-black-ter is-size-6">[SQL] ORDER BY 정렬</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/sql/">sql</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/13/tec/java/2019-05-10-java12/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Java의정석] CH15. 네트워킹(Networking)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:55:12.289Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/java/2019-05-10-java12/" class="has-link-black-ter is-size-6">[Java의정석] CH15. 네트워킹(Networking)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/java/">java</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/13/tec/java/2019-05-11-java14/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Java의정석] CH11. 컬렉션프레임웍과 유용한 클래스">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:54:20.213Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/java/2019-05-11-java14/" class="has-link-black-ter is-size-6">[Java의정석] CH11. 컬렉션프레임웍과 유용한 클래스</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/java/">java</a>
                     </p>
@@ -1045,73 +738,16 @@ LinkedList ll = <span class="keyword">new</span> LinkedList(al);
         
         <article class="media">
             
-            <a href="/2019/05/13/tec/blog/blog6/" class="media-left">
+            <a href="/2019/05/13/tec/java/2019-05-11-java13/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Hexo와 깃허브로 블로그 만들기] jykell에서 hexo로 블로그 이전하기">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Java의정석] CH11. 컬렉션프레임웍과 유용한 클래스">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:40:36.273Z">2019-05-13</time></div>
-                    <a href="/2019/05/13/tec/blog/blog6/" class="has-link-black-ter is-size-6">[Hexo와 깃허브로 블로그 만들기] jykell에서 hexo로 블로그 이전하기</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/05/13/tec/blog/blog7/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Hexo와 깃허브로 블로그 만들기] Hexo 테마 적용">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:40:36.260Z">2019-05-13</time></div>
-                    <a href="/2019/05/13/tec/blog/blog7/" class="has-link-black-ter is-size-6">[Hexo와 깃허브로 블로그 만들기] Hexo 테마 적용</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/05/13/tec/sql/2019-05-10-sql6/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[SQL] GROUP BY, HAVING절">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:38:47.306Z">2019-05-13</time></div>
-                    <a href="/2019/05/13/tec/sql/2019-05-10-sql6/" class="has-link-black-ter is-size-6">[SQL] GROUP BY, HAVING절</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/sql/">sql</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/05/13/tec/java/2019-05-03-java6/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Java의정석] CH7. 객체지향프로그래밍2">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:36:51.920Z">2019-05-13</time></div>
-                    <a href="/2019/05/13/tec/java/2019-05-03-java6/" class="has-link-black-ter is-size-6">[Java의정석] CH7. 객체지향프로그래밍2</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T04:01:44.663Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/java/2019-05-11-java13/" class="has-link-black-ter is-size-6">[Java의정석] CH11. 컬렉션프레임웍과 유용한 클래스</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/java/">java</a>
                     </p>
@@ -1121,16 +757,73 @@ LinkedList ll = <span class="keyword">new</span> LinkedList(al);
         
         <article class="media">
             
-            <a href="/2019/05/13/tec/java/2019-05-03-java5/" class="media-left">
+            <a href="/2019/05/13/tec/sql/2019-05-10-sql5/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Java의정석] CH7. 객체지향프로그래밍2">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[SQL] 함수">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:35:24.690Z">2019-05-13</time></div>
-                    <a href="/2019/05/13/tec/java/2019-05-03-java5/" class="has-link-black-ter is-size-6">[Java의정석] CH7. 객체지향프로그래밍2</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:58:30.437Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/sql/2019-05-10-sql5/" class="has-link-black-ter is-size-6">[SQL] 함수</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/sql/">sql</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/13/tec/sql/2019-05-10-sql7/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[SQL] ORDER BY 정렬">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:57:36.684Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/sql/2019-05-10-sql7/" class="has-link-black-ter is-size-6">[SQL] ORDER BY 정렬</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/sql/">sql</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/13/tec/java/2019-05-10-java12/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Java의정석] CH15. 네트워킹(Networking)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:55:12.289Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/java/2019-05-10-java12/" class="has-link-black-ter is-size-6">[Java의정석] CH15. 네트워킹(Networking)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/java/">java</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/13/tec/java/2019-05-11-java14/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Java의정석] CH11. 컬렉션프레임웍과 유용한 클래스">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:54:20.213Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/java/2019-05-11-java14/" class="has-link-black-ter is-size-6">[Java의정석] CH11. 컬렉션프레임웍과 유용한 클래스</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/java/">java</a>
                     </p>
@@ -1404,7 +1097,7 @@ LinkedList ll = <span class="keyword">new</span> LinkedList(al);
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.png" alt="[Java의정석] CH11. 컬렉션프레임웍과 유용한 클래스" height="28">
+                    <img src="/images/logo.png" alt="[SQL] ORDER BY 정렬" height="28">
                 
                 </a>
                 <p class="is-size-7">

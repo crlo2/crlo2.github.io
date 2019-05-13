@@ -11,12 +11,12 @@
 <meta name="keywords" content="sql">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[SQL] 함수">
-<meta property="og:url" content="https://crlo2.github.io/2019/05/12/tec/sql/2019-05-10-sql5/index.html">
+<meta property="og:url" content="https://crlo2.github.io/2019/05/13/tec/sql/2019-05-10-sql5/index.html">
 <meta property="og:site_name" content="EUNI">
 <meta property="og:description" content="1. 문자열 함수LOWER(문자열) 문자열 소문자로 변경  UPPER(문자열) 문자열 대문자로 변경ASCII(문자) 문자, 숫자를 ASCII로 변경CONCAT(문자열1, 문자열2) 문자열1과 문자열 2 합침(||와 같은 기능)SUBSTR(문자열, M [,N]) 문자열 중에 M부터 N개의 문자 리턴(N이 없으면 M부터 끝까지 리턴)  LENGTH(문자열) 문">
 <meta property="og:locale" content="ko">
 <meta property="og:image" content="https://crlo2.github.io/images/og_image.png">
-<meta property="og:updated_time" content="2019-05-10T08:05:54.212Z">
+<meta property="og:updated_time" content="2019-05-13T03:58:30.438Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[SQL] 함수">
 <meta name="twitter:description" content="1. 문자열 함수LOWER(문자열) 문자열 소문자로 변경  UPPER(문자열) 문자열 대문자로 변경ASCII(문자) 문자, 숫자를 ASCII로 변경CONCAT(문자열1, 문자열2) 문자열1과 문자열 2 합침(||와 같은 기능)SUBSTR(문자열, M [,N]) 문자열 중에 M부터 N개의 문자 리턴(N이 없으면 M부터 끝까지 리턴)  LENGTH(문자열) 문">
@@ -143,7 +143,7 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-12T12:44:34.466Z">2019-05-12</time>
+                <time class="level-item has-text-grey" datetime="2019-05-13T03:58:30.437Z">2019-05-13</time>
                 
                 <div class="level-item">
                 <a class="has-link-grey -link" href="/categories/tec/">tec</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/tec/sql/">sql</a>
@@ -201,9 +201,18 @@
 </ul>
 <h2 id="5-CASE표현"><a href="#5-CASE표현" class="headerlink" title="5.CASE표현"></a>5.CASE표현</h2><h3 id="함수의-성질을-가지고-있어-중첨해서-사용할-수-있음"><a href="#함수의-성질을-가지고-있어-중첨해서-사용할-수-있음" class="headerlink" title="함수의 성질을 가지고 있어 중첨해서 사용할 수 있음"></a>함수의 성질을 가지고 있어 중첨해서 사용할 수 있음</h3><figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">CASE</span><br><span class="line">  SIMPLE_CASE_EXPRESSION 조건</span><br><span class="line">  ESLE 표현절</span><br><span class="line"><span class="hljs-keyword">END</span></span><br></pre></td></tr></table></figure>
 <ul>
-<li>예제)  <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">--예제1</span></span><br><span class="line"><span class="hljs-keyword">SELECT</span> ENAME,</span><br><span class="line">      <span class="hljs-keyword">CASE</span> <span class="hljs-keyword">WHEN</span> SAL&gt;<span class="hljs-number">2000</span></span><br><span class="line">           <span class="hljs-keyword">THEN</span> SAL</span><br><span class="line">           <span class="hljs-keyword">ELSE</span> <span class="hljs-number">2000</span></span><br><span class="line">      <span class="hljs-keyword">END</span> REVISED_SALARY</span><br><span class="line"><span class="hljs-keyword">FROM</span> EMP;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">--예제2)</span></span><br><span class="line"><span class="hljs-keyword">SELECT</span> LOC,</span><br><span class="line">     <span class="hljs-keyword">CASE</span> LOC</span><br><span class="line">     <span class="hljs-keyword">WHEN</span> <span class="hljs-string">'NEW YORK'</span> <span class="hljs-keyword">THEN</span> <span class="hljs-string">'EAST'</span></span><br><span class="line">     <span class="hljs-keyword">WHEN</span> <span class="hljs-string">'CHICAGO'</span> <span class="hljs-keyword">THEN</span> <span class="hljs-string">'CENTER'</span></span><br><span class="line">     <span class="hljs-keyword">ELSE</span> <span class="hljs-string">'ETC'</span></span><br><span class="line">     <span class="hljs-keyword">END</span> <span class="hljs-keyword">AS</span> AREA</span><br><span class="line"><span class="hljs-keyword">FROM</span> DEPT;</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">## 6.NULL관련함수</span></span><br><span class="line"><span class="hljs-comment">### 연산  </span></span><br><span class="line"></span><br><span class="line">NULL+숫자=NULL;(사칙연산 모두 포함)  </span><br><span class="line">NULL+문자열=NULL;  </span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">### NVL(표현식1, 표현식2)</span></span><br><span class="line">- 표현식 1 이NULL이면 표현식 2를 출력(두 표현식의 데이터 타입이 같아야함)</span><br><span class="line"><span class="hljs-comment">### NULLIF(표현식1, 표현식2)</span></span><br><span class="line">- 표현식1이 표현식2와 같으면 NULL, 아니면 표현식1 출력</span><br><span class="line"><span class="hljs-comment">### COALESCE(표현식1,..,표현식N)</span></span><br><span class="line">- 임의의 개수 표현식에서 NULL이 아닌 최초의 표현식 리턴,</span><br><span class="line">- 모든 표현식이 NULL이면 NULLD을 리턴</span><br><span class="line"><span class="hljs-comment">### NULL과 공집합  </span></span><br><span class="line">테이블 안에 값이 NULL이면 NULL, 테이블 이 선택안되면 공집합  </span><br><span class="line">공집합을 NULL로 바꾸기 위해 적절한 함수 사용 EX)MAX()</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">### NULLIF</span></span><br><span class="line"></span><br><span class="line">```sql</span><br><span class="line"><span class="hljs-comment">--사원 테이블에서 MGR과 7698이 같으면 NULL, 다르면 MGR 표시하라. </span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">SELECT</span> ENAME, EMPNO, MGR, <span class="hljs-keyword">NULLIF</span>(MGR, <span class="hljs-number">7698</span>) NUIF</span><br><span class="line"><span class="hljs-keyword">FROM</span> EMP;</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">### COALESCE</span></span><br><span class="line"></span><br><span class="line">```sql</span><br><span class="line"><span class="hljs-comment">--사원테이블에서 커미션을 1차선택값, 급여를 2차 선택값으로 선택하되 </span></span><br><span class="line"><span class="hljs-comment">--두 칼럼 모두 NULL이면 NULL로 표시</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">SELECT</span> ENAME, COMM, SAL, <span class="hljs-keyword">COALESCE</span>(COMM, SAL) COAL</span><br><span class="line"><span class="hljs-keyword">FROM</span> EMP;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">--다른방법</span></span><br><span class="line"><span class="hljs-keyword">SELECT</span> ENAME, COMM, SAL</span><br><span class="line">     <span class="hljs-keyword">CASE</span> <span class="hljs-keyword">WHEN</span> COMM <span class="hljs-keyword">IS</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span></span><br><span class="line">          <span class="hljs-keyword">THEN</span> COMM</span><br><span class="line">          <span class="hljs-keyword">ELSE</span> (<span class="hljs-keyword">CASE</span> <span class="hljs-keyword">WHEN</span> SAL <span class="hljs-keyword">IS</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span></span><br><span class="line">                     <span class="hljs-keyword">THEN</span> SAL</span><br><span class="line">                     <span class="hljs-keyword">ELSE</span> <span class="hljs-literal">NULL</span></span><br><span class="line">                <span class="hljs-keyword">END</span>)</span><br><span class="line">      <span class="hljs-keyword">END</span> COAL</span><br><span class="line"><span class="hljs-keyword">FROM</span> EMP;</span><br></pre></td></tr></table></figure>
+<li>예제)  <figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="hljs-comment">--예제1</span></span><br><span class="line"><span class="hljs-keyword">SELECT</span> ENAME,</span><br><span class="line">      <span class="hljs-keyword">CASE</span> <span class="hljs-keyword">WHEN</span> SAL&gt;<span class="hljs-number">2000</span></span><br><span class="line">           <span class="hljs-keyword">THEN</span> SAL</span><br><span class="line">           <span class="hljs-keyword">ELSE</span> <span class="hljs-number">2000</span></span><br><span class="line">      <span class="hljs-keyword">END</span> REVISED_SALARY</span><br><span class="line"><span class="hljs-keyword">FROM</span> EMP;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">--예제2)</span></span><br><span class="line"><span class="hljs-keyword">SELECT</span> LOC,</span><br><span class="line">     <span class="hljs-keyword">CASE</span> LOC</span><br><span class="line">     <span class="hljs-keyword">WHEN</span> <span class="hljs-string">'NEW YORK'</span> <span class="hljs-keyword">THEN</span> <span class="hljs-string">'EAST'</span></span><br><span class="line">     <span class="hljs-keyword">WHEN</span> <span class="hljs-string">'CHICAGO'</span> <span class="hljs-keyword">THEN</span> <span class="hljs-string">'CENTER'</span></span><br><span class="line">     <span class="hljs-keyword">ELSE</span> <span class="hljs-string">'ETC'</span></span><br><span class="line">     <span class="hljs-keyword">END</span> <span class="hljs-keyword">AS</span> AREA</span><br><span class="line"><span class="hljs-keyword">FROM</span> DEPT;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
+<h2 id="6-NULL관련함수"><a href="#6-NULL관련함수" class="headerlink" title="6.NULL관련함수"></a>6.NULL관련함수</h2><h3 id="연산"><a href="#연산" class="headerlink" title="연산"></a>연산</h3><p>NULL+숫자=NULL;(사칙연산 모두 포함)<br>NULL+문자열=NULL;  </p>
+<h3 id="NVL-표현식1-표현식2"><a href="#NVL-표현식1-표현식2" class="headerlink" title="NVL(표현식1, 표현식2)"></a>NVL(표현식1, 표현식2)</h3><ul>
+<li>표현식 1 이NULL이면 표현식 2를 출력(두 표현식의 데이터 타입이 같아야함)<h3 id="NULLIF-표현식1-표현식2"><a href="#NULLIF-표현식1-표현식2" class="headerlink" title="NULLIF(표현식1, 표현식2)"></a>NULLIF(표현식1, 표현식2)</h3></li>
+<li>표현식1이 표현식2와 같으면 NULL, 아니면 표현식1 출력<h3 id="COALESCE-표현식1-표현식N"><a href="#COALESCE-표현식1-표현식N" class="headerlink" title="COALESCE(표현식1,..,표현식N)"></a>COALESCE(표현식1,..,표현식N)</h3></li>
+<li>임의의 개수 표현식에서 NULL이 아닌 최초의 표현식 리턴,</li>
+<li>모든 표현식이 NULL이면 NULLD을 리턴<h3 id="NULL과-공집합"><a href="#NULL과-공집합" class="headerlink" title="NULL과 공집합"></a>NULL과 공집합</h3>테이블 안에 값이 NULL이면 NULL, 테이블 이 선택안되면 공집합<br>공집합을 NULL로 바꾸기 위해 적절한 함수 사용 EX)MAX()</li>
+</ul>
+<h3 id="NULLIF"><a href="#NULLIF" class="headerlink" title="NULLIF"></a>NULLIF</h3><figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">--사원 테이블에서 MGR과 7698이 같으면 NULL, 다르면 MGR 표시하라. </span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">SELECT</span> ENAME, EMPNO, MGR, <span class="hljs-keyword">NULLIF</span>(MGR, <span class="hljs-number">7698</span>) NUIF</span><br><span class="line"><span class="hljs-keyword">FROM</span> EMP;</span><br></pre></td></tr></table></figure>
+<h3 id="COALESCE"><a href="#COALESCE" class="headerlink" title="COALESCE"></a>COALESCE</h3><figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">--사원테이블에서 커미션을 1차선택값, 급여를 2차 선택값으로 선택하되 </span></span><br><span class="line"><span class="hljs-comment">--두 칼럼 모두 NULL이면 NULL로 표시</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">SELECT</span> ENAME, COMM, SAL, <span class="hljs-keyword">COALESCE</span>(COMM, SAL) COAL</span><br><span class="line"><span class="hljs-keyword">FROM</span> EMP;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">--다른방법</span></span><br><span class="line"><span class="hljs-keyword">SELECT</span> ENAME, COMM, SAL</span><br><span class="line">     <span class="hljs-keyword">CASE</span> <span class="hljs-keyword">WHEN</span> COMM <span class="hljs-keyword">IS</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span></span><br><span class="line">          <span class="hljs-keyword">THEN</span> COMM</span><br><span class="line">          <span class="hljs-keyword">ELSE</span> (<span class="hljs-keyword">CASE</span> <span class="hljs-keyword">WHEN</span> SAL <span class="hljs-keyword">IS</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span></span><br><span class="line">                     <span class="hljs-keyword">THEN</span> SAL</span><br><span class="line">                     <span class="hljs-keyword">ELSE</span> <span class="hljs-literal">NULL</span></span><br><span class="line">                <span class="hljs-keyword">END</span>)</span><br><span class="line">      <span class="hljs-keyword">END</span> COAL</span><br><span class="line"><span class="hljs-keyword">FROM</span> EMP;</span><br></pre></td></tr></table></figure>
 
         </div>
         
@@ -229,16 +238,16 @@
     <div class="level post-navigation is-flex-wrap is-mobile">
         
         <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/05/12/tec/sql/2019-05-10-sql7/">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/2019/05/13/tec/java/2019-05-11-java13/">
                 <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">[SQL] ORDER BY 정렬</span>
+                <span class="level-item">[Java의정석] CH11. 컬렉션프레임웍과 유용한 클래스</span>
             </a>
         </div>
         
         
         <div class="level-end">
-            <a class="level level-item has-link-grey  article-nav-next" href="/2019/05/12/tec/sql/2019-05-10-sql4/">
-                <span class="level-item">[SQL] WHERE절</span>
+            <a class="level level-item has-link-grey  article-nav-next" href="/2019/05/13/tec/sql/2019-05-10-sql7/">
+                <span class="level-item">[SQL] ORDER BY 정렬</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -254,8 +263,8 @@
         
 <script>
     var disqus_config = function () {
-        this.page.url = 'https://crlo2.github.io/2019/05/12/tec/sql/2019-05-10-sql5/';
-        this.page.identifier = '2019/05/12/tec/sql/2019-05-10-sql5/';
+        this.page.url = 'https://crlo2.github.io/2019/05/13/tec/sql/2019-05-10-sql5/';
+        this.page.identifier = '2019/05/13/tec/sql/2019-05-10-sql5/';
     };
     (function() {
         var d = document, s = d.createElement('script');  
@@ -410,6 +419,38 @@
         <a class="is-flex" href="#함수의-성질을-가지고-있어-중첨해서-사용할-수-있음">
         <span class="has-mr-6">5.1</span>
         <span>함수의 성질을 가지고 있어 중첨해서 사용할 수 있음</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#6-NULL관련함수">
+        <span class="has-mr-6">6</span>
+        <span>6.NULL관련함수</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#연산">
+        <span class="has-mr-6">6.1</span>
+        <span>연산</span>
+        </a></li><li>
+        <a class="is-flex" href="#NVL-표현식1-표현식2">
+        <span class="has-mr-6">6.2</span>
+        <span>NVL(표현식1, 표현식2)</span>
+        </a></li><li>
+        <a class="is-flex" href="#NULLIF-표현식1-표현식2">
+        <span class="has-mr-6">6.3</span>
+        <span>NULLIF(표현식1, 표현식2)</span>
+        </a></li><li>
+        <a class="is-flex" href="#COALESCE-표현식1-표현식N">
+        <span class="has-mr-6">6.4</span>
+        <span>COALESCE(표현식1,..,표현식N)</span>
+        </a></li><li>
+        <a class="is-flex" href="#NULL과-공집합">
+        <span class="has-mr-6">6.5</span>
+        <span>NULL과 공집합</span>
+        </a></li><li>
+        <a class="is-flex" href="#NULLIF">
+        <span class="has-mr-6">6.6</span>
+        <span>NULLIF</span>
+        </a></li><li>
+        <a class="is-flex" href="#COALESCE">
+        <span class="has-mr-6">6.7</span>
+        <span>COALESCE</span>
         </a></li></ul></li></ul>
         </div>
     </div>
@@ -513,73 +554,16 @@
         
         <article class="media">
             
-            <a href="/2019/05/13/tec/blog/blog6/" class="media-left">
+            <a href="/2019/05/13/tec/java/2019-05-11-java13/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Hexo와 깃허브로 블로그 만들기] jykell에서 hexo로 블로그 이전하기">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Java의정석] CH11. 컬렉션프레임웍과 유용한 클래스">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:40:36.273Z">2019-05-13</time></div>
-                    <a href="/2019/05/13/tec/blog/blog6/" class="has-link-black-ter is-size-6">[Hexo와 깃허브로 블로그 만들기] jykell에서 hexo로 블로그 이전하기</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/05/13/tec/blog/blog7/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Hexo와 깃허브로 블로그 만들기] Hexo 테마 적용">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:40:36.260Z">2019-05-13</time></div>
-                    <a href="/2019/05/13/tec/blog/blog7/" class="has-link-black-ter is-size-6">[Hexo와 깃허브로 블로그 만들기] Hexo 테마 적용</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/05/13/tec/sql/2019-05-10-sql6/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[SQL] GROUP BY, HAVING절">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:38:47.306Z">2019-05-13</time></div>
-                    <a href="/2019/05/13/tec/sql/2019-05-10-sql6/" class="has-link-black-ter is-size-6">[SQL] GROUP BY, HAVING절</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/sql/">sql</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/05/13/tec/java/2019-05-03-java6/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Java의정석] CH7. 객체지향프로그래밍2">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:36:51.920Z">2019-05-13</time></div>
-                    <a href="/2019/05/13/tec/java/2019-05-03-java6/" class="has-link-black-ter is-size-6">[Java의정석] CH7. 객체지향프로그래밍2</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T04:01:44.663Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/java/2019-05-11-java13/" class="has-link-black-ter is-size-6">[Java의정석] CH11. 컬렉션프레임웍과 유용한 클래스</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/java/">java</a>
                     </p>
@@ -589,16 +573,73 @@
         
         <article class="media">
             
-            <a href="/2019/05/13/tec/java/2019-05-03-java5/" class="media-left">
+            <a href="/2019/05/13/tec/sql/2019-05-10-sql5/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Java의정석] CH7. 객체지향프로그래밍2">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[SQL] 함수">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:35:24.690Z">2019-05-13</time></div>
-                    <a href="/2019/05/13/tec/java/2019-05-03-java5/" class="has-link-black-ter is-size-6">[Java의정석] CH7. 객체지향프로그래밍2</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:58:30.437Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/sql/2019-05-10-sql5/" class="has-link-black-ter is-size-6">[SQL] 함수</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/sql/">sql</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/13/tec/sql/2019-05-10-sql7/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[SQL] ORDER BY 정렬">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:57:36.684Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/sql/2019-05-10-sql7/" class="has-link-black-ter is-size-6">[SQL] ORDER BY 정렬</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/sql/">sql</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/13/tec/java/2019-05-10-java12/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Java의정석] CH15. 네트워킹(Networking)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:55:12.289Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/java/2019-05-10-java12/" class="has-link-black-ter is-size-6">[Java의정석] CH15. 네트워킹(Networking)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/java/">java</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/13/tec/java/2019-05-11-java14/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Java의정석] CH11. 컬렉션프레임웍과 유용한 클래스">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:54:20.213Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/java/2019-05-11-java14/" class="has-link-black-ter is-size-6">[Java의정석] CH11. 컬렉션프레임웍과 유용한 클래스</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/java/">java</a>
                     </p>
@@ -880,73 +921,16 @@
         
         <article class="media">
             
-            <a href="/2019/05/13/tec/blog/blog6/" class="media-left">
+            <a href="/2019/05/13/tec/java/2019-05-11-java13/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Hexo와 깃허브로 블로그 만들기] jykell에서 hexo로 블로그 이전하기">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Java의정석] CH11. 컬렉션프레임웍과 유용한 클래스">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:40:36.273Z">2019-05-13</time></div>
-                    <a href="/2019/05/13/tec/blog/blog6/" class="has-link-black-ter is-size-6">[Hexo와 깃허브로 블로그 만들기] jykell에서 hexo로 블로그 이전하기</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/05/13/tec/blog/blog7/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Hexo와 깃허브로 블로그 만들기] Hexo 테마 적용">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:40:36.260Z">2019-05-13</time></div>
-                    <a href="/2019/05/13/tec/blog/blog7/" class="has-link-black-ter is-size-6">[Hexo와 깃허브로 블로그 만들기] Hexo 테마 적용</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/05/13/tec/sql/2019-05-10-sql6/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[SQL] GROUP BY, HAVING절">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:38:47.306Z">2019-05-13</time></div>
-                    <a href="/2019/05/13/tec/sql/2019-05-10-sql6/" class="has-link-black-ter is-size-6">[SQL] GROUP BY, HAVING절</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/sql/">sql</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
-            <a href="/2019/05/13/tec/java/2019-05-03-java6/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Java의정석] CH7. 객체지향프로그래밍2">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:36:51.920Z">2019-05-13</time></div>
-                    <a href="/2019/05/13/tec/java/2019-05-03-java6/" class="has-link-black-ter is-size-6">[Java의정석] CH7. 객체지향프로그래밍2</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T04:01:44.663Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/java/2019-05-11-java13/" class="has-link-black-ter is-size-6">[Java의정석] CH11. 컬렉션프레임웍과 유용한 클래스</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/java/">java</a>
                     </p>
@@ -956,16 +940,73 @@
         
         <article class="media">
             
-            <a href="/2019/05/13/tec/java/2019-05-03-java5/" class="media-left">
+            <a href="/2019/05/13/tec/sql/2019-05-10-sql5/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Java의정석] CH7. 객체지향프로그래밍2">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[SQL] 함수">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:35:24.690Z">2019-05-13</time></div>
-                    <a href="/2019/05/13/tec/java/2019-05-03-java5/" class="has-link-black-ter is-size-6">[Java의정석] CH7. 객체지향프로그래밍2</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:58:30.437Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/sql/2019-05-10-sql5/" class="has-link-black-ter is-size-6">[SQL] 함수</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/sql/">sql</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/13/tec/sql/2019-05-10-sql7/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[SQL] ORDER BY 정렬">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:57:36.684Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/sql/2019-05-10-sql7/" class="has-link-black-ter is-size-6">[SQL] ORDER BY 정렬</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/sql/">sql</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/13/tec/java/2019-05-10-java12/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Java의정석] CH15. 네트워킹(Networking)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:55:12.289Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/java/2019-05-10-java12/" class="has-link-black-ter is-size-6">[Java의정석] CH15. 네트워킹(Networking)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/java/">java</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/13/tec/java/2019-05-11-java14/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Java의정석] CH11. 컬렉션프레임웍과 유용한 클래스">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:54:20.213Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/java/2019-05-11-java14/" class="has-link-black-ter is-size-6">[Java의정석] CH11. 컬렉션프레임웍과 유용한 클래스</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/java/">java</a>
                     </p>
