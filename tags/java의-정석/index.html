@@ -145,6 +145,157 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-05-13T03:36:51.920Z">2019-05-13</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/tec/">tec</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/tec/java/">java</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    5분 읽기 (나에 대하여 751 단어)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/05/13/tec/java/2019-05-03-java6/">[Java의정석] CH7. 객체지향프로그래밍2</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="2-오버라이딩"><a href="#2-오버라이딩" class="headerlink" title="2. 오버라이딩"></a>2. 오버라이딩</h2><h3 id="2-1-오버라이딩이란"><a href="#2-1-오버라이딩이란" class="headerlink" title="2.1 오버라이딩이란?"></a>2.1 오버라이딩이란?</h3><p>조상 클래스부터 상속받은 메서드의 내용을 변경하는것<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">class Point&#123;</span><br><span class="line">    int x;</span><br><span class="line">    int y;</span><br><span class="line">    </span><br><span class="line">    String getLocation()&#123;</span><br><span class="line">        return &quot;x : &quot;+x+&quot;, y : &quot; + y;</span><br><span class="line">    &#125;</span><br><span class="line">|</span><br><span class="line"></span><br><span class="line">class Point3D extends Point&#123;</span><br><span class="line">    int z;</span><br><span class="line">    </span><br><span class="line">    String getLocation()&#123;</span><br><span class="line">        return &quot;x : &quot;+x+&quot;, y : &quot; + y+&quot;, z : &quot;+z;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-2-오버라이딩의-조건"><a href="#2-2-오버라이딩의-조건" class="headerlink" title="2.2 오버라이딩의 조건"></a>2.2 오버라이딩의 조건</h3><p>메서드 선언부는 조상의 것과 완전 일치해야함.<br>자손 클래스에서 오버라이딩하는 메서드는 조상 클래스의 메서드와</p>
+<ul>
+<li>이름이 같아야 한다.</li>
+<li>매개변수가 같아야 한다.</li>
+<li>리턴 타입이 같아야 한다.</li>
+</ul>
+<ol>
+<li>접근제어자는 조상 클래스의 메서드보다 좁은 범위로 변경할 수 없다.<br>ex) 조상클래스의 메서드의 접근 제어자가 protected라면<br>자식클래스에서 오버라이딩 하는 메서드의 접근 제어자는 protected나 public 이어야함.  </li>
+<li>조상 클래스의 메서드보다 많은 수의 예외를 선언할 수 없다.</li>
+</ol>
+<ul>
+<li>조상 클래스의 메서드를 자손클래스에서 오버라이딩할 때  <ol>
+<li>접근제어자를 조상클래스의 메서드보다 좁은 범위로 할 수 없다.</li>
+<li>예외는 조상 클래스의 메서드보다 많이 선언할 수 없다.</li>
+<li>인스턴스메서드를 static메서드로 또는 그 반대로 변경할 수 없다.</li>
+</ol>
+</li>
+</ul>
+<h3 id="2-3-오버로딩-VS-오버라이딩"><a href="#2-3-오버로딩-VS-오버라이딩" class="headerlink" title="2.3 오버로딩 VS 오버라이딩"></a>2.3 오버로딩 VS 오버라이딩</h3><ul>
+<li>오버로딩(overloading) : 기존에 없는 메서드를 정의하는것(new)</li>
+<li>오버라이딩(overriding) : 상속받은 메서드의 내용을 변경하는 것(change, modify)</li>
+</ul>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">class Parent&#123;</span><br><span class="line">    void parentMethod()&#123;&#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Chile extends Parent&#123;</span><br><span class="line">    void parentMethod()&#123;&#125; // 오버라이딩;</span><br><span class="line">    void parentMethod(int i)&#123;&#125; //오버로딩</span><br><span class="line">    </span><br><span class="line">    void childMethod()&#123;&#125;</span><br><span class="line">    void childMethod(int i)&#123;&#125; //오버로딩</span><br><span class="line">    void childMethod()&#123;&#125;// 에러 함수가 중복됨</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-4-super"><a href="#2-4-super" class="headerlink" title="2.4 super"></a>2.4 super</h3><p>자손클래스에서 조상 클래스로부터 상속받은 멤버를 참조하는데 사용되는 참조변수.<br>조상클래스의 멤버와 자손클래스의 멤버가 중복 정의되서 구별해야 되지 않는 상황이면 super대신 this를 써도 됨.<br>static 메서드(클래스 메서드)에서는 사용 할 수 없다.</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">class SuperTest&#123;</span><br><span class="line">    public void static void main(String args[])&#123;</span><br><span class="line">        Child c = new Child();</span><br><span class="line">        c.method();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Parent&#123;</span><br><span class="line">    int x =10;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Child extends Parent&#123;</span><br><span class="line">    int x =20;</span><br><span class="line">    void method()&#123;</span><br><span class="line">        system.out.println(&quot;x=&quot;+x);  </span><br><span class="line">        system.out.println(&quot;this.x=&quot;+this.x);</span><br><span class="line">        system.out.println(&quot;super.x=&quot;+super.x);   </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>실행 결과<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x=20</span><br><span class="line">this.x=20;</span><br><span class="line">super.x=10;</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-5-super-조상클래스의-생성자"><a href="#2-5-super-조상클래스의-생성자" class="headerlink" title="2.5 super() - 조상클래스의 생성자"></a>2.5 super() - 조상클래스의 생성자</h3><p>super()는 조상클래스의 생성자를 호출하는 생성자이다.<br>Object클래스를 제외한 모든 클래스의 생성자 첫 줄에는 생성자(같은 클래스의 다른 생성자 또는 조상의 생성자)를 호출 해야함.<br>그렇지 않으면 컴파일러가 super(); 를 자동으로 첫줄에 삽입.  </p>
+<ol>
+<li>클래스 - 어떤 클래스의 인스턴스를 생성할것인가?</li>
+<li>생성자 - 선택한 클래스의 어떤 생성자를 이용해서 인스턴스를 생성할 것인가?</li>
+</ol>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-05-13T03:35:24.690Z">2019-05-13</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/tec/">tec</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/tec/java/">java</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    3분 읽기 (나에 대하여 471 단어)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/05/13/tec/java/2019-05-03-java5/">[Java의정석] CH7. 객체지향프로그래밍2</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="1-상속"><a href="#1-상속" class="headerlink" title="1. 상속"></a>1. 상속</h2><h3 id="1-1-상속의-정의와-장점"><a href="#1-1-상속의-정의와-장점" class="headerlink" title="1.1 상속의 정의와 장점"></a>1.1 상속의 정의와 장점</h3><p>기존의 클래스를 재사용하여 새로운 클래스를 작성하는것</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">class Parent&#123;&#125;</span><br><span class="line">class Child extends Parent&#123;&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>조상클래스 -  부모클래스, 상위클래스, 기반 클래스</li>
+<li>자손클래스 - 자식 클래스, 하위클래스, 파생된 클래스  </li>
+</ul>
+<ul>
+<li>생성자와 초기화 블럭은 상속되지 않는다. 멤버만 상속된다.</li>
+<li>자손 클래스의 멤버개수는 조상 클래스보다 항상 같거나 많다.    </li>
+</ul>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class Tv&#123;</span><br><span class="line">    boolean power;</span><br><span class="line">    int channel;</span><br><span class="line">    </span><br><span class="line">    void power()&#123;power = !power;&#125;</span><br><span class="line">    void channelUp()&#123;++chnannel;&#125;</span><br><span class="line">    void channelDown()&#123;--channel;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class CaptionTv extends Tv&#123;</span><br><span class="line">    boolean caption;</span><br><span class="line">    void displayCaption(String text)&#123;</span><br><span class="line">        if(caption)&#123;</span><br><span class="line">            system.out.println(text);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="1-2-클래스간의-관계-포함관계"><a href="#1-2-클래스간의-관계-포함관계" class="headerlink" title="1.2 클래스간의 관계 - 포함관계"></a>1.2 클래스간의 관계 - 포함관계</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">class Circle&#123;</span><br><span class="line">    int x;</span><br><span class="line">    int y;</span><br><span class="line">    int r;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>이 클래스를</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">class Point&#123;</span><br><span class="line">    int x; </span><br><span class="line">    int y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Circle&#123;</span><br><span class="line">    Point point = new Point();</span><br><span class="line">    int r;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>이렇게 표현할 수 있다.<br>Engine, Door 클래스를 미리 작성 후 아래와 같이 사용 가능.</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">class car&#123;</span><br><span class="line">    Engine e = new Engine();</span><br><span class="line">    Door[] d = new Door[4];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="1-3-클래스간-관계-결정하기"><a href="#1-3-클래스간-관계-결정하기" class="headerlink" title="1.3 클래스간 관계 결정하기"></a>1.3 클래스간 관계 결정하기</h3><p>어떨때 상속, 어떨때 포함관계를 맺을까?  </p>
+<ul>
+<li>상속: ~은 ~이다(is-a)</li>
+<li>포함 : ~은 ~을 가지고 있다(has-a)  </li>
+</ul>
+<p>ex) 원은 점(point)이다 (X)<br>    원은 점을 가지고 있다(O)  -&gt; 포함관계</p>
+<pre><code>SportCar는 Car이다(0) -&gt; 상속 관계
+</code></pre><h3 id="1-4-단일-상속"><a href="#1-4-단일-상속" class="headerlink" title="1.4 단일 상속"></a>1.4 단일 상속</h3><p>부모클래스를 두개 이상 상속 받을 수 없다.</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//불가능한 경우</span><br><span class="line">calss TVCR extends TV, VCR&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">class Tv&#123;</span><br><span class="line">    boolean power;</span><br><span class="line">    int channel;</span><br><span class="line">    </span><br><span class="line">    void power()&#123;power = !power;&#125;</span><br><span class="line">    void channelUp()&#123;++chnannel;&#125;</span><br><span class="line">    void channelDown()&#123;--channel;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class VCR&#123;</span><br><span class="line">    boolean power;</span><br><span class="line">    int counter =0;</span><br><span class="line">    void power()&#123;&#125;;</span><br><span class="line">    void play()&#123;&#125;;</span><br><span class="line">    void stop()&#123;&#125;;</span><br><span class="line">    void rew()&#123;&#125;;</span><br><span class="line">    void ff()&#123;&#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class TVCR extends Tv&#123;</span><br><span class="line">    VCR vcr = new VCR();</span><br><span class="line">    int counter =vcr.counter;</span><br><span class="line">    </span><br><span class="line">    void play()&#123;</span><br><span class="line">        vcr.play();</span><br><span class="line">    &#125;;</span><br><span class="line">    void stop()&#123;</span><br><span class="line">        vcr.stop();</span><br><span class="line">    &#125;;</span><br><span class="line">    void rew()&#123;</span><br><span class="line">        vcr.rew();</span><br><span class="line">    &#125;;</span><br><span class="line">    void ff()&#123;</span><br><span class="line">        vcr.ff();</span><br><span class="line">    &#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="1-5-Object클래스-모든-클래스의-조상"><a href="#1-5-Object클래스-모든-클래스의-조상" class="headerlink" title="1.5 Object클래스 -모든 클래스의 조상"></a>1.5 Object클래스 -모든 클래스의 조상</h3><p>Object는 모든 클래스의 조상이다.  </p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class Tv&#123;&#125;</span><br></pre></td></tr></table></figure>
+<p>이것은 따지고 보면</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class Tv extends Object&#123;&#125;</span><br></pre></td></tr></table></figure>
+<p>이것임.<br>toString(), equals() 그냥 쓸 수 있는게 Object클래스에 정의 되어있어서 그렇다.</p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
                 <time class="level-item has-text-grey" datetime="2019-05-13T01:09:12.810Z">2019-05-13</time>
                 
                 <div class="level-item">
@@ -309,80 +460,6 @@
 <li>abstract메서드의 접근제어자가 private일 수 없다.</li>
 <li>메서드에 private와 final을 같이 사용할 필요는 없다.(둘중 하나만 사용해도 충분)</li>
 </ol>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-13T01:09:12.797Z">2019-05-13</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/tec/">tec</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/tec/java/">java</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    3분 읽기 (나에 대하여 471 단어)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/05/13/tec/java/2019-05-03-java5/">[Java의정석] CH7. 객체지향프로그래밍2</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="1-상속"><a href="#1-상속" class="headerlink" title="1. 상속"></a>1. 상속</h2><h3 id="1-1-상속의-정의와-장점"><a href="#1-1-상속의-정의와-장점" class="headerlink" title="1.1 상속의 정의와 장점"></a>1.1 상속의 정의와 장점</h3><p>기존의 클래스를 재사용하여 새로운 클래스를 작성하는것<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">class Parent&#123;&#125;</span><br><span class="line">class Child extends Parent&#123;&#125;</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>조상클래스 -  부모클래스, 상위클래스, 기반 클래스</li>
-<li>자손클래스 - 자식 클래스, 하위클래스, 파생된 클래스  </li>
-</ul>
-<ul>
-<li>생성자와 초기화 블럭은 상속되지 않는다. 멤버만 상속된다.</li>
-<li>자손 클래스의 멤버개수는 조상 클래스보다 항상 같거나 많다.    </li>
-</ul>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class Tv&#123;</span><br><span class="line">    boolean power;</span><br><span class="line">    int channel;</span><br><span class="line">    </span><br><span class="line">    void power()&#123;power = !power;&#125;</span><br><span class="line">    void channelUp()&#123;++chnannel;&#125;</span><br><span class="line">    void channelDown()&#123;--channel;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class CaptionTv extends Tv&#123;</span><br><span class="line">    boolean caption;</span><br><span class="line">    void displayCaption(String text)&#123;</span><br><span class="line">        if(caption)&#123;</span><br><span class="line">            system.out.println(text);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="1-2-클래스간의-관계-포함관계"><a href="#1-2-클래스간의-관계-포함관계" class="headerlink" title="1.2 클래스간의 관계 - 포함관계"></a>1.2 클래스간의 관계 - 포함관계</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">class Circle&#123;</span><br><span class="line">    int x;</span><br><span class="line">    int y;</span><br><span class="line">    int r;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>이 클래스를</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">class Point&#123;</span><br><span class="line">    int x; </span><br><span class="line">    int y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Circle&#123;</span><br><span class="line">    Point point = new Point();</span><br><span class="line">    int r;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>이렇게 표현할 수 있다.<br>Engine, Door 클래스를 미리 작성 후 아래와 같이 사용 가능.</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">class car&#123;</span><br><span class="line">    Engine e = new Engine();</span><br><span class="line">    Door[] d = new Door[4];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="1-3-클래스간-관계-결정하기"><a href="#1-3-클래스간-관계-결정하기" class="headerlink" title="1.3 클래스간 관계 결정하기"></a>1.3 클래스간 관계 결정하기</h3><p>어떨때 상속, 어떨때 포함관계를 맺을까?  </p>
-<ul>
-<li>상속: ~은 ~이다(is-a)</li>
-<li>포함 : ~은 ~을 가지고 있다(has-a)  </li>
-</ul>
-<p>ex) 원은 점(point)이다 (X)<br>    원은 점을 가지고 있다(O)  -&gt; 포함관계</p>
-<pre><code>SportCar는 Car이다(0) -&gt; 상속 관계
-</code></pre><h3 id="1-4-단일-상속"><a href="#1-4-단일-상속" class="headerlink" title="1.4 단일 상속"></a>1.4 단일 상속</h3><p>부모클래스를 두개 이상 상속 받을 수 없다.</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//불가능한 경우</span><br><span class="line">calss TVCR extends TV, VCR&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">class Tv&#123;</span><br><span class="line">    boolean power;</span><br><span class="line">    int channel;</span><br><span class="line">    </span><br><span class="line">    void power()&#123;power = !power;&#125;</span><br><span class="line">    void channelUp()&#123;++chnannel;&#125;</span><br><span class="line">    void channelDown()&#123;--channel;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class VCR&#123;</span><br><span class="line">    boolean power;</span><br><span class="line">    int counter =0;</span><br><span class="line">    void power()&#123;&#125;;</span><br><span class="line">    void play()&#123;&#125;;</span><br><span class="line">    void stop()&#123;&#125;;</span><br><span class="line">    void rew()&#123;&#125;;</span><br><span class="line">    void ff()&#123;&#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class TVCR extends Tv&#123;</span><br><span class="line">    VCR vcr = new VCR();</span><br><span class="line">    int counter =vcr.counter;</span><br><span class="line">    </span><br><span class="line">    void play()&#123;</span><br><span class="line">        vcr.play();</span><br><span class="line">    &#125;;</span><br><span class="line">    void stop()&#123;</span><br><span class="line">        vcr.stop();</span><br><span class="line">    &#125;;</span><br><span class="line">    void rew()&#123;</span><br><span class="line">        vcr.rew();</span><br><span class="line">    &#125;;</span><br><span class="line">    void ff()&#123;</span><br><span class="line">        vcr.ff();</span><br><span class="line">    &#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="1-5-Object클래스-모든-클래스의-조상"><a href="#1-5-Object클래스-모든-클래스의-조상" class="headerlink" title="1.5 Object클래스 -모든 클래스의 조상"></a>1.5 Object클래스 -모든 클래스의 조상</h3><p>Object는 모든 클래스의 조상이다.  </p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class Tv&#123;&#125;</span><br></pre></td></tr></table></figure>
-<p>이것은 따지고 보면</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class Tv extends Object&#123;&#125;</span><br></pre></td></tr></table></figure>
-<p>이거임<br>toString(), equals() 그냥 쓸 수 있는게 Object클래스에 정의 되어있어서 그렇다.</p>
 
         </div>
         
@@ -1256,199 +1333,6 @@
 
 
 
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-13T01:09:12.655Z">2019-05-13</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/tec/">tec</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/tec/java/">java</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    9분 읽기 (나에 대하여 1327 단어)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/05/13/tec/java/2019-05-10-java12/">[Java의정석] CH15. 네트워킹(Networking)</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="1-네트워킹"><a href="#1-네트워킹" class="headerlink" title="1.네트워킹"></a>1.네트워킹</h2><p>두대 이상의 컴퓨터를 케이블로 연결하여 네트워크를 구성하는것.  </p>
-<h3 id="1-1-클라이언트-서버-client-server"><a href="#1-1-클라이언트-서버-client-server" class="headerlink" title="1.1 클라이언트/서버(client/server)"></a>1.1 클라이언트/서버(client/server)</h3><p>서버(server)는 서비스를 제공하는 컴퓨터, 클라이언트(client)는 서비스를 사용하는 컴퓨터.<br>ex) 파일서버(file server), 메일서버(mail server), 어플래케이션 서버(application server)</p>
-<table>
-<thead>
-<tr>
-<th>서버기반 모델(server-based-model)</th>
-<th>P2P모델(peer-to-peer model)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>- 안정적인서비스 제공이 가능하다.<br>- 공유데이터의 관리와 보안이 용이하다.<br>- 서버구축비용과 관리비용이 든다.</td>
-<td>- 서버구축 및 운용비용을 절감할 수 있다. <br> - 자원의 활용을 극대화 할 수 있다. <br>- 자원의 관리가 어렵다. <br>- 보안이 취약하다.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="1-2-IP주소-IP-address"><a href="#1-2-IP주소-IP-address" class="headerlink" title="1.2 IP주소(IP address)"></a>1.2 IP주소(IP address)</h3><p>IP주소는 컴퓨터(호스트, host)를 구별하는데 사용하는 고유한 값.<br>4 byte(32bit)의 정수로 구성되어있음. <em>a.b.c.d</em>와 같은 형식으로 표현됨.<br>abcd는 0~255사이의 정수이다.<br>윈도우 콘솔에서 ifconfig를 확인하면 ip주소를 확인 할 수 있음.<br>ex)  </p>
-<ul>
-<li>ip주소<br>192.168.10 .100<br>(네트워크주소).(호스트주소)  </li>
-<li>서브넷마스크<br>255.255.255.0  </li>
-</ul>
-<h3 id="1-3-InetAddress"><a href="#1-3-InetAddress" class="headerlink" title="1.3 InetAddress"></a>1.3 InetAddress</h3><p>자바에서 IP주소를 다루기 위한 클래스로 InetAddress 제공함  </p>
-<h3 id="1-4-URL-Uniform-Resource-Location"><a href="#1-4-URL-Uniform-Resource-Location" class="headerlink" title="1.4 URL(Uniform Resource Location)"></a>1.4 URL(Uniform Resource Location)</h3><p>URL은 인터넷에 존재하는 여러 서버들이 제공하는 자원에 접근할 수 있는 주소를 표현하기 위한것.<br>“프로토콜://호스트명:포트번호/경로명/파이명?쿼리스트링#참조”의 형태로 이루워져있음.  </p>
-<ul>
-<li>프로토콜 : 자원에 접근하기 위해 서버와 통신하는데 사용되는 통신규약(http)</li>
-<li>호스트명: 자원을 제공하는 서버의 이름(<a href="http://www.javahome.com" target="_blank" rel="noopener">www.javahome.com</a>)</li>
-<li>포트번호 : 통신에 사용되는 서버의 포트번호(80)</li>
-<li>경로명 : 접근하려는 자원이 저장된 서버상의 위치(/sample/)</li>
-<li>파일명 : 접근하려는 자원의 이름(hello.html)</li>
-<li>쿼리 : url에서 ?이후부분</li>
-<li>참조 : url에서 # 이후부분   </li>
-</ul>
-<p>java에서 URL 클래스를 제공함  </p>
-<h3 id="1-5-URL-Connection"><a href="#1-5-URL-Connection" class="headerlink" title="1.5 URL Connection"></a>1.5 URL Connection</h3><p>어플리케이션과 URL간의 통신연결을 나타내는 클래스의 최상위 추상클래스.   </p>
-<pre><code class="java"><span class="keyword">import</span> java.net.*;
-<span class="keyword">import</span> java.io.*;
-
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NetworkEx3</span></span>{
-    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>{
-      URL url = <span class="keyword">null</span>;
-      String address = <span class="string">"http://www.javahome.com/sample/hello.html"</span>;
-      String line =<span class="string">""</span>;
-
-      <span class="keyword">try</span>{
-          url = <span class="keyword">new</span> URL(address);
-          URLConnection conn = url.openConnection();
-
-          System.out.println(<span class="string">"conn.toSTring(): "</span>+conn);
-      }<span class="keyword">catch</span>(Exception e){
-          e.printStackTrace();
-      }
-    }
-}
-</code></pre>
-<ul>
-<li>아래코드는 해당 페이지의 내용을 읽어온다..  </li>
-</ul>
-<pre><code class="java"><span class="keyword">import</span> java.net.*;
-<span class="keyword">import</span> java.io.*;
-
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NetworkEx4</span></span>{
-    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>{
-      URL url = <span class="keyword">null</span>;
-      BufferedReader input = <span class="keyword">null</span>;
-      String address = <span class="string">"http://www.javahome.com/sample/hello.html"</span>;
-      String line =<span class="string">""</span>;
-
-      <span class="keyword">try</span>{
-          url = <span class="keyword">new</span> URL(address);
-
-          input = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(url.openStream()));
-
-          <span class="keyword">while</span>((line= input.readline()) != <span class="keyword">null</span>) {
-              System.out.println(line);
-          }
-          input.close();
-      }<span class="keyword">catch</span>(Exception e){
-          e.printStackTrace();
-      }
-    }
-}
-
-</code></pre>
-<ul>
-<li>이진파일을 읽어 저장함.  </li>
-</ul>
-<pre><code class="java"><span class="keyword">import</span> java.net.*;
-<span class="keyword">import</span> java.io.*;
-
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NetworkEx5</span></span>{
-    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>{
-      URL url = <span class="keyword">null</span>;
-      InputStream in = <span class="keyword">null</span>;
-      FileOutputStream out = <span class="keyword">null</span>;
-      String address = <span class="string">"http://www.javahome.com/sample/hello.zip"</span>;
-      <span class="keyword">int</span> ch = <span class="number">0</span>;
-
-      <span class="keyword">try</span>{
-          url = <span class="keyword">new</span> URL(address);
-          in = url.openStream();
-          out = <span class="keyword">new</span> FileOutputStream(<span class="string">"hello.zip"</span>);
-
-          <span class="keyword">while</span>((ch= inlread()) != -<span class="number">1</span>) {
-              out.writy(ch);
-          }
-          in.close();
-          out.close();
-      }<span class="keyword">catch</span>(Exception e){
-          e.printStackTrace();
-      }
-    }
-}
-
-</code></pre>
-<h2 id="2-소켓-프로그래밍"><a href="#2-소켓-프로그래밍" class="headerlink" title="2. 소켓 프로그래밍"></a>2. 소켓 프로그래밍</h2><p>소켓을 이용한 통신프로그래밍.<br>java.net패키지를 통해 소켓 프로그래밍을 지원함.  </p>
-<h3 id="2-1-TCP와-UDP"><a href="#2-1-TCP와-UDP" class="headerlink" title="2.1 TCP와 UDP"></a>2.1 TCP와 UDP</h3><p>TCP/IP 프로토콜은 이기종 시스템간의 통신을 위한 표준 프로토콜로 프로토콜의 집합이다.<br>TCP와 UDP모두 TCP/IP에 포함되어 있음, OSI 7계층의 전송계층에 해당하는 프로토콜이다.   </p>
-<table>
-<thead>
-<tr>
-<th>항목</th>
-<th>TCP</th>
-<th>UDP</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>연결방식</td>
-<td>.연결기반<br>- 연결 후 통신(전화기)<br>- 1:1통신방식</td>
-<td>.비연결기반<br>- 연결없이 통신(소포)<br>- 1:1, 1:n, n:n 통신방식</td>
-</tr>
-<tr>
-<td>특징</td>
-<td>.데이터의 경계를 구분안함<br>.신뢰성 있는 데이터를 전송<br>- 데이터의 전송순서가 보장됨<br>- 데이터의 수신여부를 확인함<br>(데이터가 손실되면 재전송)<br>- 패킷을 관리할 필요가 없음<br>.UDP보다 전송속도가 느림</td>
-<td>.데이터의 경계를 구분함<br>.신뢰성 없는 데이터 전송<br>- 데이터의 전송순서가 바뀔 수 있음<br>- 데이터의 수신여부를 확인안 함<br>(데이터가 손실되어도 알 수 없음)<br>- 패킷을 관리해 주어야 함<br>.TCP보다 전송속도가 빠름</td>
-</tr>
-<tr>
-<td>관련 클래스</td>
-<td>.Scoket<br>.ServerSocket</td>
-<td>.DatagramSocket<br>.DatagramPacket<br>.MulticastSocket</td>
-</tr>
-</tbody>
-</table>
-<h3 id="2-3-TCP-소켓-프로그래밍"><a href="#2-3-TCP-소켓-프로그래밍" class="headerlink" title="2.3 TCP 소켓 프로그래밍"></a>2.3 TCP 소켓 프로그래밍</h3><p><strong>서버 프로그램과 클라이언트 프로그램간의 통신과정 단계</strong></p>
-<ol>
-<li>서버프로그램에서는 서버소켓을 사용하여 서버의 컴퓨터의 특정 포트에서 클라이언트의 연결요청을 처리할 준비를 한다. </li>
-<li>클라이언트 프로그램은 접속할 서버의 IP주소와 포트 정보를 가지고 소켓을 생성해서 서버에 연결을 요청한다. </li>
-<li>서버소켓은 클라이언트의 연결요청으 ㄹ받으면 서버에서 새로운 소켓을 생성해서 클라이언트의 소켓과 연결되도록 한다.</li>
-<li>이제 클라이언트 소켓과 새로 생성된 서버의 소켓은 서버소켓과 관계없이 일대일 통신을 한다.  </li>
-</ol>
-<h3 id="2-4-UDP-소켓-프로그래밍"><a href="#2-4-UDP-소켓-프로그래밍" class="headerlink" title="2.4 UDP 소켓 프로그래밍"></a>2.4 UDP 소켓 프로그래밍</h3>
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
 
     
 <div class="card card-transparent">
@@ -1513,7 +1397,7 @@
                         포스트
                     </p>
                     <p class="title has-text-weight-normal">
-                        46
+                        49
                     </p>
                 </div>
             </div>
@@ -1533,7 +1417,7 @@
                         태그
                     </p>
                     <p class="title has-text-weight-normal">
-                        19
+                        20
                     </p>
                 </div>
             </div>
@@ -1575,25 +1459,6 @@
         
         <article class="media">
             
-            <a href="/2019/05/13/tec/blog/blog7/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Hexo와 깃허브로 블로그 만들기] Hexo 테마 적용">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T02:09:21.227Z">2019-05-13</time></div>
-                    <a href="/2019/05/13/tec/blog/blog7/" class="has-link-black-ter is-size-6">[Hexo와 깃허브로 블로그 만들기] Hexo 테마 적용</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
             <a href="/2019/05/13/tec/blog/blog6/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="[Hexo와 깃허브로 블로그 만들기] jykell에서 hexo로 블로그 이전하기">
@@ -1602,7 +1467,7 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T02:06:36.432Z">2019-05-13</time></div>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:40:36.273Z">2019-05-13</time></div>
                     <a href="/2019/05/13/tec/blog/blog6/" class="has-link-black-ter is-size-6">[Hexo와 깃허브로 블로그 만들기] jykell에서 hexo로 블로그 이전하기</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
@@ -1613,16 +1478,16 @@
         
         <article class="media">
             
-            <a href="/2019/05/13/tec/blog/2019-04-29-blog1/" class="media-left">
+            <a href="/2019/05/13/tec/blog/blog7/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[JEKYLL과 깃허브로 블로그 만들기] 지킬 테마 복사하기">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Hexo와 깃허브로 블로그 만들기] Hexo 테마 적용">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T01:35:56.974Z">2019-05-13</time></div>
-                    <a href="/2019/05/13/tec/blog/2019-04-29-blog1/" class="has-link-black-ter is-size-6">[JEKYLL과 깃허브로 블로그 만들기] 지킬 테마 복사하기</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:40:36.260Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/blog/blog7/" class="has-link-black-ter is-size-6">[Hexo와 깃허브로 블로그 만들기] Hexo 테마 적용</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
                     </p>
@@ -1632,18 +1497,18 @@
         
         <article class="media">
             
-            <a href="/2019/05/13/tec/blog/2019-04-29-blog2/" class="media-left">
+            <a href="/2019/05/13/tec/sql/2019-05-10-sql6/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[JEKYLL과 깃허브로 블로그 만들기] 포스트(Post) 쓰기">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[SQL] GROUP BY, HAVING절">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T01:35:53.320Z">2019-05-13</time></div>
-                    <a href="/2019/05/13/tec/blog/2019-04-29-blog2/" class="has-link-black-ter is-size-6">[JEKYLL과 깃허브로 블로그 만들기] 포스트(Post) 쓰기</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:38:47.306Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/sql/2019-05-10-sql6/" class="has-link-black-ter is-size-6">[SQL] GROUP BY, HAVING절</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/sql/">sql</a>
                     </p>
                 </div>
             </div>
@@ -1651,18 +1516,37 @@
         
         <article class="media">
             
-            <a href="/2019/05/13/tec/blog/2019-04-29-blog3/" class="media-left">
+            <a href="/2019/05/13/tec/java/2019-05-03-java6/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[JEKYLL과 깃허브로 블로그 만들기] 콜렉션(Collection)만들기">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Java의정석] CH7. 객체지향프로그래밍2">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T01:35:49.900Z">2019-05-13</time></div>
-                    <a href="/2019/05/13/tec/blog/2019-04-29-blog3/" class="has-link-black-ter is-size-6">[JEKYLL과 깃허브로 블로그 만들기] 콜렉션(Collection)만들기</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:36:51.920Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/java/2019-05-03-java6/" class="has-link-black-ter is-size-6">[Java의정석] CH7. 객체지향프로그래밍2</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/java/">java</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/13/tec/java/2019-05-03-java5/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Java의정석] CH7. 객체지향프로그래밍2">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:35:24.690Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/java/2019-05-03-java5/" class="has-link-black-ter is-size-6">[Java의정석] CH7. 객체지향프로그래밍2</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/java/">java</a>
                     </p>
                 </div>
             </div>
@@ -1686,7 +1570,7 @@
                 <span class="level-item">tec</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">27</span>
+                <span class="level-item tag">30</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/tec/blog/">
@@ -1694,7 +1578,7 @@
                 <span class="level-item">blog</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">7</span>
+                <span class="level-item tag">9</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/tec/java/">
@@ -1702,7 +1586,7 @@
                 <span class="level-item">java</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">13</span>
+                <span class="level-item tag">14</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/tec/sql/">
@@ -1748,7 +1632,7 @@
                     <span class="level-item">5월 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">46</span>
+                    <span class="level-item tag">49</span>
                 </span>
             </a>
         </li>
@@ -1764,7 +1648,7 @@
         <h3 class="menu-label">
             태그 클라우드
         </h3>
-        <a href="/tags/blog/" style="font-size: 15px;">blog</a> <a href="/tags/github/" style="font-size: 15px;">github</a> <a href="/tags/hexo/" style="font-size: 11.67px;">hexo</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/java의-정석/" style="font-size: 18.33px;">java의 정석</a> <a href="/tags/jekyll/" style="font-size: 13.33px;">jekyll</a> <a href="/tags/sql/" style="font-size: 15px;">sql</a> <a href="/tags/tec/" style="font-size: 15px;">tec</a> <a href="/tags/골든서클/" style="font-size: 10px;">골든서클</a> <a href="/tags/눈/" style="font-size: 10px;">눈</a> <a href="/tags/무지개/" style="font-size: 10px;">무지개</a> <a href="/tags/빙하/" style="font-size: 10px;">빙하</a> <a href="/tags/숙소/" style="font-size: 16.67px;">숙소</a> <a href="/tags/아이슬란드/" style="font-size: 20px;">아이슬란드</a> <a href="/tags/여행/" style="font-size: 20px;">여행</a> <a href="/tags/오로라/" style="font-size: 13.33px;">오로라</a> <a href="/tags/유럽/" style="font-size: 20px;">유럽</a> <a href="/tags/폭포/" style="font-size: 11.67px;">폭포</a> <a href="/tags/해변/" style="font-size: 10px;">해변</a>
+        <a href="/tags/blog/" style="font-size: 16.25px;">blog</a> <a href="/tags/disque/" style="font-size: 10px;">disque</a> <a href="/tags/github/" style="font-size: 16.25px;">github</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/java의-정석/" style="font-size: 18.75px;">java의 정석</a> <a href="/tags/jekyll/" style="font-size: 13.75px;">jekyll</a> <a href="/tags/sql/" style="font-size: 15px;">sql</a> <a href="/tags/tec/" style="font-size: 16.25px;">tec</a> <a href="/tags/골든서클/" style="font-size: 10px;">골든서클</a> <a href="/tags/눈/" style="font-size: 10px;">눈</a> <a href="/tags/무지개/" style="font-size: 10px;">무지개</a> <a href="/tags/빙하/" style="font-size: 10px;">빙하</a> <a href="/tags/숙소/" style="font-size: 17.5px;">숙소</a> <a href="/tags/아이슬란드/" style="font-size: 20px;">아이슬란드</a> <a href="/tags/여행/" style="font-size: 20px;">여행</a> <a href="/tags/오로라/" style="font-size: 13.75px;">오로라</a> <a href="/tags/유럽/" style="font-size: 20px;">유럽</a> <a href="/tags/폭포/" style="font-size: 11.25px;">폭포</a> <a href="/tags/해변/" style="font-size: 10px;">해변</a>
     </div>
 </div>
 
@@ -1780,21 +1664,28 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/blog/">
                         <span class="tag">blog</span>
-                        <span class="tag is-grey">7</span>
+                        <span class="tag is-grey">9</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/disque/">
+                        <span class="tag">disque</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/github/">
                         <span class="tag">github</span>
-                        <span class="tag is-grey">7</span>
+                        <span class="tag is-grey">9</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/hexo/">
                         <span class="tag">hexo</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">4</span>
                     </a>
                 </div>
                 
@@ -1808,7 +1699,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/java의-정석/">
                         <span class="tag">java의 정석</span>
-                        <span class="tag is-grey">12</span>
+                        <span class="tag is-grey">13</span>
                     </a>
                 </div>
                 
@@ -1829,7 +1720,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/tec/">
                         <span class="tag">tec</span>
-                        <span class="tag is-grey">7</span>
+                        <span class="tag is-grey">9</span>
                     </a>
                 </div>
                 
@@ -1935,25 +1826,6 @@
         
         <article class="media">
             
-            <a href="/2019/05/13/tec/blog/blog7/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Hexo와 깃허브로 블로그 만들기] Hexo 테마 적용">
-                </p>
-            </a>
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T02:09:21.227Z">2019-05-13</time></div>
-                    <a href="/2019/05/13/tec/blog/blog7/" class="has-link-black-ter is-size-6">[Hexo와 깃허브로 블로그 만들기] Hexo 테마 적용</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
-        <article class="media">
-            
             <a href="/2019/05/13/tec/blog/blog6/" class="media-left">
                 <p class="image is-64x64">
                     <img class="thumbnail" src="/images/thumbnail.svg" alt="[Hexo와 깃허브로 블로그 만들기] jykell에서 hexo로 블로그 이전하기">
@@ -1962,7 +1834,7 @@
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T02:06:36.432Z">2019-05-13</time></div>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:40:36.273Z">2019-05-13</time></div>
                     <a href="/2019/05/13/tec/blog/blog6/" class="has-link-black-ter is-size-6">[Hexo와 깃허브로 블로그 만들기] jykell에서 hexo로 블로그 이전하기</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
@@ -1973,16 +1845,16 @@
         
         <article class="media">
             
-            <a href="/2019/05/13/tec/blog/2019-04-29-blog1/" class="media-left">
+            <a href="/2019/05/13/tec/blog/blog7/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[JEKYLL과 깃허브로 블로그 만들기] 지킬 테마 복사하기">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Hexo와 깃허브로 블로그 만들기] Hexo 테마 적용">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T01:35:56.974Z">2019-05-13</time></div>
-                    <a href="/2019/05/13/tec/blog/2019-04-29-blog1/" class="has-link-black-ter is-size-6">[JEKYLL과 깃허브로 블로그 만들기] 지킬 테마 복사하기</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:40:36.260Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/blog/blog7/" class="has-link-black-ter is-size-6">[Hexo와 깃허브로 블로그 만들기] Hexo 테마 적용</a>
                     <p class="is-size-7 is-uppercase">
                         <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
                     </p>
@@ -1992,18 +1864,18 @@
         
         <article class="media">
             
-            <a href="/2019/05/13/tec/blog/2019-04-29-blog2/" class="media-left">
+            <a href="/2019/05/13/tec/sql/2019-05-10-sql6/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[JEKYLL과 깃허브로 블로그 만들기] 포스트(Post) 쓰기">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[SQL] GROUP BY, HAVING절">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T01:35:53.320Z">2019-05-13</time></div>
-                    <a href="/2019/05/13/tec/blog/2019-04-29-blog2/" class="has-link-black-ter is-size-6">[JEKYLL과 깃허브로 블로그 만들기] 포스트(Post) 쓰기</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:38:47.306Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/sql/2019-05-10-sql6/" class="has-link-black-ter is-size-6">[SQL] GROUP BY, HAVING절</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/sql/">sql</a>
                     </p>
                 </div>
             </div>
@@ -2011,18 +1883,37 @@
         
         <article class="media">
             
-            <a href="/2019/05/13/tec/blog/2019-04-29-blog3/" class="media-left">
+            <a href="/2019/05/13/tec/java/2019-05-03-java6/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[JEKYLL과 깃허브로 블로그 만들기] 콜렉션(Collection)만들기">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Java의정석] CH7. 객체지향프로그래밍2">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T01:35:49.900Z">2019-05-13</time></div>
-                    <a href="/2019/05/13/tec/blog/2019-04-29-blog3/" class="has-link-black-ter is-size-6">[JEKYLL과 깃허브로 블로그 만들기] 콜렉션(Collection)만들기</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:36:51.920Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/java/2019-05-03-java6/" class="has-link-black-ter is-size-6">[Java의정석] CH7. 객체지향프로그래밍2</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/java/">java</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/13/tec/java/2019-05-03-java5/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Java의정석] CH7. 객체지향프로그래밍2">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T03:35:24.690Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/java/2019-05-03-java5/" class="has-link-black-ter is-size-6">[Java의정석] CH7. 객체지향프로그래밍2</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/java/">java</a>
                     </p>
                 </div>
             </div>
@@ -2046,7 +1937,7 @@
                 <span class="level-item">tec</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">27</span>
+                <span class="level-item tag">30</span>
             </span>
         </a><ul><li>
         <a class="level is-marginless" href="/categories/tec/blog/">
@@ -2054,7 +1945,7 @@
                 <span class="level-item">blog</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">7</span>
+                <span class="level-item tag">9</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/tec/java/">
@@ -2062,7 +1953,7 @@
                 <span class="level-item">java</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">13</span>
+                <span class="level-item tag">14</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/tec/sql/">
@@ -2108,7 +1999,7 @@
                     <span class="level-item">5월 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">46</span>
+                    <span class="level-item tag">49</span>
                 </span>
             </a>
         </li>
@@ -2124,7 +2015,7 @@
         <h3 class="menu-label">
             태그 클라우드
         </h3>
-        <a href="/tags/blog/" style="font-size: 15px;">blog</a> <a href="/tags/github/" style="font-size: 15px;">github</a> <a href="/tags/hexo/" style="font-size: 11.67px;">hexo</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/java의-정석/" style="font-size: 18.33px;">java의 정석</a> <a href="/tags/jekyll/" style="font-size: 13.33px;">jekyll</a> <a href="/tags/sql/" style="font-size: 15px;">sql</a> <a href="/tags/tec/" style="font-size: 15px;">tec</a> <a href="/tags/골든서클/" style="font-size: 10px;">골든서클</a> <a href="/tags/눈/" style="font-size: 10px;">눈</a> <a href="/tags/무지개/" style="font-size: 10px;">무지개</a> <a href="/tags/빙하/" style="font-size: 10px;">빙하</a> <a href="/tags/숙소/" style="font-size: 16.67px;">숙소</a> <a href="/tags/아이슬란드/" style="font-size: 20px;">아이슬란드</a> <a href="/tags/여행/" style="font-size: 20px;">여행</a> <a href="/tags/오로라/" style="font-size: 13.33px;">오로라</a> <a href="/tags/유럽/" style="font-size: 20px;">유럽</a> <a href="/tags/폭포/" style="font-size: 11.67px;">폭포</a> <a href="/tags/해변/" style="font-size: 10px;">해변</a>
+        <a href="/tags/blog/" style="font-size: 16.25px;">blog</a> <a href="/tags/disque/" style="font-size: 10px;">disque</a> <a href="/tags/github/" style="font-size: 16.25px;">github</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/java의-정석/" style="font-size: 18.75px;">java의 정석</a> <a href="/tags/jekyll/" style="font-size: 13.75px;">jekyll</a> <a href="/tags/sql/" style="font-size: 15px;">sql</a> <a href="/tags/tec/" style="font-size: 16.25px;">tec</a> <a href="/tags/골든서클/" style="font-size: 10px;">골든서클</a> <a href="/tags/눈/" style="font-size: 10px;">눈</a> <a href="/tags/무지개/" style="font-size: 10px;">무지개</a> <a href="/tags/빙하/" style="font-size: 10px;">빙하</a> <a href="/tags/숙소/" style="font-size: 17.5px;">숙소</a> <a href="/tags/아이슬란드/" style="font-size: 20px;">아이슬란드</a> <a href="/tags/여행/" style="font-size: 20px;">여행</a> <a href="/tags/오로라/" style="font-size: 13.75px;">오로라</a> <a href="/tags/유럽/" style="font-size: 20px;">유럽</a> <a href="/tags/폭포/" style="font-size: 11.25px;">폭포</a> <a href="/tags/해변/" style="font-size: 10px;">해변</a>
     </div>
 </div>
 
@@ -2140,21 +2031,28 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/blog/">
                         <span class="tag">blog</span>
-                        <span class="tag is-grey">7</span>
+                        <span class="tag is-grey">9</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/disque/">
+                        <span class="tag">disque</span>
+                        <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/github/">
                         <span class="tag">github</span>
-                        <span class="tag is-grey">7</span>
+                        <span class="tag is-grey">9</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/hexo/">
                         <span class="tag">hexo</span>
-                        <span class="tag is-grey">2</span>
+                        <span class="tag is-grey">4</span>
                     </a>
                 </div>
                 
@@ -2168,7 +2066,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/java의-정석/">
                         <span class="tag">java의 정석</span>
-                        <span class="tag is-grey">12</span>
+                        <span class="tag is-grey">13</span>
                     </a>
                 </div>
                 
@@ -2189,7 +2087,7 @@
                 <div class="control">
                     <a class="tags has-addons" href="/tags/tec/">
                         <span class="tag">tec</span>
-                        <span class="tag is-grey">7</span>
+                        <span class="tag is-grey">9</span>
                     </a>
                 </div>
                 
