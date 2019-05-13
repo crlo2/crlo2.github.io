@@ -131,27 +131,21 @@
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
     <div class="card">
     
-    <div class="card-image">
-        <a href="/2019/05/12/trip/europ/2019-04-30-iceland6/" class="image is-7by1">
-            <img class="thumbnail" src="/assets/images/is/sc1.jpg" alt="셀애란즈포스 폭포">
-        </a>
-    </div>
-    
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-12T13:35:34.590Z">2019-05-12</time>
+                <time class="level-item has-text-grey" datetime="2019-05-13T02:09:21.227Z">2019-05-13</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/trip/">trip</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/trip/island/">island</a>
+                <a class="has-link-grey -link" href="/categories/tec/">tec</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    1분 읽기 (나에 대하여 154 단어)
+                    1분 읽기 (나에 대하여 126 단어)
                 </span>
                 
                 
@@ -160,14 +154,20 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/05/12/trip/europ/2019-04-30-iceland6/">셀애란즈포스 폭포</a>
+                <a class="has-link-black-ter" href="/2019/05/13/tec/blog/blog7/">[Hexo와 깃허브로 블로그 만들기] Hexo 테마 적용</a>
             
         </h1>
         <div class="content">
-            <p>벌써 세째날 아침.<br>셀야란즈포스에서 멈춰섰다.<br>링로드 1번도로에서 폭포가 멀리서 보여 찾기 쉬웠다.<br>입장료는 없지만 주차비가 있다. 하루에 7천원정도였나.<br>잠깐들러 사진만 찍고 가기에는 조금은 아까웠다.<br>여름엔 폭포 뒤로 들어가볼 수도 있다고 했는데<br>겨울이라 막혀있엇다.아쉽..<br>맑은날에는 쌍문지개도 보인다고한다.<br>조금은 우중충한 날씨. 춥진 않았다.  </p>
-<img src="/assets/images/is/sc2.jpg">
-<img src="/assets/images/is/sc3.jpg">
-<iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d113048.83555266072!2d-20.337055716438048!3d63.72219169163856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x48d6e5527e87039d%3A0xf3bb79c859710655!2zUmFuZ8OhcmJha2thciwg7JWE7J207Iqs656A65Oc!3m2!1d63.8339449!2d-20.404695!4m5!1s0x48d71eade8ef2415%3A0xae01e6205209178d!2z7JWE7J207Iqs656A65OcIOyFgOyVvOuegOymiO2PrOyKpA!3m2!1d63.615623199999995!2d-19.9885688!5e0!3m2!1sko!2skr!4v1556872292507!5m2!1sko!2skr" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+            <h2 id="1-Hexo-테마-고르기"><a href="#1-Hexo-테마-고르기" class="headerlink" title="1. Hexo 테마 고르기"></a>1. Hexo 테마 고르기</h2><p><a href="https://hexo.io/themes/" target="_blank" rel="noopener">Hexo 이쁜 테마 고르러 가기</a></p>
+<h2 id="2-icarus-테마-적용하기"><a href="#2-icarus-테마-적용하기" class="headerlink" title="2. icarus 테마 적용하기"></a>2. icarus 테마 적용하기</h2><p>블로그 프로젝트 경로($ cd ~/blog/) 아래 blog/themes/icarus 폴더를 만들어 git 테마를 clone한다. </p>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="hljs-built_in">clone</span> https://github.com/ppoffice/hexo-theme-icarus.git themes/icarus</span><br></pre></td></tr></table></figure>
+<h2 id="3-blog-themes-icarus-config-yml-피일에서-theme-설정을-icarus로-변경한다"><a href="#3-blog-themes-icarus-config-yml-피일에서-theme-설정을-icarus로-변경한다" class="headerlink" title="3. ~/blog/themes/icarus/_config.yml 피일에서 theme 설정을 icarus로 변경한다."></a>3. ~/blog/themes/icarus/_config.yml 피일에서 theme 설정을 icarus로 변경한다.</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: icarus</span><br></pre></td></tr></table></figure>
+<h2 id="4-hexo-서버-재시작-한다"><a href="#4-hexo-서버-재시작-한다" class="headerlink" title="4. hexo 서버 재시작 한다."></a>4. hexo 서버 재시작 한다.</h2><pre><code class="bash">$ hexo s
+</code></pre>
+<p>localhost:4000에서 적용된 테마를 확인한다.  </p>
+<h2 id="5-github에-배포한다"><a href="#5-github에-배포한다" class="headerlink" title="5. github에 배포한다."></a>5. github에 배포한다.</h2><pre><code class="bash">$ hexo clean
+$ hexo d -g
+</code></pre>
 
         </div>
         
@@ -185,27 +185,21 @@
 
     <div class="card">
     
-    <div class="card-image">
-        <a href="/2019/05/12/trip/europ/2019-04-30-iceland3/" class="image is-7by1">
-            <img class="thumbnail" src="/assets/images/is/g2.jpg" alt="골든서클-게이시르">
-        </a>
-    </div>
-    
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-12T13:35:34.579Z">2019-05-12</time>
+                <time class="level-item has-text-grey" datetime="2019-05-13T02:06:36.432Z">2019-05-13</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/trip/">trip</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/trip/island/">island</a>
+                <a class="has-link-grey -link" href="/categories/tec/">tec</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    1분 읽기 (나에 대하여 150 단어)
+                    2분 읽기 (나에 대하여 237 단어)
                 </span>
                 
                 
@@ -214,14 +208,25 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/05/12/trip/europ/2019-04-30-iceland3/">골든서클-게이시르</a>
+                <a class="has-link-black-ter" href="/2019/05/13/tec/blog/blog6/">[Hexo와 깃허브로 블로그 만들기] jykell에서 hexo로 블로그 이전하기</a>
             
         </h1>
         <div class="content">
-            <p>아이슬란드 대표 관광지 골든서클 투어를 하기로 했다.<br>첫번째 게이시르.<br>예전에 옐로우스톤국립공원에서 간헐천을 보면서 가족들 생각이 많이났는데<br>여기서 같이 볼수 있어서 정말 기뻤다.<br>지구가 방구뀌는곳<br>생각보다 냄새는 많이 안 났고 분출도 자주 있었다.<br>나는 고프로를 들고다니며 동영상을 찍었는데<br>아빠가 카메라 의식을 너무 많이한다.  </p>
-<img src="/assets/images/is/g1.jpg">
-<img src="/assets/images/is/g3.jpg">
-<iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d265047.02439091995!2d-21.44606820016161!3d64.12446207976525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x48d6735b5b6a54db%3A0xea55745367827c1f!2zU3R1ZGlvIEU4LCBFbmdpaGphbGxpIDgsIEvDs3Bhdm9ndXIsIOyVhOydtOyKrOuegOuTnA!3m2!1d64.1098152!2d-21.858184899999998!4m5!1s0x48d6a39f03424f3f%3A0xb4751c1a62e2283f!2z6rKM7J207Iuc66W0IOyVhOydtOyKrOuegOuTnA!3m2!1d64.31037189999999!2d-20.3023605!5e0!3m2!1sko!2skr!4v1556868958914!5m2!1sko!2skr" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+            <blockquote>
+<p>hexo테마가 이쁜게 많아서 바꾸기로 함.  </p>
+</blockquote>
+<h2 id="1-Node-js설치"><a href="#1-Node-js설치" class="headerlink" title="1. Node.js설치"></a>1. Node.js설치</h2><p><a href="https://nodejs.org/en/" target="_blank" rel="noopener">nodejs 설치하러 가기</a></p>
+<h2 id="2-Git-설치"><a href="#2-Git-설치" class="headerlink" title="2. Git 설치"></a>2. Git 설치</h2><p><a href="https://git-scm.com" target="_blank" rel="noopener">git 설치하러 가기</a></p>
+<h2 id="3-Hexo-설치"><a href="#3-Hexo-설치" class="headerlink" title="3. Hexo 설치"></a>3. Hexo 설치</h2><p><a href="https://hexo.io/ko/docs/" target="_blank" rel="noopener">hexo 설치하러 가기</a></p>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<h2 id="4-블로그-시작하기"><a href="#4-블로그-시작하기" class="headerlink" title="4. 블로그 시작하기"></a>4. 블로그 시작하기</h2><p>git bash쉘에서 블로그 프로젝트를 구성할 디렉터리 위치에 가서 아래와 같이 실행한다.</p>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init blog</span><br><span class="line">$ <span class="hljs-built_in">cd</span> blog</span><br><span class="line">$ npm install</span><br><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>hexo server가 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> 으로 실행됨.  </p>
+<h2 id="5-blog-config-yml-파일-수정하기"><a href="#5-blog-config-yml-파일-수정하기" class="headerlink" title="5. blog/_config.yml 파일 수정하기"></a>5. blog/_config.yml 파일 수정하기</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">url: http://yoursite.com </span><br><span class="line"></span><br><span class="line">deploy: </span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/crlo2/crlo2.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<p>deploy 항목을 저렇게 수정하면 hexo가 명령어로 자동 배포 및 생성을 해준다.</p>
+<h2 id="6-hexo-deployer-설치"><a href="#6-hexo-deployer-설치" class="headerlink" title="6. hexo deployer 설치"></a>6. hexo deployer 설치</h2><pre><code>$ npm insatll hexo-deployer-git --save
+</code></pre><h2 id="7-hexo-생성-및-git-레포지토리에-배포"><a href="#7-hexo-생성-및-git-레포지토리에-배포" class="headerlink" title="7. hexo 생성 및 git 레포지토리에 배포"></a>7. hexo 생성 및 git 레포지토리에 배포</h2><pre><code>$ hexo d -g
+</code></pre><p>이렇게 배포를 해줘야만 <a href="https://clro2.github.io" target="_blank" rel="noopener">https://clro2.github.io</a> 주소로 접속하면 블로그 화면이 보인다.  </p>
 
         </div>
         
@@ -239,27 +244,21 @@
 
     <div class="card">
     
-    <div class="card-image">
-        <a href="/2019/05/12/trip/europ/2019-05-01-iceland17/" class="image is-7by1">
-            <img class="thumbnail" src="/assets/images/is/df4.jpg" alt="데티포스">
-        </a>
-    </div>
-    
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-12T13:35:34.567Z">2019-05-12</time>
+                <time class="level-item has-text-grey" datetime="2019-05-13T01:35:56.974Z">2019-05-13</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/trip/">trip</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/trip/island/">island</a>
+                <a class="has-link-grey -link" href="/categories/tec/">tec</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    3분 읽기 (나에 대하여 426 단어)
+                    1분 읽기 (나에 대하여 146 단어)
                 </span>
                 
                 
@@ -268,18 +267,19 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/05/12/trip/europ/2019-05-01-iceland17/">데티포스</a>
+                <a class="has-link-black-ter" href="/2019/05/13/tec/blog/2019-04-29-blog1/">[JEKYLL과 깃허브로 블로그 만들기] 지킬 테마 복사하기</a>
             
         </h1>
         <div class="content">
-            <p>날씨나 도로사정때문에 겨울에는 보기 힘들다는 데티포스를 가기로 했다.<br>하필 이런 눈내리는 날씨에.<br>아이슬란드는 겨울에 눈때문에 도로가 통제되는 일이 빈번하여<br>도로상황을 보는 앱을 항상 보면서 다녔다.<br>초록색은 clear 1단계.<br>빨간색은 impassable 8단계.<br>북쪽의 도로는 대부분 주황색, spots of ice, 하늘색 slippery 상태였다.<br>데티포스를 향하는 길은 핑크 땡땡이.<br>dif.driving 6단계 이었다.<br>4륜 구동차는 다닐수 있다고 공지되어 있어 우리는 가보기로 했다.<br>처음 들어가는 길은 신났다.<br>모험심이 넘쳤고 스릴 있었다.  </p>
-<p>한 10분쯤 들어갔을까. 갑자기 눈이 쏟아지며 가시거리가 좁아졌다.<br>1미터 앞도 거의 안 보이는데다가 눈이 너무 쌓여 폭포를 포기하고 돌아나오기로 했다.<br>도로에는 우리 차 밖에 없었다.<br>차를 돌리는데 바퀴가 헛돌았다.<br>여행 처음으로 사고의 위험을 느꼈다.<br>다같이 내려서 차를 밀고 겨우 돌렸다.<br>한창 차가 눈에 빠져서 끙끙댈 때 다른 차가 들어왔다.<br>우리 차를 보더니 곧 돌려서 나갔다.<br>그 차가 낸 눈길을 따라 천천히 왔던 길을 되돌아 나갔다.  </p>
-<p>겨우 1번도로로 탈출할 수 있었다.<br>빨리 숙소로 가서 쉬고 싶었다.<br>우리의 시련은 이게 시작이었다… </p>
-<img src="/assets/images/is/df1.jpg">
-<img src="/assets/images/is/df2.jpg">
-<img src="/assets/images/is/df3.jpg">
-<img src="/assets/images/is/df5.jpg">
-<iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d423124.86339105276!2d-15.75767952540511!3d65.52712851242012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x48cbfefc843cd699%3A0xefc553adda96809d!2z7JWE7J207Iqs656A65OcIOyEuOydtOuUlOyKpO2UvOyZuOultOuSpOultA!3m2!1d65.2598494!2d-14.010115599999999!4m5!1s0x48cd068ace5f4fb9%3A0x404278759828237a!2z642w7Yuw7Y-s7IqkIOyVhOydtOyKrOuegOuTnA!3m2!1d65.81466619999999!2d-16.384576!5e0!3m2!1sko!2skr!4v1556886862709!5m2!1sko!2skr" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+            <h2 id="1-닉네임-github-io-레포지토리-만들기"><a href="#1-닉네임-github-io-레포지토리-만들기" class="headerlink" title="1. 닉네임.github.io 레포지토리 만들기"></a>1. <code>닉네임.github.io</code> 레포지토리 만들기</h2><p>위와 같이 <code>닉네임.github.io</code> 이름으로 public 레포지토리를 만듭니다.</p>
+<p><img src="/assets/images/createrepo.JPG" alt="캡쳐"></p>
+<h2 id="2-사용할-템틀릿-정하기"><a href="#2-사용할-템틀릿-정하기" class="headerlink" title="2. 사용할 템틀릿 정하기"></a>2. 사용할 템틀릿 정하기</h2><p>여기서<a href="https://github.com/topics/jekyll-theme" target="_blank" rel="noopener">(jekyll-theme)</a>{: target=”_blank”} 원하는 테마프로젝트를 선택합니다. </p>
+<p>minimal-mistakes 테마를 선택하였습니다.</p>
+<p><img src="/assets/images/chtemplet.JPG" alt="캡쳐"></p>
+<h2 id="3-config-yml-파일-복사하기"><a href="#3-config-yml-파일-복사하기" class="headerlink" title="3. _config.yml 파일 복사하기"></a>3. _config.yml 파일 복사하기</h2><p><code>remote_theme : mmistakes/minimal-mistakes</code> 추가 및 수정하기</p>
+<p><img src="/assets/images/_config.JPG" alt="이미지"></p>
+<h2 id="4-index-html-복사하기"><a href="#4-index-html-복사하기" class="headerlink" title="4.index.html 복사하기"></a>4.index.html 복사하기</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">---layout: home---</span><br></pre></td></tr></table></figure>
+<p>위와 같이 index.html파일을 만듭니다.</p>
 
         </div>
         
@@ -297,27 +297,21 @@
 
     <div class="card">
     
-    <div class="card-image">
-        <a href="/2019/05/12/trip/europ/2019-04-30-iceland2/" class="image is-7by1">
-            <img class="thumbnail" src="/assets/images/is/ar3.jpg" alt="첫 오로라">
-        </a>
-    </div>
-    
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-12T13:35:34.557Z">2019-05-12</time>
+                <time class="level-item has-text-grey" datetime="2019-05-13T01:35:53.320Z">2019-05-13</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/trip/">trip</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/trip/island/">island</a>
+                <a class="has-link-grey -link" href="/categories/tec/">tec</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    2분 읽기 (나에 대하여 300 단어)
+                    몇 초 읽기 (나에 대하여 33 단어)
                 </span>
                 
                 
@@ -326,14 +320,12 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/05/12/trip/europ/2019-04-30-iceland2/">첫 오로라</a>
+                <a class="has-link-black-ter" href="/2019/05/13/tec/blog/2019-04-29-blog2/">[JEKYLL과 깃허브로 블로그 만들기] 포스트(Post) 쓰기</a>
             
         </h1>
         <div class="content">
-            <p>거의 20시간 넘게 비행기를 타고 숙소에 도착했다.<br>첫번째 식사는 김치찌개.<br>밤이 되었다.<br>첫날 밤을 그냥 자고싶진 않았다.<br>아픈 언니와 피곤한 아빠를 뒤로하고 엄마랑 그로타 등대로 향했다.<br>기대가 크면 실망이 클까봐 기대를 꾹꾹 눌렀다.<br>등대를 향하는 바닷가도로 위 푸른 구름이 보였다.<br>이거 오로라 아냐?<br>사진을 찍어보는데 흥분을 가라앉히기 힘들었다.<br>결국 등대 가기전 불빛이 없는 공터에 차를 대고 내렸다.<br>그냥 막 흥분이되었었다.<br>카메라로 어떻게 찍는지 연습을 못해서…<br>아쉽게 사진은 제대로 찍지 못하였다.<br>눈으로 담아도 충분했다고 생각했다.(이때는ㅜㅜ)<br>가족들이 다 오지 못한게 아쉬워 숙소로 돌아가 아빠를 모시고 왔지만<br>아빠는 오로라 흔적만 보셨다.<br>오로라 없는 겨울 밤하늘도 예뻤다.<br>첫 오로라는 성공적이였다.</p>
-<img src="/assets/images/is/ar1.jpg">
-<img src="/assets/images/is/ar2.jpg">
-<iframe src="https://www.google.com/maps/embed?pb=!1m34!1m12!1m3!1d111720.49854761273!2d-22.40078156554797!3d64.05412644502664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m19!3e0!4m5!1s0x4929fdfce2ab799f%3A0x27f88d0a15c328cd!2z7LyA7ZSM652867mE7YGsIOq1reygnOqzte2VrSBLZWZsYXbDrWt1cmZsdWd2w7ZsbHVyLCAyMzUgS2VmbGF2w61rLCDslYTsnbTsiqzrnoDrk5w!3m2!1d63.9786029!2d-22.635036!4m5!1s0x48d6735b5b6a54db%3A0xea55745367827c1f!2zU3R1ZGlvIEU4LCBFbmdpaGphbGxpIDgsIEvDs3Bhdm9ndXIsIOyVhOydtOyKrOuegOuTnA!3m2!1d64.1098152!2d-21.858184899999998!4m5!1s0x48d60aeea2eeaa69%3A0xb7c61001611f14e3!2zR3LDs3R0YSwg7IWA7Yuw7JWE66W065Oc64KY66W065Oc64Sk7IqkIOyVhOydtOyKrOuegOuTnA!3m2!1d64.1645565!2d-22.021600199999998!5e0!3m2!1sko!2skr!4v1556868566275!5m2!1sko!2skr" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+            <h2 id="1-posts-2019-01-01-md파일-생성하기"><a href="#1-posts-2019-01-01-md파일-생성하기" class="headerlink" title="1. /_posts/2019-01-01.md파일 생성하기"></a>1. /_posts/2019-01-01.md파일 생성하기</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">---</span><br><span class="line">title: &quot;테스트 포스팅&quot;</span><br><span class="line">date: 2017-10-20 08:26:28 -0400</span><br><span class="line">categories:</span><br><span class="line">  - test</span><br><span class="line">tags:</span><br><span class="line">  - test</span><br><span class="line">---</span><br><span class="line">## 안녕하세요.</span><br></pre></td></tr></table></figure>
+<h2 id="2-완성"><a href="#2-완성" class="headerlink" title="2. 완성"></a>2. 완성</h2><p><img src="/assets/images/testpost.JPG" alt="캡처"></p>
 
         </div>
         
@@ -351,135 +343,14 @@
 
     <div class="card">
     
-    <div class="card-image">
-        <a href="/2019/05/12/trip/europ/2019-04-30-iceland8/" class="image is-7by1">
-            <img class="thumbnail" src="/assets/images/is/r2.jpg" alt="레이니스피아라">
-        </a>
-    </div>
-    
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-12T13:35:34.545Z">2019-05-12</time>
+                <time class="level-item has-text-grey" datetime="2019-05-13T01:35:49.900Z">2019-05-13</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/trip/">trip</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/trip/island/">island</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    1분 읽기 (나에 대하여 192 단어)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/05/12/trip/europ/2019-04-30-iceland8/">레이니스피아라</a>
-            
-        </h1>
-        <div class="content">
-            <p>폭포를 보고 검은모래 해변을 보러왔다.<br>아빠가 무려 2천원짜리 화장실에 다녀왔다.<br>여긴 신기하게 바닷가 특유 비릿한 냄새가 안 난다.<br>파도와 바람이 거세어 사진찍다 사고를 당한 사람이 많다고 조심하란다.<br>아이슬란드에서 사고가 자주 일어나니 조심히 다녀야겠다.<br>주상절리도 보고 나름 섬 국가인데 바다에 처음 왔다.<br>해가 지는걸 보니 이제 숙소로 돌아가야 된다.<br>숙소잡는데 애를 좀 먹었지만 너무 좋았다.</p>
-<img src="/assets/images/is/r1.jpg">
-<img src="/assets/images/is/r3.jpg">
-<img src="/assets/images/is/r4.jpg">
-<img src="/assets/images/is/r5.jpg">
-<img src="/assets/images/is/r6.jpg">
-<iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d114059.58594015245!2d-19.4209869543067!3d63.46898094097938!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x48d73b7639a58c15%3A0xf60c71fcdfe7948!2z7JWE7J207Iqs656A65OcIOyKpOy9lOqwgO2PrOyKpA!3m2!1d63.5320523!2d-19.511370499999998!4m5!1s0x48d74984d567267d%3A0xe07954a3f4b36bd5!2zUmV5bmlzZmphcmEsIOyVhOydtOyKrOuegOuTnA!3m2!1d63.4057404!2d-19.0716193!5e0!3m2!1sko!2skr!4v1556871869711!5m2!1sko!2skr" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/2019/05/12/trip/europ/2019-04-30-iceland9/" class="image is-7by1">
-            <img class="thumbnail" src="/assets/images/is/d2.jpg" alt="스노우볼 달쇼프디 게스트하우스">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-12T13:35:34.534Z">2019-05-12</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/trip/">trip</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/trip/island/">island</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    2분 읽기 (나에 대하여 339 단어)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/05/12/trip/europ/2019-04-30-iceland9/">스노우볼 달쇼프디 게스트하우스</a>
-            
-        </h1>
-        <div class="content">
-            <p>이동시간이 길어서 어느덧 해가 져버렸다.<br>점점 눈이 많아졌다. 깜깜해졌다.<br>까만 세상속에 마을 불빛이 혼자 깜박였다.<br>그 불빛이 없었으면 너무 무서웠을것 같다.<br>잘 보이지도 않는 눈길을 조심히 달려 겨우 숙소에 도착했다.<br>숙소빼고 주변에 건물이 세채 밖에 없었다.<br>정말 동화속 같았다.<br>주변이 모두 평지여서 여기서 오로라와 별을 보고싶었지만,<br>구름이 잔뜩있었다.<br>우리는 숙소가 너무 마음에 들어 하루를 조금 쉬어가기로 했다.<br>오랜만에 늦잠자고, 조식을 즐기기로 했다.  </p>
-<p>다음날<br>새벽에 깨서 혼자 산책을 나갔다.<br>온통 눈밭에 하늘도 구름에 어스름한 안개까지 정말 스노우 볼 속에 있는 기분이었다.<br>해가 뜨자 아쉽게 그 분위기는 사라졌지만 동화속 풍경은 여전했다.<br>아마 가족들도 모두 이번 여행에서 가장 기억에 남는 숙소가 아니었을까.<br>여름에 다시 오고싶은 숙소 중에 하나다.</p>
-<img src="/assets/images/is/d1.jpg">
-<img src="/assets/images/is/d3.jpg">
-<img src="/assets/images/is/d4.jpg">
-<img src="/assets/images/is/d5.jpg">
-<img src="/assets/images/is/d6.jpg">
-<iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d453208.1720700995!2d-18.965367688530847!3d63.65881085950817!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x48d74984d567267d%3A0xe07954a3f4b36bd5!2zUmV5bmlzZmphcmEsIOyVhOydtOyKrOuegOuTnA!3m2!1d63.4057404!2d-19.0716193!4m5!1s0x48d0fed653ebf4bf%3A0x8108d56e3cd604c7!2z7JWE7J207Iqs656A65OcIEvDoWxmYWZlbGwsIOuLrOyHvO2UhOuUlCDqsozsiqTtirjtlZjsmrDsiqQ!3m2!1d63.911345!2d-17.837642!5e0!3m2!1sko!2skr!4v1556871903602!5m2!1sko!2skr" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-image">
-        <a href="/2019/05/12/trip/europ/2019-04-30-iceland7/" class="image is-7by1">
-            <img class="thumbnail" src="/assets/images/is/sp1.jpg" alt="스코가포스 폭포">
-        </a>
-    </div>
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-12T13:35:34.523Z">2019-05-12</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/trip/">trip</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/trip/island/">island</a>
+                <a class="has-link-grey -link" href="/categories/tec/">tec</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
                 </div>
                 
                 
@@ -495,17 +366,69 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/05/12/trip/europ/2019-04-30-iceland7/">스코가포스 폭포</a>
+                <a class="has-link-black-ter" href="/2019/05/13/tec/blog/2019-04-29-blog3/">[JEKYLL과 깃허브로 블로그 만들기] 콜렉션(Collection)만들기</a>
             
         </h1>
         <div class="content">
-            <p>셀야란즈포스에서 조금 더 지나면 스코가포스 폭포가 나온다.<br>조금 더 컸다.<br>스코카포스 폭포는 폭포위로 올라가볼 수 있다.<br>발이 아픈 언니를 빼고 가족들은 계단을 걸어 올라갔다.<br>위에서 내려다 보는 폭포도 멋졌고 올라가니 수평선이 보였다.<br>설산봉우리가 작은 스위스 같아 보이기도 했다.<br>언니는 못 올라와서 아쉬웠겠다.<br>폭포 근처라 계단에 얼음이 많아 오르고 내릴때 아주 위험했다.<br>우리 가족은 아이젠을 신었지만 그래도 조심.<br>특히 내려갈때 미끄러지는 사람들을 많이 봤다.<br>나는 그냥 계단 옆길에 얼음 빙판길에 미끄럼틀을 타기로 했다.<br>엄청 금방 안전하게 내려왔다.ㅎㅎ  </p>
-<img src="/assets/images/is/sp2.jpg">
-<img src="/assets/images/is/sp3.jpg">
-<img src="/assets/images/is/sp4.jpg">
-<img src="/assets/images/is/sp5.jpg">
-<img src="/assets/images/is/sp6.jpg">
-<iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d113663.98742072926!2d-19.89096263948583!3d63.56815153846766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x48d71eade8ef2415%3A0xae01e6205209178d!2z7JWE7J207Iqs656A65OcIOyFgOyVvOuegOymiO2PrOyKpA!3m2!1d63.615623199999995!2d-19.9885688!4m5!1s0x48d73b7639a58c15%3A0xf60c71fcdfe7948!2z7JWE7J207Iqs656A65OcIOyKpOy9lOqwgO2PrOyKpA!3m2!1d63.5320523!2d-19.511370499999998!5e0!3m2!1sko!2skr!4v1556871829638!5m2!1sko!2skr" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+            <h2 id="1-config-yml파일-수정하기"><a href="#1-config-yml파일-수정하기" class="headerlink" title="1. /_config.yml파일 수정하기"></a>1. /_config.yml파일 수정하기</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">collections:</span><br><span class="line">  trip:</span><br><span class="line">    output: true</span><br><span class="line">    permalink: /:collection/:path/</span><br></pre></td></tr></table></figure>
+<p>위의 내용 추가</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">defaults:</span><br><span class="line">  # _trip</span><br><span class="line">  - scope:</span><br><span class="line">      path: &quot;&quot;</span><br><span class="line">      type: trip</span><br><span class="line">    values:</span><br><span class="line">      layout: single</span><br><span class="line">      author_profile: false</span><br><span class="line">      share: true</span><br><span class="line">      related: true</span><br></pre></td></tr></table></figure>
+<p>위의 내용 추가</p>
+<h2 id="2-pages-trip-archive-md-파일-만들기"><a href="#2-pages-trip-archive-md-파일-만들기" class="headerlink" title="2. _pages/trip-archive.md 파일 만들기"></a>2. _pages/trip-archive.md 파일 만들기</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">---</span><br><span class="line">title: 여행</span><br><span class="line">layout: collection</span><br><span class="line">permalink: /trip/</span><br><span class="line">collection: trip</span><br><span class="line">entries_layout: grid</span><br><span class="line">classes: wide</span><br><span class="line"></span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<h2 id="3-trip-post1-md-파일-만들기"><a href="#3-trip-post1-md-파일-만들기" class="headerlink" title="3._/trip/post1.md 파일 만들기"></a>3._/trip/post1.md 파일 만들기</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">itle: &quot;Trip1&quot;</span><br><span class="line">excerpt: &quot;첫번째 여행글 입니다..&quot;</span><br><span class="line">header:</span><br><span class="line">  image: /assets/images/별그림.png</span><br><span class="line">  #teaser: assets/images/unsplash-gallery-image-1-th.jpg</span><br><span class="line">sidebar:</span><br><span class="line">  - title: &quot;Role&quot;</span><br><span class="line">    image: /assets/images/별그림.png</span><br><span class="line">    image_alt: &quot;logo&quot;</span><br><span class="line">    text: &quot;Designer, Front-End Developer&quot;</span><br><span class="line">  - title: &quot;Responsibilities&quot;</span><br><span class="line">    text: &quot;Reuters try PR stupid commenters should isn&apos;t a business model&quot;</span><br><span class="line">gallery:</span><br><span class="line">  - url: /assets/images/별그림.png</span><br><span class="line">    image_path: /assets/images/별그림.png</span><br><span class="line">    alt: &quot;placeholder image 1&quot;</span><br><span class="line">  - url: /assets/images/unsplash-gallery-image-2.jpg</span><br><span class="line">    image_path: /assets/images/별그림.png</span><br><span class="line">    alt: &quot;placeholder image 2&quot;</span><br><span class="line">  - url: /assets/images/unsplash-gallery-image-3.jpg</span><br><span class="line">    image_path: /assets/images/별그림.png</span><br><span class="line">    alt: &quot;placeholder image 3&quot;</span><br><span class="line">categories: [아시아, 한국, korea]</span><br><span class="line">tags: [hot, summer]</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">이사진은 별그림 입니다</span><br><span class="line">&#123;% include gallery caption=&quot;This is a sample gallery to go along with this case study.&quot; %&#125;</span><br><span class="line"></span><br><span class="line">이건 마지막 글입니다.</span><br><span class="line">ude gallery caption=&quot;This is a sample gallery to go along with this case study.&quot; %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="4-완성"><a href="#4-완성" class="headerlink" title="4. 완성"></a>4. 완성</h2><h2 id="참고-https-jekyllrb-ko-github-io-docs-collections"><a href="#참고-https-jekyllrb-ko-github-io-docs-collections" class="headerlink" title="참고:https://jekyllrb-ko.github.io/docs/collections/"></a>참고:<a href="https://jekyllrb-ko.github.io/docs/collections/" target="_blank" rel="noopener">https://jekyllrb-ko.github.io/docs/collections/</a></h2>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-05-13T01:35:46.972Z">2019-05-13</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/tec/">tec</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    몇 초 읽기 (나에 대하여 36 단어)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/05/13/tec/blog/2019-04-29-blog4/">[JEKYLL과 깃허브로 블로그 만들기] 네비게이션 메뉴 (Navigation)만들기</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="1-data-navigation-yml-파일-만들기"><a href="#1-data-navigation-yml-파일-만들기" class="headerlink" title="1. /_data/navigation.yml 파일 만들기"></a>1. /_data/navigation.yml 파일 만들기</h2><pre><code>main:
+  - title: &quot;TECHNOLOGY&quot;
+    url: /tec/
+  - title: &quot;WORLD-TRIP&quot;
+    url: /trip/
+  - title: &quot;OTHERS&quot;
+    url: /posts/
+</code></pre><p>위의 내용 추가</p>
+<h2 id="2-완성"><a href="#2-완성" class="headerlink" title="2. 완성"></a>2. 완성</h2><p><img src="/assets/images/nav.JPG" alt="캡쳐"></p>
 
         </div>
         
@@ -523,27 +446,21 @@
 
     <div class="card">
     
-    <div class="card-image">
-        <a href="/2019/05/12/trip/europ/2019-05-04-iceland17/" class="image is-7by1">
-            <img class="thumbnail" src="/assets/images/is/mv4.jpg" alt="미바튼">
-        </a>
-    </div>
-    
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-12T13:35:34.512Z">2019-05-12</time>
+                <time class="level-item has-text-grey" datetime="2019-05-13T01:35:43.393Z">2019-05-13</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/trip/">trip</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/trip/island/">island</a>
+                <a class="has-link-grey -link" href="/categories/tec/">tec</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    3분 읽기 (나에 대하여 407 단어)
+                    몇 초 읽기 (나에 대하여 24 단어)
                 </span>
                 
                 
@@ -552,20 +469,13 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/05/12/trip/europ/2019-05-04-iceland17/">미바튼</a>
+                <a class="has-link-black-ter" href="/2019/05/13/tec/blog/2019-04-29-blog5/">[JEKYLL과 깃허브로 블로그 만들기] 검색 메뉴(Search)만들기</a>
             
         </h1>
         <div class="content">
-            <p>테티포스에서 한바탕 고생을 한탓에 우리는 빨리 숙소에 들어가서 쉬고싶었다.<br>1번 링로드와 완전 가까운 숙소를 예약했다.<br>약간의 문제가 있었다.<br>눈이 많이 쌓여서 차를 숙소까지 가져갈 수가 없었다.<br>차는 큰도로 옆 공터에 대고, 우리가 하루동안 필요한 짐만 캐리어에 챙겨서 눈밭을 굴러 내려갔다.<br>차가 있는 위치와 숙소는 경사가 심했고 길이 보이지 않아 호스트 아저씨가 길을 걸으며 내 주었다.<br>우리는 길을 더 크게 내며 킬킬거리며 걸었다.</p>
-<p>숙소는 깔끔하고 좋았다.<br>다락방 작은 창에서는 별이 아주 잘 보였다.</p>
-<p>고생한 우리를 위해 엄마가 닭볶음탕을 해주셨다.<br>먹고 다들 뻗어서 쉬었다.  </p>
-<p>자다 일어니 창밖에서 오로라가 보였다.<br>언능 식구들을 다 깨워서 이번엔 의자를 가지고 밖으로 나갔다.<br>옆 숙소 불빛이 넘 밝아 아쉬웠지만 이렇게 별이 많은 하늘은 처음 봤다.<br>나름 별 보는 것을 좋아해서 여러 나라에서 별을 보러 다녔는데 미바튼에서 본 하늘은 정말 최고였다.<br>그렇게 세번째 오로라를 볼 수 있었다.<br>실컷 또 하늘을 구경하고 야식으로 라면을 먹고 잤다.  </p>
-<img src="/assets/images/is/mv1.jpg">
-<img src="/assets/images/is/mv2.jpg">
-<img src="/assets/images/is/mv3.jpg">
-<img src="/assets/images/is/mv5.jpg">
-<img src="/assets/images/is/mv6.jpg">
-<iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d423124.86339105276!2d-15.75767952540511!3d65.52712851242012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x48cbfefc843cd699%3A0xefc553adda96809d!2z7JWE7J207Iqs656A65OcIOyEuOydtOuUlOyKpO2UvOyZuOultOuSpOultA!3m2!1d65.2598494!2d-14.010115599999999!4m5!1s0x48cd068ace5f4fb9%3A0x404278759828237a!2z642w7Yuw7Y-s7IqkIOyVhOydtOyKrOuegOuTnA!3m2!1d65.81466619999999!2d-16.384576!5e0!3m2!1sko!2skr!4v1556886862709!5m2!1sko!2skr" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+            <h2 id="1-config-yml-파일-수정하기"><a href="#1-config-yml-파일-수정하기" class="headerlink" title="1. /_config.yml 파일 수정하기"></a>1. /_config.yml 파일 수정하기</h2><pre><code>search: true
+</code></pre><p>위의 내용 추가</p>
+<h2 id="2-완성"><a href="#2-완성" class="headerlink" title="2. 완성"></a>2. 완성</h2><p><img src="/assets/images/nav.JPG" alt="캡쳐"></p>
 
         </div>
         
@@ -583,27 +493,21 @@
 
     <div class="card">
     
-    <div class="card-image">
-        <a href="/2019/05/12/trip/europ/2019-05-01-iceland14/" class="image is-7by1">
-            <img class="thumbnail" src="/assets/images/is/dv1.jpg" alt="디위피보귀르-어촌마을">
-        </a>
-    </div>
-    
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-12T13:35:34.499Z">2019-05-12</time>
+                <time class="level-item has-text-grey" datetime="2019-05-13T01:09:12.810Z">2019-05-13</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/trip/">trip</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/trip/island/">island</a>
+                <a class="has-link-grey -link" href="/categories/tec/">tec</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/tec/java/">java</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    1분 읽기 (나에 대하여 154 단어)
+                    9분 읽기 (나에 대하여 1376 단어)
                 </span>
                 
                 
@@ -612,14 +516,152 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/05/12/trip/europ/2019-05-01-iceland14/">디위피보귀르-어촌마을</a>
+                <a class="has-link-black-ter" href="/2019/05/13/tec/java/2019-05-04-java7/">[Java의정석] CH7. 객체지향프로그래밍2</a>
             
         </h1>
         <div class="content">
-            <p>오늘은 관광보다는 이동이 주 목적이었다.<br>아이슬란드 두번째 도시 에이일스타디르에 도착해야했다.<br>차를 오래 타면 힘드니까 중간 어촌도시에 내려서 쉬어갔다.<br>기름도 넣고 네토에서 장도 봤다.<br>네토마트는 전반적으로 보너스마트 보다 비싸다..<br>항구도 있는 예쁜마을이었다.<br>여기서 하루를 보냈어도 좋았을것 같다.<br>아직 에이일스타디르까지 갈 길이 멀다.  </p>
-<img src="/assets/images/is/dv2.jpg">
-<img src="/assets/images/is/dv3.jpg">
-<iframe src="https://www.google.com/maps/embed?pb=!1m27!1m12!1m3!1d222992.87385726158!2d-16.322503270503844!3d64.11002414796697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m12!3e0!4m4!1s0x0%3A0x4202e865f907845a!3m2!1d64.04433399999999!2d-16.1776622!4m5!1s0x48cec38f02292149%3A0x3b5e271b6c5b9d8b!2zRGrDunBpdm9ndXIsIOyVhOydtOyKrOuegOuTnA!3m2!1d64.656888!2d-14.290050899999999!5e0!3m2!1sko!2skr!4v1556876019487!5m2!1sko!2skr" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+            <h2 id="3-Package와-import"><a href="#3-Package와-import" class="headerlink" title="3 Package와 import"></a>3 Package와 import</h2><h3 id="3-1-패키지-package"><a href="#3-1-패키지-package" class="headerlink" title="3.1 패키지(package)"></a>3.1 패키지(package)</h3><p>패키지란, 클래스의 묶음. 물리적으로 하나의 디렉터리임.<br>ex) java.lang.String은 java/lang 디렉터리에 위치한 Strig 클래스이다.  </p>
+<ul>
+<li>하나의 소스파일에는 첫번째 문장으로 단 한번의 패키지 선언만을 허용한다.</li>
+<li>모든 클래스는 반드시 하나의 패키지에 속해야 된다.</li>
+<li>패키지는 점(.)을 구분자로 하여 계층구조로 구성할 수 있다.</li>
+<li>패키지는 물리적으로 클래스 파일(.class)을 포함하는 하나의 디렉터리다.  </li>
+</ul>
+<h3 id="3-2-패키지의-선언"><a href="#3-2-패키지의-선언" class="headerlink" title="3.2 패키지의 선언"></a>3.2 패키지의 선언</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">package 패키지명;</span><br></pre></td></tr></table></figure>
+<h3 id="3-3-import-문"><a href="#3-3-import-문" class="headerlink" title="3.3 import 문"></a>3.3 import 문</h3><p>import 문은 컴파일러에게 소스파일에 사용된 클래스의 패키지에 대한 정보를 제공함.  </p>
+<h3 id="3-4-import문의-선언"><a href="#3-4-import문의-선언" class="headerlink" title="3.4 import문의 선언"></a>3.4 import문의 선언</h3><p>일반적인 소스 파일(*.java)의 구성은 다음의 순서로 되어있다.  </p>
+<ol>
+<li>package문</li>
+<li>import문</li>
+<li>클래스선언  </li>
+</ol>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import 패키지명.클래스명;</span><br><span class="line">import 패키지명.*;</span><br></pre></td></tr></table></figure>
+<h2 id="4-제어자"><a href="#4-제어자" class="headerlink" title="4 제어자"></a>4 제어자</h2><h3 id="4-1-제어자란"><a href="#4-1-제어자란" class="headerlink" title="4.1 제어자란?"></a>4.1 제어자란?</h3><p>클래스, 변수 또는 메서드의 선언부에 함께 사용되어 부가적인 의미를 부여함</p>
+<ul>
+<li>접근제어자 - public, protected, default, private</li>
+<li>그외 - static, final, abstract, native, transient, synchronized, volatile, strictfp<br>제어자는 클래스, 멤버변수, 메서드에 주로 사용됨.<br>하나의 대상에 여러 제어자를 조합하는 것은 가능하나 접근제어자는 하나만 쓸 수 있다.  </li>
+</ul>
+<h3 id="4-2-static-클래스의-공통적인"><a href="#4-2-static-클래스의-공통적인" class="headerlink" title="4.2 static - 클래스의, 공통적인"></a>4.2 static - 클래스의, 공통적인</h3><ul>
+<li>static 이 사용될 수 있는곳 : 멤머변수, 메서드, 초기화 블럭  </li>
+</ul>
+<p>*static  </p>
+<table>
+<thead>
+<tr>
+<th>대상</th>
+<th>의미</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>멤버변수</td>
+<td>- 모든 인스턴스에 공통적으로 사용되는 클래스 변수가 된다.<br> - 클래스변수는 인스턴스를 생성하지 않고도 가능하다.<br> - 클래스가 메모리에 로드될 때 생성된다.</td>
+</tr>
+<tr>
+<td>메서드</td>
+<td>- 인스턴스를 생성하지 않고도 호룰이 가능한 static 메서드가 된다. <br> static 메서드 내에선 인스턴스 멤버들을 직접 사용할 수 없다.  </td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">class StaticTest&#123;</span><br><span class="line">    static int width =200;</span><br><span class="line">    static int height = 120;</span><br><span class="line">    </span><br><span class="line">    static &#123;</span><br><span class="line">        // static 변수의 초기화 수행</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    static int max(int a, int b)&#123;</span><br><span class="line">        return a&gt;b?a:b;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="4-3-final-마지막의-변경될-수-없는"><a href="#4-3-final-마지막의-변경될-수-없는" class="headerlink" title="4.3 final - 마지막의, 변경될 수 없는"></a>4.3 final - 마지막의, 변경될 수 없는</h3><p>final이 사용될 수 있는 곳 - 클래스, 메서드, 멤버변수, 지역변수<br>*final  </p>
+<table>
+<thead>
+<tr>
+<th>대상</th>
+<th>의미</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>클래스</td>
+<td>변경될 수 없는 클래스, 확장될 수 없는 클래스가 된다. <br> 그래서 final로 지정된 클래스는 다른 클래스의 조상이 될 수 없음</td>
+</tr>
+<tr>
+<td>메서드</td>
+<td>변경될 수 없는 메서드, final로 지정된 메서드는 오버라이딩을 통해 재정의 될 수 없다.</td>
+</tr>
+<tr>
+<td>멤버변수/지역변수</td>
+<td>변수 앞에 final이 붙으면 값을 변경할 수 없는 상수가 된다.</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">final class FinalTest&#123;</span><br><span class="line">    final int MAX_SIZE = 10;</span><br><span class="line">    </span><br><span class="line">    final void getMaxSize()&#123;</span><br><span class="line">        final int LV = MAX_SIZE;</span><br><span class="line">        return MAX_SIZE;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="4-4-생성자를-이용한-final-멤버변수-초기화"><a href="#4-4-생성자를-이용한-final-멤버변수-초기화" class="headerlink" title="4.4 생성자를 이용한 final 멤버변수 초기화"></a>4.4 생성자를 이용한 final 멤버변수 초기화</h3><p>final 붙은 변수는 상수임으로 일반적으로 선언과 초기화를 동시에 하지만, 인스턴스 변수의 경우 생성자에서 초기화 되도록 할 수 있다.<br>각 인스턴스마다 final 이 붙은 멤버 변수가 다른 값을 갖도록 하는 것이 가능하다.<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class Card&#123;</span><br><span class="line">    final int NUMBER;</span><br><span class="line">    final String KIND;</span><br><span class="line">    static int width = 100;</span><br><span class="line">    static int height =250;</span><br><span class="line">    </span><br><span class="line">    Card(String kind, int num)&#123;</span><br><span class="line">        KIND = kind;</span><br><span class="line">        NUMBER = num;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    Card()&#123;</span><br><span class="line">        this(&quot;HEART&quot;,1);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="4-5-abstract-추상의-미완성의"><a href="#4-5-abstract-추상의-미완성의" class="headerlink" title="4.5 abstract - 추상의, 미완성의"></a>4.5 abstract - 추상의, 미완성의</h3><p>미완성의 의미를 가지고 있다.<br>메서드의 선언부만 작성하고 실제 수행내용은 구현하지 않은 추상 메서드를 선언하는데 사용함.  </p>
+<ul>
+<li>abstract가 사용될 수 있는 곳 - 클래스, 메서드</li>
+</ul>
+<p>*abstract    </p>
+<table>
+<thead>
+<tr>
+<th>대상</th>
+<th>의미</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>클래스</td>
+<td>클래스 내에 추상메서드가 선언되어 있음을 의미한다.</td>
+</tr>
+<tr>
+<td>메서드</td>
+<td>선언부만 작성하고 구현부는 작성하지 않은 추상메서드임을 알린다.</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">abstract class AbstractTest&#123;</span><br><span class="line">    abstract void move();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="4-6-접근제어자"><a href="#4-6-접근제어자" class="headerlink" title="4.6 접근제어자"></a>4.6 접근제어자</h3><ul>
+<li>멤버 또는 클래스에 사용되어 외부에서 접근하지 못하게 제한하는 역할.</li>
+<li>접근 제어자가 사용될 수 있는곳- 클래스, 멤버변수, 메서드, 생성자<ul>
+<li>private : 같은 클래스 내에서만 접근이 가능하다.</li>
+<li>default : 같은 패키지 내에서만 접근이 가은하다.</li>
+<li>protected : 같은 패키지 내에서, 그리고 다른 패키지의 자손 클래스에서 접근이 가능하다.</li>
+<li>public : 접근 제한이 없다.</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-7-접근-제어자를-이용한-캡슐화"><a href="#4-7-접근-제어자를-이용한-캡슐화" class="headerlink" title="4.7 접근 제어자를 이용한 캡슐화"></a>4.7 접근 제어자를 이용한 캡슐화</h3><p>접근 제어자 사용하는 이유: </p>
+<ul>
+<li>외부로 부터 데이터를 보호하기 위해</li>
+<li>외부에는 불필요한 내부적으로만 사용되는 부분을 감추기 위해</li>
+</ul>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">public class Time&#123;</span><br><span class="line">    private int hour;</span><br><span class="line">    private int minute;</span><br><span class="line">    private int second;</span><br><span class="line">    </span><br><span class="line">    public int getHour()&#123;return hour;&#125;</span><br><span class="line">    public void setHour(int hour)&#123;</span><br><span class="line">        if(hour&lt;0 || hour &gt; 23)&#123;</span><br><span class="line">            return;</span><br><span class="line">        &#125;</span><br><span class="line">        this.hour = hour;</span><br><span class="line">    &#125;</span><br><span class="line">    public int getMinute()&#123;return minute;&#125;</span><br><span class="line">    public void setMinute(int min)&#123;</span><br><span class="line">        if(min&lt;0 || hour &gt; 59)&#123;</span><br><span class="line">            return;</span><br><span class="line">        &#125;</span><br><span class="line">        this.minute = min;</span><br><span class="line">    &#125;</span><br><span class="line">    public int getSecond()&#123;return second;&#125;</span><br><span class="line">    public void setSecond(int sec)&#123;</span><br><span class="line">        if(sec &lt;0 || sec &gt; 59)&#123;</span><br><span class="line">            return;</span><br><span class="line">        &#125;</span><br><span class="line">        this.second = sec;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="4-9-제어자의-조합"><a href="#4-9-제어자의-조합" class="headerlink" title="4.9 제어자의 조합"></a>4.9 제어자의 조합</h3><table>
+<thead>
+<tr>
+<th>대상</th>
+<th>사용가능한 제어자</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>클래스</td>
+<td>public, default, final, abstract</td>
+</tr>
+<tr>
+<td>메서드</td>
+<td>모든 접근제어자, final, abstract, static</td>
+</tr>
+<tr>
+<td>멤버변수</td>
+<td>모든 접근제어자, final, static</td>
+</tr>
+<tr>
+<td>지역변수</td>
+<td>final</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>메서드에 static과 abstract를 함께 사용할 수 없다.</li>
+<li>클래스에 abstract와 final을 동시에 사용할 수 없다.</li>
+<li>abstract메서드의 접근제어자가 private일 수 없다.</li>
+<li>메서드에 private와 final을 같이 사용할 필요는 없다.(둘중 하나만 사용해도 충분)</li>
+</ol>
+
         </div>
         
         
@@ -636,27 +678,21 @@
 
     <div class="card">
     
-    <div class="card-image">
-        <a href="/2019/05/12/trip/europ/2019-05-01-iceland12/" class="image is-7by1">
-            <img class="thumbnail" src="/assets/images/is/j3.jpg" alt="요쿨살론-빙하호수">
-        </a>
-    </div>
-    
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-12T13:35:34.488Z">2019-05-12</time>
+                <time class="level-item has-text-grey" datetime="2019-05-13T01:09:12.797Z">2019-05-13</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/trip/">trip</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/trip/island/">island</a>
+                <a class="has-link-grey -link" href="/categories/tec/">tec</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/tec/java/">java</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    1분 읽기 (나에 대하여 173 단어)
+                    3분 읽기 (나에 대하여 471 단어)
                 </span>
                 
                 
@@ -665,14 +701,207 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/05/12/trip/europ/2019-05-01-iceland12/">요쿨살론-빙하호수</a>
+                <a class="has-link-black-ter" href="/2019/05/13/tec/java/2019-05-03-java5/">[Java의정석] CH7. 객체지향프로그래밍2</a>
             
         </h1>
         <div class="content">
-            <p>빙하가 떠내려온 호수인 요쿨살론에 도착했다.<br>오로라 뷰 포인트라던데 우리는 이른 아침에 도착했다.<br>사실 해가 짧아서 새벽도 아닌데 어스름 했다.<br>얼음을 너무 좋아하는 내가 빙하를 먹어 볼 수 있다니!!<br>미리 잔에 음료수를 담아가서 빙하를 넣어서 먹었다.<br>빙하는 엄청압축되었던지 시간이 꽤 오래지나도 형태를 유지했다.<br>여기에 정신이 팔려서 다이아몬드 비치에 못 갈뻔했다.<br>못갔으면 너무 아쉬웠을듯.</p>
-<img src="/assets/images/is/j1.jpg">
-<img src="/assets/images/is/j2.jpg">
-<iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d55790.54782356903!2d-16.19353286698807!3d64.08890705488062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x48cfd204c28a3b7b%3A0xc0d8f68f87d104ae!2z7Iqk7Lm07J2066Oo7Iuc65OcIOqyjOyKpO2KuO2VmOyasOyKpCDDnmrDs8OwdmVndXIsIOyVhOydtOyKrOuegOuTnA!3m2!1d64.1293546!2d-16.0160906!4m5!1s0x48cfd6ecd73a3819%3A0xcd05c959e10146a9!2zSsO2a3Vsc8OhcmzDs24sIOyVhOydtOyKrOuegOuTnA!3m2!1d64.0784458!2d-16.230553699999998!5e0!3m2!1sko!2skr!4v1556872082330!5m2!1sko!2skr" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+            <h2 id="1-상속"><a href="#1-상속" class="headerlink" title="1. 상속"></a>1. 상속</h2><h3 id="1-1-상속의-정의와-장점"><a href="#1-1-상속의-정의와-장점" class="headerlink" title="1.1 상속의 정의와 장점"></a>1.1 상속의 정의와 장점</h3><p>기존의 클래스를 재사용하여 새로운 클래스를 작성하는것<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">class Parent&#123;&#125;</span><br><span class="line">class Child extends Parent&#123;&#125;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>조상클래스 -  부모클래스, 상위클래스, 기반 클래스</li>
+<li>자손클래스 - 자식 클래스, 하위클래스, 파생된 클래스  </li>
+</ul>
+<ul>
+<li>생성자와 초기화 블럭은 상속되지 않는다. 멤버만 상속된다.</li>
+<li>자손 클래스의 멤버개수는 조상 클래스보다 항상 같거나 많다.    </li>
+</ul>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class Tv&#123;</span><br><span class="line">    boolean power;</span><br><span class="line">    int channel;</span><br><span class="line">    </span><br><span class="line">    void power()&#123;power = !power;&#125;</span><br><span class="line">    void channelUp()&#123;++chnannel;&#125;</span><br><span class="line">    void channelDown()&#123;--channel;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class CaptionTv extends Tv&#123;</span><br><span class="line">    boolean caption;</span><br><span class="line">    void displayCaption(String text)&#123;</span><br><span class="line">        if(caption)&#123;</span><br><span class="line">            system.out.println(text);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="1-2-클래스간의-관계-포함관계"><a href="#1-2-클래스간의-관계-포함관계" class="headerlink" title="1.2 클래스간의 관계 - 포함관계"></a>1.2 클래스간의 관계 - 포함관계</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">class Circle&#123;</span><br><span class="line">    int x;</span><br><span class="line">    int y;</span><br><span class="line">    int r;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>이 클래스를</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">class Point&#123;</span><br><span class="line">    int x; </span><br><span class="line">    int y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Circle&#123;</span><br><span class="line">    Point point = new Point();</span><br><span class="line">    int r;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>이렇게 표현할 수 있다.<br>Engine, Door 클래스를 미리 작성 후 아래와 같이 사용 가능.</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">class car&#123;</span><br><span class="line">    Engine e = new Engine();</span><br><span class="line">    Door[] d = new Door[4];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="1-3-클래스간-관계-결정하기"><a href="#1-3-클래스간-관계-결정하기" class="headerlink" title="1.3 클래스간 관계 결정하기"></a>1.3 클래스간 관계 결정하기</h3><p>어떨때 상속, 어떨때 포함관계를 맺을까?  </p>
+<ul>
+<li>상속: ~은 ~이다(is-a)</li>
+<li>포함 : ~은 ~을 가지고 있다(has-a)  </li>
+</ul>
+<p>ex) 원은 점(point)이다 (X)<br>    원은 점을 가지고 있다(O)  -&gt; 포함관계</p>
+<pre><code>SportCar는 Car이다(0) -&gt; 상속 관계
+</code></pre><h3 id="1-4-단일-상속"><a href="#1-4-단일-상속" class="headerlink" title="1.4 단일 상속"></a>1.4 단일 상속</h3><p>부모클래스를 두개 이상 상속 받을 수 없다.</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//불가능한 경우</span><br><span class="line">calss TVCR extends TV, VCR&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">class Tv&#123;</span><br><span class="line">    boolean power;</span><br><span class="line">    int channel;</span><br><span class="line">    </span><br><span class="line">    void power()&#123;power = !power;&#125;</span><br><span class="line">    void channelUp()&#123;++chnannel;&#125;</span><br><span class="line">    void channelDown()&#123;--channel;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class VCR&#123;</span><br><span class="line">    boolean power;</span><br><span class="line">    int counter =0;</span><br><span class="line">    void power()&#123;&#125;;</span><br><span class="line">    void play()&#123;&#125;;</span><br><span class="line">    void stop()&#123;&#125;;</span><br><span class="line">    void rew()&#123;&#125;;</span><br><span class="line">    void ff()&#123;&#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class TVCR extends Tv&#123;</span><br><span class="line">    VCR vcr = new VCR();</span><br><span class="line">    int counter =vcr.counter;</span><br><span class="line">    </span><br><span class="line">    void play()&#123;</span><br><span class="line">        vcr.play();</span><br><span class="line">    &#125;;</span><br><span class="line">    void stop()&#123;</span><br><span class="line">        vcr.stop();</span><br><span class="line">    &#125;;</span><br><span class="line">    void rew()&#123;</span><br><span class="line">        vcr.rew();</span><br><span class="line">    &#125;;</span><br><span class="line">    void ff()&#123;</span><br><span class="line">        vcr.ff();</span><br><span class="line">    &#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="1-5-Object클래스-모든-클래스의-조상"><a href="#1-5-Object클래스-모든-클래스의-조상" class="headerlink" title="1.5 Object클래스 -모든 클래스의 조상"></a>1.5 Object클래스 -모든 클래스의 조상</h3><p>Object는 모든 클래스의 조상이다.  </p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class Tv&#123;&#125;</span><br></pre></td></tr></table></figure>
+<p>이것은 따지고 보면</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class Tv extends Object&#123;&#125;</span><br></pre></td></tr></table></figure>
+<p>이거임<br>toString(), equals() 그냥 쓸 수 있는게 Object클래스에 정의 되어있어서 그렇다.</p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-05-13T01:09:12.785Z">2019-05-13</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/tec/">tec</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/tec/java/">java</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    5분 읽기 (나에 대하여 768 단어)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/05/13/tec/java/2019-05-11-java14/">[Java의정석] CH11. 컬렉션프레임웍과 유용한 클래스</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="1-컬렉션-프레임웍-Collection-Framework"><a href="#1-컬렉션-프레임웍-Collection-Framework" class="headerlink" title="1. 컬렉션 프레임웍(Collection Framework)"></a>1. 컬렉션 프레임웍(Collection Framework)</h2><h3 id="1-6-Enumeration-Iterator-ListIterator"><a href="#1-6-Enumeration-Iterator-ListIterator" class="headerlink" title="1.6 Enumeration, Iterator, ListIterator"></a>1.6 Enumeration, Iterator, ListIterator</h3><h4 id="1-6-1-Iterator"><a href="#1-6-1-Iterator" class="headerlink" title="1.6.1 Iterator"></a>1.6.1 Iterator</h4><p>컬렉션에 저장된 각 요소에 접근하는 기능을 가진 Iterator인터페이스를 정의해 Collection인터페이스에 Iterator를 반환하는 iterator()를 정의하고있다.  </p>
+<pre><code class="java"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Iterator</span></span>{
+
+    <span class="function"><span class="keyword">boolean</span> <span class="title">hasNext</span><span class="params">()</span></span>;
+    ObjectNext();
+    <span class="function"><span class="keyword">void</span> <span class="title">remove</span><span class="params">()</span></span>;
+}
+
+<span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Collection</span> </span>{
+    <span class="function"><span class="keyword">public</span> <span class="title">Iterator</span><span class="params">()</span></span>;
+}
+</code></pre>
+<p>iterator()은 Collection 인터페이스에 구현되어있기 때문에 자손 클래스인 List와 Set에도 포함되어 있음.    </p>
+<table>
+<thead>
+<tr>
+<th>메서드</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>boolean hasNext()</td>
+<td>읽어올 요소가 남아있는지 확인. 있으면 true, 없으면 false를 반환한다.</td>
+</tr>
+<tr>
+<td>Object next()</td>
+<td>다음 요소를 읽어온다. next()를 호출하기 전에 hasNext()를 호출해 확인하는것이 안전하다.</td>
+</tr>
+<tr>
+<td>void remove()</td>
+<td>next()로 읽어 온 요소를 삭제. next()호출 한 다음에 remove()를 호출해야 한다.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="1-6-2-Enumeration과-ListIterator"><a href="#1-6-2-Enumeration과-ListIterator" class="headerlink" title="1.6.2 Enumeration과 ListIterator"></a>1.6.2 Enumeration과 ListIterator</h4><ul>
+<li>Enumeration은 컬렉션 프레임웍이 만들어지기 전에 사용하는것 Iterator의 구버전.  Iterator를 사용하자.  </li>
+<li>ListIterator는  Iterator를 상속받아 기능을 추가한 것. 양방향으로 이동이 가능함.<br>ArrayList나 LinkedList와 같이 List인터페이스를 구현한 컬렉션에서만 사용가능  </li>
+</ul>
+<h3 id="1-7-HashSet"><a href="#1-7-HashSet" class="headerlink" title="1.7 HashSet"></a>1.7 HashSet</h3><p>HashSet은 Set인터페이스를 구현한 가장 대표적 컬렉션.<br>중복된 요소를 저장하지 않음. 저장순서를 유지하지 않음.<br>저장순서 유지하려면 LinkedHashSet을 사용하면 됨.  </p>
+<table>
+<thead>
+<tr>
+<th>생성자 또는 메서드</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HashSet()</td>
+<td>HashSet객체를 생성한다.</td>
+</tr>
+<tr>
+<td>HashSet(Collection c)</td>
+<td>주어진 컬렉션을 포함하는 HashSet객체를 생성한다.</td>
+</tr>
+<tr>
+<td>HashSet(int initialCapactiy)</td>
+<td>주어진 값을 초기용량으로 하는 HashSet객체를 생성한다.</td>
+</tr>
+<tr>
+<td>HashSet(int initialCapactiy, float loadFactor)</td>
+<td>초기용량과 load factor를 지정하는 생성자</td>
+</tr>
+<tr>
+<td>boolean add(Object o)</td>
+<td>새로운 객체를 저장한다</td>
+</tr>
+<tr>
+<td>boolean addAll(Collection c)</td>
+<td>주어진 컬렉션에 모든 객체를 추가한다.</td>
+</tr>
+<tr>
+<td>void clear()</td>
+<td>저장된 모든 객체를 삭제한다.</td>
+</tr>
+<tr>
+<td>Object clone()</td>
+<td>HashSEt을 복제하여 반환한다.</td>
+</tr>
+<tr>
+<td>boolean contains(Object o)</td>
+<td>지정된 객체를 포함하고 있는지 알려준다.</td>
+</tr>
+<tr>
+<td>boolean containsAll(Collection  c)</td>
+<td>주어진 컬렉션에 저장된 모든 객체들을 포함하고 있는지 알려준다.</td>
+</tr>
+<tr>
+<td>boolean isEmpty()</td>
+<td>HashSet이 비어있는지 알려준다.</td>
+</tr>
+<tr>
+<td>boolean iterator()</td>
+<td>Iterator 를 반환한다.</td>
+</tr>
+<tr>
+<td>boolean remove(Object o)</td>
+<td>지정된 객체를 HashSet에서 삭제한다.</td>
+</tr>
+<tr>
+<td>boolean removeAll(Collection c)</td>
+<td>주어진컬렉션에 저장된 모든 객체와 동일한 것을 HashSet에서 모두 삭제한다(차집합)</td>
+</tr>
+<tr>
+<td>boolean retainAll(Collection c)</td>
+<td>주어진 컬렉션에 저장된 객체와 동일한 것만 남기고 삭제한다.(교집합)</td>
+</tr>
+<tr>
+<td>int size()</td>
+<td>저장된 객체의 개수를 반환한다.</td>
+</tr>
+<tr>
+<td>Object[] toArray()</td>
+<td>저장된 객체들을 객체배열의 형태로 변환한다.</td>
+</tr>
+<tr>
+<td>Object[] toArray(Object[] a)</td>
+<td>저장된 객체들을 주어진 객체배열 a에 담는다.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="1-8-ThreeSet"><a href="#1-8-ThreeSet" class="headerlink" title="1.8 ThreeSet"></a>1.8 ThreeSet</h3><p>ThreeSet은 이진검색트리라는 자료구조의 형태로 데이터를 저장하는 컬렉션 클래스.<br>정렬, 검색, 범위검색에 뛰어난 성능을 보인다.  </p>
 
         </div>
         
@@ -704,9 +933,9 @@
             
             <li><a class="pagination-link has-text-black-ter" href="/page/2/">2</a></li>
             
-            <li><a class="pagination-link has-text-black-ter" href="/page/3/">3</a></li>
+            <li><span class="pagination-ellipsis has-text-black-ter">&hellip;</span></li>
             
-            <li><a class="pagination-link has-text-black-ter" href="/page/4/">4</a></li>
+            <li><a class="pagination-link has-text-black-ter" href="/page/5/">5</a></li>
             
         </ul>
     </nav>
@@ -756,7 +985,7 @@
                         포스트
                     </p>
                     <p class="title has-text-weight-normal">
-                        40
+                        46
                     </p>
                 </div>
             </div>
@@ -766,7 +995,7 @@
                         카테고리
                     </p>
                     <p class="title has-text-weight-normal">
-                        5
+                        6
                     </p>
                 </div>
             </div>
@@ -776,7 +1005,7 @@
                         태그
                     </p>
                     <p class="title has-text-weight-normal">
-                        11
+                        19
                     </p>
                 </div>
             </div>
@@ -818,18 +1047,18 @@
         
         <article class="media">
             
-            <a href="/2019/05/12/trip/europ/2019-04-30-iceland6/" class="media-left">
+            <a href="/2019/05/13/tec/blog/blog7/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/assets/images/is/sc1.jpg" alt="셀애란즈포스 폭포">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Hexo와 깃허브로 블로그 만들기] Hexo 테마 적용">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-12T13:35:34.590Z">2019-05-12</time></div>
-                    <a href="/2019/05/12/trip/europ/2019-04-30-iceland6/" class="has-link-black-ter is-size-6">셀애란즈포스 폭포</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T02:09:21.227Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/blog/blog7/" class="has-link-black-ter is-size-6">[Hexo와 깃허브로 블로그 만들기] Hexo 테마 적용</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/trip/">trip</a> / <a class="has-link-grey -link" href="/categories/trip/island/">island</a>
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
                     </p>
                 </div>
             </div>
@@ -837,18 +1066,18 @@
         
         <article class="media">
             
-            <a href="/2019/05/12/trip/europ/2019-04-30-iceland3/" class="media-left">
+            <a href="/2019/05/13/tec/blog/blog6/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/assets/images/is/g2.jpg" alt="골든서클-게이시르">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Hexo와 깃허브로 블로그 만들기] jykell에서 hexo로 블로그 이전하기">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-12T13:35:34.579Z">2019-05-12</time></div>
-                    <a href="/2019/05/12/trip/europ/2019-04-30-iceland3/" class="has-link-black-ter is-size-6">골든서클-게이시르</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T02:06:36.432Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/blog/blog6/" class="has-link-black-ter is-size-6">[Hexo와 깃허브로 블로그 만들기] jykell에서 hexo로 블로그 이전하기</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/trip/">trip</a> / <a class="has-link-grey -link" href="/categories/trip/island/">island</a>
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
                     </p>
                 </div>
             </div>
@@ -856,18 +1085,18 @@
         
         <article class="media">
             
-            <a href="/2019/05/12/trip/europ/2019-05-01-iceland17/" class="media-left">
+            <a href="/2019/05/13/tec/blog/2019-04-29-blog1/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/assets/images/is/df4.jpg" alt="데티포스">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[JEKYLL과 깃허브로 블로그 만들기] 지킬 테마 복사하기">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-12T13:35:34.567Z">2019-05-12</time></div>
-                    <a href="/2019/05/12/trip/europ/2019-05-01-iceland17/" class="has-link-black-ter is-size-6">데티포스</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T01:35:56.974Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/blog/2019-04-29-blog1/" class="has-link-black-ter is-size-6">[JEKYLL과 깃허브로 블로그 만들기] 지킬 테마 복사하기</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/trip/">trip</a> / <a class="has-link-grey -link" href="/categories/trip/island/">island</a>
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
                     </p>
                 </div>
             </div>
@@ -875,18 +1104,18 @@
         
         <article class="media">
             
-            <a href="/2019/05/12/trip/europ/2019-04-30-iceland2/" class="media-left">
+            <a href="/2019/05/13/tec/blog/2019-04-29-blog2/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/assets/images/is/ar3.jpg" alt="첫 오로라">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[JEKYLL과 깃허브로 블로그 만들기] 포스트(Post) 쓰기">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-12T13:35:34.557Z">2019-05-12</time></div>
-                    <a href="/2019/05/12/trip/europ/2019-04-30-iceland2/" class="has-link-black-ter is-size-6">첫 오로라</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T01:35:53.320Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/blog/2019-04-29-blog2/" class="has-link-black-ter is-size-6">[JEKYLL과 깃허브로 블로그 만들기] 포스트(Post) 쓰기</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/trip/">trip</a> / <a class="has-link-grey -link" href="/categories/trip/island/">island</a>
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
                     </p>
                 </div>
             </div>
@@ -894,18 +1123,18 @@
         
         <article class="media">
             
-            <a href="/2019/05/12/trip/europ/2019-04-30-iceland8/" class="media-left">
+            <a href="/2019/05/13/tec/blog/2019-04-29-blog3/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/assets/images/is/r2.jpg" alt="레이니스피아라">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[JEKYLL과 깃허브로 블로그 만들기] 콜렉션(Collection)만들기">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-12T13:35:34.545Z">2019-05-12</time></div>
-                    <a href="/2019/05/12/trip/europ/2019-04-30-iceland8/" class="has-link-black-ter is-size-6">레이니스피아라</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T01:35:49.900Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/blog/2019-04-29-blog3/" class="has-link-black-ter is-size-6">[JEKYLL과 깃허브로 블로그 만들기] 콜렉션(Collection)만들기</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/trip/">trip</a> / <a class="has-link-grey -link" href="/categories/trip/island/">island</a>
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
                     </p>
                 </div>
             </div>
@@ -929,15 +1158,23 @@
                 <span class="level-item">tec</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">21</span>
+                <span class="level-item tag">27</span>
             </span>
         </a><ul><li>
+        <a class="level is-marginless" href="/categories/tec/blog/">
+            <span class="level-start">
+                <span class="level-item">blog</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">7</span>
+            </span>
+        </a></li><li>
         <a class="level is-marginless" href="/categories/tec/java/">
             <span class="level-start">
                 <span class="level-item">java</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">14</span>
+                <span class="level-item tag">13</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/tec/sql/">
@@ -983,7 +1220,7 @@
                     <span class="level-item">5월 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">40</span>
+                    <span class="level-item tag">46</span>
                 </span>
             </a>
         </li>
@@ -999,7 +1236,7 @@
         <h3 class="menu-label">
             태그 클라우드
         </h3>
-        <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/sql/" style="font-size: 16px;">sql</a> <a href="/tags/골든서클/" style="font-size: 10px;">골든서클</a> <a href="/tags/눈/" style="font-size: 10px;">눈</a> <a href="/tags/무지개/" style="font-size: 10px;">무지개</a> <a href="/tags/빙하/" style="font-size: 10px;">빙하</a> <a href="/tags/숙소/" style="font-size: 18px;">숙소</a> <a href="/tags/여행/" style="font-size: 10px;">여행</a> <a href="/tags/오로라/" style="font-size: 14px;">오로라</a> <a href="/tags/폭포/" style="font-size: 12px;">폭포</a> <a href="/tags/해변/" style="font-size: 10px;">해변</a>
+        <a href="/tags/blog/" style="font-size: 15px;">blog</a> <a href="/tags/github/" style="font-size: 15px;">github</a> <a href="/tags/hexo/" style="font-size: 11.67px;">hexo</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/java의-정석/" style="font-size: 18.33px;">java의 정석</a> <a href="/tags/jekyll/" style="font-size: 13.33px;">jekyll</a> <a href="/tags/sql/" style="font-size: 15px;">sql</a> <a href="/tags/tec/" style="font-size: 15px;">tec</a> <a href="/tags/골든서클/" style="font-size: 10px;">골든서클</a> <a href="/tags/눈/" style="font-size: 10px;">눈</a> <a href="/tags/무지개/" style="font-size: 10px;">무지개</a> <a href="/tags/빙하/" style="font-size: 10px;">빙하</a> <a href="/tags/숙소/" style="font-size: 16.67px;">숙소</a> <a href="/tags/아이슬란드/" style="font-size: 20px;">아이슬란드</a> <a href="/tags/여행/" style="font-size: 20px;">여행</a> <a href="/tags/오로라/" style="font-size: 13.33px;">오로라</a> <a href="/tags/유럽/" style="font-size: 20px;">유럽</a> <a href="/tags/폭포/" style="font-size: 11.67px;">폭포</a> <a href="/tags/해변/" style="font-size: 10px;">해변</a>
     </div>
 </div>
 
@@ -1013,15 +1250,57 @@
             <div class="field is-grouped is-grouped-multiline">
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/blog/">
+                        <span class="tag">blog</span>
+                        <span class="tag is-grey">7</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/github/">
+                        <span class="tag">github</span>
+                        <span class="tag is-grey">7</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/hexo/">
+                        <span class="tag">hexo</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/java/">
                         <span class="tag">java</span>
-                        <span class="tag is-grey">14</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/java의-정석/">
+                        <span class="tag">java의 정석</span>
+                        <span class="tag is-grey">12</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/jekyll/">
+                        <span class="tag">jekyll</span>
+                        <span class="tag is-grey">5</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/sql/">
                         <span class="tag">sql</span>
+                        <span class="tag is-grey">7</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/tec/">
+                        <span class="tag">tec</span>
                         <span class="tag is-grey">7</span>
                     </a>
                 </div>
@@ -1062,9 +1341,16 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/아이슬란드/">
+                        <span class="tag">아이슬란드</span>
+                        <span class="tag is-grey">18</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/여행/">
                         <span class="tag">여행</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">18</span>
                     </a>
                 </div>
                 
@@ -1072,6 +1358,13 @@
                     <a class="tags has-addons" href="/tags/오로라/">
                         <span class="tag">오로라</span>
                         <span class="tag is-grey">5</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/유럽/">
+                        <span class="tag">유럽</span>
+                        <span class="tag is-grey">18</span>
                     </a>
                 </div>
                 
@@ -1114,18 +1407,18 @@
         
         <article class="media">
             
-            <a href="/2019/05/12/trip/europ/2019-04-30-iceland6/" class="media-left">
+            <a href="/2019/05/13/tec/blog/blog7/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/assets/images/is/sc1.jpg" alt="셀애란즈포스 폭포">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Hexo와 깃허브로 블로그 만들기] Hexo 테마 적용">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-12T13:35:34.590Z">2019-05-12</time></div>
-                    <a href="/2019/05/12/trip/europ/2019-04-30-iceland6/" class="has-link-black-ter is-size-6">셀애란즈포스 폭포</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T02:09:21.227Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/blog/blog7/" class="has-link-black-ter is-size-6">[Hexo와 깃허브로 블로그 만들기] Hexo 테마 적용</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/trip/">trip</a> / <a class="has-link-grey -link" href="/categories/trip/island/">island</a>
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
                     </p>
                 </div>
             </div>
@@ -1133,18 +1426,18 @@
         
         <article class="media">
             
-            <a href="/2019/05/12/trip/europ/2019-04-30-iceland3/" class="media-left">
+            <a href="/2019/05/13/tec/blog/blog6/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/assets/images/is/g2.jpg" alt="골든서클-게이시르">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Hexo와 깃허브로 블로그 만들기] jykell에서 hexo로 블로그 이전하기">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-12T13:35:34.579Z">2019-05-12</time></div>
-                    <a href="/2019/05/12/trip/europ/2019-04-30-iceland3/" class="has-link-black-ter is-size-6">골든서클-게이시르</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T02:06:36.432Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/blog/blog6/" class="has-link-black-ter is-size-6">[Hexo와 깃허브로 블로그 만들기] jykell에서 hexo로 블로그 이전하기</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/trip/">trip</a> / <a class="has-link-grey -link" href="/categories/trip/island/">island</a>
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
                     </p>
                 </div>
             </div>
@@ -1152,18 +1445,18 @@
         
         <article class="media">
             
-            <a href="/2019/05/12/trip/europ/2019-05-01-iceland17/" class="media-left">
+            <a href="/2019/05/13/tec/blog/2019-04-29-blog1/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/assets/images/is/df4.jpg" alt="데티포스">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[JEKYLL과 깃허브로 블로그 만들기] 지킬 테마 복사하기">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-12T13:35:34.567Z">2019-05-12</time></div>
-                    <a href="/2019/05/12/trip/europ/2019-05-01-iceland17/" class="has-link-black-ter is-size-6">데티포스</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T01:35:56.974Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/blog/2019-04-29-blog1/" class="has-link-black-ter is-size-6">[JEKYLL과 깃허브로 블로그 만들기] 지킬 테마 복사하기</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/trip/">trip</a> / <a class="has-link-grey -link" href="/categories/trip/island/">island</a>
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
                     </p>
                 </div>
             </div>
@@ -1171,18 +1464,18 @@
         
         <article class="media">
             
-            <a href="/2019/05/12/trip/europ/2019-04-30-iceland2/" class="media-left">
+            <a href="/2019/05/13/tec/blog/2019-04-29-blog2/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/assets/images/is/ar3.jpg" alt="첫 오로라">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[JEKYLL과 깃허브로 블로그 만들기] 포스트(Post) 쓰기">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-12T13:35:34.557Z">2019-05-12</time></div>
-                    <a href="/2019/05/12/trip/europ/2019-04-30-iceland2/" class="has-link-black-ter is-size-6">첫 오로라</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T01:35:53.320Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/blog/2019-04-29-blog2/" class="has-link-black-ter is-size-6">[JEKYLL과 깃허브로 블로그 만들기] 포스트(Post) 쓰기</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/trip/">trip</a> / <a class="has-link-grey -link" href="/categories/trip/island/">island</a>
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
                     </p>
                 </div>
             </div>
@@ -1190,18 +1483,18 @@
         
         <article class="media">
             
-            <a href="/2019/05/12/trip/europ/2019-04-30-iceland8/" class="media-left">
+            <a href="/2019/05/13/tec/blog/2019-04-29-blog3/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/assets/images/is/r2.jpg" alt="레이니스피아라">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[JEKYLL과 깃허브로 블로그 만들기] 콜렉션(Collection)만들기">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-12T13:35:34.545Z">2019-05-12</time></div>
-                    <a href="/2019/05/12/trip/europ/2019-04-30-iceland8/" class="has-link-black-ter is-size-6">레이니스피아라</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T01:35:49.900Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/blog/2019-04-29-blog3/" class="has-link-black-ter is-size-6">[JEKYLL과 깃허브로 블로그 만들기] 콜렉션(Collection)만들기</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/trip/">trip</a> / <a class="has-link-grey -link" href="/categories/trip/island/">island</a>
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
                     </p>
                 </div>
             </div>
@@ -1225,15 +1518,23 @@
                 <span class="level-item">tec</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">21</span>
+                <span class="level-item tag">27</span>
             </span>
         </a><ul><li>
+        <a class="level is-marginless" href="/categories/tec/blog/">
+            <span class="level-start">
+                <span class="level-item">blog</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">7</span>
+            </span>
+        </a></li><li>
         <a class="level is-marginless" href="/categories/tec/java/">
             <span class="level-start">
                 <span class="level-item">java</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">14</span>
+                <span class="level-item tag">13</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/tec/sql/">
@@ -1279,7 +1580,7 @@
                     <span class="level-item">5월 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">40</span>
+                    <span class="level-item tag">46</span>
                 </span>
             </a>
         </li>
@@ -1295,7 +1596,7 @@
         <h3 class="menu-label">
             태그 클라우드
         </h3>
-        <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/sql/" style="font-size: 16px;">sql</a> <a href="/tags/골든서클/" style="font-size: 10px;">골든서클</a> <a href="/tags/눈/" style="font-size: 10px;">눈</a> <a href="/tags/무지개/" style="font-size: 10px;">무지개</a> <a href="/tags/빙하/" style="font-size: 10px;">빙하</a> <a href="/tags/숙소/" style="font-size: 18px;">숙소</a> <a href="/tags/여행/" style="font-size: 10px;">여행</a> <a href="/tags/오로라/" style="font-size: 14px;">오로라</a> <a href="/tags/폭포/" style="font-size: 12px;">폭포</a> <a href="/tags/해변/" style="font-size: 10px;">해변</a>
+        <a href="/tags/blog/" style="font-size: 15px;">blog</a> <a href="/tags/github/" style="font-size: 15px;">github</a> <a href="/tags/hexo/" style="font-size: 11.67px;">hexo</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/java의-정석/" style="font-size: 18.33px;">java의 정석</a> <a href="/tags/jekyll/" style="font-size: 13.33px;">jekyll</a> <a href="/tags/sql/" style="font-size: 15px;">sql</a> <a href="/tags/tec/" style="font-size: 15px;">tec</a> <a href="/tags/골든서클/" style="font-size: 10px;">골든서클</a> <a href="/tags/눈/" style="font-size: 10px;">눈</a> <a href="/tags/무지개/" style="font-size: 10px;">무지개</a> <a href="/tags/빙하/" style="font-size: 10px;">빙하</a> <a href="/tags/숙소/" style="font-size: 16.67px;">숙소</a> <a href="/tags/아이슬란드/" style="font-size: 20px;">아이슬란드</a> <a href="/tags/여행/" style="font-size: 20px;">여행</a> <a href="/tags/오로라/" style="font-size: 13.33px;">오로라</a> <a href="/tags/유럽/" style="font-size: 20px;">유럽</a> <a href="/tags/폭포/" style="font-size: 11.67px;">폭포</a> <a href="/tags/해변/" style="font-size: 10px;">해변</a>
     </div>
 </div>
 
@@ -1309,15 +1610,57 @@
             <div class="field is-grouped is-grouped-multiline">
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/blog/">
+                        <span class="tag">blog</span>
+                        <span class="tag is-grey">7</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/github/">
+                        <span class="tag">github</span>
+                        <span class="tag is-grey">7</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/hexo/">
+                        <span class="tag">hexo</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/java/">
                         <span class="tag">java</span>
-                        <span class="tag is-grey">14</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/java의-정석/">
+                        <span class="tag">java의 정석</span>
+                        <span class="tag is-grey">12</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/jekyll/">
+                        <span class="tag">jekyll</span>
+                        <span class="tag is-grey">5</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/sql/">
                         <span class="tag">sql</span>
+                        <span class="tag is-grey">7</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/tec/">
+                        <span class="tag">tec</span>
                         <span class="tag is-grey">7</span>
                     </a>
                 </div>
@@ -1358,9 +1701,16 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/아이슬란드/">
+                        <span class="tag">아이슬란드</span>
+                        <span class="tag is-grey">18</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/여행/">
                         <span class="tag">여행</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">18</span>
                     </a>
                 </div>
                 
@@ -1368,6 +1718,13 @@
                     <a class="tags has-addons" href="/tags/오로라/">
                         <span class="tag">오로라</span>
                         <span class="tag is-grey">5</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/유럽/">
+                        <span class="tag">유럽</span>
+                        <span class="tag is-grey">18</span>
                     </a>
                 </div>
                 

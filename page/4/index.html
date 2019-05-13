@@ -131,21 +131,27 @@
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
     <div class="card">
     
+    <div class="card-image">
+        <a href="/2019/05/13/trip/europ/2019-05-04-iceland17/" class="image is-7by1">
+            <img class="thumbnail" src="/assets/images/is/mv4.jpg" alt="미바튼">
+        </a>
+    </div>
+    
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-12T04:53:40.495Z">2019-05-12</time>
+                <time class="level-item has-text-grey" datetime="2019-05-13T01:07:44.604Z">2019-05-13</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/tec/">tec</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/tec/java/">java</a>
+                <a class="has-link-grey -link" href="/categories/trip/">trip</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/trip/island/">island</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    4분 읽기 (나에 대하여 554 단어)
+                    3분 읽기 (나에 대하여 407 단어)
                 </span>
                 
                 
@@ -154,24 +160,401 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/05/12/tec/java/2019-05-07-java9/">[Java의정석] CH7. 객체지향프로그래밍2</a>
+                <a class="has-link-black-ter" href="/2019/05/13/trip/europ/2019-05-04-iceland17/">미바튼</a>
             
         </h1>
         <div class="content">
-            <h2 id="6-추상클래스"><a href="#6-추상클래스" class="headerlink" title="6. 추상클래스"></a>6. 추상클래스</h2><h3 id="6-1-추상클래스란"><a href="#6-1-추상클래스란" class="headerlink" title="6.1 추상클래스란?"></a>6.1 추상클래스란?</h3><p>미완성된 설계도. 미완성 메서드(추상메서드)를 포함하고 있는 클래스.<br>추상 클래스는 상속을 통해 자손클래스에 의해서만 완성될 수 있음.<br><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> 클래스이름</span>&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="6-2-추상메서드"><a href="#6-2-추상메서드" class="headerlink" title="6.2 추상메서드"></a>6.2 추상메서드</h3><p>메서드 선언부와 구현부 중 선언부만 작성한것.<br><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">abstract</span> 리턴타입 메서드이름();</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Player</span></span>&#123;</span><br><span class="line">        <span class="hljs-function"><span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span> <span class="hljs-title">play</span><span class="hljs-params">(<span class="hljs-keyword">int</span> pos)</span></span>;</span><br><span class="line">        <span class="hljs-function"><span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span> <span class="hljs-title">stop</span><span class="hljs-params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AudioPlayeer</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Player</span></span>&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">play</span><span class="hljs-params">(<span class="hljs-keyword">int</span> pos)</span></span>&#123;</span><br><span class="line">        <span class="hljs-comment">// 기능 구현   </span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">stop</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">        <span class="hljs-comment">//기능 구현</span></span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AbstractPlayer</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Player</span></span>&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">play</span><span class="hljs-params">(<span class="hljs-keyword">int</span> pos)</span> </span>&#123;</span><br><span class="line">        <span class="hljs-comment">// 기능 구현</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="6-3-추상클래스의-작성"><a href="#6-3-추상클래스의-작성" class="headerlink" title="6.3 추상클래스의 작성"></a>6.3 추상클래스의 작성</h3><ul>
-<li>추상 : 낱낱의 구체적 표상이나 개념에서 공통된 성질을 뽑아 이를 일반적인 개념으로 파악하는 정신 작용.  </li>
-<li>추상화 : 클래스간의 공통점을 찾아내서 공통의 조상을 만드는 작업.</li>
-<li>구체화 : 상속을 통해 클래스를 구현, 확장하는 작업</li>
-</ul>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Player</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">boolean</span> pause;</span><br><span class="line">    <span class="hljs-keyword">int</span> currentPos;</span><br><span class="line">    </span><br><span class="line">    Player()&#123;</span><br><span class="line">        pause = <span class="hljs-keyword">false</span>;</span><br><span class="line">        currentPos = <span class="hljs-number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span> <span class="hljs-title">play</span><span class="hljs-params">(<span class="hljs-keyword">int</span> pos)</span></span>;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span> <span class="hljs-title">stop</span><span class="hljs-params">()</span></span>;</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">play</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">        play(currentPos);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">pause</span> <span class="hljs-params">()</span></span>&#123;</span><br><span class="line">        <span class="hljs-keyword">if</span>(pause)&#123;</span><br><span class="line">            pause = <span class="hljs-keyword">false</span>;</span><br><span class="line">        &#125;<span class="hljs-keyword">else</span> &#123;</span><br><span class="line">            pause = <span class="hljs-keyword">true</span>;</span><br><span class="line">            stop();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>위의 Player추상클래스를 조상으로 하는 CDPlayer<br><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CDPlayer</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">player</span></span>&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">play</span><span class="hljs-params">(<span class="hljs-keyword">int</span> currentPos)</span></span>&#123;</span><br><span class="line">        <span class="hljs-comment">//기능 구현</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">stop</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">        <span class="hljs-comment">//기능 구현</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-keyword">int</span> currentTrace;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">nextTrace</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">        currentTrace++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">preTrace</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">        <span class="hljs-keyword">if</span>(currentTrace&gt;<span class="hljs-number">1</span>)&#123;</span><br><span class="line">            currentTrace--;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>추상메서드로 안 만들고 구현부를 빈 상태로 두어 자손 클래스에서 오버라이드해서 사용할 수 있지만<br>추상메서드로하면 필수로 구연해야 한다.  </p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Marine</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> x,y;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">move</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y)</span></span>&#123;&#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">stop</span><span class="hljs-params">()</span></span>&#123;&#125;;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">stimPack</span><span class="hljs-params">()</span></span>&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Tank</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> x,y;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">move</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y)</span></span>&#123;&#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">stop</span><span class="hljs-params">()</span></span>&#123;&#125;;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">changeMode</span><span class="hljs-params">()</span></span>&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Dropship</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> x,y;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">move</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y)</span></span>&#123;&#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">stop</span><span class="hljs-params">()</span></span>&#123;&#125;;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">load</span><span class="hljs-params">()</span></span>&#123;&#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">unload</span><span class="hljs-params">()</span></span>&#123;&#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p>위에서 공통부분을 뽑아내서 추상클래스 Unit을 만들어 다시 구현.<br><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Unit</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> x,y;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span> <span class="hljs-title">move</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y)</span></span>;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">stop</span><span class="hljs-params">()</span></span>&#123;&#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Marine</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Unit</span></span>&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">move</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y)</span></span>&#123;&#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">stimPack</span><span class="hljs-params">()</span></span>&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Tank</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Unit</span></span>&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">move</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y)</span></span>&#123;&#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">changeMode</span><span class="hljs-params">()</span></span>&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Dropship</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Unit</span></span>&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">move</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y)</span></span>&#123;&#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">load</span><span class="hljs-params">()</span></span>&#123;&#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">unload</span><span class="hljs-params">()</span></span>&#123;&#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
-<p>위와같이 구현하면 아래처럼 Unit으로 배열로 다룰 수 있음<br><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Unit[] grop = <span class="hljs-keyword">new</span> Unit[<span class="hljs-number">4</span>];</span><br><span class="line">group[<span class="hljs-number">0</span>] = <span class="hljs-keyword">new</span> Marine();</span><br><span class="line">group[<span class="hljs-number">1</span>] = <span class="hljs-keyword">new</span> Tank();</span><br><span class="line">group[<span class="hljs-number">2</span>] = <span class="hljs-keyword">new</span> Marine();</span><br><span class="line">group[<span class="hljs-number">4</span>] = <span class="hljs-keyword">new</span> Dropship();</span><br></pre></td></tr></table></figure></p>
+            <p>테티포스에서 한바탕 고생을 한탓에 우리는 빨리 숙소에 들어가서 쉬고싶었다.<br>1번 링로드와 완전 가까운 숙소를 예약했다.<br>약간의 문제가 있었다.<br>눈이 많이 쌓여서 차를 숙소까지 가져갈 수가 없었다.<br>차는 큰도로 옆 공터에 대고, 우리가 하루동안 필요한 짐만 캐리어에 챙겨서 눈밭을 굴러 내려갔다.<br>차가 있는 위치와 숙소는 경사가 심했고 길이 보이지 않아 호스트 아저씨가 길을 걸으며 내 주었다.<br>우리는 길을 더 크게 내며 킬킬거리며 걸었다.</p>
+<p>숙소는 깔끔하고 좋았다.<br>다락방 작은 창에서는 별이 아주 잘 보였다.</p>
+<p>고생한 우리를 위해 엄마가 닭볶음탕을 해주셨다.<br>먹고 다들 뻗어서 쉬었다.  </p>
+<p>자다 일어니 창밖에서 오로라가 보였다.<br>언능 식구들을 다 깨워서 이번엔 의자를 가지고 밖으로 나갔다.<br>옆 숙소 불빛이 넘 밝아 아쉬웠지만 이렇게 별이 많은 하늘은 처음 봤다.<br>나름 별 보는 것을 좋아해서 여러 나라에서 별을 보러 다녔는데 미바튼에서 본 하늘은 정말 최고였다.<br>그렇게 세번째 오로라를 볼 수 있었다.<br>실컷 또 하늘을 구경하고 야식으로 라면을 먹고 잤다.  </p>
+<img src="/assets/images/is/mv1.jpg">
+<img src="/assets/images/is/mv2.jpg">
+<img src="/assets/images/is/mv3.jpg">
+<img src="/assets/images/is/mv5.jpg">
+<img src="/assets/images/is/mv6.jpg">
+<iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d423124.86339105276!2d-15.75767952540511!3d65.52712851242012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x48cbfefc843cd699%3A0xefc553adda96809d!2z7JWE7J207Iqs656A65OcIOyEuOydtOuUlOyKpO2UvOyZuOultOuSpOultA!3m2!1d65.2598494!2d-14.010115599999999!4m5!1s0x48cd068ace5f4fb9%3A0x404278759828237a!2z642w7Yuw7Y-s7IqkIOyVhOydtOyKrOuegOuTnA!3m2!1d65.81466619999999!2d-16.384576!5e0!3m2!1sko!2skr!4v1556886862709!5m2!1sko!2skr" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-image">
+        <a href="/2019/05/13/trip/europ/2019-05-01-iceland14/" class="image is-7by1">
+            <img class="thumbnail" src="/assets/images/is/dv1.jpg" alt="디위피보귀르-어촌마을">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-05-13T01:07:44.590Z">2019-05-13</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/trip/">trip</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/trip/island/">island</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    1분 읽기 (나에 대하여 154 단어)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/05/13/trip/europ/2019-05-01-iceland14/">디위피보귀르-어촌마을</a>
+            
+        </h1>
+        <div class="content">
+            <p>오늘은 관광보다는 이동이 주 목적이었다.<br>아이슬란드 두번째 도시 에이일스타디르에 도착해야했다.<br>차를 오래 타면 힘드니까 중간 어촌도시에 내려서 쉬어갔다.<br>기름도 넣고 네토에서 장도 봤다.<br>네토마트는 전반적으로 보너스마트 보다 비싸다..<br>항구도 있는 예쁜마을이었다.<br>여기서 하루를 보냈어도 좋았을것 같다.<br>아직 에이일스타디르까지 갈 길이 멀다.  </p>
+<img src="/assets/images/is/dv2.jpg">
+<img src="/assets/images/is/dv3.jpg">
+<iframe src="https://www.google.com/maps/embed?pb=!1m27!1m12!1m3!1d222992.87385726158!2d-16.322503270503844!3d64.11002414796697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m12!3e0!4m4!1s0x0%3A0x4202e865f907845a!3m2!1d64.04433399999999!2d-16.1776622!4m5!1s0x48cec38f02292149%3A0x3b5e271b6c5b9d8b!2zRGrDunBpdm9ndXIsIOyVhOydtOyKrOuegOuTnA!3m2!1d64.656888!2d-14.290050899999999!5e0!3m2!1sko!2skr!4v1556876019487!5m2!1sko!2skr" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-image">
+        <a href="/2019/05/13/trip/europ/2019-04-30-iceland3/" class="image is-7by1">
+            <img class="thumbnail" src="/assets/images/is/g2.jpg" alt="골든서클-게이시르">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-05-13T01:07:44.579Z">2019-05-13</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/trip/">trip</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/trip/island/">island</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    1분 읽기 (나에 대하여 150 단어)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/05/13/trip/europ/2019-04-30-iceland3/">골든서클-게이시르</a>
+            
+        </h1>
+        <div class="content">
+            <p>아이슬란드 대표 관광지 골든서클 투어를 하기로 했다.<br>첫번째 게이시르.<br>예전에 옐로우스톤국립공원에서 간헐천을 보면서 가족들 생각이 많이났는데<br>여기서 같이 볼수 있어서 정말 기뻤다.<br>지구가 방구뀌는곳<br>생각보다 냄새는 많이 안 났고 분출도 자주 있었다.<br>나는 고프로를 들고다니며 동영상을 찍었는데<br>아빠가 카메라 의식을 너무 많이한다.  </p>
+<img src="/assets/images/is/g1.jpg">
+<img src="/assets/images/is/g3.jpg">
+<iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d265047.02439091995!2d-21.44606820016161!3d64.12446207976525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x48d6735b5b6a54db%3A0xea55745367827c1f!2zU3R1ZGlvIEU4LCBFbmdpaGphbGxpIDgsIEvDs3Bhdm9ndXIsIOyVhOydtOyKrOuegOuTnA!3m2!1d64.1098152!2d-21.858184899999998!4m5!1s0x48d6a39f03424f3f%3A0xb4751c1a62e2283f!2z6rKM7J207Iuc66W0IOyVhOydtOyKrOuegOuTnA!3m2!1d64.31037189999999!2d-20.3023605!5e0!3m2!1sko!2skr!4v1556868958914!5m2!1sko!2skr" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-image">
+        <a href="/2019/05/13/trip/europ/2019-05-04-iceland18/" class="image is-7by1">
+            <img class="thumbnail" src="/assets/images/is/mv4.jpg" alt="미바튼">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-05-13T01:07:44.567Z">2019-05-13</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/trip/">trip</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/trip/island/">island</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    몇 초 읽기 (나에 대하여 19 단어)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/05/13/trip/europ/2019-05-04-iceland18/">미바튼</a>
+            
+        </h1>
+        <div class="content">
+            <p>전날 눈과 사투를 너무 많이 벌여서 빨리 숙소로</p>
+<iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d210431.40991207212!2d-17.785130091192528!3d65.66646795991183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x48cd9e68213ddccb%3A0x195ccac63dc376ff!2zSGxpZCBDb3R0YWdlcyBNw712YXRuLCBIcmF1bmJyw7puLCA2NjAgUmV5a2phaGzDrcOwLCDslYTsnbTsiqzrnoDrk5w!3m2!1d65.64941329999999!2d-16.9187157!4m5!1s0x48d28f10e2315807%3A0x751d357649f68c5f!2z7Zi47YWUIOyVhOy_oOugiOydtOumrA!3m2!1d65.67824399999999!2d-18.089834!5e0!3m2!1sko!2skr!4v1557476546400!5m2!1sko!2skr" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-image">
+        <a href="/2019/05/13/trip/europ/2019-04-30-iceland9/" class="image is-7by1">
+            <img class="thumbnail" src="/assets/images/is/d2.jpg" alt="스노우볼 달쇼프디 게스트하우스">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-05-13T01:07:44.554Z">2019-05-13</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/trip/">trip</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/trip/island/">island</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    2분 읽기 (나에 대하여 339 단어)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/05/13/trip/europ/2019-04-30-iceland9/">스노우볼 달쇼프디 게스트하우스</a>
+            
+        </h1>
+        <div class="content">
+            <p>이동시간이 길어서 어느덧 해가 져버렸다.<br>점점 눈이 많아졌다. 깜깜해졌다.<br>까만 세상속에 마을 불빛이 혼자 깜박였다.<br>그 불빛이 없었으면 너무 무서웠을것 같다.<br>잘 보이지도 않는 눈길을 조심히 달려 겨우 숙소에 도착했다.<br>숙소빼고 주변에 건물이 세채 밖에 없었다.<br>정말 동화속 같았다.<br>주변이 모두 평지여서 여기서 오로라와 별을 보고싶었지만,<br>구름이 잔뜩있었다.<br>우리는 숙소가 너무 마음에 들어 하루를 조금 쉬어가기로 했다.<br>오랜만에 늦잠자고, 조식을 즐기기로 했다.  </p>
+<p>다음날<br>새벽에 깨서 혼자 산책을 나갔다.<br>온통 눈밭에 하늘도 구름에 어스름한 안개까지 정말 스노우 볼 속에 있는 기분이었다.<br>해가 뜨자 아쉽게 그 분위기는 사라졌지만 동화속 풍경은 여전했다.<br>아마 가족들도 모두 이번 여행에서 가장 기억에 남는 숙소가 아니었을까.<br>여름에 다시 오고싶은 숙소 중에 하나다.</p>
+<img src="/assets/images/is/d1.jpg">
+<img src="/assets/images/is/d3.jpg">
+<img src="/assets/images/is/d4.jpg">
+<img src="/assets/images/is/d5.jpg">
+<img src="/assets/images/is/d6.jpg">
+<iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d453208.1720700995!2d-18.965367688530847!3d63.65881085950817!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x48d74984d567267d%3A0xe07954a3f4b36bd5!2zUmV5bmlzZmphcmEsIOyVhOydtOyKrOuegOuTnA!3m2!1d63.4057404!2d-19.0716193!4m5!1s0x48d0fed653ebf4bf%3A0x8108d56e3cd604c7!2z7JWE7J207Iqs656A65OcIEvDoWxmYWZlbGwsIOuLrOyHvO2UhOuUlCDqsozsiqTtirjtlZjsmrDsiqQ!3m2!1d63.911345!2d-17.837642!5e0!3m2!1sko!2skr!4v1556871903602!5m2!1sko!2skr" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-image">
+        <a href="/2019/05/13/trip/europ/2019-04-30-iceland2/" class="image is-7by1">
+            <img class="thumbnail" src="/assets/images/is/ar3.jpg" alt="첫 오로라">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-05-13T01:07:44.542Z">2019-05-13</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/trip/">trip</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/trip/island/">island</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    2분 읽기 (나에 대하여 300 단어)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/05/13/trip/europ/2019-04-30-iceland2/">첫 오로라</a>
+            
+        </h1>
+        <div class="content">
+            <p>거의 20시간 넘게 비행기를 타고 숙소에 도착했다.<br>첫번째 식사는 김치찌개.<br>밤이 되었다.<br>첫날 밤을 그냥 자고싶진 않았다.<br>아픈 언니와 피곤한 아빠를 뒤로하고 엄마랑 그로타 등대로 향했다.<br>기대가 크면 실망이 클까봐 기대를 꾹꾹 눌렀다.<br>등대를 향하는 바닷가도로 위 푸른 구름이 보였다.<br>이거 오로라 아냐?<br>사진을 찍어보는데 흥분을 가라앉히기 힘들었다.<br>결국 등대 가기전 불빛이 없는 공터에 차를 대고 내렸다.<br>그냥 막 흥분이되었었다.<br>카메라로 어떻게 찍는지 연습을 못해서…<br>아쉽게 사진은 제대로 찍지 못하였다.<br>눈으로 담아도 충분했다고 생각했다.(이때는ㅜㅜ)<br>가족들이 다 오지 못한게 아쉬워 숙소로 돌아가 아빠를 모시고 왔지만<br>아빠는 오로라 흔적만 보셨다.<br>오로라 없는 겨울 밤하늘도 예뻤다.<br>첫 오로라는 성공적이였다.</p>
+<img src="/assets/images/is/ar1.jpg">
+<img src="/assets/images/is/ar2.jpg">
+<iframe src="https://www.google.com/maps/embed?pb=!1m34!1m12!1m3!1d111720.49854761273!2d-22.40078156554797!3d64.05412644502664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m19!3e0!4m5!1s0x4929fdfce2ab799f%3A0x27f88d0a15c328cd!2z7LyA7ZSM652867mE7YGsIOq1reygnOqzte2VrSBLZWZsYXbDrWt1cmZsdWd2w7ZsbHVyLCAyMzUgS2VmbGF2w61rLCDslYTsnbTsiqzrnoDrk5w!3m2!1d63.9786029!2d-22.635036!4m5!1s0x48d6735b5b6a54db%3A0xea55745367827c1f!2zU3R1ZGlvIEU4LCBFbmdpaGphbGxpIDgsIEvDs3Bhdm9ndXIsIOyVhOydtOyKrOuegOuTnA!3m2!1d64.1098152!2d-21.858184899999998!4m5!1s0x48d60aeea2eeaa69%3A0xb7c61001611f14e3!2zR3LDs3R0YSwg7IWA7Yuw7JWE66W065Oc64KY66W065Oc64Sk7IqkIOyVhOydtOyKrOuegOuTnA!3m2!1d64.1645565!2d-22.021600199999998!5e0!3m2!1sko!2skr!4v1556868566275!5m2!1sko!2skr" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-image">
+        <a href="/2019/05/13/trip/europ/2019-05-01-iceland11/" class="image is-7by1">
+            <img class="thumbnail" src="/assets/images/is/ge1.jpg" alt="스카이루스 게스트하우스">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-05-13T01:07:44.528Z">2019-05-13</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/trip/">trip</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/trip/island/">island</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    1분 읽기 (나에 대하여 121 단어)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/05/13/trip/europ/2019-05-01-iceland11/">스카이루스 게스트하우스</a>
+            
+        </h1>
+        <div class="content">
+            <p>여태껏 숙소는 다 개별룸으로 지냈는데<br>방이 없어서 이날 하루 게스트 하우스에서 지냈다.<br>깐깐해보이는 주인 아줌마가 계셨는데 친절했다.<br>공용주방이 너무 작아서 두팀밖에 밥을 못 먹었다.<br>공용화장실이지만 그래도 깨끗했다.<br>아침에 시끄러운 공사소리가 기억에 남는다.  </p>
+<img src="/assets/images/is/ge2.jpg">
+<img src="/assets/images/is/ge3.jpg">
+<iframe src="https://www.google.com/maps/embed?pb=!1m27!1m12!1m3!1d375940.2071939442!2d-17.6044811089338!3d64.03554429869675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m12!3e0!4m4!1s0x0%3A0xd47cf30a57e565ea!3m2!1d64.016205!2d-16.9667285!4m5!1s0x48cfd204c28a3b7b%3A0xc0d8f68f87d104ae!2z7Iqk7Lm07J2066Oo7Iuc65OcIOqyjOyKpO2KuO2VmOyasOyKpCDDnmrDs8OwdmVndXIsIOyVhOydtOyKrOuegOuTnA!3m2!1d64.1293546!2d-16.0160906!5e0!3m2!1sko!2skr!4v1556872025660!5m2!1sko!2skr" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-image">
+        <a href="/2019/05/12/trip/europ/2019-04-30-iceland7/" class="image is-7by1">
+            <img class="thumbnail" src="/assets/images/is/sp1.jpg" alt="스코가포스 폭포">
+        </a>
+    </div>
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-05-12T13:35:34.523Z">2019-05-12</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/trip/">trip</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/trip/island/">island</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    2분 읽기 (나에 대하여 259 단어)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/05/12/trip/europ/2019-04-30-iceland7/">스코가포스 폭포</a>
+            
+        </h1>
+        <div class="content">
+            <p>셀야란즈포스에서 조금 더 지나면 스코가포스 폭포가 나온다.<br>조금 더 컸다.<br>스코카포스 폭포는 폭포위로 올라가볼 수 있다.<br>발이 아픈 언니를 빼고 가족들은 계단을 걸어 올라갔다.<br>위에서 내려다 보는 폭포도 멋졌고 올라가니 수평선이 보였다.<br>설산봉우리가 작은 스위스 같아 보이기도 했다.<br>언니는 못 올라와서 아쉬웠겠다.<br>폭포 근처라 계단에 얼음이 많아 오르고 내릴때 아주 위험했다.<br>우리 가족은 아이젠을 신었지만 그래도 조심.<br>특히 내려갈때 미끄러지는 사람들을 많이 봤다.<br>나는 그냥 계단 옆길에 얼음 빙판길에 미끄럼틀을 타기로 했다.<br>엄청 금방 안전하게 내려왔다.ㅎㅎ  </p>
+<img src="/assets/images/is/sp2.jpg">
+<img src="/assets/images/is/sp3.jpg">
+<img src="/assets/images/is/sp4.jpg">
+<img src="/assets/images/is/sp5.jpg">
+<img src="/assets/images/is/sp6.jpg">
+<iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d113663.98742072926!2d-19.89096263948583!3d63.56815153846766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x48d71eade8ef2415%3A0xae01e6205209178d!2z7JWE7J207Iqs656A65OcIOyFgOyVvOuegOymiO2PrOyKpA!3m2!1d63.615623199999995!2d-19.9885688!4m5!1s0x48d73b7639a58c15%3A0xf60c71fcdfe7948!2z7JWE7J207Iqs656A65OcIOyKpOy9lOqwgO2PrOyKpA!3m2!1d63.5320523!2d-19.511370499999998!5e0!3m2!1sko!2skr!4v1556871829638!5m2!1sko!2skr" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 
         </div>
         
@@ -193,17 +576,17 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-12T04:53:40.492Z">2019-05-12</time>
+                <time class="level-item has-text-grey" datetime="2019-05-12T12:44:34.484Z">2019-05-12</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/tec/">tec</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/tec/java/">java</a>
+                <a class="has-link-grey -link" href="/categories/tec/">tec</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/tec/sql/">sql</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    6분 읽기 (나에 대하여 844 단어)
+                    1분 읽기 (나에 대하여 152 단어)
                 </span>
                 
                 
@@ -212,36 +595,11 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/05/12/tec/java/2019-05-07-java10/">[Java의정석] CH7. 객체지향프로그래밍2</a>
+                <a class="has-link-black-ter" href="/2019/05/12/tec/sql/2019-05-10-sql7/">[SQL] ORDER BY 정렬</a>
             
         </h1>
         <div class="content">
-            <h2 id="7-인터페이스"><a href="#7-인터페이스" class="headerlink" title="7. 인터페이스"></a>7. 인터페이스</h2><h3 id="7-1-인터페이스란"><a href="#7-1-인터페이스란" class="headerlink" title="7.1 인터페이스란?"></a>7.1 인터페이스란?</h3><p>인터페이스는 일종의 추상클래스.<br>추상클래스처럼 추상메서드를 갖지만 추상클래스보다 추상화 정도가 높아서<br>추상클래스와 달리 몸통을 갖춘 일반 메서드 또는 멤버변수를 구성원으로 가질 수 없다. </p>
-<h3 id="7-2-인터페이스의-작성"><a href="#7-2-인터페이스의-작성" class="headerlink" title="7.2 인터페이스의 작성"></a>7.2 인터페이스의 작성</h3><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">interface</span> 인터페이스이름</span>&#123;</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> 타입 상수이름 = 값;</span><br><span class="line">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> 메서드이름(매개변수 목록);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>모든 멤버변수는 public static final 이어야 하며, 이를 생략할 수 있다.</li>
-<li>모든 메서드는 public abstract 이어야하며, 이를 생략할 수 있다.  </li>
-</ul>
-<h3 id="7-3-인터페이스의-상속"><a href="#7-3-인터페이스의-상속" class="headerlink" title="7.3 인터페이스의 상속"></a>7.3 인터페이스의 상속</h3><p>인터페이스는 인터페이스로부터만 상속받을 수 있으며, 클래스와는 달리 다중상속이 가능하다.  </p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Movable</span></span>&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">move</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Attactable</span></span>&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">move</span><span class="hljs-params">(Unit u)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Fightable</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Movable</span>, <span class="hljs-title">Attackable</span></span>&#123;&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="7-4-인터페이스의-구현"><a href="#7-4-인터페이스의-구현" class="headerlink" title="7.4 인터페이스의 구현"></a>7.4 인터페이스의 구현</h3><p>그 자체로는 인스턴스를 생성할 수 없음. 클래스에서 implements를 사용하여 구현함.  </p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> 클래스 이름 <span class="hljs-keyword">implements</span> 인터페이스이름</span>&#123;</span><br><span class="line">    <span class="hljs-comment">//인터페이스에 정의된 추상메서드 구현</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Figther</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Fightable</span></span>&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">move</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y)</span></span>&#123;</span><br><span class="line">        <span class="hljs-comment">//기능 구현</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">attack</span><span class="hljs-params">(Unit u)</span></span>&#123;</span><br><span class="line">        <span class="hljs-comment">//기능 구현</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>구현하는 인터페이스의 메서드 중 일부만 구현하면 추상메서드로 선언되어야 함.<br><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Fighter</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Figtable</span></span>&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">move</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y)</span></span>&#123;</span><br><span class="line">        <span class="hljs-comment">//기능 구현</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>상속과 구현을 동시에 할 수 있음<br><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Figther</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Unit</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Figthable</span></span>&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">move</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y)</span></span>&#123;</span><br><span class="line">        <span class="hljs-comment">//기능 구현</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">attack</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">        <span class="hljs-comment">//기능 구현</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="7-5-인터페이스를-이용한-다중상속"><a href="#7-5-인터페이스를-이용한-다중상속" class="headerlink" title="7.5 인터페이스를 이용한 다중상속"></a>7.5 인터페이스를 이용한 다중상속</h3><p>자바에서는 다중상속을 허용하지 않아서 인터페이스로 다중상속을 할 수는 있지만 거의 하지 않는다.<br>두개의 클래스를 상속받아야 하는 상황이라면 두 클래스중 비중이 높은걸 상속받고 나머지는 클래스 내부 멤버로 포함시키는 방법.<br>필요한 부분을 뽑아 인터페이슬슬 만든 후 구현함.</p>
-<h3 id="7-6-인터페이스를-이용한-다형성"><a href="#7-6-인터페이스를-이용한-다형성" class="headerlink" title="7.6 인터페이스를 이용한 다형성"></a>7.6 인터페이스를 이용한 다형성</h3><p>인터페이스 타입의 참조변수로 이를 구현한 클래스의 인스턴스를 참조할 수있고 형변환도 가능함.<br>인터페이스 : Fightable, 클래스 : Fighter(implements Figtable)일때<br><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Fightable f = (Fightable) <span class="hljs-keyword">new</span> Figther();</span><br><span class="line">Fightable f = <span class="hljs-keyword">new</span> Fighter();</span><br></pre></td></tr></table></figure></p>
-<p>인터페이스는 매게변수 타입으로도 쓸 수 있음<br><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function">viod <span class="hljs-title">attack</span><span class="hljs-params">(Figtable f)</span></span>&#123;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>메서드 호출 시 해당 인터페이스를 구현한 클래스의 인스턴스를 매개변수로 제공해야한다.<br>여기서는 new Figther();<br>리턴타입으로 인터페이스 타입을 지정하는것도 가능함.<br><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function">Fightable <span class="hljs-title">method</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">    <span class="hljs-comment">// ...</span></span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Fighter();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="7-7-인터페이스의-장점"><a href="#7-7-인터페이스의-장점" class="headerlink" title="7.7 인터페이스의 장점"></a>7.7 인터페이스의 장점</h3><ul>
-<li>개발시간을 단축시킬 수 있다. </li>
-<li>표준화가 가능하다. </li>
-<li>서로 관계업는 클래스들에게 관계를 맺어줄 수 있다.</li>
-<li>독립적인 프로그래밍이 가능하다.</li>
-</ul>
-<h3 id="7-8-인터페이스의-이해"><a href="#7-8-인터페이스의-이해" class="headerlink" title="7.8 인터페이스의 이해"></a>7.8 인터페이스의 이해</h3><ul>
-<li>클래스를 사용하는 쪽과 클래스를 제공하는 쪽이 있다.</li>
-<li>메서드 사용하느 쪽에서는 사용하려는 메서드의 선언부만 알면된다. </li>
-</ul>
+            <h2 id="1-ORDER-BY-정렬"><a href="#1-ORDER-BY-정렬" class="headerlink" title="1. ORDER BY 정렬"></a>1. ORDER BY 정렬</h2><figure class="highlight sql hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">SELECT</span> 칼럼명 [<span class="hljs-keyword">ALIAS</span>명]</span><br><span class="line"><span class="hljs-keyword">FROM</span> 테이블명</span><br><span class="line">[<span class="hljs-keyword">WHERE</span> 조건식]</span><br><span class="line">[<span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span> 칼럼또는 표현식]</span><br><span class="line">[<span class="hljs-keyword">HAVING</span> 그룹조건식]</span><br><span class="line">[<span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> 칼럼이나 표현식 [<span class="hljs-keyword">ASC</span> 또는 <span class="hljs-keyword">DESC</span>];</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">## 2.SELECT 문장실행 순서</span></span><br><span class="line"></span><br><span class="line">5)<span class="hljs-keyword">SELECT</span>  </span><br><span class="line"><span class="hljs-number">1</span>)<span class="hljs-keyword">FROM</span>  </span><br><span class="line"><span class="hljs-number">2</span>)<span class="hljs-keyword">WHERE</span>  </span><br><span class="line"><span class="hljs-number">3</span>)<span class="hljs-keyword">GROUP</span> <span class="hljs-keyword">BY</span>  </span><br><span class="line"><span class="hljs-number">4</span>)<span class="hljs-keyword">HAVING</span>  </span><br><span class="line"><span class="hljs-number">6</span>)<span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span>    </span><br><span class="line"></span><br><span class="line"><span class="hljs-string">``</span><span class="hljs-string">`sql</span></span><br><span class="line"><span class="hljs-string">SELECT DNAME, LOC, DEPTNO</span></span><br><span class="line"><span class="hljs-string">FROM DEPT</span></span><br><span class="line"><span class="hljs-string">ORDER BY 1,2,3 DESC;</span></span><br><span class="line"><span class="hljs-string"></span></span><br><span class="line"><span class="hljs-string">SELECT JOB FROM EMP</span></span><br><span class="line"><span class="hljs-string">GROUP BY JOB</span></span><br><span class="line"><span class="hljs-string">HAVING COUNT(*)&gt;0</span></span><br><span class="line"><span class="hljs-string">ORDER BY MAX(EMPNO), MAX(MGR), SUM(SAL), COUNT(DEPTNO), MAX(HIREDATE);</span></span><br><span class="line"><span class="hljs-string">`</span><span class="hljs-string">``</span>  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">## 3. TOP N 쿼리</span></span><br><span class="line"><span class="hljs-comment">### ROWNUM  </span></span><br><span class="line"></span><br><span class="line"><span class="hljs-string">``</span><span class="hljs-string">`sql</span></span><br><span class="line"><span class="hljs-string">--ORDER BY가 제일 늦게 실행되기 때문에 원하는 값이 안 나옴</span></span><br><span class="line"><span class="hljs-string">SELECT ENAME, SAL FROM EMP</span></span><br><span class="line"><span class="hljs-string">WHERE ROWNUM &lt;4</span></span><br><span class="line"><span class="hljs-string">ORDER BY SAL;</span></span><br><span class="line"><span class="hljs-string"></span></span><br><span class="line"><span class="hljs-string">--2중쿼리 이용</span></span><br><span class="line"><span class="hljs-string">SELECT ENAME, SAL</span></span><br><span class="line"><span class="hljs-string">FROM (SELECT ENAME, SAL FROM EMP</span></span><br><span class="line"><span class="hljs-string">      ORDER BY SAL DESC)</span></span><br><span class="line"><span class="hljs-string">WHERE ROWNUM&lt;4;</span></span><br></pre></td></tr></table></figure>
 
         </div>
         
@@ -263,17 +621,17 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-12T04:53:40.489Z">2019-05-12</time>
+                <time class="level-item has-text-grey" datetime="2019-05-12T12:44:34.475Z">2019-05-12</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/tec/">tec</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/tec/java/">java</a>
+                <a class="has-link-grey -link" href="/categories/tec/">tec</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/tec/sql/">sql</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    6분 읽기 (나에 대하여 840 단어)
+                    8분 읽기 (나에 대하여 1210 단어)
                 </span>
                 
                 
@@ -282,780 +640,118 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2019/05/12/tec/java/2019-05-04-java8/">[Java의정석] CH7. 객체지향프로그래밍2</a>
+                <a class="has-link-black-ter" href="/2019/05/12/tec/sql/2019-05-10-sql6/">[SQL] GROUP BY, HAVING절</a>
             
         </h1>
         <div class="content">
-            <h2 id="5-다형성"><a href="#5-다형성" class="headerlink" title="5. 다형성"></a>5. 다형성</h2><h3 id="5-1-다형성이란"><a href="#5-1-다형성이란" class="headerlink" title="5.1 다형성이란?"></a>5.1 다형성이란?</h3><p>여러가지 형태를 가질 수 있는 능력.<br>조상클래스 타입의 참조변수로 자손클래스의 인스턴스를 참조할 수 있도록 함.<br><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Tv</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">boolean</span> power;</span><br><span class="line">    <span class="hljs-keyword">int</span> channel;</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">power</span><span class="hljs-params">()</span></span>&#123;power = !power;&#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">channelUp</span><span class="hljs-params">()</span></span>&#123;++channel;&#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">channelDown</span><span class="hljs-params">()</span></span>&#123;--channel;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CaptionTv</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Tv</span></span>&#123;</span><br><span class="line">    String text;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">caption</span><span class="hljs-params">()</span></span>&#123;&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Tv t = <span class="hljs-keyword">new</span> Tv();</span><br><span class="line">CaptionTv c = <span class="hljs-keyword">new</span> CaptionTv();</span><br></pre></td></tr></table></figure>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Tv t = <span class="hljs-keyword">new</span> CaptionTv();</span><br></pre></td></tr></table></figure>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">CaptionTv c = <span class="hljs-keyword">new</span> CaptionTv();</span><br><span class="line">Tv t = <span class="hljs-keyword">new</span> CaptionTv();</span><br></pre></td></tr></table></figure>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//이렇게는 불가능함</span></span><br><span class="line">CaptionTv c = <span class="hljs-keyword">new</span> Tv();</span><br></pre></td></tr></table></figure>
-<p>조상 타입의 참조변수로 자손타입의 인스턴스를 참조할 수 있다.<br>반대로 자손타입의 참조변수로 조상타입의 인스턴스를 참조할 수는 없다.  </p>
-<h3 id="5-2-참조변수의-형병환"><a href="#5-2-참조변수의-형병환" class="headerlink" title="5.2 참조변수의 형병환"></a>5.2 참조변수의 형병환</h3><p>자손타입-&gt;조상타입(up-castion) : 형변환 생략 가능<br>자손타입&lt;-조상타입(Down-castion) : 형변환 생략 불가</p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Car</span></span>&#123;</span><br><span class="line">    String color;</span><br><span class="line">    <span class="hljs-keyword">int</span> door;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">drive</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="hljs-string">"drive, Brrr~"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">stop</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="hljs-string">"stop!!"</span>);</span><br><span class="line">    &#125;   </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FireEngine</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Car</span></span>&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">water</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="hljs-string">"water!!!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Ambulance</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Car</span> </span>&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">siren</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="hljs-string">"siren~~!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>FireEngine타입과 Ambulance타입은 서로 형변환 불가능<br>Car 타입과 FireEngine 타입 형변환 예시<br><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Car car = <span class="hljs-keyword">null</span>;</span><br><span class="line">FireEngine fe = <span class="hljs-keyword">new</span> FireEngine();</span><br><span class="line">FireEngine fe2 = <span class="hljs-keyword">null</span>;</span><br><span class="line"></span><br><span class="line">car = fe;  <span class="hljs-comment">//car = (Car) fe; 형변환이 생략된 형태</span></span><br><span class="line">fe2 = (FireEngine) car; <span class="hljs-comment">//형변환 생략 불가.</span></span><br></pre></td></tr></table></figure></p>
-<p>아래 예제는 컴파일에러는 발생하지 않지만 실행시 에러가 발생함.<br><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CastingTest2</span></span>&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span></span>&#123;</span><br><span class="line">        Car car = <span class="hljs-keyword">new</span> Car();</span><br><span class="line">        Car car2 = <span class="hljs-keyword">null</span>;</span><br><span class="line">        FireEngine fe = <span class="hljs-keyword">null</span>;</span><br><span class="line">        </span><br><span class="line">        car.drive();</span><br><span class="line">        fe = (FireEngine) car; <span class="hljs-comment">//실행시 여기서 에러 발생</span></span><br><span class="line">        fe.drive();</span><br><span class="line">        car2 = fe;</span><br><span class="line">        car2.drive();</span><br><span class="line">    &#125;</span><br><span class="line"> &#125;</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line">car가 Car타입의 인스턴스여서 FireEngine을 받을 수 없음.</span><br><span class="line">- 캐스트연산자를 사용하면 서로 상속관계에 있는 클래스 타입의 참조변수간의 형변환은 양방향으로 자유롭게 수행될 수 있다.  </span><br><span class="line">그러나 참조변수가 참조하고 있는 인스턴스의 자손타입으로 형변환을 하는것은 허용되지 않는다.  </span><br><span class="line"></span><br><span class="line">### 5.3 instanceof연산자  </span><br><span class="line">참조변수가 참조하는 인스턴스 실제타입을 확인하기 위해 <span class="hljs-keyword">instanceof</span>연산자 사용.  </span><br><span class="line">주로 조건문에사용. </span><br><span class="line">* 값이 ull인 참조변수에 대해 <span class="hljs-keyword">instanceof</span>연산을 하면 <span class="hljs-keyword">false</span>나옴.  </span><br><span class="line"></span><br><span class="line">```java</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">doWork</span><span class="hljs-params">(Car c)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span>(c <span class="hljs-keyword">instanceof</span> FireEngine)&#123;</span><br><span class="line">        FireEngine fe = (FireEngind) c;</span><br><span class="line">        fe.water();</span><br><span class="line">    &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>( c instance of Ambulance)&#123;</span><br><span class="line">        Ambulance a = (Ambulance) c;</span><br><span class="line">        a.siren();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">InstanceOfTest</span></span>&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span> <span class="hljs-params">(String args[])</span></span>&#123;</span><br><span class="line">        FireEngine fe = <span class="hljs-keyword">new</span> FireEngine();</span><br><span class="line">        </span><br><span class="line">        <span class="hljs-keyword">if</span>(fe <span class="hljs-keyword">instanceof</span> FireEngine)&#123;</span><br><span class="line">            System.out.println(<span class="hljs-string">"FireEngine instance"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-keyword">if</span>( fe <span class="hljs-keyword">instanceof</span> Car)&#123;</span><br><span class="line">            System.out.println(<span class="hljs-string">"Car instance"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-keyword">if</span>( fe <span class="hljs-keyword">instanceof</span> Object)&#123;</span><br><span class="line">            System.out.println(<span class="hljs-string">"Object instance"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>위의 코드를 실행할 경우<br><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">FireEngine instance</span><br><span class="line">Car instance</span><br><span class="line">Object instance</span><br></pre></td></tr></table></figure></p>
-<h3 id="5-4-참조변수와-인스턴스의-연결"><a href="#5-4-참조변수와-인스턴스의-연결" class="headerlink" title="5.4 참조변수와 인스턴스의 연결"></a>5.4 참조변수와 인스턴스의 연결</h3><p>멤버변수가 조상클래스와 자손클래스에 중복으로 정의된 경우, 조상 타입의 참조변수를 사용했을 때는 조상클래스에 선언된 멤버변수가 사용되고, 지손타입의 참조변수를 사용했을 때는 자손틀래스에 선언된 멤버변수가 사용된다.  </p>
-<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BindingTest</span></span>&#123;</span><br><span class="line">        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span></span>&#123;</span><br><span class="line">            Parent p = <span class="hljs-keyword">new</span> Child();</span><br><span class="line">            Child c = <span class="hljs-keyword">new</span> Child();</span><br><span class="line">            </span><br><span class="line">            System.out.println(<span class="hljs-string">"p.x ="</span> + p.x);</span><br><span class="line">            p.method();</span><br><span class="line">            </span><br><span class="line">            System.out.println(<span class="hljs-string">"c.x= "</span>+c.x);</span><br><span class="line">            c.method();</span><br><span class="line">          </span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Parent</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> x = <span class="hljs-number">100</span>;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">method</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="hljs-string">"Parent Method"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Child</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> x = <span class="hljs-number">200</span>;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">method</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="hljs-string">"Child Method"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>실행결과<br><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">p.x=<span class="hljs-number">100</span></span><br><span class="line">Child Method</span><br><span class="line">c.x=<span class="hljs-number">200</span></span><br><span class="line">Child Method</span><br></pre></td></tr></table></figure></p>
-<h3 id="5-5-매개변수의-다형성"><a href="#5-5-매개변수의-다형성" class="headerlink" title="5.5 매개변수의 다형성"></a>5.5 매개변수의 다형성</h3><h3 id="5-6-여러-종류의-객체를-하나의-배열로-다루기"><a href="#5-6-여러-종류의-객체를-하나의-배열로-다루기" class="headerlink" title="5.6 여러 종류의 객체를 하나의 배열로 다루기"></a>5.6 여러 종류의 객체를 하나의 배열로 다루기</h3>
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-12T04:53:40.485Z">2019-05-12</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/tec/">tec</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/tec/java/">java</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    9분 읽기 (나에 대하여 1376 단어)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/05/12/tec/java/2019-05-04-java7/">[Java의정석] CH7. 객체지향프로그래밍2</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="3-Package와-import"><a href="#3-Package와-import" class="headerlink" title="3 Package와 import"></a>3 Package와 import</h2><h3 id="3-1-패키지-package"><a href="#3-1-패키지-package" class="headerlink" title="3.1 패키지(package)"></a>3.1 패키지(package)</h3><p>패키지란, 클래스의 묶음. 물리적으로 하나의 디렉터리임.<br>ex) java.lang.String은 java/lang 디렉터리에 위치한 Strig 클래스이다.  </p>
-<ul>
-<li>하나의 소스파일에는 첫번째 문장으로 단 한번의 패키지 선언만을 허용한다.</li>
-<li>모든 클래스는 반드시 하나의 패키지에 속해야 된다.</li>
-<li>패키지는 점(.)을 구분자로 하여 계층구조로 구성할 수 있다.</li>
-<li>패키지는 물리적으로 클래스 파일(.class)을 포함하는 하나의 디렉터리다.  </li>
+            <h2 id="1-집계함수-AGGREGATE-FUNCTION"><a href="#1-집계함수-AGGREGATE-FUNCTION" class="headerlink" title="1. 집계함수(AGGREGATE FUNCTION)"></a>1. 집계함수(AGGREGATE FUNCTION)</h2><ul>
+<li>여러 행들의 그룹이 모여 그룹당 하나의 결과를 리턴하는 함수</li>
+<li>GROUP BY 절은 행들을 소그룹화 함</li>
+<li>SELECT절, HAVING절, ORDER BY 절에 사용할 수 있음.  </li>
 </ul>
-<h3 id="3-2-패키지의-선언"><a href="#3-2-패키지의-선언" class="headerlink" title="3.2 패키지의 선언"></a>3.2 패키지의 선언</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">package 패키지명;</span><br></pre></td></tr></table></figure>
-<h3 id="3-3-import-문"><a href="#3-3-import-문" class="headerlink" title="3.3 import 문"></a>3.3 import 문</h3><p>import 문은 컴파일러에게 소스파일에 사용된 클래스의 패키지에 대한 정보를 제공함.  </p>
-<h3 id="3-4-import문의-선언"><a href="#3-4-import문의-선언" class="headerlink" title="3.4 import문의 선언"></a>3.4 import문의 선언</h3><p>일반적인 소스 파일(*.java)의 구성은 다음의 순서로 되어있다.  </p>
-<ol>
-<li>package문</li>
-<li>import문</li>
-<li>클래스선언  </li>
-</ol>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import 패키지명.클래스명;</span><br><span class="line">import 패키지명.*;</span><br></pre></td></tr></table></figure>
-<h2 id="4-제어자"><a href="#4-제어자" class="headerlink" title="4 제어자"></a>4 제어자</h2><h3 id="4-1-제어자란"><a href="#4-1-제어자란" class="headerlink" title="4.1 제어자란?"></a>4.1 제어자란?</h3><p>클래스, 변수 또는 메서드의 선언부에 함께 사용되어 부가적인 의미를 부여함</p>
-<ul>
-<li>접근제어자 - public, protected, default, private</li>
-<li>그외 - static, final, abstract, native, transient, synchronized, volatile, strictfp<br>제어자는 클래스, 멤버변수, 메서드에 주로 사용됨.<br>하나의 대상에 여러 제어자를 조합하는 것은 가능하나 접근제어자는 하나만 쓸 수 있다.  </li>
+<h3 id="집계함수명-DISTINCT-칼럼이나-표현식"><a href="#집계함수명-DISTINCT-칼럼이나-표현식" class="headerlink" title="집계함수명([DISTINCT] 칼럼이나 표현식)"></a>집계함수명([DISTINCT] 칼럼이나 표현식)</h3><h3 id="COUNT"><a href="#COUNT" class="headerlink" title="COUNT(*)"></a>COUNT(*)</h3><ul>
+<li>NULL값을 포함한 행의 수 출력<h3 id="COUNT-표현식"><a href="#COUNT-표현식" class="headerlink" title="COUNT(표현식)"></a>COUNT(표현식)</h3></li>
+<li>표현식의 값이 NULL값을 제외한 행의 수 출력<h3 id="SUM-DISTINCT-표현식"><a href="#SUM-DISTINCT-표현식" class="headerlink" title="SUM([DISTINCT] 표현식)"></a>SUM([DISTINCT] 표현식)</h3></li>
+<li>NULL값을 제외한 합계출력<h3 id="AVG-DISTINCT-표현식"><a href="#AVG-DISTINCT-표현식" class="headerlink" title="AVG([DISTINCT] 표현식)"></a>AVG([DISTINCT] 표현식)</h3></li>
+<li>NULL값을 제외한 평균출력<h3 id="MAX-DISTINCT-표현식"><a href="#MAX-DISTINCT-표현식" class="headerlink" title="MAX([DISTINCT] 표현식)"></a>MAX([DISTINCT] 표현식)</h3></li>
+<li>표현식의 최대값 출력<h3 id="MIN-DISTINCT-표현식"><a href="#MIN-DISTINCT-표현식" class="headerlink" title="MIN([DISTINCT] 표현식)"></a>MIN([DISTINCT] 표현식)</h3></li>
+<li>표현식의 최소값 출력<h3 id="STDDEV-D-표현식"><a href="#STDDEV-D-표현식" class="headerlink" title="STDDEV([D] 표현식)"></a>STDDEV([D] 표현식)</h3></li>
+<li>표현식의 표준편차 출력<h3 id="VARIAN-D-표현식"><a href="#VARIAN-D-표현식" class="headerlink" title="VARIAN([D] 표현식)"></a>VARIAN([D] 표현식)</h3></li>
+<li>표현식의 분산 출력   </li>
 </ul>
-<h3 id="4-2-static-클래스의-공통적인"><a href="#4-2-static-클래스의-공통적인" class="headerlink" title="4.2 static - 클래스의, 공통적인"></a>4.2 static - 클래스의, 공통적인</h3><ul>
-<li>static 이 사용될 수 있는곳 : 멤머변수, 메서드, 초기화 블럭  </li>
+<h2 id="2-GROUP-BY절"><a href="#2-GROUP-BY절" class="headerlink" title="2. GROUP BY절"></a>2. GROUP BY절</h2><ul>
+<li>SQL문에서 FROM과 WHERE절 뒤에 위치, 데이터를 그룹으로 분류하여 소그룹에대한 항목별 통계정보를 얻을때 사용  </li>
 </ul>
-<p>*static  </p>
-<table>
-<thead>
-<tr>
-<th>대상</th>
-<th>의미</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>멤버변수</td>
-<td>- 모든 인스턴스에 공통적으로 사용되는 클래스 변수가 된다.<br> - 클래스변수는 인스턴스를 생성하지 않고도 가능하다.<br> - 클래스가 메모리에 로드될 때 생성된다.</td>
-</tr>
-<tr>
-<td>메서드</td>
-<td>- 인스턴스를 생성하지 않고도 호룰이 가능한 static 메서드가 된다. <br> static 메서드 내에선 인스턴스 멤버들을 직접 사용할 수 없다.  </td>
-</tr>
-</tbody>
-</table>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">class StaticTest&#123;</span><br><span class="line">    static int width =200;</span><br><span class="line">    static int height = 120;</span><br><span class="line">    </span><br><span class="line">    static &#123;</span><br><span class="line">        // static 변수의 초기화 수행</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    static int max(int a, int b)&#123;</span><br><span class="line">        return a&gt;b?a:b;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="4-3-final-마지막의-변경될-수-없는"><a href="#4-3-final-마지막의-변경될-수-없는" class="headerlink" title="4.3 final - 마지막의, 변경될 수 없는"></a>4.3 final - 마지막의, 변경될 수 없는</h3><p>final이 사용될 수 있는 곳 - 클래스, 메서드, 멤버변수, 지역변수<br>*final  </p>
-<table>
-<thead>
-<tr>
-<th>대상</th>
-<th>의미</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>클래스</td>
-<td>변경될 수 없는 클래스, 확장될 수 없는 클래스가 된다. <br> 그래서 final로 지정된 클래스는 다른 클래스의 조상이 될 수 없음</td>
-</tr>
-<tr>
-<td>메서드</td>
-<td>변경될 수 없는 메서드, final로 지정된 메서드는 오버라이딩을 통해 재정의 될 수 없다.</td>
-</tr>
-<tr>
-<td>멤버변수/지역변수</td>
-<td>변수 앞에 final이 붙으면 값을 변경할 수 없는 상수가 된다.</td>
-</tr>
-</tbody>
-</table>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">final class FinalTest&#123;</span><br><span class="line">    final int MAX_SIZE = 10;</span><br><span class="line">    </span><br><span class="line">    final void getMaxSize()&#123;</span><br><span class="line">        final int LV = MAX_SIZE;</span><br><span class="line">        return MAX_SIZE;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="4-4-생성자를-이용한-final-멤버변수-초기화"><a href="#4-4-생성자를-이용한-final-멤버변수-초기화" class="headerlink" title="4.4 생성자를 이용한 final 멤버변수 초기화"></a>4.4 생성자를 이용한 final 멤버변수 초기화</h3><p>final 붙은 변수는 상수임으로 일반적으로 선언과 초기화를 동시에 하지만, 인스턴스 변수의 경우 생성자에서 초기화 되도록 할 수 있다.<br>각 인스턴스마다 final 이 붙은 멤버 변수가 다른 값을 갖도록 하는 것이 가능하다.<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class Card&#123;</span><br><span class="line">    final int NUMBER;</span><br><span class="line">    final String KIND;</span><br><span class="line">    static int width = 100;</span><br><span class="line">    static int height =250;</span><br><span class="line">    </span><br><span class="line">    Card(String kind, int num)&#123;</span><br><span class="line">        KIND = kind;</span><br><span class="line">        NUMBER = num;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    Card()&#123;</span><br><span class="line">        this(&quot;HEART&quot;,1);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="4-5-abstract-추상의-미완성의"><a href="#4-5-abstract-추상의-미완성의" class="headerlink" title="4.5 abstract - 추상의, 미완성의"></a>4.5 abstract - 추상의, 미완성의</h3><p>미완성의 의미를 가지고 있다.<br>메서드의 선언부만 작성하고 실제 수행내용은 구현하지 않은 추상 메서드를 선언하는데 사용함.  </p>
-<ul>
-<li>abstract가 사용될 수 있는 곳 - 클래스, 메서드</li>
+<pre><code class="sql"><span class="keyword">SELECT</span> [<span class="keyword">DISTINCT</span>] 칼럼명 [<span class="keyword">ALIAS</span>명]
+<span class="keyword">FROM</span> 테이블명
+[<span class="keyword">WHERE</span> 조건식]
+[<span class="keyword">GROUP</span> <span class="keyword">BY</span> 칼럼이나 표현식]
+[<span class="keyword">HAVING</span> 그룹조건식];
+</code></pre>
+<h3 id="GROUP-BY-HAVING절의-특성"><a href="#GROUP-BY-HAVING절의-특성" class="headerlink" title="GROUP BY, HAVING절의 특성"></a>GROUP BY, HAVING절의 특성</h3><ul>
+<li>그룹바이로 소그룹의 기준을 정한후, SELECT 절에 집계함수를 사용</li>
+<li>집계함수의 통계정보는 NULL값을 제외하고 수행함</li>
+<li>WHERE절에는 집계함수 올 수 없음</li>
+<li>HAVING절은 그룹바이절의 기준 항목이나 소그룹의 집계함수를 이용한 저건을 표시</li>
+<li>그룹바이절에 의해 소그룹별로 만들어진 집계데이터 중, HAVING 절에 제한 조건을 두어 만족하는 내용만 출력</li>
+<li>HAVING절은 일반적으로 GROUP BY절 뒤에 위치  </li>
 </ul>
-<p>*abstract    </p>
-<table>
-<thead>
-<tr>
-<th>대상</th>
-<th>의미</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>클래스</td>
-<td>클래스 내에 추상메서드가 선언되어 있음을 의미한다.</td>
-</tr>
-<tr>
-<td>메서드</td>
-<td>선언부만 작성하고 구현부는 작성하지 않은 추상메서드임을 알린다.</td>
-</tr>
-</tbody>
-</table>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">abstract class AbstractTest&#123;</span><br><span class="line">    abstract void move();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="4-6-접근제어자"><a href="#4-6-접근제어자" class="headerlink" title="4.6 접근제어자"></a>4.6 접근제어자</h3><ul>
-<li>멤버 또는 클래스에 사용되어 외부에서 접근하지 못하게 제한하는 역할.</li>
-<li>접근 제어자가 사용될 수 있는곳- 클래스, 멤버변수, 메서드, 생성자<ul>
-<li>private : 같은 클래스 내에서만 접근이 가능하다.</li>
-<li>default : 같은 패키지 내에서만 접근이 가은하다.</li>
-<li>protected : 같은 패키지 내에서, 그리고 다른 패키지의 자손 클래스에서 접근이 가능하다.</li>
-<li>public : 접근 제한이 없다.</li>
+<pre><code class="sql"><span class="keyword">SELECT</span> <span class="keyword">POSITION</span> 포지션, <span class="keyword">AVG</span>(HEIGHT) 평균키
+<span class="keyword">FROM</span> PLAYER;
+<span class="comment">--&gt;&gt;ERROR : 단일 그룹의 집계함수가 아니다라고 나옴</span>
+
+
+<span class="keyword">SELECT</span> <span class="keyword">POSITION</span> 포지션, <span class="keyword">AVG</span>(HEIGHT) 평균키
+<span class="keyword">FROM</span> PLAYER
+<span class="keyword">GROUP</span> <span class="keyword">BY</span> <span class="keyword">POSITION</span> 포지션;
+<span class="comment">--&gt;&gt;ERROR SQL명령어가 올바르게 종료되지 않음--&gt;그룹바이에 별명ALIAS쓸 수 없음</span>
+
+<span class="comment">--포지션별 최대키, 최소키, 평균키 출력</span>
+<span class="keyword">SELECT</span> <span class="keyword">POSITION</span> 포지션, <span class="keyword">MAX</span>(HEIGHT), <span class="keyword">MIN</span>(HEIGHT), <span class="keyword">AVG</span>(HEIGHT)
+<span class="keyword">FROM</span> PLAYER
+<span class="keyword">GROUP</span> <span class="keyword">BY</span> PISITION;
+</code></pre>
+<h2 id="3-HAVING-절"><a href="#3-HAVING-절" class="headerlink" title="3.HAVING 절"></a>3.HAVING 절</h2><ul>
+<li>GROUP BY후에 조건을 달고 싶을때 WHERE 대신 씀</li>
+<li>WHERE절은 GROUP BY절 전에 오기때문에 소그룹으로 묶인후의 조건을 걸 수없음.  </li>
 </ul>
-</li>
+<pre><code class="sql"><span class="keyword">SELECT</span> <span class="keyword">POSITION</span> 포지션, <span class="keyword">ROUND</span>(<span class="keyword">AVG</span>(HEIGHT),<span class="number">2</span>) 평균키
+<span class="keyword">FROM</span> PLAYER
+<span class="keyword">WHERE</span> <span class="keyword">AVG</span>(HIGHT) &gt;=<span class="number">180</span>
+<span class="keyword">GROUP</span> <span class="keyword">BY</span> <span class="keyword">POSITION</span>
+<span class="comment">--3행오류 : 집계함수가 허가되지 않음. 그룹바이로 소그룹화 되기전에 집계함수를 사용했기때문.</span>
+
+<span class="keyword">SELECT</span> <span class="keyword">POSITION</span>, <span class="keyword">ROUND</span>(<span class="keyword">AVG</span>(HEIGHT),<span class="number">2</span>)
+<span class="keyword">FROM</span> PLAYER
+<span class="keyword">GROUP</span> <span class="keyword">BY</span> <span class="keyword">POSITION</span>
+<span class="keyword">HAVING</span> <span class="keyword">AVG</span>(HEIGNT)&gt;=<span class="number">180</span>;
+
+<span class="comment">--이렇게써야함</span>
+<span class="comment">--예제)</span>
+<span class="comment">--최대 키가 190CM이상인 선수를 가지고 포지션별 평균 키를 출력</span>
+<span class="keyword">SELECT</span> POSICITON <span class="keyword">AVG</span>(HEIGHT)
+<span class="keyword">FROM</span> PLAYER
+<span class="keyword">GROUP</span> <span class="keyword">BY</span> <span class="keyword">POSITION</span>
+<span class="keyword">HAVING</span> <span class="keyword">MAX</span>(HEIGHT) &gt;=<span class="number">190</span>;
+</code></pre>
+<h2 id="4-CASE-표현을-활용한-월별-데이터-집계"><a href="#4-CASE-표현을-활용한-월별-데이터-집계" class="headerlink" title="4. CASE 표현을 활용한 월별 데이터 집계"></a>4. CASE 표현을 활용한 월별 데이터 집계</h2><ul>
+<li>모델링의 제 1정규화로 반독되는 칼럼의 경우, 구분칼럼을 두고 여러개의 레코드로 만들어진 집합을 정해진 칼럼 수만큼 확장해서 집계 보고서를 만드는 유용한 기법  </li>
 </ul>
-<h3 id="4-7-접근-제어자를-이용한-캡슐화"><a href="#4-7-접근-제어자를-이용한-캡슐화" class="headerlink" title="4.7 접근 제어자를 이용한 캡슐화"></a>4.7 접근 제어자를 이용한 캡슐화</h3><p>접근 제어자 사용하는 이유: </p>
-<ul>
-<li>외부로 부터 데이터를 보호하기 위해</li>
-<li>외부에는 불필요한 내부적으로만 사용되는 부분을 감추기 위해</li>
+<p>예제)<br>부서별 월별 입사자의 평균 급여를 조회, 입사후 1년마다 급여 인상이나 보너스 지급과 같은 일정이 정기적으로 잡히면 업무적으로 중요한 정보가 됨  </p>
+<pre><code class="sql"><span class="comment">--STEPT1</span>
+<span class="comment">--개별입사정보에서 월별데이터 추출</span>
+<span class="keyword">SELECT</span> ENAME, DEPOTNO, <span class="keyword">EXTRACT</span>(<span class="keyword">MONTH</span> <span class="keyword">FROM</span> HIREDATE) <span class="keyword">MONTH</span>, SAL
+<span class="keyword">FROM</span> EMP;
+
+<span class="comment">--STEPT2 월별데이터 구분</span>
+<span class="keyword">SELECT</span> ENAME, DEPTNO,
+  <span class="keyword">CASE</span> <span class="keyword">MONTH</span> <span class="keyword">WHEN</span> <span class="number">1</span> <span class="keyword">THEN</span> SAL <span class="keyword">END</span> M01, <span class="keyword">CASE</span> <span class="keyword">MONTH</span> <span class="keyword">WHEN</span> <span class="number">2</span> <span class="keyword">THEN</span> SAL <span class="keyword">END</span> M02,
+  <span class="keyword">CASE</span> <span class="keyword">MONTH</span> <span class="keyword">WHEN</span> <span class="number">3</span> <span class="keyword">THEN</span> SAL <span class="keyword">END</span> M03, <span class="keyword">CASE</span> <span class="keyword">MONTH</span> <span class="keyword">WHEN</span> <span class="number">4</span> <span class="keyword">THEN</span> SAL <span class="keyword">END</span> M04,
+  <span class="keyword">CASE</span> <span class="keyword">MONTH</span> <span class="keyword">WHEN</span> <span class="number">5</span> <span class="keyword">THEN</span> SAL <span class="keyword">END</span> M05, <span class="keyword">CASE</span> <span class="keyword">MONTH</span> <span class="keyword">WHEN</span> <span class="number">6</span> <span class="keyword">THEN</span> SAL <span class="keyword">END</span> M06,
+  <span class="keyword">CASE</span> <span class="keyword">MONTH</span> <span class="keyword">WHEN</span> <span class="number">7</span> <span class="keyword">THEN</span> SAL <span class="keyword">END</span> M07, <span class="keyword">CASE</span> <span class="keyword">MONTH</span> <span class="keyword">WHEN</span> <span class="number">8</span> <span class="keyword">THEN</span> SAL <span class="keyword">END</span> M08,
+  <span class="keyword">CASE</span> <span class="keyword">MONTH</span> <span class="keyword">WHEN</span> <span class="number">9</span> <span class="keyword">THEN</span> SAL <span class="keyword">END</span> M09, <span class="keyword">CASE</span> <span class="keyword">MONTH</span> <span class="keyword">WHEN</span> <span class="number">10</span> <span class="keyword">THEN</span> SAL <span class="keyword">END</span> M10,
+  <span class="keyword">CASE</span> <span class="keyword">MONTH</span> <span class="keyword">WHEN</span> <span class="number">11</span> <span class="keyword">THEN</span> SAL <span class="keyword">END</span> M11, <span class="keyword">CASE</span> <span class="keyword">MONTH</span> <span class="keyword">WHEN</span> <span class="number">12</span> <span class="keyword">THEN</span> SAL <span class="keyword">END</span> M12
+<span class="keyword">FROM</span> (<span class="keyword">SELECT</span> ENAME, DEPTNO, <span class="keyword">EXTRACT</span>(<span class="keyword">MONTH</span> <span class="keyword">FROM</span> HIREDATE) <span class="keyword">MONTH</span>, SAL
+      <span class="keyword">FROM</span> EMP);
+
+<span class="comment">--STEPT3 2의구분을 부서별로 그룹화</span>
+<span class="keyword">SELECT</span> DEPTNO,
+  <span class="keyword">AVG</span>(<span class="keyword">CASE</span> <span class="keyword">MONTH</span> <span class="keyword">WHEN</span> <span class="number">1</span> <span class="keyword">THEN</span> SAL <span class="keyword">END</span>) M01, <span class="keyword">AVG</span>(<span class="keyword">CASE</span> <span class="keyword">MONTH</span> <span class="keyword">WHEN</span> <span class="number">2</span> <span class="keyword">THEN</span> SAL <span class="keyword">END</span>) M02,
+  <span class="keyword">AVG</span>(<span class="keyword">CASE</span> <span class="keyword">MONTH</span> <span class="keyword">WHEN</span> <span class="number">3</span> <span class="keyword">THEN</span> SAL <span class="keyword">END</span>) M03, <span class="keyword">AVG</span>(<span class="keyword">CASE</span> <span class="keyword">MONTH</span> <span class="keyword">WHEN</span> <span class="number">4</span> <span class="keyword">THEN</span> SAL <span class="keyword">END</span>) M04,
+  <span class="keyword">AVG</span>(<span class="keyword">CASE</span> <span class="keyword">MONTH</span> <span class="keyword">WHEN</span> <span class="number">5</span> <span class="keyword">THEN</span> SAL <span class="keyword">END</span>) M05, <span class="keyword">AVG</span>(<span class="keyword">CASE</span> <span class="keyword">MONTH</span> <span class="keyword">WHEN</span> <span class="number">6</span> <span class="keyword">THEN</span> SAL <span class="keyword">END</span>) M06,
+  <span class="keyword">AVG</span>(<span class="keyword">CASE</span> <span class="keyword">MONTH</span> <span class="keyword">WHEN</span> <span class="number">7</span> <span class="keyword">THEN</span> SAL <span class="keyword">END</span>) M07, <span class="keyword">AVG</span>(<span class="keyword">CASE</span> <span class="keyword">MONTH</span> <span class="keyword">WHEN</span> <span class="number">8</span> <span class="keyword">THEN</span> SAL <span class="keyword">END</span>) M08,
+  <span class="keyword">AVG</span>(<span class="keyword">CASE</span> <span class="keyword">MONTH</span> <span class="keyword">WHEN</span> <span class="number">9</span> <span class="keyword">THEN</span> SAL <span class="keyword">END</span>) M09, <span class="keyword">AVG</span>(<span class="keyword">CASE</span> <span class="keyword">MONTH</span> <span class="keyword">WHEN</span> <span class="number">10</span> <span class="keyword">THEN</span> SAL <span class="keyword">END</span>) M10,
+  <span class="keyword">AVG</span>(<span class="keyword">CASE</span> <span class="keyword">MONTH</span> <span class="keyword">WHEN</span> <span class="number">11</span> <span class="keyword">THEN</span> SAL <span class="keyword">END</span>) M11, <span class="keyword">AVG</span>(<span class="keyword">CASE</span> <span class="keyword">MONTH</span> <span class="keyword">WHEN</span> <span class="number">12</span> <span class="keyword">THEN</span> SAL <span class="keyword">END</span>) M12
+<span class="keyword">FROM</span> (<span class="keyword">SELECT</span> ENAME, DEPTNO, <span class="keyword">EXTRACT</span>(<span class="keyword">MONTH</span> <span class="keyword">FROM</span> HIREDATE) <span class="keyword">MONTH</span>, SAL
+      <span class="keyword">FROM</span> EMP)
+<span class="keyword">GROUP</span> <span class="keyword">BY</span> DEPTNO;
+</code></pre>
+<h2 id="5-집계함수와-NULL처리"><a href="#5-집계함수와-NULL처리" class="headerlink" title="5.집계함수와 NULL처리"></a>5.집계함수와 NULL처리</h2><ul>
+<li>빈칸을 NULL이 아니라 0으로 처리하기 위해 NVL()을 사용하는 경우가 있는데, 오히려 불필요할 수 있음</li>
+<li>행 함수는 건수가 NULL인 행을 빼고 계산함. SUM, AVG,..등 굳이 0을넣어 불필요하게 더 계산할 필요가 없음</li>
+<li>ELSE  절 생략하면 DEFAULT 값이 NULL임</li>
+<li>출력시 NULL이 아닌 0을 표현하고싶으면 NVL(SUM(SAL),0)이렇게 하면됨</li>
 </ul>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">public class Time&#123;</span><br><span class="line">    private int hour;</span><br><span class="line">    private int minute;</span><br><span class="line">    private int second;</span><br><span class="line">    </span><br><span class="line">    public int getHour()&#123;return hour;&#125;</span><br><span class="line">    public void setHour(int hour)&#123;</span><br><span class="line">        if(hour&lt;0 || hour &gt; 23)&#123;</span><br><span class="line">            return;</span><br><span class="line">        &#125;</span><br><span class="line">        this.hour = hour;</span><br><span class="line">    &#125;</span><br><span class="line">    public int getMinute()&#123;return minute;&#125;</span><br><span class="line">    public void setMinute(int min)&#123;</span><br><span class="line">        if(min&lt;0 || hour &gt; 59)&#123;</span><br><span class="line">            return;</span><br><span class="line">        &#125;</span><br><span class="line">        this.minute = min;</span><br><span class="line">    &#125;</span><br><span class="line">    public int getSecond()&#123;return second;&#125;</span><br><span class="line">    public void setSecond(int sec)&#123;</span><br><span class="line">        if(sec &lt;0 || sec &gt; 59)&#123;</span><br><span class="line">            return;</span><br><span class="line">        &#125;</span><br><span class="line">        this.second = sec;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="4-9-제어자의-조합"><a href="#4-9-제어자의-조합" class="headerlink" title="4.9 제어자의 조합"></a>4.9 제어자의 조합</h3><table>
-<thead>
-<tr>
-<th>대상</th>
-<th>사용가능한 제어자</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>클래스</td>
-<td>public, default, final, abstract</td>
-</tr>
-<tr>
-<td>메서드</td>
-<td>모든 접근제어자, final, abstract, static</td>
-</tr>
-<tr>
-<td>멤버변수</td>
-<td>모든 접근제어자, final, static</td>
-</tr>
-<tr>
-<td>지역변수</td>
-<td>final</td>
-</tr>
-</tbody>
-</table>
-<ol>
-<li>메서드에 static과 abstract를 함께 사용할 수 없다.</li>
-<li>클래스에 abstract와 final을 동시에 사용할 수 없다.</li>
-<li>abstract메서드의 접근제어자가 private일 수 없다.</li>
-<li>메서드에 private와 final을 같이 사용할 필요는 없다.(둘중 하나만 사용해도 충분)</li>
-</ol>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-12T04:53:40.482Z">2019-05-12</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/tec/">tec</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/tec/java/">java</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    5분 읽기 (나에 대하여 751 단어)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/05/12/tec/java/2019-05-03-java6/">[Java의정석] CH7. 객체지향프로그래밍2</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="2-오버라이딩"><a href="#2-오버라이딩" class="headerlink" title="2. 오버라이딩"></a>2. 오버라이딩</h2><h3 id="2-1-오버라이딩이란"><a href="#2-1-오버라이딩이란" class="headerlink" title="2.1 오버라이딩이란?"></a>2.1 오버라이딩이란?</h3><p>조상 클래스부터 상속받은 메서드의 내용을 변경하는것<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">class Point&#123;</span><br><span class="line">    int x;</span><br><span class="line">    int y;</span><br><span class="line">    </span><br><span class="line">    String getLocation()&#123;</span><br><span class="line">        return &quot;x : &quot;+x+&quot;, y : &quot; + y;</span><br><span class="line">    &#125;</span><br><span class="line">|</span><br><span class="line"></span><br><span class="line">class Point3D extends Point&#123;</span><br><span class="line">    int z;</span><br><span class="line">    </span><br><span class="line">    String getLocation()&#123;</span><br><span class="line">        return &quot;x : &quot;+x+&quot;, y : &quot; + y+&quot;, z : &quot;+z;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="2-2-오버라이딩의-조건"><a href="#2-2-오버라이딩의-조건" class="headerlink" title="2.2 오버라이딩의 조건"></a>2.2 오버라이딩의 조건</h3><p>메서드 선언부는 조상의 것과 완전 일치해야함.<br>자손 클래스에서 오버라이딩하는 메서드는 조상 클래스의 메서드와</p>
-<ul>
-<li>이름이 같아야 한다.</li>
-<li>매개변수가 같아야 한다.</li>
-<li>리턴 타입이 같아야 한다.</li>
-</ul>
-<ol>
-<li>접근제어자는 조상 클래스의 메서드보다 좁은 범위로 변경할 수 없다.<br>ex) 조상클래스의 메서드의 접근 제어자가 protected라면<br>자식클래스에서 오버라이딩 하는 메서드의 접근 제어자는 protected나 public 이어야함.  </li>
-<li>조상 클래스의 메서드보다 많은 수의 예외를 선언할 수 없다.</li>
-</ol>
-<ul>
-<li>조상 클래스의 메서드를 자손클래스에서 오버라이딩할 때  <ol>
-<li>접근제어자를 조상클래스의 메서드보다 좁은 범위로 할 수 없다.</li>
-<li>예외는 조상 클래스의 메서드보다 많이 선언할 수 없다.</li>
-<li>인스턴스메서드를 static메서드로 또는 그 반대로 변경할 수 없다.</li>
-</ol>
-</li>
-</ul>
-<h3 id="2-3-오버로딩-VS-오버라이딩"><a href="#2-3-오버로딩-VS-오버라이딩" class="headerlink" title="2.3 오버로딩 VS 오버라이딩"></a>2.3 오버로딩 VS 오버라이딩</h3><ul>
-<li>오버로딩(overloading) : 기존에 없는 메서드를 정의하는것(new)</li>
-<li>오버라이딩(overriding) : 상속받은 메서드의 내용을 변경하는 것(change, modify)</li>
-</ul>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">class Parent&#123;</span><br><span class="line">    void parentMethod()&#123;&#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Chile extends Parent&#123;</span><br><span class="line">    void parentMethod()&#123;&#125; // 오버라이딩;</span><br><span class="line">    void parentMethod(int i)&#123;&#125; //오버로딩</span><br><span class="line">    </span><br><span class="line">    void childMethod()&#123;&#125;</span><br><span class="line">    void childMethod(int i)&#123;&#125; //오버로딩</span><br><span class="line">    void childMethod()&#123;&#125;// 에러 함수가 중복됨</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="2-4-super"><a href="#2-4-super" class="headerlink" title="2.4 super"></a>2.4 super</h3><p>자손클래스에서 조상 클래스로부터 상속받은 멤버를 참조하는데 사용되는 참조변수.<br>조상클래스의 멤버와 자손클래스의 멤버가 중복 정의되서 구별해야 되지 않는 상황이면 super대신 this를 써도 됨.<br>static 메서드(클래스 메서드)에서는 사용 할 수 없다.</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">class SuperTest&#123;</span><br><span class="line">    public void static void main(String args[])&#123;</span><br><span class="line">        Child c = new Child();</span><br><span class="line">        c.method();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Parent&#123;</span><br><span class="line">    int x =10;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Child extends Parent&#123;</span><br><span class="line">    int x =20;</span><br><span class="line">    void method()&#123;</span><br><span class="line">        system.out.println(&quot;x=&quot;+x);  </span><br><span class="line">        system.out.println(&quot;this.x=&quot;+this.x);</span><br><span class="line">        system.out.println(&quot;super.x=&quot;+super.x);   </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>실행 결과<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x=20</span><br><span class="line">this.x=20;</span><br><span class="line">super.x=10;</span><br></pre></td></tr></table></figure></p>
-<h3 id="2-5-super-조상클래스의-생성자"><a href="#2-5-super-조상클래스의-생성자" class="headerlink" title="2.5 super() - 조상클래스의 생성자"></a>2.5 super() - 조상클래스의 생성자</h3><p>super()는 조상클래스의 생성자를 호출하는 생성자이다.<br>Object클래스를 제외한 모든 클래스의 생성자 첫 줄에는 생성자(같은 클래스의 다른 생성자 또는 조상의 생성자)를 호출 해야함.<br>그렇지 않으면 컴파일러가 super(); 를 자동으로 첫줄에 삽입.  </p>
-<ol>
-<li>클래스 - 어떤 클래스의 인스턴스를 생성할것인가?</li>
-<li>생성자 - 선택한 클래스의 어떤 생성자를 이용해서 인스턴스를 생성할 것인가?</li>
-</ol>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-12T04:53:40.479Z">2019-05-12</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/tec/">tec</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/tec/java/">java</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    3분 읽기 (나에 대하여 471 단어)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/05/12/tec/java/2019-05-03-java5/">[Java의정석] CH7. 객체지향프로그래밍2</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="1-상속"><a href="#1-상속" class="headerlink" title="1. 상속"></a>1. 상속</h2><h3 id="1-1-상속의-정의와-장점"><a href="#1-1-상속의-정의와-장점" class="headerlink" title="1.1 상속의 정의와 장점"></a>1.1 상속의 정의와 장점</h3><p>기존의 클래스를 재사용하여 새로운 클래스를 작성하는것<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">class Parent&#123;&#125;</span><br><span class="line">class Child extends Parent&#123;&#125;</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>조상클래스 -  부모클래스, 상위클래스, 기반 클래스</li>
-<li>자손클래스 - 자식 클래스, 하위클래스, 파생된 클래스  </li>
-</ul>
-<ul>
-<li>생성자와 초기화 블럭은 상속되지 않는다. 멤버만 상속된다.</li>
-<li>자손 클래스의 멤버개수는 조상 클래스보다 항상 같거나 많다.    </li>
-</ul>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class Tv&#123;</span><br><span class="line">    boolean power;</span><br><span class="line">    int channel;</span><br><span class="line">    </span><br><span class="line">    void power()&#123;power = !power;&#125;</span><br><span class="line">    void channelUp()&#123;++chnannel;&#125;</span><br><span class="line">    void channelDown()&#123;--channel;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class CaptionTv extends Tv&#123;</span><br><span class="line">    boolean caption;</span><br><span class="line">    void displayCaption(String text)&#123;</span><br><span class="line">        if(caption)&#123;</span><br><span class="line">            system.out.println(text);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="1-2-클래스간의-관계-포함관계"><a href="#1-2-클래스간의-관계-포함관계" class="headerlink" title="1.2 클래스간의 관계 - 포함관계"></a>1.2 클래스간의 관계 - 포함관계</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">class Circle&#123;</span><br><span class="line">    int x;</span><br><span class="line">    int y;</span><br><span class="line">    int r;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>이 클래스를</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">class Point&#123;</span><br><span class="line">    int x; </span><br><span class="line">    int y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Circle&#123;</span><br><span class="line">    Point point = new Point();</span><br><span class="line">    int r;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>이렇게 표현할 수 있다.<br>Engine, Door 클래스를 미리 작성 후 아래와 같이 사용 가능.</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">class car&#123;</span><br><span class="line">    Engine e = new Engine();</span><br><span class="line">    Door[] d = new Door[4];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="1-3-클래스간-관계-결정하기"><a href="#1-3-클래스간-관계-결정하기" class="headerlink" title="1.3 클래스간 관계 결정하기"></a>1.3 클래스간 관계 결정하기</h3><p>어떨때 상속, 어떨때 포함관계를 맺을까?  </p>
-<ul>
-<li>상속: ~은 ~이다(is-a)</li>
-<li>포함 : ~은 ~을 가지고 있다(has-a)  </li>
-</ul>
-<p>ex) 원은 점(point)이다 (X)<br>    원은 점을 가지고 있다(O)  -&gt; 포함관계</p>
-<pre><code>SportCar는 Car이다(0) -&gt; 상속 관계
-</code></pre><h3 id="1-4-단일-상속"><a href="#1-4-단일-상속" class="headerlink" title="1.4 단일 상속"></a>1.4 단일 상속</h3><p>부모클래스를 두개 이상 상속 받을 수 없다.</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//불가능한 경우</span><br><span class="line">calss TVCR extends TV, VCR&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">class Tv&#123;</span><br><span class="line">    boolean power;</span><br><span class="line">    int channel;</span><br><span class="line">    </span><br><span class="line">    void power()&#123;power = !power;&#125;</span><br><span class="line">    void channelUp()&#123;++chnannel;&#125;</span><br><span class="line">    void channelDown()&#123;--channel;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class VCR&#123;</span><br><span class="line">    boolean power;</span><br><span class="line">    int counter =0;</span><br><span class="line">    void power()&#123;&#125;;</span><br><span class="line">    void play()&#123;&#125;;</span><br><span class="line">    void stop()&#123;&#125;;</span><br><span class="line">    void rew()&#123;&#125;;</span><br><span class="line">    void ff()&#123;&#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class TVCR extends Tv&#123;</span><br><span class="line">    VCR vcr = new VCR();</span><br><span class="line">    int counter =vcr.counter;</span><br><span class="line">    </span><br><span class="line">    void play()&#123;</span><br><span class="line">        vcr.play();</span><br><span class="line">    &#125;;</span><br><span class="line">    void stop()&#123;</span><br><span class="line">        vcr.stop();</span><br><span class="line">    &#125;;</span><br><span class="line">    void rew()&#123;</span><br><span class="line">        vcr.rew();</span><br><span class="line">    &#125;;</span><br><span class="line">    void ff()&#123;</span><br><span class="line">        vcr.ff();</span><br><span class="line">    &#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="1-5-Object클래스-모든-클래스의-조상"><a href="#1-5-Object클래스-모든-클래스의-조상" class="headerlink" title="1.5 Object클래스 -모든 클래스의 조상"></a>1.5 Object클래스 -모든 클래스의 조상</h3><p>Object는 모든 클래스의 조상이다.  </p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class Tv&#123;&#125;</span><br></pre></td></tr></table></figure>
-<p>이것은 따지고 보면</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class Tv extends Object&#123;&#125;</span><br></pre></td></tr></table></figure>
-<p>이거임<br>toString(), equals() 그냥 쓸 수 있는게 Object클래스에 정의 되어있어서 그렇다.</p>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-12T04:53:40.476Z">2019-05-12</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/tec/">tec</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/tec/java/">java</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    4분 읽기 (나에 대하여 637 단어)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/05/12/tec/java/2019-05-03-java4/">[Java의정석] CH6. 객체지향프로그래밍1</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="6-변수의-초기화"><a href="#6-변수의-초기화" class="headerlink" title="6. 변수의 초기화"></a>6. 변수의 초기화</h2><h3 id="6-1-변수의-초기화"><a href="#6-1-변수의-초기화" class="headerlink" title="6.1 변수의 초기화"></a>6.1 변수의 초기화</h3><p>변수를 선언하고 처읍으로 값을 저장하는것.<br>가능하면 선언과 동시에 초기화 하는게 바람직.  </p>
-<ul>
-<li>멤버변수(클래스변수와 인스턴스 변수)와 배열의 초기화는 선택적이지만,<br>지역변수는 반드시 초기화 후 사용해야함.</li>
-</ul>
-<p>멤버변수 추기화 방법</p>
-<ol>
-<li>명시적 초기화</li>
-<li>생성자</li>
-<li>초기화 블럭<ul>
-<li>인스턴스 초기화 블럭: 인스턴스변수를 초기화 하는데 사용</li>
-<li>클래스 초기화 블럭: 클래스를 초기화 하는데 사용  </li>
-</ul>
-</li>
-</ol>
-<h3 id="6-2-명시적-초기화"><a href="#6-2-명시적-초기화" class="headerlink" title="6.2 명시적 초기화"></a>6.2 명시적 초기화</h3><p> 변수 선언과 동시에 초기화 하는것<br> <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">class Car&#123;</span><br><span class="line">   int door= 4;     //기본형 변수 초기화</span><br><span class="line">   Engine = new Engine();  // 참조형 변수 초기화</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="6-3-초기화-블럭"><a href="#6-3-초기화-블럭" class="headerlink" title="6. 3 초기화 블럭"></a>6. 3 초기화 블럭</h3><ul>
-<li>초기화 블럭 - 클래스변수의 복잡한 초기화에 사용</li>
-<li>인스턴스 초기화 블럭 - 인스턴스 변수의 복잡한 초기화에 사용</li>
-</ul>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">class InitBlock&#123;</span><br><span class="line">    static&#123;/* 클래스 초기화 블럭*/&#125;</span><br><span class="line">    &#123;/*인스턴스 초기화 블럭 */&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>클래스 초기화 블럭은 클래스가 메모리에 올라가 갈 때 한번만 수행.<br>인스턴스 초기화는 인스턴스 생성될때 생성자보다 먼저 수행됨.</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Car()&#123;</span><br><span class="line">    System.out.println(&quot;Car인스턴스가 생성되었습니다.&quot;);</span><br><span class="line">    color= &quot;withe&quot;;</span><br><span class="line">    gearType=&quot;auto&quot;;</span><br><span class="line">&#125;</span><br><span class="line">Car(String color, String gearType)&#123;</span><br><span class="line">    System.out.println(&quot;Car인스턴스가 생성되었습니다.&quot;);</span><br><span class="line">    this.color= color;</span><br><span class="line">    this.gearType=gearType;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>동일한 “Car인스턴스가 생성되었습니다.” 처리를 인스턴스 블럭으로 아래와 같이 처리   </p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123; System.out.println(&quot;Car인스턴스가 생성되었습니다.&quot;); &#125;</span><br><span class="line"></span><br><span class="line">Car()&#123;</span><br><span class="line">    color= &quot;withe&quot;;</span><br><span class="line">    gearType=&quot;auto&quot;;</span><br><span class="line">&#125;</span><br><span class="line">Car(String color, String gearType)&#123;</span><br><span class="line">    this.color= color;</span><br><span class="line">    this.gearType=gearType;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="6-4-멤버변수의-초기화-시기와-순서"><a href="#6-4-멤버변수의-초기화-시기와-순서" class="headerlink" title="6.4 멤버변수의 초기화 시기와 순서"></a>6.4 멤버변수의 초기화 시기와 순서</h3><ul>
-<li>클래스 변수 초기화 시점 - 클래스가 처음 로딩될 때 한번 초기화</li>
-<li><p>인스턴스 변수의 초기화 시점 - 인스턴스가 생성될 때마다 각 인스턴스별로 초기화 이루어짐</p>
-</li>
-<li><p>클래스 변수 초기화 순서 : 기본값 -&gt; 명시적 초기화 -&gt; 클래스 초기화 블럭</p>
-</li>
-<li>인스턴스 변수 초기화 순서 : 기본값 -&gt; 명시적 초기화 -&gt; 인스턴스초기화 블럭 -&gt; 생성자  </li>
-</ul>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class Product&#123;</span><br><span class="line">    static int count =0; //생성된 인스턴스 수를 저장하기 위한 변수</span><br><span class="line">    int serialNo; //인스턴스 고유 번호</span><br><span class="line">    </span><br><span class="line">    &#123;</span><br><span class="line">        ++count;</span><br><span class="line">        serialNo = count; // Product인스턴스가 생성될 때마다 count 값을 1증가시켜 serialNo에 저장</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    public product()&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-12T04:53:40.472Z">2019-05-12</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/tec/">tec</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/tec/java/">java</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    7분 읽기 (나에 대하여 978 단어)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/05/12/tec/java/2019-05-03-java3/">[Java의정석] CH6. 객체지향프로그래밍1</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="4-메서드-오버로딩"><a href="#4-메서드-오버로딩" class="headerlink" title="4. 메서드 오버로딩"></a>4. 메서드 오버로딩</h2><h3 id="4-1-메서드-오버로딩이란"><a href="#4-1-메서드-오버로딩이란" class="headerlink" title="4.1 메서드 오버로딩이란?"></a>4.1 메서드 오버로딩이란?</h3><p>한 클래스 내에 같은 이름의 메서드를 매개변수를 다르게 해서 여러개 정의 하는것.</p>
-<h3 id="4-2-오버로딩의-조건"><a href="#4-2-오버로딩의-조건" class="headerlink" title="4.2 오버로딩의 조건"></a>4.2 오버로딩의 조건</h3><ol>
-<li>메서드 이름이 같아야 한다.</li>
-<li>매개변수의 개수 또는 타입이 달라야 한다.</li>
-<li>매개변수는 같고 리턴타입이 다른 경우는 오버로딩이 성립되지 않는다.</li>
-</ol>
-<h3 id="4-3-오버로딩의-예"><a href="#4-3-오버로딩의-예" class="headerlink" title="4.3 오버로딩의 예"></a>4.3 오버로딩의 예</h3>  <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">void println();</span><br><span class="line">void println(booleand x);</span><br><span class="line">void println(char x);</span><br><span class="line">void println(char[] x);</span><br><span class="line">void println(double x);</span><br><span class="line">void println(float x);</span><br><span class="line">void println(int x);</span><br><span class="line">void println(long x);</span><br><span class="line">void println(String x);</span><br><span class="line">void println(Object x);</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>매개 변수의 타입과 개수가 같아서 오버로딩 성립 안하는 예</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int add(int a, int b)&#123; return a+b;&#125;</span><br><span class="line">int add(int x, int y)&#123; return x+y;&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>리턴 타입만 다른 경우 오버라이딩 성립 안함</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int add(int a, int b)&#123; return a+b;&#125;</span><br><span class="line">int add(int a, int b)&#123; return (long) a+b;&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>같은 매개변수를 순서만 바꿔서 작성하면 오버로딩이지만 헷갈리는 좋지 않은 방법<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int add(int a, long b)&#123; return a+b;&#125;</span><br><span class="line">int add(long a, int b)&#123; return a+b;&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="4-4-오버로딩의-장점"><a href="#4-4-오버로딩의-장점" class="headerlink" title="4.4 오버로딩의 장점"></a>4.4 오버로딩의 장점</h3><ul>
-<li>동일 기능의 메서드가 하나의 이름으로 정의될 수 있음</li>
-<li>메서드 이름 절약가능</li>
-</ul>
-<h2 id="5-생성자-Constructor"><a href="#5-생성자-Constructor" class="headerlink" title="5. 생성자(Constructor)"></a>5. 생성자(Constructor)</h2><h3 id="5-1-생성자란"><a href="#5-1-생성자란" class="headerlink" title="5.1 생성자란?"></a>5.1 생성자란?</h3><p>인스턴스가 생성될 때 호출되는 인스턴스 초기화 메서드</p>
-<ol>
-<li>생성자의 이름은 클래스의 이름과 같아야함</li>
-<li>생성자는 리턴 값이 없음</li>
-</ol>
-<ul>
-<li>new 연산자가 인스턴스를 생성하는것이지, 생성자가 인스턴스를 생성하는것은 아님</li>
-</ul>
-<h3 id="5-2-기본-생성자-default-constructor"><a href="#5-2-기본-생성자-default-constructor" class="headerlink" title="5.2 기본 생성자(default constructor)"></a>5.2 기본 생성자(default constructor)</h3><p>생성자를 안 만들어도 컴파일러가 기본으로 생성자 하나 만들어줌.<br>publid 클래스이름(){};</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">class Data1&#123;</span><br><span class="line">    int value;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Data2&#123;</span><br><span class="line">    int value;</span><br><span class="line">    </span><br><span class="line">    Data2(int x)&#123;</span><br><span class="line">        value = x;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class ConstructorTest &#123;</span><br><span class="line">    public stataic void main(String[] args)&#123;</span><br><span class="line">        Data1 d1 = new Data1();</span><br><span class="line">        //컴파일 에러 발생</span><br><span class="line">        Data2 d2 = new Data2();</span><br><span class="line">        Data2 d2 = new Data2(int 1);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="5-3-매개변수가-있는-생성자"><a href="#5-3-매개변수가-있는-생성자" class="headerlink" title="5.3 매개변수가 있는 생성자"></a>5.3 매개변수가 있는 생성자</h3><p>인스턴스 생성할때 초기값을 넣어 초기화 할 수 있음<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">class Car&#123;</span><br><span class="line">    String color;</span><br><span class="line">    String gearType;</span><br><span class="line">    int door;</span><br><span class="line">    </span><br><span class="line">    Car()&#123;&#125;</span><br><span class="line">    Car(String c, String g, int d)&#123;</span><br><span class="line">        color= c;</span><br><span class="line">        gearType = g;</span><br><span class="line">        door =d;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>이렇게 사용하면 됨<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Car c = new Car(&quot;white&quot;, &quot;auto&quot;, 4&#125;;</span><br></pre></td></tr></table></figure></p>
-<h3 id="5-4-생성자에서-다른-생성자-호출하기-this-this"><a href="#5-4-생성자에서-다른-생성자-호출하기-this-this" class="headerlink" title="5.4 생성자에서 다른 생성자 호출하기 - this(), this"></a>5.4 생성자에서 다른 생성자 호출하기 - this(), this</h3><p>같은 클래스 내에서 생성자도 아래 조건을 만족 할 경우 서로 호출이 가능함</p>
-<ul>
-<li>생성자의 이름으로 클래스 이름 대신 this를 사용한다.</li>
-<li><p>한 생성자엥서 다른 생성자를 호출할 때는 반드시 첫줄에서만 호출이 가능하다.</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">class Car&#123;</span><br><span class="line">    String color;</span><br><span class="line">    String gearType;</span><br><span class="line">    int door;</span><br><span class="line">    </span><br><span class="line">    Car()&#123;</span><br><span class="line">        this(&quot;white&quot;, &quot;auto&quot;, 4);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    Car(String color)&#123;</span><br><span class="line">        this(color, &quot;auto&quot;, 4&#125;</span><br><span class="line">        </span><br><span class="line">    Car(String color, String gearType, int door)&#123;</span><br><span class="line">        this.color= color;</span><br><span class="line">        this.gearType = gearType;</span><br><span class="line">        this.door =door;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>this - 인스턴스 자신을 가리키느 ㄴ참조변수, 인스턴스의 주소가 저장되어있다.<br>모든 인스턴스 메서드에 지역변수로 숨겨진 채로 존재한다.  </p>
-<ul>
-<li>this.(), this(매개변수) -  생성자, 같은 클래스의 다른 생성자를 호출 할 때 사용한다.  </li>
-</ul>
-</li>
-</ul>
-<h3 id="5-5-생성자를-이용한-인스턴스-복사"><a href="#5-5-생성자를-이용한-인스턴스-복사" class="headerlink" title="5.5 생성자를 이용한 인스턴스 복사"></a>5.5 생성자를 이용한 인스턴스 복사</h3><p> 동일한 현재 상태를 갖는 인트턴스 하나 더 생성할때 생성자를 사용함.<br> 어떤 상태인지 자세히 몰라도 똑같은 인스턴스 새로 추가 가능.<br> <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Car(Car c)&#123;</span><br><span class="line">     color= c.color;</span><br><span class="line">     gearType = c.gearType;</span><br><span class="line">     door =c.door;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">class Car&#123;</span><br><span class="line">    String color;</span><br><span class="line">    String gearType;</span><br><span class="line">    int door;</span><br><span class="line">    </span><br><span class="line">    Car()&#123;</span><br><span class="line">        this(&quot;white&quot;, &quot;auto&quot;, 4);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">   Car(Car c)&#123;</span><br><span class="line">        color= c.color;</span><br><span class="line">        gearType = c.gearType;</span><br><span class="line">        door =c.door;</span><br><span class="line">   &#125;</span><br><span class="line">    Car(String color)&#123;</span><br><span class="line">        this(color, &quot;auto&quot;, 4&#125;</span><br><span class="line">        </span><br><span class="line">    Car(String color, String gearType, int door)&#123;</span><br><span class="line">        this.color= color;</span><br><span class="line">        this.gearType = gearType;</span><br><span class="line">        this.door =door;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>*** 인스턴스를 생성할 때는 아래 두가지 사항을 결정해야함</p>
-<ol>
-<li>클래스 - 어떤 클래스의 인스턴스를 생성할 것인가?</li>
-<li>생성자 - 선택한 클래스의 어떤 생성자로 인스턴스를 생성할것인가?</li>
-</ol>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-12T04:53:40.469Z">2019-05-12</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/tec/">tec</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/tec/java/">java</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    6분 읽기 (나에 대하여 901 단어)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/05/12/tec/java/2019-05-02-java2/">[Java의정석] CH.6 객체지향프로그래밍1</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="3-변수와-매서드"><a href="#3-변수와-매서드" class="headerlink" title="3. 변수와 매서드"></a>3. 변수와 매서드</h2><h3 id="3-1-선언위치에-따른-변수의-종류"><a href="#3-1-선언위치에-따른-변수의-종류" class="headerlink" title="3.1 선언위치에 따른 변수의 종류"></a>3.1 선언위치에 따른 변수의 종류</h3><table>
-<thead>
-<tr>
-<th>변수의 종류</th>
-<th>선언위치</th>
-<th>생성시기</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>클래스변수</td>
-<td>클래스 영역</td>
-<td>클래스가 메모리에 올라갔을 때</td>
-</tr>
-<tr>
-<td>인스턴스 변수</td>
-<td>클래스 영역</td>
-<td>인스턴스가 생성되었을때</td>
-</tr>
-<tr>
-<td>지역변수</td>
-<td>클래스 영역 이외의 영역 (메서드, 생성자, 초기화 블럭 내부)</td>
-<td>변수 선언문이 수행되었을때</td>
-</tr>
-</tbody>
-</table>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">class Variables&#123;</span><br><span class="line">    int iv; //인스턴스 변수</span><br><span class="line">    static int cv; //클래스 변수(static 변수, 공유변수)</span><br><span class="line">    </span><br><span class="line">    void method()&#123;</span><br><span class="line">        int iv; // 지역변수</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol>
-<li>인스턴스 변수<ul>
-<li>클래스 영역에 선언, 인스턴스 생성때 만들어짐</li>
-</ul>
-</li>
-<li>클래스 변수<ul>
-<li>인스턴스 앞에 static을 붙임.<br>한 클래스의 모든 인스턴스들이 공통적 값을 유지해야 되는 경우 사용.<br>public을 붙이면 프로그램 내 전역에서 사용가능</li>
-</ul>
-</li>
-<li>지역 변수<ul>
-<li>매서드 내 선언. 메서드 내에서만 사용가능. 메서드 종료시 소멸.</li>
-</ul>
-</li>
-</ol>
-<h3 id="3-2-클래스변수와-인스턴스-변수"><a href="#3-2-클래스변수와-인스턴스-변수" class="headerlink" title="3.2 클래스변수와 인스턴스 변수"></a>3.2 클래스변수와 인스턴스 변수</h3> <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> class Card &#123;</span><br><span class="line">    String kind; // 카드 무늬 - 인스턴스변수</span><br><span class="line">    int number; // 카드 숫자 - 인스턴스 변수</span><br><span class="line">    static int width = 100; // 카드 폭 - 클래스 변수</span><br><span class="line">    static int height = 250; //카드 높이 -클래스 변수</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>인스턴스 변수는 인스턴스가 생성될 때마다 각기 다른 값을 유지,<br>클래스 변수는 모든 인스턴스가 하나의 저장공간을 공유해서 항상 공통된 값 가짐</p>
-<h3 id="3-3-메서드"><a href="#3-3-메서드" class="headerlink" title="3.3  메서드"></a>3.3  메서드</h3><ul>
-<li>하나의 메서드는 되도록 하나의 기능만 수행하도록 하는것이 좋다.</li>
-<li>반복적으로 수행되야 하는 여러 문장을 하나의 메서드로 정의해놓으면 좋다</li>
-<li>관련된 여러 문장을 하나의 메서드로 만들어 놓는 것이 좋다.</li>
-</ul>
-<h3 id="3-4-return-문"><a href="#3-4-return-문" class="headerlink" title="3.4 return 문"></a>3.4 return 문</h3><ul>
-<li>메서드가 정상적으로 종료되는 경우  <ol>
-<li>메서드의 블럭{}내의 마지막 문장을 수행했을 때</li>
-<li>메서드의 블럭{}내에 있는 문장을 수행중 return 문을 만났을때.</li>
-</ol>
-</li>
-<li>return 문은 실행중인 메서드를 종료 후 호출 메서드로 되돌아감<ol>
-<li>반환값이 없는 경우 : return;</li>
-<li>반환값이 있는 경우 : return 반환값;</li>
-</ol>
-</li>
-</ul>
-<h3 id="3-5-메서드의-호출"><a href="#3-5-메서드의-호출" class="headerlink" title="3.5 메서드의 호출"></a>3.5 메서드의 호출</h3><p>참조변수.메서드이름();<br>참소변수.메서드이름(값1, 값2, ..);</p>
-<h3 id="3-6-JVM의-메모리-구조"><a href="#3-6-JVM의-메모리-구조" class="headerlink" title="3.6 JVM의 메모리 구조"></a>3.6 JVM의 메모리 구조</h3><hr>
-<ol>
-<li>Method Area(메서드영역)<br>클래스/데이터  </li>
-</ol>
-<hr>
-<ol start="3">
-<li>Call Stack(호출스택)<br>Main  </li>
-</ol>
-<hr>
-<ol start="2">
-<li>Heap(힙)<br>인스턴스  </li>
-</ol>
-<hr>
-<h3 id="3-7-기본형-매개변수와-참조형-매개변수"><a href="#3-7-기본형-매개변수와-참조형-매개변수" class="headerlink" title="3.7 기본형 매개변수와 참조형 매개변수"></a>3.7 기본형 매개변수와 참조형 매개변수</h3><p>기본형 매개변수 - 변수의 값 읽기만 할 수 있음<br>참조형 매개변수 - 변수의 값을 읽고 변경 할 수 있음.</p>
-<h3 id="3-8-재귀호출"><a href="#3-8-재귀호출" class="headerlink" title="3.8 재귀호출"></a>3.8 재귀호출</h3><p>f(n) = n* f(n-1)</p>
-<h3 id="3-9-클래스-static-메서드-와-인스턴스메서드"><a href="#3-9-클래스-static-메서드-와-인스턴스메서드" class="headerlink" title="3.9 클래스(static 메서드)와 인스턴스메서드"></a>3.9 클래스(static 메서드)와 인스턴스메서드</h3><ol>
-<li>클래스 설계할 때, 멤버 변수 중 모든 인스턴스에 공통적으로 사용해야하는 것에 static 을 붙인다.</li>
-<li>클래스 변수(static변수)는 인스턴스를 생성하지 않아도 사용할 수 있다.</li>
-<li>클래스 메서드는 인스턴스 변수를 사용할 수 없다.</li>
-<li>메서드 내에서 인스턴스 변수를 사용하지 않는다면, static을 붙이는 것을 고려한다.</li>
-</ol>
-<h3 id="3-10-클래스멤버와-인스턴스멤버간의-참조와-호출"><a href="#3-10-클래스멤버와-인스턴스멤버간의-참조와-호출" class="headerlink" title="3.10 클래스멤버와 인스턴스멤버간의 참조와 호출"></a>3.10 클래스멤버와 인스턴스멤버간의 참조와 호출</h3><p>인스턴스 멤버가 존재할때는 클래스멤버는 항상 존재하지만,<br>클래스맴버가 존재하는 시점에 인스턴스멤버가 존재할수도 있고 없을수도 있음.</p>
-
-        </div>
-        
-        
-        
-    </div>
-</div>
-
-
-
-
-
-
-
-
-    <div class="card">
-    
-    <div class="card-content article ">
-        
-        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
-            <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-05-12T04:53:40.466Z">2019-05-12</time>
-                
-                <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/tec/">tec</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/tec/java/">java</a>
-                </div>
-                
-                
-                <span class="level-item has-text-grey">
-                    
-                    
-                    4분 읽기 (나에 대하여 643 단어)
-                </span>
-                
-                
-            </div>
-        </div>
-        
-        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
-            
-                <a class="has-link-black-ter" href="/2019/05/12/tec/java/2019-05-02-java1/">[Java의정석] CH.6 객체지향프로그래밍1</a>
-            
-        </h1>
-        <div class="content">
-            <h2 id="1-객체지향-언어"><a href="#1-객체지향-언어" class="headerlink" title="1. 객체지향 언어"></a>1. 객체지향 언어</h2><hr>
-<ol>
-<li>코드의 재사용성이 높다.</li>
-<li>코드의 관리가 용이하다.</li>
-<li>신뢰성이 높은 프로그래밍을 가등하게 한다.</li>
-</ol>
-<h2 id="2-클래스와-객체"><a href="#2-클래스와-객체" class="headerlink" title="2. 클래스와 객체"></a>2. 클래스와 객체</h2><hr>
-<h3 id="2-1-클래스와-객체의-정의와-용도"><a href="#2-1-클래스와-객체의-정의와-용도" class="headerlink" title="2.1 클래스와 객체의 정의와 용도"></a>2.1 클래스와 객체의 정의와 용도</h3><p>클래스: 객체를 정의 해놓은것으로 객체를 생성할때 사용한다.  </p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">클래스</th>
-<th style="text-align:center">객체</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">제품설계도</td>
-<td style="text-align:center">제품</td>
-</tr>
-<tr>
-<td style="text-align:center">TV설계도</td>
-<td style="text-align:center">TV</td>
-</tr>
-<tr>
-<td style="text-align:center">붕어빵 기계</td>
-<td style="text-align:center">붕어빵</td>
-</tr>
-</tbody>
-</table>
-<h3 id="2-2-객체와-인스턴스"><a href="#2-2-객체와-인스턴스" class="headerlink" title="2.2 객체와 인스턴스"></a>2.2 객체와 인스턴스</h3><p>클래스 —(인스턴스화)—&gt; 인스턴스(객체)</p>
-<h3 id="2-3-객체의-구성요소-속성과-기능"><a href="#2-3-객체의-구성요소-속성과-기능" class="headerlink" title="2.3 객체의 구성요소 - 속성과 기능"></a>2.3 객체의 구성요소 - 속성과 기능</h3><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">속성(propertiy) - 맴버변수(member variable), 특성(attribute), 필드(field), 상태(state)  </span><br><span class="line">기능(function)- 매서드(method), 행위(behavior), 함수(function)</span><br></pre></td></tr></table></figure>
-<ul>
-<li>TV의 속성과 기능</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">속성</th>
-<th style="text-align:center">기능</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">크기, 길이, 높이, 색상, 볼륨, 채널 등</td>
-<td style="text-align:center">켜기, 끄기, 볼륨 높이기, 볼륨 낮추기, 채널 변경하기</td>
-</tr>
-</tbody>
-</table>
-<p>속성-&gt; 맴버변수<br>기능-&gt;매서드  </p>
-<ul>
-<li>TV 클래스<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class Tv &#123;</span><br><span class="line">    //Tv의 속성(맴버변수)</span><br><span class="line">    String color;</span><br><span class="line">    boolean power;</span><br><span class="line">    int channel;</span><br><span class="line"></span><br><span class="line">    //Tv의 기능(매서드)</span><br><span class="line">    void power()&#123; power=!power;&#125;</span><br><span class="line">    void channelUp()&#123;++channel;&#125;</span><br><span class="line">    void channelDowun()&#123;--channel;&#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="2-4-인스턴스의-생성과-사용"><a href="#2-4-인스턴스의-생성과-사용" class="headerlink" title="2.4 인스턴스의 생성과 사용"></a>2.4 인스턴스의 생성과 사용</h3><p>클래스 변수명; // 클래스의 객체를 참조하기 위한 참조변수를 선언한다.<br>변수명 = new 클래스명(); // 클래스의 객체를 생성 후 , 객체의 주소를 참수변수에 저장한다.</p>
-<p>Tv t;<br>t = new Tv();  </p>
-<ul>
-<li>TvTest.java<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">class Tv &#123;</span><br><span class="line">    //Tv의 속성(맴버변수)</span><br><span class="line">    String color;</span><br><span class="line">    boolean power;</span><br><span class="line">    int channel;</span><br><span class="line"></span><br><span class="line">    //Tv의 기능(매서드)</span><br><span class="line">    void power()&#123; power=!power;&#125;</span><br><span class="line">    void channelUp()&#123;++channel;&#125;</span><br><span class="line">    void channelDowun()&#123;--channel;&#125;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class TvTest&#123;</span><br><span class="line">    public static void main(String args[])&#123;</span><br><span class="line">        Tv t; // 메모리에 참조변수 t의 공간 생김</span><br><span class="line">        t = new Tv(); // t에 객체 주소값이 저장, 메모리 공간에 TV 클래스 인스턴스가 생김</span><br><span class="line">        t.channel = 7; //t에 저장된 주소에 있는 인스턴스 멤버변수 channel에 7저장</span><br><span class="line">        t.channelDown(); //t가 참조하는 Tv인스턴스 channelDowun매서드 호출-&gt;channel1감소</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="2-5-클래스의-또-다른-정의"><a href="#2-5-클래스의-또-다른-정의" class="headerlink" title="2.5 클래스의 또 다른 정의"></a>2.5 클래스의 또 다른 정의</h3><ol>
-<li><p>클래스 - 데이터와 함수의 결합</p>
-<ol>
-<li>변수 - 하나의 데이터를 저장할 수 있는 공간</li>
-<li>배열 - 같은 종류의 여러 데이터를 하나의 집합으로 저장할 수 있는 공간</li>
-<li>구조체 - 서로 관련된 여러 데이터를 종류에 관계없이 하나의 집합으로 저장할 수 있는 공간</li>
-<li><p>클래스 - 데이터와 함수의 결합(구조체+함수)</p>
-</li>
-<li><p>클래스 - 사용자 정의 타입</p>
-</li>
-</ol>
-</li>
-</ol>
-<p>서로 관련된 변수를 묶어서 하나의 타입으로 새로 추가<br><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">int hour;</span><br><span class="line">int minute;</span><br><span class="line">float second;</span><br><span class="line">```</span><br></pre></td></tr></table></figure></p>
-<p>class Time{<br>    int hour;<br>    int minute;<br>    float<br>}<br><code>`</code></p>
 
         </div>
         
@@ -1078,7 +774,7 @@
         <div class="pagination-previous">
             <a class="is-flex-grow has-text-black-ter" href="/page/3/">이전</a>
         </div>
-        <div class="pagination-next is-invisible is-hidden-mobile">
+        <div class="pagination-next">
             <a class="is-flex-grow has-text-black-ter" href="/page/5/">다음</a>
         </div>
         <ul class="pagination-list is-hidden-mobile">
@@ -1090,6 +786,8 @@
             <li><a class="pagination-link has-text-black-ter" href="/page/3/">3</a></li>
             
             <li><a class="pagination-link is-current" href="/page/4/">4</a></li>
+            
+            <li><a class="pagination-link has-text-black-ter" href="/page/5/">5</a></li>
             
         </ul>
     </nav>
@@ -1139,7 +837,7 @@
                         포스트
                     </p>
                     <p class="title has-text-weight-normal">
-                        40
+                        46
                     </p>
                 </div>
             </div>
@@ -1149,7 +847,7 @@
                         카테고리
                     </p>
                     <p class="title has-text-weight-normal">
-                        5
+                        6
                     </p>
                 </div>
             </div>
@@ -1159,7 +857,7 @@
                         태그
                     </p>
                     <p class="title has-text-weight-normal">
-                        11
+                        19
                     </p>
                 </div>
             </div>
@@ -1201,18 +899,18 @@
         
         <article class="media">
             
-            <a href="/2019/05/12/trip/europ/2019-04-30-iceland6/" class="media-left">
+            <a href="/2019/05/13/tec/blog/blog7/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/assets/images/is/sc1.jpg" alt="셀애란즈포스 폭포">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Hexo와 깃허브로 블로그 만들기] Hexo 테마 적용">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-12T13:35:34.590Z">2019-05-12</time></div>
-                    <a href="/2019/05/12/trip/europ/2019-04-30-iceland6/" class="has-link-black-ter is-size-6">셀애란즈포스 폭포</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T02:09:21.227Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/blog/blog7/" class="has-link-black-ter is-size-6">[Hexo와 깃허브로 블로그 만들기] Hexo 테마 적용</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/trip/">trip</a> / <a class="has-link-grey -link" href="/categories/trip/island/">island</a>
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
                     </p>
                 </div>
             </div>
@@ -1220,18 +918,18 @@
         
         <article class="media">
             
-            <a href="/2019/05/12/trip/europ/2019-04-30-iceland3/" class="media-left">
+            <a href="/2019/05/13/tec/blog/blog6/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/assets/images/is/g2.jpg" alt="골든서클-게이시르">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Hexo와 깃허브로 블로그 만들기] jykell에서 hexo로 블로그 이전하기">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-12T13:35:34.579Z">2019-05-12</time></div>
-                    <a href="/2019/05/12/trip/europ/2019-04-30-iceland3/" class="has-link-black-ter is-size-6">골든서클-게이시르</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T02:06:36.432Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/blog/blog6/" class="has-link-black-ter is-size-6">[Hexo와 깃허브로 블로그 만들기] jykell에서 hexo로 블로그 이전하기</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/trip/">trip</a> / <a class="has-link-grey -link" href="/categories/trip/island/">island</a>
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
                     </p>
                 </div>
             </div>
@@ -1239,18 +937,18 @@
         
         <article class="media">
             
-            <a href="/2019/05/12/trip/europ/2019-05-01-iceland17/" class="media-left">
+            <a href="/2019/05/13/tec/blog/2019-04-29-blog1/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/assets/images/is/df4.jpg" alt="데티포스">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[JEKYLL과 깃허브로 블로그 만들기] 지킬 테마 복사하기">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-12T13:35:34.567Z">2019-05-12</time></div>
-                    <a href="/2019/05/12/trip/europ/2019-05-01-iceland17/" class="has-link-black-ter is-size-6">데티포스</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T01:35:56.974Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/blog/2019-04-29-blog1/" class="has-link-black-ter is-size-6">[JEKYLL과 깃허브로 블로그 만들기] 지킬 테마 복사하기</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/trip/">trip</a> / <a class="has-link-grey -link" href="/categories/trip/island/">island</a>
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
                     </p>
                 </div>
             </div>
@@ -1258,18 +956,18 @@
         
         <article class="media">
             
-            <a href="/2019/05/12/trip/europ/2019-04-30-iceland2/" class="media-left">
+            <a href="/2019/05/13/tec/blog/2019-04-29-blog2/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/assets/images/is/ar3.jpg" alt="첫 오로라">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[JEKYLL과 깃허브로 블로그 만들기] 포스트(Post) 쓰기">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-12T13:35:34.557Z">2019-05-12</time></div>
-                    <a href="/2019/05/12/trip/europ/2019-04-30-iceland2/" class="has-link-black-ter is-size-6">첫 오로라</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T01:35:53.320Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/blog/2019-04-29-blog2/" class="has-link-black-ter is-size-6">[JEKYLL과 깃허브로 블로그 만들기] 포스트(Post) 쓰기</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/trip/">trip</a> / <a class="has-link-grey -link" href="/categories/trip/island/">island</a>
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
                     </p>
                 </div>
             </div>
@@ -1277,18 +975,18 @@
         
         <article class="media">
             
-            <a href="/2019/05/12/trip/europ/2019-04-30-iceland8/" class="media-left">
+            <a href="/2019/05/13/tec/blog/2019-04-29-blog3/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/assets/images/is/r2.jpg" alt="레이니스피아라">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[JEKYLL과 깃허브로 블로그 만들기] 콜렉션(Collection)만들기">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-12T13:35:34.545Z">2019-05-12</time></div>
-                    <a href="/2019/05/12/trip/europ/2019-04-30-iceland8/" class="has-link-black-ter is-size-6">레이니스피아라</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T01:35:49.900Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/blog/2019-04-29-blog3/" class="has-link-black-ter is-size-6">[JEKYLL과 깃허브로 블로그 만들기] 콜렉션(Collection)만들기</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/trip/">trip</a> / <a class="has-link-grey -link" href="/categories/trip/island/">island</a>
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
                     </p>
                 </div>
             </div>
@@ -1312,15 +1010,23 @@
                 <span class="level-item">tec</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">21</span>
+                <span class="level-item tag">27</span>
             </span>
         </a><ul><li>
+        <a class="level is-marginless" href="/categories/tec/blog/">
+            <span class="level-start">
+                <span class="level-item">blog</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">7</span>
+            </span>
+        </a></li><li>
         <a class="level is-marginless" href="/categories/tec/java/">
             <span class="level-start">
                 <span class="level-item">java</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">14</span>
+                <span class="level-item tag">13</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/tec/sql/">
@@ -1366,7 +1072,7 @@
                     <span class="level-item">5월 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">40</span>
+                    <span class="level-item tag">46</span>
                 </span>
             </a>
         </li>
@@ -1382,7 +1088,7 @@
         <h3 class="menu-label">
             태그 클라우드
         </h3>
-        <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/sql/" style="font-size: 16px;">sql</a> <a href="/tags/골든서클/" style="font-size: 10px;">골든서클</a> <a href="/tags/눈/" style="font-size: 10px;">눈</a> <a href="/tags/무지개/" style="font-size: 10px;">무지개</a> <a href="/tags/빙하/" style="font-size: 10px;">빙하</a> <a href="/tags/숙소/" style="font-size: 18px;">숙소</a> <a href="/tags/여행/" style="font-size: 10px;">여행</a> <a href="/tags/오로라/" style="font-size: 14px;">오로라</a> <a href="/tags/폭포/" style="font-size: 12px;">폭포</a> <a href="/tags/해변/" style="font-size: 10px;">해변</a>
+        <a href="/tags/blog/" style="font-size: 15px;">blog</a> <a href="/tags/github/" style="font-size: 15px;">github</a> <a href="/tags/hexo/" style="font-size: 11.67px;">hexo</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/java의-정석/" style="font-size: 18.33px;">java의 정석</a> <a href="/tags/jekyll/" style="font-size: 13.33px;">jekyll</a> <a href="/tags/sql/" style="font-size: 15px;">sql</a> <a href="/tags/tec/" style="font-size: 15px;">tec</a> <a href="/tags/골든서클/" style="font-size: 10px;">골든서클</a> <a href="/tags/눈/" style="font-size: 10px;">눈</a> <a href="/tags/무지개/" style="font-size: 10px;">무지개</a> <a href="/tags/빙하/" style="font-size: 10px;">빙하</a> <a href="/tags/숙소/" style="font-size: 16.67px;">숙소</a> <a href="/tags/아이슬란드/" style="font-size: 20px;">아이슬란드</a> <a href="/tags/여행/" style="font-size: 20px;">여행</a> <a href="/tags/오로라/" style="font-size: 13.33px;">오로라</a> <a href="/tags/유럽/" style="font-size: 20px;">유럽</a> <a href="/tags/폭포/" style="font-size: 11.67px;">폭포</a> <a href="/tags/해변/" style="font-size: 10px;">해변</a>
     </div>
 </div>
 
@@ -1396,15 +1102,57 @@
             <div class="field is-grouped is-grouped-multiline">
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/blog/">
+                        <span class="tag">blog</span>
+                        <span class="tag is-grey">7</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/github/">
+                        <span class="tag">github</span>
+                        <span class="tag is-grey">7</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/hexo/">
+                        <span class="tag">hexo</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/java/">
                         <span class="tag">java</span>
-                        <span class="tag is-grey">14</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/java의-정석/">
+                        <span class="tag">java의 정석</span>
+                        <span class="tag is-grey">12</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/jekyll/">
+                        <span class="tag">jekyll</span>
+                        <span class="tag is-grey">5</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/sql/">
                         <span class="tag">sql</span>
+                        <span class="tag is-grey">7</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/tec/">
+                        <span class="tag">tec</span>
                         <span class="tag is-grey">7</span>
                     </a>
                 </div>
@@ -1445,9 +1193,16 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/아이슬란드/">
+                        <span class="tag">아이슬란드</span>
+                        <span class="tag is-grey">18</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/여행/">
                         <span class="tag">여행</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">18</span>
                     </a>
                 </div>
                 
@@ -1455,6 +1210,13 @@
                     <a class="tags has-addons" href="/tags/오로라/">
                         <span class="tag">오로라</span>
                         <span class="tag is-grey">5</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/유럽/">
+                        <span class="tag">유럽</span>
+                        <span class="tag is-grey">18</span>
                     </a>
                 </div>
                 
@@ -1497,18 +1259,18 @@
         
         <article class="media">
             
-            <a href="/2019/05/12/trip/europ/2019-04-30-iceland6/" class="media-left">
+            <a href="/2019/05/13/tec/blog/blog7/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/assets/images/is/sc1.jpg" alt="셀애란즈포스 폭포">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Hexo와 깃허브로 블로그 만들기] Hexo 테마 적용">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-12T13:35:34.590Z">2019-05-12</time></div>
-                    <a href="/2019/05/12/trip/europ/2019-04-30-iceland6/" class="has-link-black-ter is-size-6">셀애란즈포스 폭포</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T02:09:21.227Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/blog/blog7/" class="has-link-black-ter is-size-6">[Hexo와 깃허브로 블로그 만들기] Hexo 테마 적용</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/trip/">trip</a> / <a class="has-link-grey -link" href="/categories/trip/island/">island</a>
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
                     </p>
                 </div>
             </div>
@@ -1516,18 +1278,18 @@
         
         <article class="media">
             
-            <a href="/2019/05/12/trip/europ/2019-04-30-iceland3/" class="media-left">
+            <a href="/2019/05/13/tec/blog/blog6/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/assets/images/is/g2.jpg" alt="골든서클-게이시르">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Hexo와 깃허브로 블로그 만들기] jykell에서 hexo로 블로그 이전하기">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-12T13:35:34.579Z">2019-05-12</time></div>
-                    <a href="/2019/05/12/trip/europ/2019-04-30-iceland3/" class="has-link-black-ter is-size-6">골든서클-게이시르</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T02:06:36.432Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/blog/blog6/" class="has-link-black-ter is-size-6">[Hexo와 깃허브로 블로그 만들기] jykell에서 hexo로 블로그 이전하기</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/trip/">trip</a> / <a class="has-link-grey -link" href="/categories/trip/island/">island</a>
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
                     </p>
                 </div>
             </div>
@@ -1535,18 +1297,18 @@
         
         <article class="media">
             
-            <a href="/2019/05/12/trip/europ/2019-05-01-iceland17/" class="media-left">
+            <a href="/2019/05/13/tec/blog/2019-04-29-blog1/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/assets/images/is/df4.jpg" alt="데티포스">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[JEKYLL과 깃허브로 블로그 만들기] 지킬 테마 복사하기">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-12T13:35:34.567Z">2019-05-12</time></div>
-                    <a href="/2019/05/12/trip/europ/2019-05-01-iceland17/" class="has-link-black-ter is-size-6">데티포스</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T01:35:56.974Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/blog/2019-04-29-blog1/" class="has-link-black-ter is-size-6">[JEKYLL과 깃허브로 블로그 만들기] 지킬 테마 복사하기</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/trip/">trip</a> / <a class="has-link-grey -link" href="/categories/trip/island/">island</a>
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
                     </p>
                 </div>
             </div>
@@ -1554,18 +1316,18 @@
         
         <article class="media">
             
-            <a href="/2019/05/12/trip/europ/2019-04-30-iceland2/" class="media-left">
+            <a href="/2019/05/13/tec/blog/2019-04-29-blog2/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/assets/images/is/ar3.jpg" alt="첫 오로라">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[JEKYLL과 깃허브로 블로그 만들기] 포스트(Post) 쓰기">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-12T13:35:34.557Z">2019-05-12</time></div>
-                    <a href="/2019/05/12/trip/europ/2019-04-30-iceland2/" class="has-link-black-ter is-size-6">첫 오로라</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T01:35:53.320Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/blog/2019-04-29-blog2/" class="has-link-black-ter is-size-6">[JEKYLL과 깃허브로 블로그 만들기] 포스트(Post) 쓰기</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/trip/">trip</a> / <a class="has-link-grey -link" href="/categories/trip/island/">island</a>
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
                     </p>
                 </div>
             </div>
@@ -1573,18 +1335,18 @@
         
         <article class="media">
             
-            <a href="/2019/05/12/trip/europ/2019-04-30-iceland8/" class="media-left">
+            <a href="/2019/05/13/tec/blog/2019-04-29-blog3/" class="media-left">
                 <p class="image is-64x64">
-                    <img class="thumbnail" src="/assets/images/is/r2.jpg" alt="레이니스피아라">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[JEKYLL과 깃허브로 블로그 만들기] 콜렉션(Collection)만들기">
                 </p>
             </a>
             
             <div class="media-content">
                 <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-12T13:35:34.545Z">2019-05-12</time></div>
-                    <a href="/2019/05/12/trip/europ/2019-04-30-iceland8/" class="has-link-black-ter is-size-6">레이니스피아라</a>
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T01:35:49.900Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/blog/2019-04-29-blog3/" class="has-link-black-ter is-size-6">[JEKYLL과 깃허브로 블로그 만들기] 콜렉션(Collection)만들기</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/trip/">trip</a> / <a class="has-link-grey -link" href="/categories/trip/island/">island</a>
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
                     </p>
                 </div>
             </div>
@@ -1608,15 +1370,23 @@
                 <span class="level-item">tec</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">21</span>
+                <span class="level-item tag">27</span>
             </span>
         </a><ul><li>
+        <a class="level is-marginless" href="/categories/tec/blog/">
+            <span class="level-start">
+                <span class="level-item">blog</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">7</span>
+            </span>
+        </a></li><li>
         <a class="level is-marginless" href="/categories/tec/java/">
             <span class="level-start">
                 <span class="level-item">java</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">14</span>
+                <span class="level-item tag">13</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/tec/sql/">
@@ -1662,7 +1432,7 @@
                     <span class="level-item">5월 2019</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">40</span>
+                    <span class="level-item tag">46</span>
                 </span>
             </a>
         </li>
@@ -1678,7 +1448,7 @@
         <h3 class="menu-label">
             태그 클라우드
         </h3>
-        <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/sql/" style="font-size: 16px;">sql</a> <a href="/tags/골든서클/" style="font-size: 10px;">골든서클</a> <a href="/tags/눈/" style="font-size: 10px;">눈</a> <a href="/tags/무지개/" style="font-size: 10px;">무지개</a> <a href="/tags/빙하/" style="font-size: 10px;">빙하</a> <a href="/tags/숙소/" style="font-size: 18px;">숙소</a> <a href="/tags/여행/" style="font-size: 10px;">여행</a> <a href="/tags/오로라/" style="font-size: 14px;">오로라</a> <a href="/tags/폭포/" style="font-size: 12px;">폭포</a> <a href="/tags/해변/" style="font-size: 10px;">해변</a>
+        <a href="/tags/blog/" style="font-size: 15px;">blog</a> <a href="/tags/github/" style="font-size: 15px;">github</a> <a href="/tags/hexo/" style="font-size: 11.67px;">hexo</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/java의-정석/" style="font-size: 18.33px;">java의 정석</a> <a href="/tags/jekyll/" style="font-size: 13.33px;">jekyll</a> <a href="/tags/sql/" style="font-size: 15px;">sql</a> <a href="/tags/tec/" style="font-size: 15px;">tec</a> <a href="/tags/골든서클/" style="font-size: 10px;">골든서클</a> <a href="/tags/눈/" style="font-size: 10px;">눈</a> <a href="/tags/무지개/" style="font-size: 10px;">무지개</a> <a href="/tags/빙하/" style="font-size: 10px;">빙하</a> <a href="/tags/숙소/" style="font-size: 16.67px;">숙소</a> <a href="/tags/아이슬란드/" style="font-size: 20px;">아이슬란드</a> <a href="/tags/여행/" style="font-size: 20px;">여행</a> <a href="/tags/오로라/" style="font-size: 13.33px;">오로라</a> <a href="/tags/유럽/" style="font-size: 20px;">유럽</a> <a href="/tags/폭포/" style="font-size: 11.67px;">폭포</a> <a href="/tags/해변/" style="font-size: 10px;">해변</a>
     </div>
 </div>
 
@@ -1692,15 +1462,57 @@
             <div class="field is-grouped is-grouped-multiline">
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/blog/">
+                        <span class="tag">blog</span>
+                        <span class="tag is-grey">7</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/github/">
+                        <span class="tag">github</span>
+                        <span class="tag is-grey">7</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/hexo/">
+                        <span class="tag">hexo</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/java/">
                         <span class="tag">java</span>
-                        <span class="tag is-grey">14</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/java의-정석/">
+                        <span class="tag">java의 정석</span>
+                        <span class="tag is-grey">12</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/jekyll/">
+                        <span class="tag">jekyll</span>
+                        <span class="tag is-grey">5</span>
                     </a>
                 </div>
                 
                 <div class="control">
                     <a class="tags has-addons" href="/tags/sql/">
                         <span class="tag">sql</span>
+                        <span class="tag is-grey">7</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/tec/">
+                        <span class="tag">tec</span>
                         <span class="tag is-grey">7</span>
                     </a>
                 </div>
@@ -1741,9 +1553,16 @@
                 </div>
                 
                 <div class="control">
+                    <a class="tags has-addons" href="/tags/아이슬란드/">
+                        <span class="tag">아이슬란드</span>
+                        <span class="tag is-grey">18</span>
+                    </a>
+                </div>
+                
+                <div class="control">
                     <a class="tags has-addons" href="/tags/여행/">
                         <span class="tag">여행</span>
-                        <span class="tag is-grey">1</span>
+                        <span class="tag is-grey">18</span>
                     </a>
                 </div>
                 
@@ -1751,6 +1570,13 @@
                     <a class="tags has-addons" href="/tags/오로라/">
                         <span class="tag">오로라</span>
                         <span class="tag is-grey">5</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/유럽/">
+                        <span class="tag">유럽</span>
+                        <span class="tag is-grey">18</span>
                     </a>
                 </div>
                 

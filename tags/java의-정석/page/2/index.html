@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+<title>태그: java의 정석 - EUNI</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+    <meta property="og:type" content="website">
+<meta property="og:title" content="EUNI">
+<meta property="og:url" content="https://crlo2.github.io/tags/java의-정석/page/2/index.html">
+<meta property="og:site_name" content="EUNI">
+<meta property="og:locale" content="ko">
+<meta property="og:image" content="https://crlo2.github.io/images/og_image.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="EUNI">
+<meta name="twitter:image" content="https://crlo2.github.io/images/og_image.png">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/favicon.svg">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+    
+    
+
+    
+    
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="/">
+            
+                <img src="/images/logo.png" alt="EUNI" height="28">
+            
+            </a>
+        </div>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item" href="/categories/tec/">Technology</a>
+                
+                <a class="navbar-item" href="/categories/trip/">Trip</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                    
+                    
+                    <a class="navbar-item" target="_blank" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                    
+                
+                
+                
+                <a class="navbar-item search" title="검색" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    <div class="card-content">
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+        <ul>
+            <li><a href="/tags">태그</a></li>
+            <li class="is-active"><a href="#" aria-current="page">java의 정석</a></li>
+        </ul>
+        </nav>
+    </div>
+</div>
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-05-13T01:09:12.639Z">2019-05-13</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/tec/">tec</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/tec/java/">java</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    6분 읽기 (나에 대하여 840 단어)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/05/13/tec/java/2019-05-04-java8/">[Java의정석] CH7. 객체지향프로그래밍2</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="5-다형성"><a href="#5-다형성" class="headerlink" title="5. 다형성"></a>5. 다형성</h2><h3 id="5-1-다형성이란"><a href="#5-1-다형성이란" class="headerlink" title="5.1 다형성이란?"></a>5.1 다형성이란?</h3><p>여러가지 형태를 가질 수 있는 능력.<br>조상클래스 타입의 참조변수로 자손클래스의 인스턴스를 참조할 수 있도록 함.<br><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Tv</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">boolean</span> power;</span><br><span class="line">    <span class="hljs-keyword">int</span> channel;</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">power</span><span class="hljs-params">()</span></span>&#123;power = !power;&#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">channelUp</span><span class="hljs-params">()</span></span>&#123;++channel;&#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">channelDown</span><span class="hljs-params">()</span></span>&#123;--channel;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CaptionTv</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Tv</span></span>&#123;</span><br><span class="line">    String text;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">caption</span><span class="hljs-params">()</span></span>&#123;&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Tv t = <span class="hljs-keyword">new</span> Tv();</span><br><span class="line">CaptionTv c = <span class="hljs-keyword">new</span> CaptionTv();</span><br></pre></td></tr></table></figure>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Tv t = <span class="hljs-keyword">new</span> CaptionTv();</span><br></pre></td></tr></table></figure>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">CaptionTv c = <span class="hljs-keyword">new</span> CaptionTv();</span><br><span class="line">Tv t = <span class="hljs-keyword">new</span> CaptionTv();</span><br></pre></td></tr></table></figure>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//이렇게는 불가능함</span></span><br><span class="line">CaptionTv c = <span class="hljs-keyword">new</span> Tv();</span><br></pre></td></tr></table></figure>
+<p>조상 타입의 참조변수로 자손타입의 인스턴스를 참조할 수 있다.<br>반대로 자손타입의 참조변수로 조상타입의 인스턴스를 참조할 수는 없다.  </p>
+<h3 id="5-2-참조변수의-형병환"><a href="#5-2-참조변수의-형병환" class="headerlink" title="5.2 참조변수의 형병환"></a>5.2 참조변수의 형병환</h3><p>자손타입-&gt;조상타입(up-castion) : 형변환 생략 가능<br>자손타입&lt;-조상타입(Down-castion) : 형변환 생략 불가</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Car</span></span>&#123;</span><br><span class="line">    String color;</span><br><span class="line">    <span class="hljs-keyword">int</span> door;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">drive</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="hljs-string">"drive, Brrr~"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">stop</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="hljs-string">"stop!!"</span>);</span><br><span class="line">    &#125;   </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FireEngine</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Car</span></span>&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">water</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="hljs-string">"water!!!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Ambulance</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Car</span> </span>&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">siren</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="hljs-string">"siren~~!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>FireEngine타입과 Ambulance타입은 서로 형변환 불가능<br>Car 타입과 FireEngine 타입 형변환 예시<br><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Car car = <span class="hljs-keyword">null</span>;</span><br><span class="line">FireEngine fe = <span class="hljs-keyword">new</span> FireEngine();</span><br><span class="line">FireEngine fe2 = <span class="hljs-keyword">null</span>;</span><br><span class="line"></span><br><span class="line">car = fe;  <span class="hljs-comment">//car = (Car) fe; 형변환이 생략된 형태</span></span><br><span class="line">fe2 = (FireEngine) car; <span class="hljs-comment">//형변환 생략 불가.</span></span><br></pre></td></tr></table></figure></p>
+<p>아래 예제는 컴파일에러는 발생하지 않지만 실행시 에러가 발생함.<br><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CastingTest2</span></span>&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span></span>&#123;</span><br><span class="line">        Car car = <span class="hljs-keyword">new</span> Car();</span><br><span class="line">        Car car2 = <span class="hljs-keyword">null</span>;</span><br><span class="line">        FireEngine fe = <span class="hljs-keyword">null</span>;</span><br><span class="line">        </span><br><span class="line">        car.drive();</span><br><span class="line">        fe = (FireEngine) car; <span class="hljs-comment">//실행시 여기서 에러 발생</span></span><br><span class="line">        fe.drive();</span><br><span class="line">        car2 = fe;</span><br><span class="line">        car2.drive();</span><br><span class="line">    &#125;</span><br><span class="line"> &#125;</span><br><span class="line">```  </span><br><span class="line"></span><br><span class="line">car가 Car타입의 인스턴스여서 FireEngine을 받을 수 없음.</span><br><span class="line">- 캐스트연산자를 사용하면 서로 상속관계에 있는 클래스 타입의 참조변수간의 형변환은 양방향으로 자유롭게 수행될 수 있다.  </span><br><span class="line">그러나 참조변수가 참조하고 있는 인스턴스의 자손타입으로 형변환을 하는것은 허용되지 않는다.  </span><br><span class="line"></span><br><span class="line">### 5.3 instanceof연산자  </span><br><span class="line">참조변수가 참조하는 인스턴스 실제타입을 확인하기 위해 <span class="hljs-keyword">instanceof</span>연산자 사용.  </span><br><span class="line">주로 조건문에사용. </span><br><span class="line">* 값이 ull인 참조변수에 대해 <span class="hljs-keyword">instanceof</span>연산을 하면 <span class="hljs-keyword">false</span>나옴.  </span><br><span class="line"></span><br><span class="line">```java</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">doWork</span><span class="hljs-params">(Car c)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span>(c <span class="hljs-keyword">instanceof</span> FireEngine)&#123;</span><br><span class="line">        FireEngine fe = (FireEngind) c;</span><br><span class="line">        fe.water();</span><br><span class="line">    &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>( c instance of Ambulance)&#123;</span><br><span class="line">        Ambulance a = (Ambulance) c;</span><br><span class="line">        a.siren();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">InstanceOfTest</span></span>&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span> <span class="hljs-params">(String args[])</span></span>&#123;</span><br><span class="line">        FireEngine fe = <span class="hljs-keyword">new</span> FireEngine();</span><br><span class="line">        </span><br><span class="line">        <span class="hljs-keyword">if</span>(fe <span class="hljs-keyword">instanceof</span> FireEngine)&#123;</span><br><span class="line">            System.out.println(<span class="hljs-string">"FireEngine instance"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-keyword">if</span>( fe <span class="hljs-keyword">instanceof</span> Car)&#123;</span><br><span class="line">            System.out.println(<span class="hljs-string">"Car instance"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-keyword">if</span>( fe <span class="hljs-keyword">instanceof</span> Object)&#123;</span><br><span class="line">            System.out.println(<span class="hljs-string">"Object instance"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>위의 코드를 실행할 경우<br><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">FireEngine instance</span><br><span class="line">Car instance</span><br><span class="line">Object instance</span><br></pre></td></tr></table></figure></p>
+<h3 id="5-4-참조변수와-인스턴스의-연결"><a href="#5-4-참조변수와-인스턴스의-연결" class="headerlink" title="5.4 참조변수와 인스턴스의 연결"></a>5.4 참조변수와 인스턴스의 연결</h3><p>멤버변수가 조상클래스와 자손클래스에 중복으로 정의된 경우, 조상 타입의 참조변수를 사용했을 때는 조상클래스에 선언된 멤버변수가 사용되고, 지손타입의 참조변수를 사용했을 때는 자손틀래스에 선언된 멤버변수가 사용된다.  </p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BindingTest</span></span>&#123;</span><br><span class="line">        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span></span>&#123;</span><br><span class="line">            Parent p = <span class="hljs-keyword">new</span> Child();</span><br><span class="line">            Child c = <span class="hljs-keyword">new</span> Child();</span><br><span class="line">            </span><br><span class="line">            System.out.println(<span class="hljs-string">"p.x ="</span> + p.x);</span><br><span class="line">            p.method();</span><br><span class="line">            </span><br><span class="line">            System.out.println(<span class="hljs-string">"c.x= "</span>+c.x);</span><br><span class="line">            c.method();</span><br><span class="line">          </span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Parent</span> </span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> x = <span class="hljs-number">100</span>;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">method</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="hljs-string">"Parent Method"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Child</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> x = <span class="hljs-number">200</span>;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">method</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">        System.out.println(<span class="hljs-string">"Child Method"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>실행결과<br><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">p.x=<span class="hljs-number">100</span></span><br><span class="line">Child Method</span><br><span class="line">c.x=<span class="hljs-number">200</span></span><br><span class="line">Child Method</span><br></pre></td></tr></table></figure></p>
+<h3 id="5-5-매개변수의-다형성"><a href="#5-5-매개변수의-다형성" class="headerlink" title="5.5 매개변수의 다형성"></a>5.5 매개변수의 다형성</h3><h3 id="5-6-여러-종류의-객체를-하나의-배열로-다루기"><a href="#5-6-여러-종류의-객체를-하나의-배열로-다루기" class="headerlink" title="5.6 여러 종류의 객체를 하나의 배열로 다루기"></a>5.6 여러 종류의 객체를 하나의 배열로 다루기</h3>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-05-13T01:09:12.621Z">2019-05-13</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/tec/">tec</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/tec/java/">java</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    4분 읽기 (나에 대하여 554 단어)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                <a class="has-link-black-ter" href="/2019/05/13/tec/java/2019-05-07-java9/">[Java의정석] CH7. 객체지향프로그래밍2</a>
+            
+        </h1>
+        <div class="content">
+            <h2 id="6-추상클래스"><a href="#6-추상클래스" class="headerlink" title="6. 추상클래스"></a>6. 추상클래스</h2><h3 id="6-1-추상클래스란"><a href="#6-1-추상클래스란" class="headerlink" title="6.1 추상클래스란?"></a>6.1 추상클래스란?</h3><p>미완성된 설계도. 미완성 메서드(추상메서드)를 포함하고 있는 클래스.<br>추상 클래스는 상속을 통해 자손클래스에 의해서만 완성될 수 있음.<br><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> 클래스이름</span>&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="6-2-추상메서드"><a href="#6-2-추상메서드" class="headerlink" title="6.2 추상메서드"></a>6.2 추상메서드</h3><p>메서드 선언부와 구현부 중 선언부만 작성한것.<br><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">abstract</span> 리턴타입 메서드이름();</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Player</span></span>&#123;</span><br><span class="line">        <span class="hljs-function"><span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span> <span class="hljs-title">play</span><span class="hljs-params">(<span class="hljs-keyword">int</span> pos)</span></span>;</span><br><span class="line">        <span class="hljs-function"><span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span> <span class="hljs-title">stop</span><span class="hljs-params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AudioPlayeer</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Player</span></span>&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">play</span><span class="hljs-params">(<span class="hljs-keyword">int</span> pos)</span></span>&#123;</span><br><span class="line">        <span class="hljs-comment">// 기능 구현   </span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">stop</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">        <span class="hljs-comment">//기능 구현</span></span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AbstractPlayer</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Player</span></span>&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">play</span><span class="hljs-params">(<span class="hljs-keyword">int</span> pos)</span> </span>&#123;</span><br><span class="line">        <span class="hljs-comment">// 기능 구현</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="6-3-추상클래스의-작성"><a href="#6-3-추상클래스의-작성" class="headerlink" title="6.3 추상클래스의 작성"></a>6.3 추상클래스의 작성</h3><ul>
+<li>추상 : 낱낱의 구체적 표상이나 개념에서 공통된 성질을 뽑아 이를 일반적인 개념으로 파악하는 정신 작용.  </li>
+<li>추상화 : 클래스간의 공통점을 찾아내서 공통의 조상을 만드는 작업.</li>
+<li>구체화 : 상속을 통해 클래스를 구현, 확장하는 작업</li>
+</ul>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Player</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">boolean</span> pause;</span><br><span class="line">    <span class="hljs-keyword">int</span> currentPos;</span><br><span class="line">    </span><br><span class="line">    Player()&#123;</span><br><span class="line">        pause = <span class="hljs-keyword">false</span>;</span><br><span class="line">        currentPos = <span class="hljs-number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span> <span class="hljs-title">play</span><span class="hljs-params">(<span class="hljs-keyword">int</span> pos)</span></span>;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span> <span class="hljs-title">stop</span><span class="hljs-params">()</span></span>;</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">play</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">        play(currentPos);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">pause</span> <span class="hljs-params">()</span></span>&#123;</span><br><span class="line">        <span class="hljs-keyword">if</span>(pause)&#123;</span><br><span class="line">            pause = <span class="hljs-keyword">false</span>;</span><br><span class="line">        &#125;<span class="hljs-keyword">else</span> &#123;</span><br><span class="line">            pause = <span class="hljs-keyword">true</span>;</span><br><span class="line">            stop();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>위의 Player추상클래스를 조상으로 하는 CDPlayer<br><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CDPlayer</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">player</span></span>&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">play</span><span class="hljs-params">(<span class="hljs-keyword">int</span> currentPos)</span></span>&#123;</span><br><span class="line">        <span class="hljs-comment">//기능 구현</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">stop</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">        <span class="hljs-comment">//기능 구현</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="hljs-keyword">int</span> currentTrace;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">nextTrace</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">        currentTrace++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">preTrace</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">        <span class="hljs-keyword">if</span>(currentTrace&gt;<span class="hljs-number">1</span>)&#123;</span><br><span class="line">            currentTrace--;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>추상메서드로 안 만들고 구현부를 빈 상태로 두어 자손 클래스에서 오버라이드해서 사용할 수 있지만<br>추상메서드로하면 필수로 구연해야 한다.  </p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Marine</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> x,y;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">move</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y)</span></span>&#123;&#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">stop</span><span class="hljs-params">()</span></span>&#123;&#125;;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">stimPack</span><span class="hljs-params">()</span></span>&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Tank</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> x,y;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">move</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y)</span></span>&#123;&#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">stop</span><span class="hljs-params">()</span></span>&#123;&#125;;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">changeMode</span><span class="hljs-params">()</span></span>&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Dropship</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> x,y;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">move</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y)</span></span>&#123;&#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">stop</span><span class="hljs-params">()</span></span>&#123;&#125;;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">load</span><span class="hljs-params">()</span></span>&#123;&#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">unload</span><span class="hljs-params">()</span></span>&#123;&#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>위에서 공통부분을 뽑아내서 추상클래스 Unit을 만들어 다시 구현.<br><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Unit</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> x,y;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span> <span class="hljs-title">move</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y)</span></span>;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">stop</span><span class="hljs-params">()</span></span>&#123;&#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Marine</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Unit</span></span>&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">move</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y)</span></span>&#123;&#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">stimPack</span><span class="hljs-params">()</span></span>&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Tank</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Unit</span></span>&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">move</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y)</span></span>&#123;&#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">changeMode</span><span class="hljs-params">()</span></span>&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Dropship</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Unit</span></span>&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">move</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y)</span></span>&#123;&#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">load</span><span class="hljs-params">()</span></span>&#123;&#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">unload</span><span class="hljs-params">()</span></span>&#123;&#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>위와같이 구현하면 아래처럼 Unit으로 배열로 다룰 수 있음<br><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Unit[] grop = <span class="hljs-keyword">new</span> Unit[<span class="hljs-number">4</span>];</span><br><span class="line">group[<span class="hljs-number">0</span>] = <span class="hljs-keyword">new</span> Marine();</span><br><span class="line">group[<span class="hljs-number">1</span>] = <span class="hljs-keyword">new</span> Tank();</span><br><span class="line">group[<span class="hljs-number">2</span>] = <span class="hljs-keyword">new</span> Marine();</span><br><span class="line">group[<span class="hljs-number">4</span>] = <span class="hljs-keyword">new</span> Dropship();</span><br></pre></td></tr></table></figure></p>
+
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+    
+<div class="card card-transparent">
+    <nav class="pagination is-centered" role="navigation" aria-label="pagination">
+        <div class="pagination-previous">
+            <a class="is-flex-grow has-text-black-ter" href="/tags/java의-정석/">이전</a>
+        </div>
+        <div class="pagination-next is-invisible is-hidden-mobile">
+            <a class="is-flex-grow has-text-black-ter" href="/tags/java의-정석/page/3/">다음</a>
+        </div>
+        <ul class="pagination-list is-hidden-mobile">
+            
+            <li><a class="pagination-link has-text-black-ter" href="/tags/java의-정석/">1</a></li>
+            
+            <li><a class="pagination-link is-current" href="/tags/java의-정석/page/2/">2</a></li>
+            
+        </ul>
+    </nav>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left is-sticky">
+    
+        
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered">
+                <div>
+                    
+                        <img class="image is-128x128 has-mb-6" src="/images/ap.jpg" alt="crlo">
+                    
+                    
+                    <p class="is-size-4 is-block">
+                        crlo
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        developer
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>S.Korea</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        포스트
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        46
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        카테고리
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        6
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        태그
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        19
+                    </p>
+                </div>
+            </div>
+        </nav>
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/crlo2" target="_blank">
+                팔로우</a>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="https://github.com/crlo2">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="RSS" href="/">
+                
+                <i class="fas fa-rss"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+            
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            최근 글
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/05/13/tec/blog/blog7/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Hexo와 깃허브로 블로그 만들기] Hexo 테마 적용">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T02:09:21.227Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/blog/blog7/" class="has-link-black-ter is-size-6">[Hexo와 깃허브로 블로그 만들기] Hexo 테마 적용</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/13/tec/blog/blog6/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Hexo와 깃허브로 블로그 만들기] jykell에서 hexo로 블로그 이전하기">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T02:06:36.432Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/blog/blog6/" class="has-link-black-ter is-size-6">[Hexo와 깃허브로 블로그 만들기] jykell에서 hexo로 블로그 이전하기</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/13/tec/blog/2019-04-29-blog1/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[JEKYLL과 깃허브로 블로그 만들기] 지킬 테마 복사하기">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T01:35:56.974Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/blog/2019-04-29-blog1/" class="has-link-black-ter is-size-6">[JEKYLL과 깃허브로 블로그 만들기] 지킬 테마 복사하기</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/13/tec/blog/2019-04-29-blog2/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[JEKYLL과 깃허브로 블로그 만들기] 포스트(Post) 쓰기">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T01:35:53.320Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/blog/2019-04-29-blog2/" class="has-link-black-ter is-size-6">[JEKYLL과 깃허브로 블로그 만들기] 포스트(Post) 쓰기</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/13/tec/blog/2019-04-29-blog3/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[JEKYLL과 깃허브로 블로그 만들기] 콜렉션(Collection)만들기">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T01:35:49.900Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/blog/2019-04-29-blog3/" class="has-link-black-ter is-size-6">[JEKYLL과 깃허브로 블로그 만들기] 콜렉션(Collection)만들기</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+        
+            
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                카테고리
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/tec/">
+            <span class="level-start">
+                <span class="level-item">tec</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">27</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/tec/blog/">
+            <span class="level-start">
+                <span class="level-item">blog</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">7</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/tec/java/">
+            <span class="level-start">
+                <span class="level-item">java</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">13</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/tec/sql/">
+            <span class="level-start">
+                <span class="level-item">sql</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">7</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/trip/">
+            <span class="level-start">
+                <span class="level-item">trip</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">19</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/trip/island/">
+            <span class="level-start">
+                <span class="level-item">island</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">19</span>
+            </span>
+        </a></li></ul></li>
+            </ul>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            아카이브
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/05/">
+                <span class="level-start">
+                    <span class="level-item">5월 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">46</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+            
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            태그 클라우드
+        </h3>
+        <a href="/tags/blog/" style="font-size: 15px;">blog</a> <a href="/tags/github/" style="font-size: 15px;">github</a> <a href="/tags/hexo/" style="font-size: 11.67px;">hexo</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/java의-정석/" style="font-size: 18.33px;">java의 정석</a> <a href="/tags/jekyll/" style="font-size: 13.33px;">jekyll</a> <a href="/tags/sql/" style="font-size: 15px;">sql</a> <a href="/tags/tec/" style="font-size: 15px;">tec</a> <a href="/tags/골든서클/" style="font-size: 10px;">골든서클</a> <a href="/tags/눈/" style="font-size: 10px;">눈</a> <a href="/tags/무지개/" style="font-size: 10px;">무지개</a> <a href="/tags/빙하/" style="font-size: 10px;">빙하</a> <a href="/tags/숙소/" style="font-size: 16.67px;">숙소</a> <a href="/tags/아이슬란드/" style="font-size: 20px;">아이슬란드</a> <a href="/tags/여행/" style="font-size: 20px;">여행</a> <a href="/tags/오로라/" style="font-size: 13.33px;">오로라</a> <a href="/tags/유럽/" style="font-size: 20px;">유럽</a> <a href="/tags/폭포/" style="font-size: 11.67px;">폭포</a> <a href="/tags/해변/" style="font-size: 10px;">해변</a>
+    </div>
+</div>
+
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                태그
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/blog/">
+                        <span class="tag">blog</span>
+                        <span class="tag is-grey">7</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/github/">
+                        <span class="tag">github</span>
+                        <span class="tag is-grey">7</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/hexo/">
+                        <span class="tag">hexo</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/java/">
+                        <span class="tag">java</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/java의-정석/">
+                        <span class="tag">java의 정석</span>
+                        <span class="tag is-grey">12</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/jekyll/">
+                        <span class="tag">jekyll</span>
+                        <span class="tag is-grey">5</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/sql/">
+                        <span class="tag">sql</span>
+                        <span class="tag is-grey">7</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/tec/">
+                        <span class="tag">tec</span>
+                        <span class="tag is-grey">7</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/골든서클/">
+                        <span class="tag">골든서클</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/눈/">
+                        <span class="tag">눈</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/무지개/">
+                        <span class="tag">무지개</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/빙하/">
+                        <span class="tag">빙하</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/숙소/">
+                        <span class="tag">숙소</span>
+                        <span class="tag is-grey">10</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/아이슬란드/">
+                        <span class="tag">아이슬란드</span>
+                        <span class="tag is-grey">18</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/여행/">
+                        <span class="tag">여행</span>
+                        <span class="tag is-grey">18</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/오로라/">
+                        <span class="tag">오로라</span>
+                        <span class="tag is-grey">5</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/유럽/">
+                        <span class="tag">유럽</span>
+                        <span class="tag is-grey">18</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/폭포/">
+                        <span class="tag">폭포</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/해변/">
+                        <span class="tag">해변</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            최근 글
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/2019/05/13/tec/blog/blog7/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Hexo와 깃허브로 블로그 만들기] Hexo 테마 적용">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T02:09:21.227Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/blog/blog7/" class="has-link-black-ter is-size-6">[Hexo와 깃허브로 블로그 만들기] Hexo 테마 적용</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/13/tec/blog/blog6/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[Hexo와 깃허브로 블로그 만들기] jykell에서 hexo로 블로그 이전하기">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T02:06:36.432Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/blog/blog6/" class="has-link-black-ter is-size-6">[Hexo와 깃허브로 블로그 만들기] jykell에서 hexo로 블로그 이전하기</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/13/tec/blog/2019-04-29-blog1/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[JEKYLL과 깃허브로 블로그 만들기] 지킬 테마 복사하기">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T01:35:56.974Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/blog/2019-04-29-blog1/" class="has-link-black-ter is-size-6">[JEKYLL과 깃허브로 블로그 만들기] 지킬 테마 복사하기</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/13/tec/blog/2019-04-29-blog2/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[JEKYLL과 깃허브로 블로그 만들기] 포스트(Post) 쓰기">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T01:35:53.320Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/blog/2019-04-29-blog2/" class="has-link-black-ter is-size-6">[JEKYLL과 깃허브로 블로그 만들기] 포스트(Post) 쓰기</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/2019/05/13/tec/blog/2019-04-29-blog3/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="[JEKYLL과 깃허브로 블로그 만들기] 콜렉션(Collection)만들기">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-05-13T01:35:49.900Z">2019-05-13</time></div>
+                    <a href="/2019/05/13/tec/blog/2019-04-29-blog3/" class="has-link-black-ter is-size-6">[JEKYLL과 깃허브로 블로그 만들기] 콜렉션(Collection)만들기</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/tec/">tec</a> / <a class="has-link-grey -link" href="/categories/tec/blog/">blog</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                카테고리
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/tec/">
+            <span class="level-start">
+                <span class="level-item">tec</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">27</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/tec/blog/">
+            <span class="level-start">
+                <span class="level-item">blog</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">7</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/tec/java/">
+            <span class="level-start">
+                <span class="level-item">java</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">13</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/tec/sql/">
+            <span class="level-start">
+                <span class="level-item">sql</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">7</span>
+            </span>
+        </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/trip/">
+            <span class="level-start">
+                <span class="level-item">trip</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">19</span>
+            </span>
+        </a><ul><li>
+        <a class="level is-marginless" href="/categories/trip/island/">
+            <span class="level-start">
+                <span class="level-item">island</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">19</span>
+            </span>
+        </a></li></ul></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            아카이브
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/05/">
+                <span class="level-start">
+                    <span class="level-item">5월 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">46</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            태그 클라우드
+        </h3>
+        <a href="/tags/blog/" style="font-size: 15px;">blog</a> <a href="/tags/github/" style="font-size: 15px;">github</a> <a href="/tags/hexo/" style="font-size: 11.67px;">hexo</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/java의-정석/" style="font-size: 18.33px;">java의 정석</a> <a href="/tags/jekyll/" style="font-size: 13.33px;">jekyll</a> <a href="/tags/sql/" style="font-size: 15px;">sql</a> <a href="/tags/tec/" style="font-size: 15px;">tec</a> <a href="/tags/골든서클/" style="font-size: 10px;">골든서클</a> <a href="/tags/눈/" style="font-size: 10px;">눈</a> <a href="/tags/무지개/" style="font-size: 10px;">무지개</a> <a href="/tags/빙하/" style="font-size: 10px;">빙하</a> <a href="/tags/숙소/" style="font-size: 16.67px;">숙소</a> <a href="/tags/아이슬란드/" style="font-size: 20px;">아이슬란드</a> <a href="/tags/여행/" style="font-size: 20px;">여행</a> <a href="/tags/오로라/" style="font-size: 13.33px;">오로라</a> <a href="/tags/유럽/" style="font-size: 20px;">유럽</a> <a href="/tags/폭포/" style="font-size: 11.67px;">폭포</a> <a href="/tags/해변/" style="font-size: 10px;">해변</a>
+    </div>
+</div>
+
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                태그
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/blog/">
+                        <span class="tag">blog</span>
+                        <span class="tag is-grey">7</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/github/">
+                        <span class="tag">github</span>
+                        <span class="tag is-grey">7</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/hexo/">
+                        <span class="tag">hexo</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/java/">
+                        <span class="tag">java</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/java의-정석/">
+                        <span class="tag">java의 정석</span>
+                        <span class="tag is-grey">12</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/jekyll/">
+                        <span class="tag">jekyll</span>
+                        <span class="tag is-grey">5</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/sql/">
+                        <span class="tag">sql</span>
+                        <span class="tag is-grey">7</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/tec/">
+                        <span class="tag">tec</span>
+                        <span class="tag is-grey">7</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/골든서클/">
+                        <span class="tag">골든서클</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/눈/">
+                        <span class="tag">눈</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/무지개/">
+                        <span class="tag">무지개</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/빙하/">
+                        <span class="tag">빙하</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/숙소/">
+                        <span class="tag">숙소</span>
+                        <span class="tag is-grey">10</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/아이슬란드/">
+                        <span class="tag">아이슬란드</span>
+                        <span class="tag is-grey">18</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/여행/">
+                        <span class="tag">여행</span>
+                        <span class="tag is-grey">18</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/오로라/">
+                        <span class="tag">오로라</span>
+                        <span class="tag is-grey">5</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/유럽/">
+                        <span class="tag">유럽</span>
+                        <span class="tag is-grey">18</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/폭포/">
+                        <span class="tag">폭포</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/해변/">
+                        <span class="tag">해변</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/logo.png" alt="EUNI" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2019 daeun&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Download on GitHub" href="https://github.com/crlo2">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("ko");</script>
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="Back to Top" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+    <script src="/js/clipboard.js" defer></script>
+    
+
+    
+    
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="입력 하세요...">
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '포스트',
+                PAGES: '페이지',
+                CATEGORIES: '카테고리',
+                TAGS: '태그',
+                UNTITLED: '(제목없음)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+</body>
+</html>
